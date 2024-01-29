@@ -20,8 +20,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/coachs/:coachId',
-      name: 'coach-details',
+      path: '/coachs/:id',
       props: true,
       components: {
         default: CoachDetails
@@ -29,7 +28,6 @@ const router = createRouter({
       children: [
         {
           path: 'contact',
-          name: 'coach-contact',
           components: {
             default: CoachContact
           }

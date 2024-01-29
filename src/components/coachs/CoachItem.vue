@@ -19,10 +19,13 @@ import BaseBadge from '../common/BaseBadge.vue';
 import BaseButton from '../common/BaseButton.vue';
 
 const coachContactLink = computed(() => {
+
+
     return '/coachs/' + props.item.id + '/contact'
 })
 
 const coachDetailLink = computed(() => {
+    console.log('/coachs/' + props.item.id);
     return '/coachs/' + props.item.id
 })
 

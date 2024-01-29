@@ -11,7 +11,7 @@ export type State = {
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
-  strict: true,
+  // strict: true,
   modules: {
     coachs: coachsModule
   },

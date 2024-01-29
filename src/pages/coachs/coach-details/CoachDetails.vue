@@ -7,7 +7,8 @@
         <p class="text-2xl font-bold">
             Interested? Reach out now!
         </p>
-        <base-button to="contact" mode="contained" class="self-start">Contact</base-button>
+        <base-button :to="contactLink" mode="contained" class="self-start">Contact</base-button>
+        <router-view></router-view>
     </base-card>
     <base-card class="flex gap-2 flex-col">
         <div class="flex gap-4">
@@ -24,17 +25,19 @@ import BaseButton from '@/components/common/BaseButton.vue';
 import BaseCard from '@/components/common/BaseCard.vue';
 import { key } from '@/store';
 import type { Coach } from '@/store/modules/coachs';
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore(key);
 
 const props = defineProps<{
-    coachId: string
+    id: string
 }>()
+
+const contactLink = computed(() => '/coachs/' + props.id + '/contact')
 
 const coach = computed(() => {
     const coachs = store.getters['coachs/coachs'] as Coach[]
-    return coachs.find(item => item.id = props.coachId)
+    return coachs.find(item => item.id = props.id)
 })
 
 const fullName = computed(() => {

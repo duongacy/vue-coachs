@@ -1,6 +1,6 @@
 <template>
     <div>
-        Contact coach
+        Contact form
     </div>
 </template>
 
