@@ -1,30 +1,15 @@
-import { type CoachsState } from './modules/coachs/index'
+import { COACHES, type CoachsState } from './modules/COACHES'
 import { type InjectionKey } from 'vue'
 import { createStore, Store } from 'vuex'
-import { coachsModule } from './modules/coachs'
 
-export type State = {
-  coachs: CoachsState
+export type TState = {
+  COACHES: CoachsState
 }
 
-// define injection key
-export const key: InjectionKey<Store<State>> = Symbol()
+export const key: InjectionKey<Store<TState>> = Symbol()
 
-export const store = createStore<State>({
-  // strict: true,
+export const store = createStore<TState>({
   modules: {
-    coachs: coachsModule
+    COACHES
   },
-  actions: {
-    incrementAction: (context, payload: number) => {
-      setTimeout(() => {
-        context.commit({ type: 'incrementMutation', payload })
-      }, 1000)
-    }
-  },
-  mutations: {
-    incrementMutation(state: State, action: { type: string; payload: number }) {
-      // state.count += action.payload
-    }
-  }
 })

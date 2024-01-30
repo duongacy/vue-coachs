@@ -1,64 +1,66 @@
-import NotFound from '@/pages/NotFound.vue'
+import NotFoundVue from '@/pages/NotFound.vue'
+import CoachDetailsVue from '@/pages/coaches/CoachDetails.vue'
+import CoachRegisterVue from '@/pages/coaches/CoachRegister.vue'
+import CoachesListVue from '@/pages/coaches/CoachesList.vue'
+import RequestFormVue from '@/pages/requests/RequestForm.vue'
+import RequestsReceivedVue from '@/pages/requests/RequestsReceived.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import CoachsList from '@/pages/coachs/coachs-list/CoachsList.vue'
-import CoachDetails from '@/pages/coachs/coach-details/CoachDetails.vue'
-import CoachRegistration from '@/pages/coachs/coach-registration/CoachRegistration.vue'
-import CoachContact from '@/pages/requests/coach-contact/CoachContact.vue'
 
+export const routes = [
+  {
+    path: '/',
+    name: 'home',
+    redirect: '/coaches'
+  },
+  {
+    path: '/coaches',
+    name: 'coaches',
+    components: { default: CoachesListVue }
+  },
+  {
+    path: '/coaches/:coachId',
+    name: 'coach-details',
+    props: true,
+    components: { default: CoachDetailsVue },
+    children: [
+      {
+        path: 'request',
+        name: 'request-form',
+        components: {
+          default: RequestFormVue
+        }
+      }
+    ]
+  },
+  {
+    path: '/coaches/register',
+    name: 'coach-register',
+    components: {
+      default: CoachRegisterVue
+    }
+  },
+  {
+    path: '/requests-received',
+    name: 'requests-received',
+    components: {
+      default: RequestsReceivedVue
+    }
+  },
+  {
+    path: '/not-found',
+    name: 'not-found',
+    components: {
+      default: NotFoundVue
+    }
+  },
+  {
+    path: '/:catchAll(.*)',
+    redirect: '/not-found'
+  }
+]
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      redirect: '/coachs'
-    },
-    {
-      path: '/coachs',
-      name: 'coachs-list',
-      components: {
-        default: CoachsList
-      }
-    },
-    {
-      path: '/coachs/:id',
-      props: true,
-      components: {
-        default: CoachDetails
-      },
-      children: [
-        {
-          path: 'contact',
-          components: {
-            default: CoachContact
-          }
-        }
-      ]
-    },
-    {
-      path: '/register',
-      name: 'coach-registration',
-      components: {
-        default: CoachRegistration
-      }
-    },
-    {
-      path: '/requests-received',
-      name: 'requests-received',
-      components: {
-        default: CoachContact
-      }
-    },
-    {
-      path: '/notFound',
-      components: {
-        default: NotFound
-      }
-    },
-    {
-      path: '/:notFound(.*)',
-      redirect: '/notFound'
-    }
-  ]
+  routes
 })
 
 export default router
