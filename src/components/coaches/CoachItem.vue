@@ -6,9 +6,7 @@
       <base-badge v-for="area in item.areas" :key="area" :type="area"></base-badge>
     </div>
     <div class="flex justify-end gap-4">
-      <base-button :to="coachDetailLink" class="text-blue-500" mode="contained"
-        >Details</base-button
-      >
+      <base-button :to="coachDetailLink" mode="contained">Details</base-button>
     </div>
   </div>
 </template>
@@ -20,7 +18,7 @@ import BaseButton from '../common/BaseButton.vue'
 import type { TCoach } from '@/types/coach'
 
 const coachDetailLink = computed(() => {
-  return '/coachs/' + props.item.id
+  return '/coaches/' + props.item.id
 })
 
 const props = defineProps<{ item: TCoach }>()

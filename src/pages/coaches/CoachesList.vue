@@ -15,12 +15,24 @@ import CoachItem from '@/components/coaches/CoachItem.vue'
 import BaseButton from '@/components/common/BaseButton.vue'
 import { routes } from '@/router'
 import { key } from '@/store'
-import { computed } from 'vue'
+import type { TCoach } from '@/types/coach'
+import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore(key)
-const coaches = computed(() => store.state.COACHES.coaches)
+
+const coaches = ref<TCoach[]>([])
+
+onMounted(() => {
+  fetch('https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/coaches.json').then(
+    (rs) => {
+      rs.json().then((r) => {
+        console.log(r)
+        coaches.value = r
+      })
+    }
+  )
+})
+// const coaches = computed(() => store.state.COACHES.coaches)
 
 const registerRoute = routes.find((item) => item.name === 'coach-register')
 </script>
-
-<style scoped></style>
