@@ -1,38 +1,63 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <div class="flex gap-4 items-end">
-      <p class="text-2xl font-extrabold">Coaches list</p>
-      <base-button mode="contained" :to="registerRoute?.path">Add new coach</base-button>
-    </div>
-    <div class="grid grid-cols-3 gap-4">
-      <coach-item v-for="coach in coaches" :item="coach" :key="coach.id"> </coach-item>
+  <div class="p-4">
+    <div class="border border-gray-200 rounded-lg overflow-hidden py-6">
+      <div class="bg-white px-4">
+        <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
+          <div class="ml-4 mt-4">
+            <h3 class="text-base font-semibold leading-6 text-gray-900">Coaches</h3>
+            <p class="mt-1 text-sm text-gray-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.
+            </p>
+          </div>
+          <div class="ml-4 mt-4 flex-shrink-0">
+            <base-button variant="primary" size="large" :to="registerRoute?.path"
+              >Create new job
+            </base-button>
+          </div>
+        </div>
+      </div>
+      <div class="h-[1px] bg-gray-200 my-4"></div>
+      <div class="bg-white px-4">
+        <div v-for="(coach, coachIndex) in coaches" :key="coach.id">
+          <coach-item :item="coach"></coach-item>
+          <div class="h-[1px] bg-gray-200 my-4" v-if="coachIndex !== coaches.length - 1"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import CoachItem from '@/components/coaches/CoachItem.vue'
 import BaseButton from '@/components/common/BaseButton.vue'
 import { routes } from '@/router'
 import { key } from '@/store'
-import type { TCoach } from '@/types/coach'
 import { computed, onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
+import CoachItem from './CoachItem.vue'
+
 const store = useStore(key)
-
-const coaches = ref<TCoach[]>([])
-
-onMounted(() => {
-  fetch('https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/coaches.json').then(
-    (rs) => {
-      rs.json().then((r) => {
-        console.log(r)
-        coaches.value = r
-      })
-    }
-  )
+const coaches = computed(() => {
+  return store.state.COACHES.coaches
 })
-// const coaches = computed(() => store.state.COACHES.coaches)
+
+const error = ref<string>('')
+
+onMounted(async () => {
+  try {
+    store.dispatch('COACHES/loadAllAction')
+  } catch (error: any) {
+    console.log(error.message)
+  }
+})
+
+const onDelete = async (id: string) => {
+  try {
+    await store.dispatch('COACHES/deleteAction', id)
+  } catch (err: any) {
+    console.log(err)
+    error.value = err.message
+  }
+}
 
 const registerRoute = routes.find((item) => item.name === 'coach-register')
 </script>

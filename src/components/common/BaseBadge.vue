@@ -1,19 +1,25 @@
 <template>
-    <span :class="cn('text-white  px-4 py-1 rounded-full text-sm uppercase inline-block',
-        {
-            'bg-red-700 ': props.type === 'frontend',
-            'bg-yellow-700 ': props.type === 'backend',
-            'bg-slate-700 ': props.type === 'fullstack',
-        })">
-        {{ props.type }}
-    </span>
+  <span
+    :class="
+      cn([
+        'inline-flex w-fit items-center gap-x-1.5 rounded-md px-3 select-none min-h-7 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200',
+        props.class
+      ])
+    "
+  >
+    <svg
+      :class="cn(`h-1.5 w-1.5 fill-slate-800`, props.dotClass)"
+      viewBox="0 0 6 6"
+      aria-hidden="true"
+    >
+      <circle cx="3" cy="3" r="3" />
+    </svg>
+    {{ props.text }}
+  </span>
 </template>
 
-<script lang="ts" setup>
-import cn from '@/utils/cn';
+<script setup lang="ts">
+import cn from '@/utils/cn'
 
-const props = defineProps<
-    {
-        type: 'frontend' | 'backend' | 'fullstack'
-    }>()
+const props = defineProps<{ dotClass?: string; text: string; class?: string }>()
 </script>

@@ -132,7 +132,7 @@ const onSubmit = () => {
     return
   }
   const data: TCoach = {
-    id: new Date().getTime().toString(),
+    id: new Date().toISOString(),
     firstName: validateObj.value.firstName.val,
     lastName: validateObj.value.lastName.val,
     areas: validateObj.value.areas.val,
@@ -140,10 +140,5 @@ const onSubmit = () => {
     hourlyRate: validateObj.value.hourlyRate.val
   }
   store.dispatch('COACHES/addAction', data)
-  window.addEventListener('ADD_COACH_SUCCESS', () => {
-    router.push({
-      path: '/coaches'
-    })
-  })
 }
 </script>

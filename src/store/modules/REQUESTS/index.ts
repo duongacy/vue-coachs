@@ -12,8 +12,6 @@ export const REQUESTS = {
     },
     actions: {
         addAction(context: any, payload: TRequest) {
-            console.log({ payload });
-
             setTimeout(() => {
                 context.commit({ type: 'addMutation', payload })
             }, 1000)
@@ -22,8 +20,6 @@ export const REQUESTS = {
     mutations: {
         addMutation(state: RequestState, action: { payload: TRequest }) {
             state.requests.push(action.payload);
-            console.log({ state });
-
         }
     }
 }

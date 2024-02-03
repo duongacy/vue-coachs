@@ -2,6 +2,7 @@ import NotFoundVue from '@/pages/NotFound.vue'
 import CoachDetailsVue from '@/pages/coaches/CoachDetails.vue'
 import CoachRegisterVue from '@/pages/coaches/CoachRegister.vue'
 import CoachesListVue from '@/pages/coaches/CoachesList.vue'
+import CommonPage from '@/pages/common/CommonPage.vue'
 import RequestFormVue from '@/pages/requests/RequestForm.vue'
 import RequestsReceivedVue from '@/pages/requests/RequestsReceived.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -11,6 +12,11 @@ export const routes = [
     path: '/',
     name: 'home',
     redirect: '/coaches'
+  },
+  {
+    path: '/common',
+    name: 'common',
+    components: { default: CommonPage }
   },
   {
     path: '/coaches',
@@ -24,7 +30,7 @@ export const routes = [
     components: { default: CoachDetailsVue },
     children: [
       {
-        path: 'request',
+        path: 'contact',
         name: 'request-form',
         components: {
           default: RequestFormVue
