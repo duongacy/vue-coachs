@@ -1,39 +1,45 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <h1 class="text-xl font-extrabold">Request form</h1>
-    <form @submit.prevent="onSubmit" class="flex flex-col gap-2">
-      <label class="grid grid-cols-[120px_1fr] items-end gap-y-1">
-        <strong>Email:</strong>
-        <input
-          type="text"
-          v-model.trim="request.userEmail.value"
-          :class="{
-            'border-red-500 focus:ring-red-500 focus:border-red-500': !!request.userEmail.error
-          }"
-          @change="cancelValidate('userEmail')"
-        />
-        <span />
-        <small class="text-red-500" v-if="request.userEmail.error">{{
-          request.userEmail.error
-        }}</small>
-      </label>
+  <form class="bg-gray-100 -mx-4 p-4">
+    <div class="space-y-6">
+      <div>
+        <h2 class="font-bold text-xl leading-7 text-gray-900">Contact</h2>
+        <p class="mt-1 text-sm leading-6 text-gray-600">
+          This information will be displayed publicly so be careful what you share.
+        </p>
 
-      <label class="grid grid-cols-[120px_1fr] items-end gap-y-1">
-        <strong>Message:</strong>
-        <textarea
-          rows="3"
-          v-model.trim="request.message.value"
-          :class="{
-            'border-red-500 focus:ring-red-500 focus:border-red-500': !!request.message.error
-          }"
-          @change="cancelValidate('message')"
-        />
-        <span />
-        <small class="text-red-500" v-if="request.message.error">{{ request.message.error }}</small>
-      </label>
-      <base-button class="self-end" mode="contained">Send request</base-button>
-    </form>
-  </div>
+        <div class="mt-4 grid gap-y-4">
+          <label class="block">
+            <span class="text-sm font-medium leading-6 text-gray-900">Email</span>
+            <div
+              class="flex mt-2 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 max-w-md"
+            >
+              <input
+                type="text"
+                class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 text-sm leading-6"
+                placeholder="Please enter your email"
+              />
+            </div>
+          </label>
+
+          <label class="block">
+            <span class="text-sm font-medium leading-6 text-gray-900">Message</span>
+            <textarea
+              rows="3"
+              class="block w-full mt-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6"
+            />
+            <p class="mt-3 text-sm leading-6 text-gray-600">
+              Write a few sentences about yourself.
+            </p>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-end gap-x-4">
+      <base-button variant="secondary" size="large">Cancel</base-button>
+      <base-button variant="primary" size="large">Submit</base-button>
+    </div>
+  </form>
 </template>
 
 <script setup lang="ts">
