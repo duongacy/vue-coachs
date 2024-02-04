@@ -39,15 +39,12 @@
           </div>
           <div class="border-t border-gray-100 py-6">
             <dt class="text-sm font-medium leading-6 text-gray-900">Salary expectation</dt>
-            <dd class="mt-1 text-sm leading-6 text-gray-700">$120,000</dd>
+            <dd class="mt-1 text-sm leading-6 text-gray-700">${{ coach.hourlyRate }}/hour</dd>
           </div>
           <div class="border-t border-gray-100 py-6 col-span-2">
-            <dt class="text-sm font-medium leading-6 text-gray-900">About</dt>
+            <dt class="text-sm font-medium leading-6 text-gray-900">Description</dt>
             <dd class="mt-1 text-sm leading-6 text-gray-700">
-              Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa
-              consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit
-              nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing
-              reprehenderit deserunt qui eu.
+              {{ coach.description }}
             </dd>
           </div>
           <div class="border-t border-gray-100 py-6 col-span-2">
@@ -87,7 +84,10 @@
           </div>
         </dl>
       </div>
-      <router-view></router-view>
+      <base-button variant="primary" size="extra-large" :to="registerLink"
+        >Request a coach</base-button
+      >
+      <router-view class="mt-6"></router-view>
     </div>
   </div>
 </template>
@@ -95,22 +95,23 @@
 <script setup lang="ts">
 import { PaperClipIcon } from '@heroicons/vue/20/solid'
 import BaseBadge from '@/components/common/BaseBadge.vue'
-import BaseCard from '@/components/common/BaseCard.vue'
 import BaseButton from '@/components/common/BaseButton.vue'
 import { key } from '@/store'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import cn from '@/utils/cn'
 
-const store = useStore(key)
-const coachs = store.state.COACHES.coaches
 const props = defineProps<{ coachId: string }>()
+const store = useStore(key)
 
 const coach = computed(() => {
-  return coachs.find((item) => item.id === props.coachId)
+  return store.state.COACHES.selectedCoach
 })
-
 const registerLink = computed(() => {
   return `/coaches/${props.coachId}/request`
+})
+
+onMounted(() => {
+  store.dispatch('COACHES/loadByIdAction', props.coachId)
 })
 </script>

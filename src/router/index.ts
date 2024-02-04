@@ -30,7 +30,7 @@ export const routes = [
     components: { default: CoachDetailsVue },
     children: [
       {
-        path: 'contact',
+        path: 'request',
         name: 'request-form',
         components: {
           default: RequestFormVue

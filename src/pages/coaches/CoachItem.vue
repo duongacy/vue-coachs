@@ -1,17 +1,3 @@
-<!-- <template>
-  <div class="border p-4 rounded-lg space-y-2">
-    <p class="text-2xl font-bold">{{ item.firstName }} - {{ item.lastName }}</p>
-    <p class="font-bold">${{ item.hourlyRate }}/hour</p>
-    <div class="space-x-2">
-      <base-badge v-for="area in item.areas" :key="area" :type="area"></base-badge>
-    </div>
-    <div class="flex justify-end gap-4">
-      <base-button :to="detailLink" mode="contained">Details</base-button>
-      <base-button @click="emits('delete', item.id)">Delete</base-button>
-    </div>
-  </div>
-  
-</template> -->
 <template>
   <div class="gap-4 flex justify-between">
     <div class="flex flex-col gap-2">
@@ -37,7 +23,7 @@
     </div>
     <div class="flex items-end gap-2">
       <base-button variant="secondary" size="medium" :to="detailLink">Details</base-button>
-      <base-button variant="primary" size="medium" :to="requestLink">Contact</base-button>
+      <base-button variant="primary" size="medium" :to="requestLink">Request</base-button>
     </div>
   </div>
 </template>
@@ -55,7 +41,7 @@ const detailLink = computed(() => {
   return '/coaches/' + props.item.id
 })
 const requestLink = computed(() => {
-  return detailLink.value + '/contact'
+  return detailLink.value + '/request'
 })
 
 const props = defineProps<{ item: TCoach }>()

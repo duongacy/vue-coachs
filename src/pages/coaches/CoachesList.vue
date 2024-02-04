@@ -54,7 +54,6 @@ const onDelete = async (id: string) => {
   try {
     await store.dispatch('COACHES/deleteAction', id)
   } catch (err: any) {
-    console.log(err)
     error.value = err.message
   }
 }

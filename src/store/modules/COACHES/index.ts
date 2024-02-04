@@ -1,13 +1,15 @@
 import type { TCoach } from "@/types/coach"
 
 export type CoachsState = {
-  coaches: TCoach[]
+  coaches: TCoach[],
+  selectedCoach: TCoach | null
 }
 export const COACHES = {
   namespaced: true,
   state() {
     return {
-      coaches: []
+      coaches: [],
+      selectedCoach: null,
     } as CoachsState
   },
   actions: {
@@ -29,12 +31,10 @@ export const COACHES = {
       const convertedData: TCoach[] = []
       const originData = await fetch('https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/coaches.json');
       const jsonData = await originData.json();
-
       if (!originData.ok) {
         const error = new Error(jsonData.message || 'Something went wrong');
         throw error
       }
-
       for (const key in jsonData) {
         convertedData.push(jsonData[key])
       }
@@ -42,16 +42,23 @@ export const COACHES = {
         { type: 'loadAllMutation', payload: convertedData }
       )
     },
+    async loadByIdAction(context: any, coachId: string) {
+      const response = await fetch(`https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/coaches/${coachId}.json`);
+      const responseJson = await response.json();
+      if (!response.ok) {
+        const error = new Error(responseJson?.message || "Something went wrong");
+        throw error
+      }
+      context.commit({ type: 'loadByIdMutation', payload: responseJson as TCoach })
+    },
     async deleteAction(context: any, id: string) {
       const originData = await fetch(`https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/coaches/${id}.json`, {
         method: "DELETE"
       });
-
       if (!originData.ok) {
         const error = new Error("Something went wrong");
         throw error;
       }
-
       context.commit({ type: 'deleteMutation', payload: id })
     }
   },
@@ -61,6 +68,9 @@ export const COACHES = {
     },
     loadAllMutation(state: CoachsState, action: { payload: TCoach[] }) {
       state.coaches = action.payload
+    },
+    loadByIdMutation(state: CoachsState, action: { payload: TCoach }) {
+      state.selectedCoach = action.payload
     },
     deleteMutation(state: CoachsState, action: { payload: string }) {
       state.coaches = state.coaches.filter(item => item.id !== action.payload)

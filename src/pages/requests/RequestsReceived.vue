@@ -1,34 +1,40 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <div class="text-2xl font-extrabold">Request received</div>
-    <base-card class="flex flex-col gap-4" v-if="requests.length">
-      <div
-        class="border-cyan-400 border grid grid-cols-[auto_1fr] gap-2 p-4"
-        v-for="request in requests"
-        :key="request.id"
-      >
-        <strong>Email:</strong>
-        <a class="text-green-700" target="_blank" :href="'mailto:' + request.userEmail">{{
-          request.userEmail
-        }}</a>
-        <strong>Message:</strong>
-        <span>{{ request.message }}</span>
+  <div class="p-4">
+    <div class="border border-gray-200 rounded-lg overflow-hidden p-4 flex flex-col gap-4">
+      <div>
+        <h3 class="text-base font-semibold leading-6 text-gray-900">Requests</h3>
+        <p class="mt-1 text-sm text-gray-500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.
+        </p>
       </div>
-    </base-card>
-    <base-card v-else>
-      <div class="p-4 text-xl">You don't have any request</div>
-    </base-card>
+      <div class="h-[1px] bg-gray-200"></div>
+      <div class="grid gap-4" v-if="!!requests.length">
+        <div
+          v-for="request in requests"
+          :key="request.id"
+          class="shadow-lg rounded-md overflow-hidden p-4"
+        >
+          <a :href="'mailto:' + request.userEmail" class="text-sm font-bold text-gray-900">{{
+            request.userEmail
+          }}</a>
+          <div class="mt-4 space-y-6 text-base italic text-gray-600">
+            {{ request.message }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import BaseCard from '@/components/common/BaseCard.vue'
-import { key } from '@/store'
-import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { key } from '@/store';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
 const store = useStore(key)
 const requests = computed(() => {
-  return store.state.REQUESTS.requests.filter((item) => item.coachId == store.state.coachId)
+  return store.state.REQUESTS.requests
 })
+
+store.dispatch('REQUESTS/loadAllAction')
 </script>
