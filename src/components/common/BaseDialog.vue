@@ -1,15 +1,6 @@
 <template>
-  <div class="fixed inset-0 flex items-center justify-center">
-    <button
-      type="button"
-      @click="openModal"
-      class="rounded-md bg-black/20 px-4 py-2 text-sm font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
-    >
-      Open dialog
-    </button>
-  </div>
-  <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal" class="relative z-10">
+  <TransitionRoot appear :show="show" as="template" @close="$emit('close')">
+    <Dialog as="div" class="relative z-10">
       <TransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -36,24 +27,34 @@
             <DialogPanel
               class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
             >
-              <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-                Payment successful
+              <DialogTitle
+                as="h3"
+                class="text-lg font-medium leading-6 text-gray-900"
+                v-if="!!title"
+              >
+                {{ title }}
               </DialogTitle>
               <div class="mt-2">
-                <p class="text-sm text-gray-500">
-                  Your payment has been successfully submitted. We’ve sent you an email with all of
-                  the details of your order.
-                </p>
+                <slot></slot>
               </div>
 
-              <div class="mt-4">
-                <button
-                  type="button"
-                  class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                  @click="closeModal"
+              <div class="mt-4 flex gap-4 justify-end" v-if="!!okText || !!cancelText">
+                <base-button
+                  v-if="!!cancelText"
+                  variant="secondary"
+                  size="large"
+                  class="min-w-20 justify-center"
+                  @click="$emit('cancel')"
+                  >{{ cancelText }}</base-button
                 >
-                  Got it, thanks!
-                </button>
+                <base-button
+                  v-if="!!okText"
+                  variant="primary"
+                  size="large"
+                  class="min-w-20 justify-center"
+                  @click="$emit('ok')"
+                  >{{ okText }}</base-button
+                >
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -64,15 +65,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle } from '@headlessui/vue'
+import BaseButton from './BaseButton.vue'
 
-const isOpen = ref(true)
-
-function closeModal() {
-  isOpen.value = false
-}
-function openModal() {
-  isOpen.value = true
-}
+defineEmits(['close', 'cancel', 'ok'])
+defineProps<{ show: boolean; title?: string; okText?: string; cancelText?: string }>()
 </script>

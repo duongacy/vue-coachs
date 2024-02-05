@@ -1,10 +1,12 @@
 import NotFoundVue from '@/pages/NotFound.vue'
+import UserAuth from '@/pages/auth/UserAuth.vue'
 import CoachDetailsVue from '@/pages/coaches/CoachDetails.vue'
 import CoachRegisterVue from '@/pages/coaches/CoachRegister.vue'
 import CoachesListVue from '@/pages/coaches/CoachesList.vue'
 import CommonPage from '@/pages/common/CommonPage.vue'
 import RequestFormVue from '@/pages/requests/RequestForm.vue'
 import RequestsReceivedVue from '@/pages/requests/RequestsReceived.vue'
+import { store } from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 
 export const routes = [
@@ -32,9 +34,10 @@ export const routes = [
       {
         path: 'request',
         name: 'request-form',
+        props: true,
         components: {
           default: RequestFormVue
-        }
+        },
       }
     ]
   },
@@ -50,6 +53,16 @@ export const routes = [
     name: 'requests-received',
     components: {
       default: RequestsReceivedVue
+    },
+    meta: {
+      requireAuth: true
+    }
+  },
+  {
+    path: '/auth',
+    name: 'authen',
+    components: {
+      default: UserAuth
     }
   },
   {
@@ -67,6 +80,20 @@ export const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, _, next) => {
+  const isAuthenticate = store.getters['AUTHEN/isAuthenticate']
+  if (to.meta.requireAuth && !isAuthenticate) {
+    next('/auth')
+  } else if (
+    to.path === '/auth' && isAuthenticate
+  ) {
+    next('/coaches')
+  }
+  else {
+    next()
+  }
 })
 
 export default router

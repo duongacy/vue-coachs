@@ -1,5 +1,4 @@
 import type { TRequest } from "@/types/request"
-import type { ActionContext } from 'vuex'
 
 export type RequestState = {
     requests: TRequest[]
@@ -27,12 +26,12 @@ export const REQUESTS = {
             context.commit({ type: 'addMutation', request })
         },
         async loadAllAction(context: any) {
+            const token = context.rootGetters['AUTHEN/token']
             const results: TRequest[] = []
-            const response = await fetch(`https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/requests.json`)
+            const response = await fetch(`https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/requests.json?auth=${token}`)
             const responseJson = await response.json();
-            // return
             if (!response.ok) {
-                const error = new Error(responseJson?.message || "Something went wrong")
+                const error = new Error(responseJson?.error || "Something went wrong")
                 throw error
             }
             for (const coachId in responseJson) {
@@ -49,8 +48,6 @@ export const REQUESTS = {
             state.requests.push(action.payload);
         },
         loadAllMutation(state: RequestState, action: { payload: TRequest[] }) {
-            console.log('action.payload', action.payload);
-
             state.requests = action.payload
         }
     }

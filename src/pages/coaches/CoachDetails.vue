@@ -87,7 +87,7 @@
       <base-button variant="primary" size="extra-large" :to="registerLink"
         >Request a coach</base-button
       >
-      <router-view class="mt-6"></router-view>
+      <router-view></router-view>
     </div>
   </div>
 </template>

@@ -78,8 +78,6 @@ import { key } from '@/store'
 import type { TArea, TCoach } from '@/types/coach'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
-const router = useRouter()
 
 const store = useStore(key)
 const areas: TArea[] = ['backend', 'frontend', 'fullstack']
