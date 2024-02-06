@@ -5,6 +5,8 @@
       <nav-link :to="coachesRoute?.path!">Coachs</nav-link>
       <nav-link :to="requestsReceivedRoute?.path!">Requests received</nav-link>
       <nav-link :to="commonRoute?.path!">Common</nav-link>
+      <nav-link to="/auth">Login</nav-link>
+
     </div>
   </div>
 </template>

@@ -37,7 +37,7 @@ export const routes = [
         props: true,
         components: {
           default: RequestFormVue
-        },
+        }
       }
     ]
   },
@@ -80,20 +80,6 @@ export const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
-})
-
-router.beforeEach((to, _, next) => {
-  const isAuthenticate = store.getters['AUTHEN/isAuthenticate']
-  if (to.meta.requireAuth && !isAuthenticate) {
-    next('/auth')
-  } else if (
-    to.path === '/auth' && isAuthenticate
-  ) {
-    next('/coaches')
-  }
-  else {
-    next()
-  }
 })
 
 export default router
