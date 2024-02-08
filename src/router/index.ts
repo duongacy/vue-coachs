@@ -63,6 +63,9 @@ export const routes = [
     name: 'authen',
     components: {
       default: UserAuth
+    },
+    meta: {
+      requireUnauth: true
     }
   },
   {
@@ -82,14 +85,14 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to, _, next) => {
+router.beforeEach((to, from, next) => {
   const isAuthenticate = store.getters['AUTHEN/isAuthenticate']
   if (to.meta.requireAuth && !isAuthenticate) {
     next('/auth')
   } else if (
-    to.path === '/auth' && isAuthenticate
+    to.meta.requireUnauth && isAuthenticate
   ) {
-    next('/coaches')
+    next(from || '/coaches')
   }
   else {
     next()

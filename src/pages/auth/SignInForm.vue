@@ -62,10 +62,10 @@ const onSubmit = async () => {
     password: userAuthen.value.password.value
   }
   try {
-    await store.dispatch('AUTHEN/signin', user)
+    await store.dispatch('AUTHEN/auth', { userAuthen: user, mode: 'signin' })
     router.replace('/coaches')
-  } catch (error) {
-    console.log('buggg')
+  } catch (error: any) {
+    alert(error.message)
   }
 }
 </script>

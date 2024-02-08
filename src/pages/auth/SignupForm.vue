@@ -73,6 +73,6 @@ const onSubmit = () => {
     email: userAuthen.value.email.value,
     password: userAuthen.value.password.value
   }
-  store.dispatch('AUTHEN/signup', user)
+  store.dispatch('AUTHEN/auth', { userAuthen: user, mode: 'signup' })
 }
 </script>

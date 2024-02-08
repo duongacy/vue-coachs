@@ -15,6 +15,22 @@
 <script setup lang="ts">
 import TheFooter from '@/layouts/TheFooter.vue'
 import TheNavigation from '@/layouts/TheNavigation.vue'
+import { store } from './store'
+import { computed, onMounted, watch } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+onMounted(() => {
+  store.dispatch('AUTHEN/autoLogin')
+})
+
+const didAutoLogout = computed(() => {
+  return store.getters['AUTHEN/isAutoLogout']
+})
+
+watch(didAutoLogout, () => {
+  router.replace('/coaches')
+})
 </script>
 <style>
 .route-enter-active,
