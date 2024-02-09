@@ -49,6 +49,9 @@ export const routes = [
     name: 'coach-register',
     components: {
       default: CoachRegisterVue
+    },
+    meta: {
+      requireAuth: true
     }
   },
   {

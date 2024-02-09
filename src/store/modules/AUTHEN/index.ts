@@ -15,7 +15,6 @@ export const AUTHEN = {
             token: '',
             autoLogout: false
         }
-
     },
     getters: {
         userId(state: AuthenState) {
