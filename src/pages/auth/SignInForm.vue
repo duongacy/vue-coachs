@@ -30,7 +30,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import BaseButton from '@/components/common/BaseButton.vue'
 import router from '@/router'
 import { key } from '@/store'
 import type { TUserAuthen } from '@/types/authen'

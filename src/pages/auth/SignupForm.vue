@@ -38,7 +38,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import BaseButton from '@/components/common/BaseButton.vue'
 import { key } from '@/store'
 import type { TUserAuthen } from '@/types/authen'
 import { ref } from 'vue'

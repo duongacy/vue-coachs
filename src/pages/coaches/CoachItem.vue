@@ -31,8 +31,6 @@
 <script setup lang="ts">
 import type { TCoach } from '@/types/coach'
 import { computed } from 'vue'
-import BaseBadge from '@/components/common/BaseBadge.vue'
-import BaseButton from '@/components/common/BaseButton.vue'
 import cn from '@/utils/cn'
 
 const emits = defineEmits(['delete'])

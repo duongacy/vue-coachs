@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import NavLink from '@/components/common/NavLink.vue'
 import { routes } from '@/router'
 import { store } from '@/store'
 import { computed } from 'vue'
@@ -28,7 +27,7 @@ const commonRoute = routes.find((item) => item.name === 'common')
 const isAuthenticated = computed(() => store.getters['AUTHEN/isAuthenticate'])
 
 const logout = () => {
-  if (route.meta.requireAuth) router.replace('coaches')
+  if (route.meta.requireAuth) router.replace('/coaches')
   store.dispatch('AUTHEN/logout')
 }
 </script>

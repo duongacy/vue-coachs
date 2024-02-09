@@ -94,8 +94,6 @@
 
 <script setup lang="ts">
 import { PaperClipIcon } from '@heroicons/vue/20/solid'
-import BaseBadge from '@/components/common/BaseBadge.vue'
-import BaseButton from '@/components/common/BaseButton.vue'
 import { key } from '@/store'
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'

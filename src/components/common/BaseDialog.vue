@@ -66,7 +66,6 @@
 
 <script lang="ts" setup>
 import { TransitionRoot, TransitionChild, Dialog, DialogPanel, DialogTitle } from '@headlessui/vue'
-import BaseButton from './BaseButton.vue'
 
 defineEmits(['close', 'cancel', 'ok'])
 defineProps<{ show: boolean; title?: string; okText?: string; cancelText?: string }>()

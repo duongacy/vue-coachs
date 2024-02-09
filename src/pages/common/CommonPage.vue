@@ -34,11 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseBadge from '@/components/common/BaseBadge.vue'
-import BaseButton, {
-  type TBaseButtonSize,
-  type TBaseButtonVariant
-} from '@/components/common/BaseButton.vue'
+import { type TBaseButtonSize, type TBaseButtonVariant } from '@/components/common/BaseButton.vue'
 import cn from '@/utils/cn'
 
 const sizes: TBaseButtonSize[] = ['extra-large', 'large', 'medium', 'small']

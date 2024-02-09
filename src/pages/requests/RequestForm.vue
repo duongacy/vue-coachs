@@ -80,8 +80,6 @@
 </template>
 
 <script setup lang="ts">
-import BaseButton from '@/components/common/BaseButton.vue'
-import BaseDialog from '@/components/common/BaseDialog.vue'
 import { key } from '@/store'
 import type { TRequest } from '@/types/request'
 import cn from '@/utils/cn'

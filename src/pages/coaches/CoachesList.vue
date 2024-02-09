@@ -28,7 +28,6 @@
 </template>
 
 <script setup lang="ts">
-import BaseButton from '@/components/common/BaseButton.vue'
 import { routes } from '@/router'
 import { key } from '@/store'
 import { computed, onMounted, ref } from 'vue'

@@ -1,13 +1,16 @@
-import NotFoundVue from '@/pages/NotFound.vue'
-import UserAuth from '@/pages/auth/UserAuth.vue'
-import CoachDetailsVue from '@/pages/coaches/CoachDetails.vue'
-import CoachRegisterVue from '@/pages/coaches/CoachRegister.vue'
-import CoachesListVue from '@/pages/coaches/CoachesList.vue'
-import CommonPage from '@/pages/common/CommonPage.vue'
-import RequestFormVue from '@/pages/requests/RequestForm.vue'
-import RequestsReceivedVue from '@/pages/requests/RequestsReceived.vue'
+
 import { store } from '@/store'
+import { defineAsyncComponent } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+
+const NotFoundVue = defineAsyncComponent(() => import('@/pages/NotFound.vue'))
+const UserAuth = defineAsyncComponent(() => import('@/pages/auth/UserAuth.vue'))
+const CoachDetailsVue = defineAsyncComponent(() => import('@/pages/coaches/CoachDetails.vue'))
+const CoachRegisterVue = defineAsyncComponent(() => import('@/pages/coaches/CoachRegister.vue'))
+const CoachesListVue = defineAsyncComponent(() => import('@/pages/coaches/CoachesList.vue'))
+const CommonPage = defineAsyncComponent(() => import('@/pages/common/CommonPage.vue'))
+const RequestFormVue = defineAsyncComponent(() => import('@/pages/requests/RequestForm.vue'))
+const RequestsReceivedVue = defineAsyncComponent(() => import('@/pages/requests/RequestsReceived.vue'))
 
 export const routes = [
   {

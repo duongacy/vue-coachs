@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseDialog from '@/components/common/BaseDialog.vue'
+// import BaseDialog from '@/components/common/BaseDialog.vue'
 import { key } from '@/store'
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
