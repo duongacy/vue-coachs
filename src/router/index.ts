@@ -3,14 +3,14 @@ import { store } from '@/store'
 import { defineAsyncComponent } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
-const NotFoundVue = defineAsyncComponent(() => import('@/pages/NotFound.vue'))
+const NotFound = defineAsyncComponent(() => import('@/pages/NotFound.vue'))
 const UserAuth = defineAsyncComponent(() => import('@/pages/auth/UserAuth.vue'))
-const CoachDetailsVue = defineAsyncComponent(() => import('@/pages/coaches/CoachDetails.vue'))
-const CoachRegisterVue = defineAsyncComponent(() => import('@/pages/coaches/CoachRegister.vue'))
-const CoachesListVue = defineAsyncComponent(() => import('@/pages/coaches/CoachesList.vue'))
+const CoachDetails = defineAsyncComponent(() => import('@/pages/coaches/CoachDetails.vue'))
+const CoachRegister = defineAsyncComponent(() => import('@/pages/coaches/CoachRegister.vue'))
+const CoachesList = defineAsyncComponent(() => import('@/pages/coaches/CoachesList.vue'))
 const CommonPage = defineAsyncComponent(() => import('@/pages/common/CommonPage.vue'))
-const RequestFormVue = defineAsyncComponent(() => import('@/pages/requests/RequestForm.vue'))
-const RequestsReceivedVue = defineAsyncComponent(() => import('@/pages/requests/RequestsReceived.vue'))
+const RequestForm = defineAsyncComponent(() => import('@/pages/requests/RequestForm.vue'))
+const RequestsReceived = defineAsyncComponent(() => import('@/pages/requests/RequestsReceived.vue'))
 
 export const routes = [
   {
@@ -21,35 +21,31 @@ export const routes = [
   {
     path: '/common',
     name: 'common',
-    components: { default: CommonPage }
+    components: CommonPage
   },
   {
     path: '/coaches',
     name: 'coaches',
-    components: { default: CoachesListVue }
+    component: CoachesList
   },
   {
     path: '/coaches/:coachId',
     name: 'coach-details',
     props: true,
-    components: { default: CoachDetailsVue },
+    component: CoachDetails,
     children: [
       {
         path: 'request',
         name: 'request-form',
         props: true,
-        components: {
-          default: RequestFormVue
-        },
+        component: RequestForm,
       }
     ]
   },
   {
     path: '/coaches/register',
     name: 'coach-register',
-    components: {
-      default: CoachRegisterVue
-    },
+    component: CoachRegister,
     meta: {
       requireAuth: true
     }
@@ -57,9 +53,7 @@ export const routes = [
   {
     path: '/requests-received',
     name: 'requests-received',
-    components: {
-      default: RequestsReceivedVue
-    },
+    component: RequestsReceived,
     meta: {
       requireAuth: true
     }
@@ -67,9 +61,7 @@ export const routes = [
   {
     path: '/auth',
     name: 'authen',
-    components: {
-      default: UserAuth
-    },
+    component: UserAuth,
     meta: {
       requireUnauth: true
     }
@@ -77,9 +69,7 @@ export const routes = [
   {
     path: '/not-found',
     name: 'not-found',
-    components: {
-      default: NotFoundVue
-    }
+    component: NotFound
   },
   {
     path: '/:catchAll(.*)',

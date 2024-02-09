@@ -14,15 +14,9 @@ export type TState = {
 export const key: InjectionKey<Store<TState>> = Symbol()
 
 export const store = createStore({
-  // state() {
-  //   return {
-  //     coachId: '1'
-  //   }
-  // },
   modules: {
     COACHES,
     REQUESTS,
     AUTHEN
   },
-
 })

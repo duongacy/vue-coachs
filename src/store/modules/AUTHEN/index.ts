@@ -1,5 +1,3 @@
-
-
 import type { TUserAuthen } from "@/types/authen"
 let timer: any;
 export type AuthenState = {
