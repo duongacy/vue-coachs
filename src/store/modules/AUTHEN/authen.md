@@ -19,6 +19,9 @@
 
 * setUser
 
+signin url:https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDu2NLLgMIq7qnjZwBiKtPaRYvPPf39d5s
+signup url:https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDu2NLLgMIq7qnjZwBiKtPaRYvPPf39d5s
+
 - payload sigin/signup:
   {
   email,
