@@ -44,7 +44,6 @@ export const authActions = {
         const expireTime = +jsonResponse.expiresIn * 1000 + new Date().getTime()
         addAuthenStorage(jsonResponse.idToken, jsonResponse.localId, expireTime.toString())
 
-        clearTimeout(timer)
         timer = setTimeout(() => {
             context.dispatch('signout')
         }, +jsonResponse.expiresIn * 1000);
