@@ -22,6 +22,7 @@
 signin url:https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDu2NLLgMIq7qnjZwBiKtPaRYvPPf39d5s
 signup url:https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDu2NLLgMIq7qnjZwBiKtPaRYvPPf39d5s
 
+
 - payload sigin/signup:
   {
   email,
@@ -34,4 +35,5 @@ signup url:https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD
   }
 
 files: SignInForm.vue, SignupForm.vue, UserAuth.vue, router/index.js
-paths need to authen: /coaches/register, /requests-received
+paths need to authen: /coaches/register
+/requests-received: `https://vue-coachs-default-rtdb.asia-southeast1.firebasedatabase.app/requests.json?auth=${token}`

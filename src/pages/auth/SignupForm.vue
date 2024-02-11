@@ -39,7 +39,7 @@
 </template>
 <script setup lang="ts">
 import { key } from '@/store'
-import type { TUserAuthen } from '@/types/authen'
+import type { authActions } from '@/store/modules/AUTHEN/actions'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 
@@ -66,12 +66,17 @@ const checkValidate = () => {
   return ok
 }
 const store = useStore(key)
-const onSubmit = () => {
+
+const onSubmit = async () => {
   if (!checkValidate()) return
-  const user: TUserAuthen = {
-    email: userAuthen.value.email.value,
-    password: userAuthen.value.password.value
+  const signupAction: Parameters<typeof authActions.auth>[1] = {
+    type: 'signin',
+    payload: { email: userAuthen.value.email.value, password: userAuthen.value.password.value }
   }
-  store.dispatch('AUTHEN/auth', { userAuthen: user, mode: 'signup' })
+  try {
+    await store.dispatch('AUTHEN/signup', signupAction)
+  } catch (error: any) {
+    alert(error.message)
+  }
 }
 </script>

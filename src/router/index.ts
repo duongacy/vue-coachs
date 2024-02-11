@@ -1,16 +1,15 @@
 
 import { store } from '@/store'
-import { defineAsyncComponent } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
-const NotFound = defineAsyncComponent(() => import('@/pages/NotFound.vue'))
-const UserAuth = defineAsyncComponent(() => import('@/pages/auth/UserAuth.vue'))
-const CoachDetails = defineAsyncComponent(() => import('@/pages/coaches/CoachDetails.vue'))
-const CoachRegister = defineAsyncComponent(() => import('@/pages/coaches/CoachRegister.vue'))
-const CoachesList = defineAsyncComponent(() => import('@/pages/coaches/CoachesList.vue'))
-const CommonPage = defineAsyncComponent(() => import('@/pages/common/CommonPage.vue'))
-const RequestForm = defineAsyncComponent(() => import('@/pages/requests/RequestForm.vue'))
-const RequestsReceived = defineAsyncComponent(() => import('@/pages/requests/RequestsReceived.vue'))
+const NotFound = () => import('@/pages/NotFound.vue')
+const UserAuth = () => import('@/pages/auth/UserAuth.vue')
+const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue')
+const CoachRegister = () => import('@/pages/coaches/CoachRegister.vue')
+const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
+const CommonPage = () => import('@/pages/common/CommonPage.vue')
+const RequestForm = () => import('@/pages/requests/RequestForm.vue')
+const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue')
 
 export const routes = [
   {
@@ -21,7 +20,7 @@ export const routes = [
   {
     path: '/common',
     name: 'common',
-    components: CommonPage
+    component: CommonPage
   },
   {
     path: '/coaches',
@@ -76,17 +75,18 @@ export const routes = [
     redirect: '/not-found'
   }
 ]
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
 
 router.beforeEach((to, from, next) => {
-  const isAuthenticate = store.getters['AUTHEN/isAuthenticate']
-  if (to.meta.requireAuth && !isAuthenticate) {
+  const isAuthenticated = store.getters['AUTHEN/isAuthenticated']
+  if (to.meta.requireAuth && !isAuthenticated) {
     next('/auth')
   } else if (
-    to.meta.requireUnauth && isAuthenticate
+    to.meta.requireUnauth && isAuthenticated
   ) {
     next(from || '/coaches')
   }

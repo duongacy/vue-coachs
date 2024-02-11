@@ -15,21 +15,35 @@
 <script setup lang="ts">
 import TheFooter from '@/layouts/TheFooter.vue'
 import TheNavigation from '@/layouts/TheNavigation.vue'
+import { onBeforeUnmount, onMounted } from 'vue'
 import { store } from './store'
-import { computed, onMounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 const router = useRouter()
+const route = useRoute()
+
+const authenSuccessEventHandler = () => {
+  if (route.redirectedFrom) {
+    router.replace(route.redirectedFrom)
+  } else {
+    router.replace('/coaches')
+  }
+}
+
+const removeAuthenSuccessEventHandler = () => {
+  if (route.meta.requireAuth) {
+    router.replace('/coaches')
+  }
+}
 
 onMounted(() => {
-  store.dispatch('AUTHEN/autoLogin')
+  store.dispatch('AUTHEN/autoSignin')
+  window.addEventListener('authenSuccess', authenSuccessEventHandler)
+  window.addEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler)
 })
 
-const didAutoLogout = computed(() => {
-  return store.getters['AUTHEN/isAutoLogout']
-})
-
-watch(didAutoLogout, () => {
-  router.replace('/coaches')
+onBeforeUnmount(() => {
+  window.removeEventListener('authenSuccess', authenSuccessEventHandler)
+  window.removeEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler)
 })
 </script>
 <style>

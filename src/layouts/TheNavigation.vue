@@ -14,20 +14,20 @@
 </template>
 
 <script setup lang="ts">
-import { routes } from '@/router'
-import { store } from '@/store'
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { routes } from '@/router';
+import { store } from '@/store';
+import { computed } from 'vue';
 
-const route = useRoute()
-const router = useRouter()
 const coachesRoute = routes.find((item) => item.name === 'coaches')
 const requestsReceivedRoute = routes.find((item) => item.name === 'requests-received')
 const commonRoute = routes.find((item) => item.name === 'common')
-const isAuthenticated = computed(() => store.getters['AUTHEN/isAuthenticate'])
+const isAuthenticated = computed(() => store.getters['AUTHEN/isAuthenticated'])
 
-const logout = () => {
-  if (route.meta.requireAuth) router.replace('/coaches')
-  store.dispatch('AUTHEN/logout')
+const logout = async () => {
+  try {
+    await store.dispatch('AUTHEN/signout')
+  } catch (error) {
+    alert('Logout error')
+  }
 }
 </script>

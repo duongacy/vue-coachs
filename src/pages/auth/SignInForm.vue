@@ -30,9 +30,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import router from '@/router'
 import { key } from '@/store'
-import type { TUserAuthen } from '@/types/authen'
+import type { authActions } from '@/store/modules/AUTHEN/actions'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 
@@ -54,15 +53,18 @@ const checkValidate = () => {
   return ok
 }
 const store = useStore(key)
+
 const onSubmit = async () => {
   if (!checkValidate()) return
-  const user: TUserAuthen = {
-    email: userAuthen.value.email.value,
-    password: userAuthen.value.password.value
+  const signinAction: Parameters<typeof authActions.auth>[1] = {
+    type: 'signin',
+    payload: {
+      email: userAuthen.value.email.value,
+      password: userAuthen.value.password.value
+    }
   }
   try {
-    await store.dispatch('AUTHEN/auth', { userAuthen: user, mode: 'signin' })
-    router.replace('/coaches')
+    await store.dispatch('AUTHEN/auth', signinAction)
   } catch (error: any) {
     alert(error.message)
   }
