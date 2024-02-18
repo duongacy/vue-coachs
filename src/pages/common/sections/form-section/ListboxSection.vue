@@ -4,7 +4,7 @@
       >Listbox</base-typography
     >
     <div class="grid grid-cols-[auto_1fr] gap-4 items-end py-4">
-      <base-listbox :options="options" class="min-w-[400px]" v-model="selectedValue"></base-listbox>
+      <base-listbox :options="options" class="min-w-[300px]" v-model="selectedValue"></base-listbox>
       Selected: {{ selectedName }}
     </div>
   </div>

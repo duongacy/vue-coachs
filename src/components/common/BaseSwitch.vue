@@ -1,23 +1,31 @@
 <template>
-  <div class="py-16">
+  <label class="inline-flex select-none cursor-pointer gap-x-2">
     <Switch
       v-model="enabled"
-      :class="enabled ? 'bg-teal-900' : 'bg-teal-700'"
-      class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+      :class="
+        cn(
+          'relative bg-teal-700 inline-flex h-[20px] w-[34px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75',
+          { 'bg-teal-900': enabled },
+          props.class
+        )
+      "
+      as="button"
     >
-      <span class="sr-only">Use setting</span>
       <span
         aria-hidden="true"
-        :class="enabled ? 'translate-x-9' : 'translate-x-0'"
-        class="pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out"
+        :class="enabled ? 'translate-x-[14px]' : 'translate-x-0'"
+        class="pointer-events-none inline-block h-[16px] w-[16px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out"
       />
     </Switch>
-  </div>
+    <BaseTypography size="body" weight="medium" v-if="!!props.label">{{ label }}</BaseTypography>
+  </label>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { Switch } from '@headlessui/vue'
 
-const enabled = ref(false)
+import cn from '@/utils/cn'
+import BaseTypography from './BaseTypography.vue'
+const enabled = defineModel<boolean>()
+const props = defineProps<{ class?: string; label?: string }>()
 </script>
