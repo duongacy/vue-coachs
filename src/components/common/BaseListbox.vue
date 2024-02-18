@@ -64,6 +64,6 @@ const props = defineProps<{
 
 const selectedValue = defineModel<string>()
 const selectedName = computed(
-  () => props.options.find((option) => option.value === selectedValue.value)?.name
+  () => props.options?.find((option) => option.value === selectedValue.value)?.name
 )
 </script>

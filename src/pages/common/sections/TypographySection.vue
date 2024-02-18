@@ -1,22 +1,24 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col overflow-x-hidden">
     <base-typography size="heading4" weight="bold" class="p-4 bg-red-100"
       >Typography</base-typography
     >
-    <div
-      class="flex gap-2 items-baseline"
-      v-for="weight in typographyWeights"
-      :key="'typographyWeights' + weight"
-    >
-      <p class="min-w-[70px] uppercase">{{ weight }}</p>
-      <base-typography
-        v-for="size in typographySizes"
-        :size="size"
-        :weight="weight"
-        :key="'typographySizes' + size + weight"
-        class="capitalize"
-        >{{ size }}</base-typography
+    <div class="overflow-x-auto py-4 grid gap-2">
+      <div
+        class="flex gap-2 items-baseline"
+        v-for="weight in typographyWeights"
+        :key="'typographyWeights' + weight"
       >
+        <p class="min-w-[70px] uppercase">{{ weight }}</p>
+        <base-typography
+          v-for="size in typographySizes"
+          :size="size"
+          :weight="weight"
+          :key="'typographySizes' + size + weight"
+          class="capitalize"
+          >{{ size }}</base-typography
+        >
+      </div>
     </div>
   </div>
 </template>
