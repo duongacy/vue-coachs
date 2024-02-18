@@ -35,6 +35,8 @@ import type { authActions } from '@/store/modules/AUTHEN/actions'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 
+const store = useStore(key)
+
 const userAuthen = ref({
   email: { value: '', error: '' },
   password: { value: '', error: '' }
@@ -52,7 +54,6 @@ const checkValidate = () => {
   }
   return ok
 }
-const store = useStore(key)
 
 const onSubmit = async () => {
   if (!checkValidate()) return

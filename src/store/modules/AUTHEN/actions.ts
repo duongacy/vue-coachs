@@ -1,5 +1,5 @@
 import type { authMutations } from "./mutations";
-import type { TAuthActionContext, TAuthRequest, TAuthResponse } from "./types";
+import type { TAuthActionContext, TAuthResponse } from "./types";
 
 const removeAuthenStorage = () => {
     localStorage.removeItem('token')

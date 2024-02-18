@@ -7,4 +7,4 @@ export type TCoach = {
     description: string;
     hourlyRate: number;
 }
-export type TCoachAdd = Omit<TCoach, 'areas'>
+export type TCoachAdd = Omit<TCoach, 'id'>

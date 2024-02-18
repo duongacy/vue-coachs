@@ -10,8 +10,8 @@
             </p>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <base-button variant="primary" size="large" :to="registerRoute?.path"
-              >Create new job
+            <base-button variant="primary" size="large" to="/coaches/add"
+              >Create new coach
             </base-button>
           </div>
         </div>
@@ -28,9 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import { routes } from '@/router'
 import { key } from '@/store'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import CoachItem from './CoachItem.vue'
 
@@ -39,8 +38,6 @@ const coaches = computed(() => {
   return store.state.COACHES.coaches
 })
 
-const error = ref<string>('')
-
 onMounted(async () => {
   try {
     store.dispatch('COACHES/loadAllAction')
@@ -48,14 +45,4 @@ onMounted(async () => {
     console.log(error.message)
   }
 })
-
-const onDelete = async (id: string) => {
-  try {
-    await store.dispatch('COACHES/deleteAction', id)
-  } catch (err: any) {
-    error.value = err.message
-  }
-}
-
-const registerRoute = routes.find((item) => item.name === 'coach-register')
 </script>

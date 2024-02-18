@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const NotFound = () => import('@/pages/NotFound.vue')
 const UserAuth = () => import('@/pages/auth/UserAuth.vue')
 const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue')
-const CoachRegister = () => import('@/pages/coaches/CoachRegister.vue')
+const AddCoach = () => import('@/pages/coaches/AddCoach.vue')
 const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
 const CommonPage = () => import('@/pages/common/CommonPage.vue')
 const RequestForm = () => import('@/pages/requests/RequestForm.vue')
@@ -42,9 +42,9 @@ export const routes = [
     ]
   },
   {
-    path: '/coaches/register',
-    name: 'coach-register',
-    component: CoachRegister,
+    path: '/coaches/add',
+    name: 'add-coach',
+    component: AddCoach,
     meta: {
       requireAuth: true
     }

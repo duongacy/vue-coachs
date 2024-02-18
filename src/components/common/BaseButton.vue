@@ -47,6 +47,3 @@ const buttonClasses = computed(() => {
   )
 })
 </script>
-<!-- Focused
-Disabled
-Active -->
