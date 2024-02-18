@@ -1,15 +1,13 @@
 <template>
   <div>
     <base-typography size="heading5" weight="medium" class="bg-green-100 py-2 px-10"
-      >Radio group</base-typography
+      >Switch</base-typography
     >
-    <div class="grid grid-cols-[auto_1fr] gap-4 items-end mt-4">
-      <BaseRadioGroup></BaseRadioGroup>
-    </div>
+    <BaseSwitch></BaseSwitch>
   </div>
 </template>
 
 <script setup lang="ts">
-import BaseRadioGroup from '@/components/common/BaseRadioGroup.vue'
+import BaseSwitch from '@/components/common/BaseSwitch.vue'
 import BaseTypography from '@/components/common/BaseTypography.vue'
 </script>

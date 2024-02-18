@@ -1,16 +1,15 @@
 <template>
-  <div class="top-16 min-w-[200px]">
+  <div :class="cn('min-w-[200px]', props.class)">
     <Listbox v-model="selectedValue">
-      <div class="relative mt-1">
+      <div>
         <ListboxButton
           class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300"
         >
-          <span class="block truncate" v-if="selectedName">{{ selectedName }}</span>
+          <span class="block truncate">{{ selectedName }}</span>
           <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
-
         <transition
           leave-active-class="transition duration-100 ease-in"
           leave-from-class="opacity-100"
@@ -27,12 +26,13 @@
               as="template"
             >
               <li
-                :class="[
-                  active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
-                  'relative cursor-default select-none py-2 pl-10 pr-4'
-                ]"
+                :class="
+                  cn('relative cursor-default select-none py-2 pl-10 pr-4 text-gray-900', {
+                    'bg-amber-100 text-amber-900': active
+                  })
+                "
               >
-                <span :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']">{{
+                <span :class="cn('font-normal block truncate', { 'font-medium': selected })">{{
                   option.name
                 }}</span>
                 <span
@@ -51,22 +51,21 @@
 </template>
 
 <script setup lang="ts">
+import cn from '@/utils/cn'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/vue'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
-import { computed, ref } from 'vue'
-
-export type TSelectOption = {
+import { computed } from 'vue'
+export type TBaseListboxOption = {
   value: string
   name: string
 }
 const props = defineProps<{
-  options: TSelectOption[]
-  value?: string
+  options: TBaseListboxOption[]
+  class?: string
 }>()
 
-const selectedValue = ref(props.value || props.options[0]?.value)
-
-const selectedName = computed(() => {
-  return props.options.find((option) => option.value === selectedValue.value)?.name
-})
+const selectedValue = defineModel<string>()
+const selectedName = computed(
+  () => props.options.find((option) => option.value === selectedValue.value)?.name
+)
 </script>

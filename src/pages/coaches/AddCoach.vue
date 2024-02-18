@@ -3,7 +3,7 @@
     <base-input label="First name" v-model="firstName" @input="onInput"></base-input>
     <base-radio-group></base-radio-group>
     <base-checkbox></base-checkbox>
-    <base-select></base-select>
+    <base-listbox></base-listbox>
     <base-typography variant="heading1" weight="bold"> Text </base-typography>
   </form>
 </template>

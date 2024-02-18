@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import BaseTypography from '@/components/common/BaseTypography.vue'
-import FormSection from './sections/FormSection.vue'
+import FormSection from './sections/form-section/FormSection.vue'
 import ButtonSection from './sections/ButtonSection.vue'
 import BadgeSection from './sections/BadgeSection.vue'
 import TypographySection from './sections/TypographySection.vue'

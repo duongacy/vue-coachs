@@ -4,7 +4,8 @@
     <input-section></input-section>
     <checkbox-section></checkbox-section>
     <radio-group-section></radio-group-section>
-    <select-section></select-section>
+    <listbox-section></listbox-section>
+    <switch-section></switch-section>
   </div>
 </template>
 
@@ -13,5 +14,6 @@ import BaseTypography from '@/components/common/BaseTypography.vue'
 import CheckboxSection from './CheckboxSection.vue'
 import InputSection from './InputSection.vue'
 import RadioGroupSection from './RadioGroupSection.vue'
-import SelectSection from './SelectSection.vue'
+import ListboxSection from './ListboxSection.vue'
+import SwitchSection from './SwitchSection.vue'
 </script>
