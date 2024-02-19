@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <base-typography size="heading4" weight="bold" class="p-4 bg-red-100">Form</base-typography>
+    <base-typography size="heading4" weight="bold" class="p-4 bg-green-500 text-white">Form</base-typography>
     <input-section></input-section>
     <checkbox-section></checkbox-section>
     <radio-group-section></radio-group-section>

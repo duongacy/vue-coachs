@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col overflow-x-hidden">
-    <base-typography size="heading4" weight="bold" class="p-4 bg-red-100"
+    <base-typography size="heading4" weight="bold" class="p-4 bg-green-500 text-white"
       >Typography</base-typography
     >
-    <div class="overflow-x-auto py-4 grid gap-2">
+    <div class="overflow-x-auto p-4 grid gap-2 bg-warning-50">
       <div
         class="flex gap-2 items-baseline"
         v-for="weight in typographyWeights"
@@ -43,5 +43,3 @@ const typographySizes: TTypographySize[] = [
   'tiny'
 ]
 </script>
-
-<style scoped></style>

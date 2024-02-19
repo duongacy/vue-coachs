@@ -1,9 +1,9 @@
 <template>
   <div>
-    <base-typography size="heading2" weight="heavy" class="px-4 py-8 bg-yellow-100"
+    <base-typography size="heading2" weight="heavy" class="px-4 py-8"
       >Common</base-typography
     >
-    <div class="grid gap-10">
+    <div class="">
       <button-section></button-section>
       <badge-section></badge-section>
       <typography-section></typography-section>

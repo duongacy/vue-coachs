@@ -1,5 +1,5 @@
 <template>
-  <div :class="cn('flex flex-col gap-y-1', props.class)">
+  <div :class="cn('flex flex-col gap-y-1 bg-white rounded-lg', props.class)">
     <Disclosure
       v-slot="{ open }"
       :default-open="item.defaultOpen"
@@ -7,12 +7,12 @@
       :key="item.title.toString()"
     >
       <DisclosureButton
-        class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+        class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 focus:outline-none focus-visible:ring focus-visible:ring-primary-500/75"
       >
         <span>{{ item.title }}</span>
-        <ChevronUpIcon :class="cn('h-5 w-5 text-purple-500', { 'rotate-180 transform': open })" />
+        <ChevronUpIcon :class="cn('h-5 w-5 text-primary-500', { 'rotate-180 transform': open })" />
       </DisclosureButton>
-      <DisclosurePanel class="px-4 py-2 text-sm text-gray-500 max-w-full">
+      <DisclosurePanel class="px-4 py-2 text-sm text-neutral-500 max-w-full">
         {{ item.content }}
       </DisclosurePanel>
     </Disclosure>

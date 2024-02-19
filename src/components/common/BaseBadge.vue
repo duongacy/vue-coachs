@@ -2,13 +2,13 @@
   <span
     :class="
       cn([
-        'inline-flex w-fit items-center gap-x-1.5 rounded-md px-3 select-none min-h-7 text-sm font-medium text-gray-900 ring-1 ring-inset ring-gray-200',
+        'inline-flex w-fit items-center gap-x-1.5 rounded-md px-3 select-none min-h-7 text-sm font-medium text-neutral-900 ring-1 ring-inset ring-neutral-200',
         props.class
       ])
     "
   >
     <svg
-      :class="cn(`h-1.5 w-1.5 fill-slate-800`, props.dotClass)"
+      :class="cn(`h-1.5 w-1.5 fill-warning-800`, props.dotClass)"
       viewBox="0 0 6 6"
       aria-hidden="true"
     >

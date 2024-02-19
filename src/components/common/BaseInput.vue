@@ -3,11 +3,11 @@
     <label
       :class="
         cn(
-          'flex rounded-[4px] text-[14px] border overflow-hidden text-gray-900 placeholder:text-gray-500 border-gray-500 focus-within:border-indigo-600',
+          'bg-white flex rounded-[4px] text-[14px] border overflow-hidden text-neutral-900 placeholder:text-neutral-500 border-neutral-500 focus-within:border-primary-600',
           {
-            'border-red-500': !!error,
-            ' border-gray-300 opacity-85 text-gray-600': disabled,
-            'text-red-600 focus-within:border-red-600': !!error
+            'border-error-500': !!error,
+            ' border-neutral-300 opacity-85 text-neutral-600': disabled,
+            'text-error-600 focus-within:border-error-600': !!error
           }
         )
       "
@@ -21,7 +21,7 @@
         :class="
           cn({
             'border-none flex-grow focus:border-none focus:ring-0 bg-transparent': true,
-            'placeholder:text-gray-300': disabled
+            'placeholder:text-neutral-300': disabled
           })
         "
         :disabled="disabled"
@@ -34,8 +34,8 @@
       size="small"
       weight="regular"
       :class="
-        cn('leading-[1] mt-[4px] text-gray-900', {
-          'text-gray-500': disabled
+        cn('leading-[1] mt-[4px] text-neutral-900', {
+          'text-neutral-500': disabled
         })
       "
       v-if="!!hint"
@@ -44,7 +44,7 @@
     <base-typography
       size="small"
       weight="regular"
-      class="text-red-600 leading-[1] mt-[4px]"
+      class="text-error-600 leading-[1] mt-[4px]"
       v-if="!!error"
       >{{ error }}</base-typography
     >

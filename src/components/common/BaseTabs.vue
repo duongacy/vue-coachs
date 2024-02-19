@@ -35,13 +35,13 @@
             <li
               v-for="post in posts"
               :key="post.id"
-              class="relative rounded-md p-3 hover:bg-gray-100"
+              class="relative rounded-md p-3 hover:bg-neutral-100"
             >
               <h3 class="text-sm font-medium leading-5">
                 {{ post.title }}
               </h3>
 
-              <ul class="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
+              <ul class="mt-1 flex space-x-1 text-xs font-normal leading-4 text-neutral-500">
                 <li>{{ post.date }}</li>
                 <li>&middot;</li>
                 <li>{{ post.commentCount }} comments</li>

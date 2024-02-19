@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="pt-4">
-      <form class="bg-gray-100 -mx-4 p-4 grid gap-y-4" @submit.prevent="onSubmit">
+      <form class="bg-neutral-100 -mx-4 p-4 grid gap-y-4" @submit.prevent="onSubmit">
         <div>
           <!-- form head -->
-          <h2 class="font-bold text-xl leading-7 text-gray-900">Request</h2>
-          <p class="mt-1 text-sm leading-6 text-gray-600">
+          <h2 class="font-bold text-xl leading-7 text-neutral-900">Request</h2>
+          <p class="mt-1 text-sm leading-6 text-neutral-600">
             This information will be displayed publicly so be careful what you share.
           </p>
         </div>
@@ -13,27 +13,27 @@
         <div class="grid gap-y-4 mt-2">
           <!-- form body -->
           <label class="grid gap-2">
-            <span class="text-sm font-medium leading-6 text-gray-900">Email</span>
+            <span class="text-sm font-medium leading-6 text-neutral-900">Email</span>
             <input
               type="text"
               ref="emailRef"
               @change="cancelValidate('userEmail')"
               :class="
                 cn({
-                  'rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 text-sm leading-6': true,
-                  'focus:ring-red-600 focus:ring-2 ring-red-600': !!request.userEmail.error
+                  'rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-primary-600 text-sm leading-6': true,
+                  'focus:ring-error-600 focus:ring-2 ring-error-600': !!request.userEmail.error
                 })
               "
               placeholder="Please enter your email"
               v-model.trim="request.userEmail.value"
             />
-            <p class="text-sm leading-6 text-red-600" v-if="!!request.userEmail.error">
+            <p class="text-sm leading-6 text-error-600" v-if="!!request.userEmail.error">
               {{ request.userEmail.error }}
             </p>
           </label>
 
           <label class="grid gap-2">
-            <span class="text-sm font-medium leading-6 text-gray-900">Message</span>
+            <span class="text-sm font-medium leading-6 text-neutral-900">Message</span>
             <textarea
               ref="messageRef"
               rows="3"
@@ -41,15 +41,15 @@
               @change="cancelValidate('message')"
               :class="
                 cn(
-                  'rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 text-sm leading-6',
+                  'rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-primary-600 text-sm leading-6',
                   {
-                    'focus:ring-red-600 focus:ring-2 ring-red-600': !!request.message.error
+                    'focus:ring-error-600 focus:ring-2 ring-error-600': !!request.message.error
                   }
                 )
               "
               placeholder="Write a few sentences about yourself"
             />
-            <p class="text-sm leading-6 text-red-600" v-if="!!request.message.error">
+            <p class="text-sm leading-6 text-error-600" v-if="!!request.message.error">
               {{ request.message.error }}
             </p>
           </label>
@@ -71,7 +71,7 @@
       title="Request fail"
       ok-text="OK"
     >
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-neutral-500">
         <!-- {{ error }} -->
         Something went wrong
       </p>

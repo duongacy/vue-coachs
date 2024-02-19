@@ -36,11 +36,11 @@
             <DialogPanel
               class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
             >
-              <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
+              <DialogTitle as="h3" class="text-lg font-medium leading-6 text-neutral-900">
                 Payment successful
               </DialogTitle>
               <div class="mt-2">
-                <p class="text-sm text-gray-500">
+                <p class="text-sm text-neutral-500">
                   Your payment has been successfully submitted. We’ve sent you an email with all of
                   the details of your order.
                 </p>

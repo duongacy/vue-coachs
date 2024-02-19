@@ -1,9 +1,9 @@
 <template>
   <div>
-    <base-typography size="heading5" weight="medium" class="bg-green-100 py-2 px-10"
+    <base-typography size="heading5" weight="medium" class="bg-pink-100 py-2 px-10 text-neutral-900 "
       >Checkbox</base-typography
     >
-    <div class="grid grid-cols-[auto_1fr] gap-4 items-end py-4">
+    <div class="grid grid-cols-[auto_1fr] gap-4 items-end py-4 bg-warning-50">
       <BaseCheckboxGroup
         :options="options"
         v-model="selectedValues"

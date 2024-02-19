@@ -4,11 +4,11 @@
       <signin-form v-if="isSignin"></signin-form>
       <signup-form v-else></signup-form>
     </div>
-    <p class="text-center text-sm text-gray-500">
+    <p class="text-center text-sm text-neutral-500">
       {{ isSignin ? 'Not a member?' : 'Is a member?' }}
       <button
         @click="toggleAuth"
-        class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+        class="font-semibold leading-6 text-primary-600 hover:text-primary-500"
       >
         {{ isSignin ? 'Signup new account' : 'Signin to your account' }}
       </button>

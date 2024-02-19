@@ -1,11 +1,11 @@
 <template>
   <div class="p-4">
-    <div class="border border-gray-200 rounded-lg overflow-hidden py-6">
+    <div class="border border-neutral-200 rounded-lg overflow-hidden py-6">
       <div class="bg-white px-4">
         <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
           <div class="ml-4 mt-4">
-            <h3 class="text-base font-semibold leading-6 text-gray-900">Coaches</h3>
-            <p class="mt-1 text-sm text-gray-500">
+            <h3 class="text-base font-semibold leading-6 text-neutral-900">Coaches</h3>
+            <p class="mt-1 text-sm text-neutral-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.
             </p>
           </div>
@@ -16,11 +16,11 @@
           </div>
         </div>
       </div>
-      <div class="h-[1px] bg-gray-200 my-4"></div>
+      <div class="h-[1px] bg-neutral-200 my-4"></div>
       <div class="bg-white px-4">
         <div v-for="(coach, coachIndex) in coaches" :key="coach.id">
           <coach-item :item="coach"></coach-item>
-          <div class="h-[1px] bg-gray-200 my-4" v-if="coachIndex !== coaches.length - 1"></div>
+          <div class="h-[1px] bg-neutral-200 my-4" v-if="coachIndex !== coaches.length - 1"></div>
         </div>
       </div>
     </div>

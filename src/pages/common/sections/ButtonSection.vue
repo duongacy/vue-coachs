@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col">
-    <base-typography size="heading4" weight="bold" class="p-4 bg-red-100">Button</base-typography>
-    <div class="flex flex-col gap-4 bg-slate-100 p-4">
+    <base-typography size="heading4" weight="bold" class="p-4 bg-green-500 text-white"
+      >Button</base-typography
+    >
+    <div class="flex flex-col gap-4 bg-warning-50 p-4">
       <div class="flex gap-2 items-end" v-for="variant in buttonVariants" :key="variant">
         <base-button
           v-for="size in buttonSizes"

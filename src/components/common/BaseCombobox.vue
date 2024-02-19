@@ -6,12 +6,12 @@
           class="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
         >
           <ComboboxInput
-            class="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+            class="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-neutral-900 focus:ring-0"
             :displayValue="(person: any) => person.name"
             @change="query = $event.target.value"
           />
           <ComboboxButton class="absolute inset-y-0 right-0 flex items-center pr-2">
-            <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+            <ChevronUpDownIcon class="h-5 w-5 text-neutral-400" aria-hidden="true" />
           </ComboboxButton>
         </div>
         <TransitionRoot
@@ -25,7 +25,7 @@
           >
             <div
               v-if="filteredPeople.length === 0 && query !== ''"
-              class="relative cursor-default select-none px-4 py-2 text-gray-700"
+              class="relative cursor-default select-none px-4 py-2 text-neutral-700"
             >
               Nothing found.
             </div>
@@ -41,7 +41,7 @@
                 class="relative cursor-default select-none py-2 pl-10 pr-4"
                 :class="{
                   'bg-teal-600 text-white': active,
-                  'text-gray-900': !active
+                  'text-neutral-900': !active
                 }"
               >
                 <span

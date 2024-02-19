@@ -10,7 +10,7 @@
           v-model="propsModel"
           :value="option.value"
           type="checkbox"
-          class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600 shrink-0"
+          class="h-4 w-4 rounded border-neutral-300 text-success-700 focus:ring-success-700 shrink-0"
         />
       </div>
       <BaseTypography size="body" weight="medium" class="leading-[24px] min-h-4">{{

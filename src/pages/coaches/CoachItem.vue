@@ -2,7 +2,7 @@
   <div class="gap-4 flex justify-between">
     <div class="flex flex-col gap-2">
       <div class="flex gap-4 items-baseline">
-        <span class="text-indigo-600 font-bold">{{ item.firstName + ' ' + item.lastName }}</span>
+        <span class="text-primary-600 font-bold">{{ item.firstName + ' ' + item.lastName }}</span>
         <span class="text-sm font-bold">(${{ item.hourlyRate }}/hour)</span>
       </div>
       <div class="flex gap-4">
@@ -11,7 +11,7 @@
           :key="area"
           :dotClass="
             cn({
-              'fill-red-500': area === 'frontend',
+              'fill-error-500': area === 'frontend',
               'fill-yellow-500': area === 'backend',
               'fill-green-500': area === 'fullstack'
             })

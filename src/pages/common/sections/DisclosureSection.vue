@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col">
-    <base-typography size="heading4" weight="bold" class="p-4 bg-red-100"
+    <base-typography size="heading4" weight="bold" class="p-4 bg-green-500 text-white"
       >Disclosure Group</base-typography
     >
-    <div class="py-4">
+    <div class="p-4 bg-warning-50">
       <base-disclosure-group
         :items="disclosureGroupItems"
         class="w-[300px]"

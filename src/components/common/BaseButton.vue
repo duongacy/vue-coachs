@@ -38,11 +38,12 @@ const buttonClasses = computed(() => {
       'text-sm px-3 min-h-7 rounded-md': props.size === 'medium',
       'text-xs px-2 min-h-6 rounded-md': props.size === 'small',
 
-      'bg-indigo-500 text-white hover:bg-indigo-600 active:bg-indigo-700':
+      'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700':
         props.variant === 'primary',
-      'border border-indigo-500 hover:border-indigo-600 active:border-indigo-700 text-indigo-500 hover:text-indigo-600 active:text-indigo-700':
+      'border border-primary-500 hover:border-primary-600 active:border-primary-700 text-primary-500 hover:text-primary-600 active:text-primary-700':
         props.variant === 'secondary',
-      'text-indigo-500 hover:text-indigo-600 active:text-indigo-700': props.variant === 'tertiary'
+      'text-primary-500 hover:text-primary-600 active:text-primary-700':
+        props.variant === 'tertiary'
     }
   )
 })

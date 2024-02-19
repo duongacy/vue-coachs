@@ -1,24 +1,24 @@
 <template>
   <div class="flex flex-col p-12">
     <div class="mx-auto w-full max-w-sm space-y-10">
-      <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+      <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-neutral-900">
         Sign in to your account
       </h2>
       <form class="space-y-6" @submit.prevent="onSubmit">
         <div>
-          <p class="text-sm font-medium leading-6 text-gray-900">Email address</p>
+          <p class="text-sm font-medium leading-6 text-neutral-900">Email address</p>
           <input
             v-model="userAuthen.email.value"
             type="email"
-            class="block w-full mt-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6"
+            class="block w-full mt-2 rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 text-sm leading-6"
           />
         </div>
         <div>
-          <p class="text-sm font-medium leading-6 text-gray-900">Password</p>
+          <p class="text-sm font-medium leading-6 text-neutral-900">Password</p>
           <input
             v-model="userAuthen.password.value"
             type="password"
-            class="block w-full mt-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6"
+            class="block w-full mt-2 rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 text-sm leading-6"
           />
         </div>
 
