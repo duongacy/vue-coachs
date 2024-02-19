@@ -44,16 +44,13 @@
                   'text-neutral-900': !active
                 }"
               >
-                <span
-                  class="block truncate"
-                  :class="{ 'font-medium': selected, 'font-normal': !selected }"
-                >
+                <span class="block truncate ont-normal" :class="{ 'font-medium': selected }">
                   {{ person.name }}
                 </span>
                 <span
                   v-if="selected"
-                  class="absolute inset-y-0 left-0 flex items-center pl-3"
-                  :class="{ 'text-white': active, 'text-teal-600': !active }"
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-teal-600'"
+                  :class="{ 'text-white': active }"
                 >
                   <CheckIcon class="h-5 w-5" aria-hidden="true" />
                 </span>

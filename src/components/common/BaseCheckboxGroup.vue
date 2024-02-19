@@ -5,7 +5,7 @@
       v-for="option in props.options"
       :key="option.value"
     >
-      <div class="w-6 h-6 grid place-items-center">
+      <div class="h-6 grid items-center flex-shrink-0">
         <input
           v-model="propsModel"
           :value="option.value"

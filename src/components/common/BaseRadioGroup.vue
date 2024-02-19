@@ -5,14 +5,14 @@
       :value="option.value"
       v-for="option in props.options"
       :key="option.value"
-      class="cursor-pointer flex gap-2 items-start"
+      class="cursor-pointer flex gap-2 items-start select-none"
     >
-      <div class="w-6 h-6 grid place-items-center">
+      <div class="h-6 grid items-center flex-shrink-0">
         <div
           :class="
             cn('h-4 w-4 rounded-full border border-neutral-300', {
-              ' border-success-700 border-[6px]': checked,
-              ' ring-[2px] ring-offset-2 ring-success-700 border-success-700': active
+              'border-success-700 border-[6px]': checked,
+              'ring-[2px] ring-offset-[1px] ring-success-700 border-success-700': active
             })
           "
         ></div>

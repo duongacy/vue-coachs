@@ -4,7 +4,7 @@
       v-model="enabled"
       :class="
         cn(
-          'relative bg-neutral-300 inline-flex h-[20px] w-[34px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75',
+          'relative bg-neutral-300 inline-flex h-[20px] w-[34px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:ring-2 ring-offset-[1px] focus-visible:ring-success-700 focus-visible:outline-none focus:ring-2 focus:ring-success-700 focus:outline-none',
           { 'bg-success-700': enabled },
           props.class
         )

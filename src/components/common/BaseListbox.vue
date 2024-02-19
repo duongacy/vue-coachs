@@ -2,7 +2,7 @@
   <Listbox v-model="selectedValue" as="div" :class="cn('min-w-[200px] relative z-50', props.class)">
     <div>
       <ListboxButton
-        class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-primary-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300"
+        class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-success-700 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-success-700"
       >
         <span class="block truncate">{{ selectedName }}</span>
         <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -27,7 +27,7 @@
             <li
               :class="
                 cn('relative cursor-default select-none py-2 pl-10 pr-4 text-neutral-900', {
-                  'bg-amber-100 text-amber-900': active
+                  'bg-success-100 text-success-900': active
                 })
               "
             >
@@ -36,7 +36,7 @@
               }}</span>
               <span
                 v-if="selected"
-                class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                class="absolute inset-y-0 left-0 flex items-center pl-3 text-success-600"
               >
                 <CheckIcon class="h-5 w-5" aria-hidden="true" />
               </span>
