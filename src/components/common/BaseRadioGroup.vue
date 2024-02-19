@@ -5,7 +5,7 @@
       :value="option.value"
       v-for="option in props.options"
       :key="option.value"
-      class="cursor-pointer flex gap-2 items-start select-none"
+      class="cursor-pointer flex gap-2 items-start select-none focus:outline-none"
     >
       <div class="h-6 grid items-center flex-shrink-0">
         <div
