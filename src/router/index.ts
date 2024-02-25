@@ -10,6 +10,8 @@ const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
 const CommonPage = () => import('@/pages/common/CommonPage.vue')
 const RequestForm = () => import('@/pages/requests/RequestForm.vue')
 const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue')
+const MouseClick = () => import('@/pages/examples/MouseClick.vue')
+const ExamplesPage = () => import('@/pages/examples/ExamplesPage.vue')
 
 export const routes = [
   {
@@ -73,7 +75,17 @@ export const routes = [
   {
     path: '/:catchAll(.*)',
     redirect: '/not-found'
-  }
+  },
+  {
+    path: '/examples',
+    component: ExamplesPage,
+    children: [
+      {
+        path: 'mouse-click',
+        component: MouseClick
+      },
+    ]
+  },
 ]
 
 const router = createRouter({
