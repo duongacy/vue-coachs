@@ -1,4 +1,7 @@
 
+import CommonPage from '@/pages/common/CommonPage.vue'
+import ExamplesPage from '@/pages/examples/ExamplesPage.vue'
+import ShadcnExamplesPage from '@/pages/examples/shadcn/ShadcnExamplesPage.vue'
 import { store } from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -7,11 +10,11 @@ const UserAuth = () => import('@/pages/auth/UserAuth.vue')
 const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue')
 const AddCoach = () => import('@/pages/coaches/AddCoach.vue')
 const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
-const CommonPage = () => import('@/pages/common/CommonPage.vue')
+// const CommonPage = () => import('@/pages/common/CommonPage.vue')
 const RequestForm = () => import('@/pages/requests/RequestForm.vue')
 const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue')
 const MouseClick = () => import('@/pages/examples/MouseClick.vue')
-const ExamplesPage = () => import('@/pages/examples/ExamplesPage.vue')
+// const ExamplesPage = () => import('@/pages/examples/ExamplesPage.vue')
 
 export const routes = [
   {
@@ -84,6 +87,10 @@ export const routes = [
         path: 'mouse-click',
         component: MouseClick
       },
+      {
+        path: 'shadcn',
+        component: ShadcnExamplesPage
+      }
     ]
   },
 ]

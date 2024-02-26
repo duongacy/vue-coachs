@@ -1,8 +1,6 @@
 <template>
   <div>
-    <base-typography size="heading2" weight="heavy" class="px-4 py-8"
-      >Common</base-typography
-    >
+    <base-typography size="heading2" weight="heavy" class="px-4 py-8">Common</base-typography>
     <div class="">
       <button-section></button-section>
       <badge-section></badge-section>
