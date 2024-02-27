@@ -11,7 +11,7 @@ import {
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseSelect>
       <SelectTrigger class="w-[180px]">
         <SelectValue placeholder="Select a fruit" />

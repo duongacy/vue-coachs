@@ -9,7 +9,7 @@ import {
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <TooltipProvider>
       <BaseTooltip>
         <TooltipTrigger as-child>

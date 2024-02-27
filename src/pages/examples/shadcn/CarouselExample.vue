@@ -10,7 +10,7 @@ import { BaseCard, CardContent } from '@/components/ui/card'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseCarousel class="relative w-full max-w-xs">
       <CarouselContent>
         <CarouselItem v-for="(_, index) in 5" :key="index">

@@ -4,7 +4,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <RadioGroup default-value="comfortable">
       <div class="flex items-center space-x-2">
         <RadioGroupItem id="r1" value="default" />

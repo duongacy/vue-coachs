@@ -12,7 +12,7 @@ const date = ref<Date>()
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BasePopover>
       <PopoverTrigger as-child>
         <BaseButton

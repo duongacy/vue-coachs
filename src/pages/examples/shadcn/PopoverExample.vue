@@ -6,7 +6,7 @@ import { BaseInput } from '@/components/ui/input'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BasePopover>
       <PopoverTrigger as-child>
         <BaseButton variant="outline"> Open popover </BaseButton>

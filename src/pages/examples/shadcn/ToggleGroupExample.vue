@@ -5,7 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <ToggleGroup type="multiple">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <Bold class="h-4 w-4" />

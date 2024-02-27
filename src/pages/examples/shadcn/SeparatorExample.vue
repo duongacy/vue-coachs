@@ -3,7 +3,7 @@ import { BaseSeparator } from '@/components/ui/separator'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <div class="space-y-1">
       <h4 class="text-sm font-medium leading-none">Radix Primitives</h4>
       <p class="text-sm text-muted-foreground">An open-source UI component library.</p>

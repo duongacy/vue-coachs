@@ -15,7 +15,7 @@ import {
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseSheet>
       <SheetTrigger as-child>
         <BaseButton variant="outline"> Open </BaseButton>

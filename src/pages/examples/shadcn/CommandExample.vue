@@ -14,7 +14,7 @@ import {
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseCommand class="rounded-lg border shadow-md max-w-[450px]">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>

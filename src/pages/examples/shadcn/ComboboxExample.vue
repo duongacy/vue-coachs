@@ -27,7 +27,7 @@ const value = ref({})
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BasePopover v-model:open="open">
       <PopoverTrigger as-child>
         <BaseButton

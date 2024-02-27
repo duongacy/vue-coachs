@@ -3,7 +3,7 @@ import { BaseTextarea } from '@/components/ui/textarea'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseTextarea placeholder="Type your message here." />
   </div>
 </template>

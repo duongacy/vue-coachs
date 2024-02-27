@@ -5,7 +5,7 @@ import { BaseToggle } from '@/components/ui/toggle'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseToggle aria-label="Toggle italic">
       <Bold class="h-4 w-4" />
     </BaseToggle>

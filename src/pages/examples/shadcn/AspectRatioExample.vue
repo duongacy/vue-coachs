@@ -3,7 +3,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <AspectRatio :ratio="16 / 9" class="bg-muted">
       <img
         src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"

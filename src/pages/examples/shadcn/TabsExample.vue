@@ -14,7 +14,7 @@ import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/ta
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseTabs default-value="account" class="w-[400px]">
       <TabsList class="grid w-full grid-cols-2">
         <TabsTrigger value="account"> Account </TabsTrigger>

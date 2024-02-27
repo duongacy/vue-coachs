@@ -3,7 +3,7 @@ import { BaseAvatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseAvatar>
       <AvatarImage src="https://github.com/radix-vue.png" alt="@radix-vue" />
       <AvatarFallback>CN</AvatarFallback>

@@ -6,7 +6,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/h
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <HoverCard>
       <HoverCardTrigger as-child>
         <BaseButton variant="link"> @vuejs </BaseButton>

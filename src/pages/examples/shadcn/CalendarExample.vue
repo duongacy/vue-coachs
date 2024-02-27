@@ -6,7 +6,7 @@ const date = ref(new Date())
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseCalendar v-model="date" class="rounded-md border" />
   </div>
 </template>

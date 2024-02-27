@@ -7,7 +7,7 @@ const handleComplete = (e: string[]) => alert(e.join(''))
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <PinInput
       id="pin-input"
       v-model="value"

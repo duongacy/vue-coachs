@@ -20,7 +20,7 @@ import { BaseButton } from '@/components/ui/button'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseCard class="w-[350px]">
       <CardHeader>
         <CardTitle>Create project</CardTitle>

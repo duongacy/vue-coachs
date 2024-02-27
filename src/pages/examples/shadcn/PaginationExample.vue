@@ -14,7 +14,7 @@ import { BaseButton } from '@/components/ui/button'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BasePagination v-slot="{ page }" :total="100" :sibling-count="1" show-edges :default-page="2">
       <PaginationList v-slot="{ items }" class="flex items-center gap-1">
         <PaginationFirst />

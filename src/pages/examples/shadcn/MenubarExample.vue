@@ -17,7 +17,7 @@ import {
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseMenubar>
       <MenubarMenu>
         <MenubarTrigger>File</MenubarTrigger>

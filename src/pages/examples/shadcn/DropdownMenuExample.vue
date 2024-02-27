@@ -34,7 +34,7 @@ import {
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <DropdownMenu>
       <DropdownMenuTrigger as-child>
         <BaseButton variant="outline"> Open </BaseButton>

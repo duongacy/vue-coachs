@@ -56,7 +56,7 @@ const invoices = [
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseTable>
       <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>

@@ -3,7 +3,7 @@ import { BaseCheckbox } from '@/components/ui/checkbox'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseCheckbox id="terms" />
     <label
       for="terms"

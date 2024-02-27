@@ -179,7 +179,7 @@ const table = useVueTable({
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <div class="flex gap-2 items-center py-4">
       <BaseInput
         class="max-w-sm"

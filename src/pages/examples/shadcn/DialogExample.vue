@@ -14,7 +14,7 @@ import { BaseLabel } from '@/components/ui/label'
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-2 border p-2">
     <BaseDialog>
       <DialogTrigger as-child>
         <BaseButton variant="outline"> Edit Profile </BaseButton>
