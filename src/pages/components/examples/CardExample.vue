@@ -61,7 +61,7 @@ const actionHandler = () => {
       </BaseCard>
     </form>
 
-    <BaseTypography variant="list">Card with custom header</BaseTypography>
+    <BaseTypography variant="list">Card with custom header & footer</BaseTypography>
     <BaseCard>
       <template #header>
         <CardHeader>

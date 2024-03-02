@@ -16,7 +16,7 @@ import { BaseCard, CardContent } from '@/components/ui/card'
         <CarouselItem v-for="(_, index) in 5" :key="index">
           <div class="p-1">
             <BaseCard>
-              <CardContent class="flex aspect-square items-center justify-center p-6">
+              <CardContent class="flex aspect-[16/9] items-center justify-center p-6">
                 <span class="text-4xl font-semibold">{{ index + 1 }}</span>
               </CardContent>
             </BaseCard>
