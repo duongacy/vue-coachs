@@ -1,6 +1,13 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <!-- <div class="min-h-screen flex flex-col">
     <the-navigation></the-navigation>
+    <div class="h-12 flex items-center px-8">
+      <BaseTypography variant="p" weight="bold">shadcn-vue</BaseTypography>
+      <div class="flex gap-4 px-4">
+        <NavLink to="/components">Components</NavLink>
+        <NavLink to="/themes">Themes</NavLink>
+      </div>
+    </div>
     <div class="flex-grow flex flex-col">
       <router-view v-slot="slotProps">
         <transition name="route" mode="out-in">
@@ -9,15 +16,41 @@
       </router-view>
     </div>
     <the-footer></the-footer>
-  </div>
+  </div> -->
+  <MainLayout>
+    <template #header>
+      <TheNavigation></TheNavigation>
+    </template>
+    <template #content>
+      <router-view v-slot="slotProps">
+        <transition name="route" mode="out-in">
+          <component :is="slotProps.Component"></component>
+        </transition>
+      </router-view>
+    </template>
+    <template #footer?>
+      <TheFooter></TheFooter>
+    </template>
+  </MainLayout>
 </template>
 
 <script setup lang="ts">
+import { BaseTypography } from '@/components/ui/typography'
 import TheFooter from '@/layouts/TheFooter.vue'
 import TheNavigation from '@/layouts/TheNavigation.vue'
 import { onBeforeUnmount, onMounted } from 'vue'
 import { store } from './store'
 import { useRoute, useRouter } from 'vue-router'
+import { buttonVariants } from './components/ui/button'
+import cn from './utils/cn'
+import {
+  NavigationMenuLink,
+  NavigationMenuItem,
+  NavigationMenu,
+  NavigationMenuContent
+} from './components/ui/navigation-menu'
+import { NavLink } from '@/components/ui/nav'
+import { MainLayout } from './layouts'
 const router = useRouter()
 const route = useRoute()
 

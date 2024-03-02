@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import {
   AccordionRoot,
@@ -6,15 +5,38 @@ import {
   type AccordionRootProps,
   useForwardPropsEmits
 } from 'radix-vue'
+import AccordionItem from './AccordionItem.vue'
+import AccordionTrigger from './AccordionTrigger.vue'
+import AccordionContent from './AccordionContent.vue'
 
-const props = defineProps<AccordionRootProps>()
+export type TAccordionOption = {
+  value: string
+  title: string
+  content: string
+}
+
+const props = defineProps<
+  AccordionRootProps & {
+    options: TAccordionOption[]
+  }
+>()
 const emits = defineEmits<AccordionRootEmits>()
-
-const forwarded = useForwardPropsEmits(props, emits)
+const { options, ...restProps } = props
+const forwarded = useForwardPropsEmits(restProps, emits)
+const forwardedModel = defineModel<string[] | string>()
 </script>
 
 <template>
-  <AccordionRoot v-bind="forwarded">
-    <slot />
+  <AccordionRoot
+    class="p-4 pt-2 rounded-2xl overflow-hidden w-80"
+    v-bind="forwarded"
+    v-model="forwardedModel"
+  >
+    <AccordionItem v-for="item in options" :key="item.value" :value="item.value">
+      <AccordionTrigger>{{ item.title }}</AccordionTrigger>
+      <AccordionContent>
+        {{ item.content }}
+      </AccordionContent>
+    </AccordionItem>
   </AccordionRoot>
 </template>
