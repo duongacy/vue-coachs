@@ -11,7 +11,7 @@ import { BaseCard, CardContent } from '@/components/ui/card'
 
 <template>
   <div class="grid gap-2 px-12">
-    <BaseCarousel class="relative w-[350px]">
+    <BaseCarousel class="relative">
       <CarouselContent>
         <CarouselItem v-for="(_, index) in 5" :key="index">
           <div class="p-1">
