@@ -36,7 +36,7 @@ const props = withDefaults(
     modelModifiers?: object
     columns?: number
     type?: 'single' | 'range'
-    class: string
+    class?: string
   }>(),
   {
     type: 'single',

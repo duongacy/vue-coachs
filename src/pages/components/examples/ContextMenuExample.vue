@@ -17,7 +17,7 @@ import {
 </script>
 
 <template>
-  <!-- <div class="grid gap-2 ">
+  <div class="grid gap-2 ">
     <ContextMenu>
       <ContextMenuTrigger
         class="flex h-[150px] w-[350px] items-center justify-center rounded-md border border-dashed text-sm"
@@ -65,6 +65,5 @@ import {
         </ContextMenuRadioGroup>
       </ContextMenuContent>
     </ContextMenu>
-  </div> -->
-  <div></div>
+  </div>
 </template>
