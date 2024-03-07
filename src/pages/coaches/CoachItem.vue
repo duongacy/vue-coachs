@@ -1,46 +1,40 @@
 <template>
-  <div class="gap-4 flex justify-between">
-    <div class="flex flex-col gap-2">
-      <div class="flex gap-4 items-baseline">
-        <span class="text-primary-600 font-bold">{{ item.firstName + ' ' + item.lastName }}</span>
-        <span class="text-sm font-bold">(${{ item.hourlyRate }}/hour)</span>
-      </div>
-      <div class="flex gap-4">
-        <base-badge
-          v-for="area in item.areas"
-          :key="area"
-          :dotClass="
-            cn({
-              'fill-error-500': area === 'frontend',
-              'fill-yellow-500': area === 'backend',
-              'fill-green-500': area === 'fullstack'
-            })
-          "
-          class="capitalize"
-          :text="area"
-        ></base-badge>
+  <BaseCard class="grid gap-4">
+    <div>
+      <BaseTypography variant="body" class="font-bold">{{ fullName }}</BaseTypography>
+      <BaseTypography>{{ item.description }} </BaseTypography>
+      <div class="flex gap-2 mt-2">
+        <BaseBadge variant="destructive" v-for="area in item.areas" :key="area + '-area'">{{
+          area
+        }}</BaseBadge>
       </div>
     </div>
-    <div class="flex items-end gap-2">
-      <base-button variant="secondary" size="medium" :to="detailLink">Details</base-button>
-      <base-button variant="primary" size="medium" :to="requestLink">Request</base-button>
+    <div class="flex gap-4 justify-end">
+      <BaseButton variant="outline">
+        <router-link :to="detailsLink">Details</router-link>
+      </BaseButton>
+      <router-link :to="requestLink">
+        <BaseButton>Request</BaseButton>
+      </router-link>
     </div>
-  </div>
+  </BaseCard>
 </template>
 
 <script setup lang="ts">
 import type { TCoach } from '@/types/coach'
 import { computed } from 'vue'
-import cn from '@/utils/cn'
+import { cn } from '@/lib/utils'
+import { BaseCard } from '@/components/ui/card'
+import { BaseTypography } from '@/components/ui/typography'
+import { BaseBadge } from '@/components/ui/badge'
+import { BaseButton } from '@/components/ui/button'
 
 const emits = defineEmits(['delete'])
 
-const detailLink = computed(() => {
-  return '/coaches/' + props.item.id
-})
-const requestLink = computed(() => {
-  return detailLink.value + '/request'
-})
+const detailsLink = computed(() => '/coaches/' + props.item.id)
+const requestLink = computed(() => detailsLink.value + '/request')
+
+const fullName = computed(() => props.item.firstName + ' ' + props.item.lastName)
 
 const props = defineProps<{ item: TCoach }>()
 </script>

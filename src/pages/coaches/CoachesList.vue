@@ -10,18 +10,13 @@
             </p>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <base-button variant="primary" size="large" to="/coaches/add"
-              >Create new coach
-            </base-button>
+            <BaseButton variant="outline" to="/coaches/add">Create new coach </BaseButton>
           </div>
         </div>
       </div>
       <div class="h-[1px] bg-neutral-200 my-4"></div>
-      <div class="bg-white px-4">
-        <div v-for="(coach, coachIndex) in coaches" :key="coach.id">
-          <coach-item :item="coach"></coach-item>
-          <div class="h-[1px] bg-neutral-200 my-4" v-if="coachIndex !== coaches.length - 1"></div>
-        </div>
+      <div class="bg-white px-4 grid md:grid-cols-2 gap-4">
+        <coach-item :item="coach" v-for="coach in coaches" :key="coach.id"></coach-item>
       </div>
     </div>
   </div>
@@ -32,6 +27,10 @@ import { key } from '@/store'
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import CoachItem from './CoachItem.vue'
+import { BaseCard } from '@/components/ui/card'
+import { BaseTypography } from '@/components/ui/typography'
+import { BaseBadge } from '@/components/ui/badge'
+import { BaseButton } from '@/components/ui/button'
 
 const store = useStore(key)
 const coaches = computed(() => {

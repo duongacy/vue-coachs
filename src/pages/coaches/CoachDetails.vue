@@ -97,7 +97,7 @@ import { PaperClipIcon } from '@heroicons/vue/20/solid'
 import { key } from '@/store'
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import cn from '@/utils/cn'
+import { cn } from '@/lib/utils'
 
 const props = defineProps<{ coachId: string }>()
 const store = useStore(key)

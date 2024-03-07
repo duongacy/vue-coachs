@@ -1,15 +1,14 @@
 <template>
   <form>
-    <base-input label="First name" v-model="firstName" @input="onInput"></base-input>
+    <!-- <base-input label="First name" v-model="firstName" @input="onInput"></base-input>
     <base-radio-group></base-radio-group>
     <base-checkbox></base-checkbox>
     <base-listbox></base-listbox>
-    <base-typography variant="heading1" weight="bold"> Text </base-typography>
+    <base-typography variant="heading1" weight="bold"> Text </base-typography> -->
   </form>
 </template>
 
 <script setup lang="ts">
-import BaseTypography from '@/components/common/BaseTypography.vue'
 
 import { ref, watch } from 'vue'
 

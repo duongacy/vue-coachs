@@ -13,10 +13,10 @@
   <div class="flex gap-8 h-12 items-center">
     <BaseTypography variant="p" weight="bold">YLVN-vue</BaseTypography>
     <div class="flex gap-4 px-4 flex-grow">
-      <NavLink to="/coaches">Coaches</NavLink>
-      <NavLink to="/requests-received">Requests received</NavLink>
-      <NavLink to="/components">Components</NavLink>
-      <NavLink to="/themes">Themes</NavLink>
+      <router-link to="/coaches">Coaches</router-link>
+      <router-link to="/requests-received">Requests received</router-link>
+      <router-link to="/components">Components</router-link>
+      <router-link to="/themes">Themes</router-link>
     </div>
     <div>
       <BaseButton variant="link" v-if="isAuthenticated" @click="logout">Logout</BaseButton>
@@ -26,7 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import NavLink from '@/components/common/NavLink.vue'
 import { BaseButton } from '@/components/ui/button'
 import { BaseTypography } from '@/components/ui/typography'
 import { store } from '@/store'

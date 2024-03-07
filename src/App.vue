@@ -44,7 +44,6 @@ import { computed, onBeforeUnmount, onMounted } from 'vue'
 import { store } from './store'
 import { useRoute, useRouter } from 'vue-router'
 import { buttonVariants } from './components/ui/button'
-import cn from './utils/cn'
 import {
   NavigationMenuLink,
   NavigationMenuItem,

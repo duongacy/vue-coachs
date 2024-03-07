@@ -1,7 +1,4 @@
 
-import CommonPage from '@/pages/common/CommonPage.vue'
-
-import ExamplesPage from '@/pages/examples/ExamplesPage.vue'
 import { store } from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -12,7 +9,6 @@ const AddCoach = () => import('@/pages/coaches/AddCoach.vue')
 const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
 const RequestForm = () => import('@/pages/requests/RequestForm.vue')
 const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue')
-const MouseClick = () => import('@/pages/examples/MouseClick.vue')
 const ComponentsPage = () => import('@/pages/components')
 const ThemesPage = () => import('@/pages/themes')
 
@@ -22,11 +18,6 @@ export const routes = [
     path: '/',
     name: 'home',
     redirect: '/coaches'
-  },
-  {
-    path: '/common',
-    name: 'common',
-    component: CommonPage
   },
   {
     path: '/coaches',
@@ -79,16 +70,6 @@ export const routes = [
   {
     path: '/:catchAll(.*)',
     redirect: '/not-found'
-  },
-  {
-    path: '/examples',
-    component: ExamplesPage,
-    children: [
-      {
-        path: 'mouse-click',
-        component: MouseClick
-      }
-    ]
   },
   {
     path: '/components',

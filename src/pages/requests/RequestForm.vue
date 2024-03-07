@@ -82,7 +82,7 @@
 <script setup lang="ts">
 import { key } from '@/store'
 import type { TRequest } from '@/types/request'
-import cn from '@/utils/cn'
+import { cn } from '@/lib/utils'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'

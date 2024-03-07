@@ -1,11 +1,5 @@
 <template>
   <div class="min-h-full flex gap-4 p-2">
-    <div class="min-w-60">
-      <div class="grid gap-2">
-        <a href="#accordion">Accordion</a>
-        <a href="#alert">Alert</a>
-      </div>
-    </div>
     <div class="flex-grow flex-col flex gap-4">
       <div id="accordion">
         <ExampleSectionTemplate name="Accordion">

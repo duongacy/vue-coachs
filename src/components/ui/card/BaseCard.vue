@@ -39,7 +39,7 @@ const clickActionHandler = computed(() => {
 </script>
 
 <template>
-  <div :class="cn('rounded-lg border bg-card text-card-foreground shadow-sm', props.class)">
+  <div :class="cn('rounded-lg border p-4 bg-card text-card-foreground shadow-sm', props.class)">
     <slot name="header">
       <CardHeader v-if="!!title || !!description">
         <CardTitle v-if="!!title">{{ title }}</CardTitle>
@@ -47,9 +47,7 @@ const clickActionHandler = computed(() => {
       </CardHeader>
     </slot>
 
-    <CardContent>
-      <slot></slot>
-    </CardContent>
+    <slot></slot>
     <slot name="footer">
       <CardFooter class="flex justify-between px-6 pb-6" v-if="!!cancelText || !!actionText">
         <BaseButton type="button" variant="outline" v-if="!!cancelText" @click="emits('cancel')">
