@@ -1,6 +1,6 @@
 import type { TCoach } from "@/types/coach"
 
-export type CoachsState = {
+export type CoachesState = {
   coaches: TCoach[],
   selectedCoach: TCoach | null
 }
@@ -10,7 +10,7 @@ export const COACHES = {
     return {
       coaches: [],
       selectedCoach: null,
-    } as CoachsState
+    } as CoachesState
   },
   actions: {
     async addAction(context: any, payload: TCoach) {
@@ -63,16 +63,16 @@ export const COACHES = {
     }
   },
   mutations: {
-    addMutation(state: CoachsState, action: { payload: TCoach }) {
+    addMutation(state: CoachesState, action: { payload: TCoach }) {
       state.coaches.push(action.payload);
     },
-    loadAllMutation(state: CoachsState, action: { payload: TCoach[] }) {
+    loadAllMutation(state: CoachesState, action: { payload: TCoach[] }) {
       state.coaches = action.payload
     },
-    loadByIdMutation(state: CoachsState, action: { payload: TCoach }) {
+    loadByIdMutation(state: CoachesState, action: { payload: TCoach }) {
       state.selectedCoach = action.payload
     },
-    deleteMutation(state: CoachsState, action: { payload: string }) {
+    deleteMutation(state: CoachesState, action: { payload: string }) {
       state.coaches = state.coaches.filter(item => item.id !== action.payload)
     }
   }

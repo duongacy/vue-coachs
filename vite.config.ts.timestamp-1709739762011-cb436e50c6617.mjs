@@ -1,10 +1,10 @@
 // vite.config.ts
 import { fileURLToPath, URL } from "node:url";
-import Components from "file:///Users/ylvn/Desktop/vue/vue-coachs/node_modules/unplugin-vue-components/dist/vite.js";
-import { defineConfig } from "file:///Users/ylvn/Desktop/vue/vue-coachs/node_modules/vite/dist/node/index.js";
-import vue from "file:///Users/ylvn/Desktop/vue/vue-coachs/node_modules/@vitejs/plugin-vue/dist/index.mjs";
-import vueJsx from "file:///Users/ylvn/Desktop/vue/vue-coachs/node_modules/@vitejs/plugin-vue-jsx/dist/index.mjs";
-var __vite_injected_original_import_meta_url = "file:///Users/ylvn/Desktop/vue/vue-coachs/vite.config.ts";
+import Components from "file:///Users/ylvn/Desktop/vue/vue-coaches/node_modules/unplugin-vue-components/dist/vite.js";
+import { defineConfig } from "file:///Users/ylvn/Desktop/vue/vue-coaches/node_modules/vite/dist/node/index.js";
+import vue from "file:///Users/ylvn/Desktop/vue/vue-coaches/node_modules/@vitejs/plugin-vue/dist/index.mjs";
+import vueJsx from "file:///Users/ylvn/Desktop/vue/vue-coaches/node_modules/@vitejs/plugin-vue-jsx/dist/index.mjs";
+var __vite_injected_original_import_meta_url = "file:///Users/ylvn/Desktop/vue/vue-coaches/vite.config.ts";
 var vite_config_default = defineConfig({
   plugins: [
     vue(),

@@ -17,7 +17,7 @@
     </div>
     <the-footer></the-footer>
   </div> -->
-  <MainLayout>
+  <MainLayout v-if="!isAuthenTemplate">
     <template #header>
       <TheNavigation></TheNavigation>
     </template>
@@ -32,13 +32,15 @@
       <TheFooter></TheFooter>
     </template>
   </MainLayout>
+
+  <router-view v-else></router-view>
 </template>
 
 <script setup lang="ts">
 import { BaseTypography } from '@/components/ui/typography'
 import TheFooter from '@/layouts/TheFooter.vue'
 import TheNavigation from '@/layouts/TheNavigation.vue'
-import { onBeforeUnmount, onMounted } from 'vue'
+import { computed, onBeforeUnmount, onMounted } from 'vue'
 import { store } from './store'
 import { useRoute, useRouter } from 'vue-router'
 import { buttonVariants } from './components/ui/button'
@@ -53,6 +55,8 @@ import { NavLink } from '@/components/ui/nav'
 import { MainLayout } from './layouts'
 const router = useRouter()
 const route = useRoute()
+
+const isAuthenTemplate = computed(() => route.name === 'authen')
 
 const authenSuccessEventHandler = () => {
   if (route.redirectedFrom) {

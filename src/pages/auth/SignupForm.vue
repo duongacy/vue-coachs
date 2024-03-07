@@ -1,43 +1,67 @@
 <template>
-  <div class="flex flex-col p-12">
-    <div class="mx-auto w-full max-w-sm space-y-10">
-      <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-neutral-900">
-        Sign up to your account
-      </h2>
-      <form class="space-y-6" @submit.prevent="onSubmit">
-        <div>
-          <p class="text-sm font-medium leading-6 text-neutral-900">Email address</p>
-          <input
-            v-model.trim="userAuthen.email.value"
-            type="email"
-            class="block w-full mt-2 rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 text-sm leading-6"
-          />
-        </div>
-        <div>
-          <p class="text-sm font-medium leading-6 text-neutral-900">Password</p>
-          <input
-            v-model.trim="userAuthen.password.value"
-            type="password"
-            class="block w-full mt-2 rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 text-sm leading-6"
-          />
-        </div>
-        <div>
-          <p class="text-sm font-medium leading-6 text-neutral-900">Confirm password</p>
-          <input
-            v-model.trim="userAuthen.rePassword.value"
-            type="password"
-            class="block w-full mt-2 rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 text-sm leading-6"
-          />
-        </div>
-
-        <base-button type="submit" variant="primary" size="large" class="w-full justify-center">
-          Sign up
-        </base-button>
-      </form>
+  <div>
+    <div>
+      <BaseTypography variant="h3" weight="medium" class="text-center"
+        >Create an account
+      </BaseTypography>
+      <BaseTypography variant="detail" weight="regular" class="text-center text-neutral-500"
+        >Enter your email and password
+      </BaseTypography>
     </div>
+    <form class="space-y-4 mt-6" @submit.prevent="onSubmit">
+      <div class="space-y-2">
+        <div>
+          <BaseInput
+            placeholder="Enter your email"
+            v-model="userAuthen.email.value"
+            @input="removeValidate('email')"
+          />
+          <BaseTypography
+            class="text-red-500 mt-1"
+            variant="small"
+            v-if="!!userAuthen.email.error"
+            >{{ userAuthen.email.error }}</BaseTypography
+          >
+        </div>
+        <div>
+          <BaseInput
+            placeholder="Enter your password"
+            type="password"
+            v-model="userAuthen.password.value"
+            @input="removeValidate('password')"
+          />
+          <BaseTypography
+            class="text-red-500 mt-1"
+            variant="small"
+            v-if="!!userAuthen.password.error"
+            >{{ userAuthen.password.error }}</BaseTypography
+          >
+        </div>
+        <div>
+          <BaseInput
+            placeholder="Confirm your password"
+            type="password"
+            v-model="userAuthen.rePassword.value"
+            @input="removeValidate('rePassword')"
+          />
+          <BaseTypography
+            class="text-red-500 mt-1"
+            variant="small"
+            v-if="!!userAuthen.rePassword.error"
+            >{{ userAuthen.rePassword.error }}</BaseTypography
+          >
+        </div>
+      </div>
+      <BaseButton class="w-full"> Sign Up</BaseButton>
+    </form>
   </div>
 </template>
+
 <script setup lang="ts">
+import { BaseButton } from '@/components/ui/button'
+import { BaseInput } from '@/components/ui/input'
+import { BaseTypography } from '@/components/ui/typography'
+
 import { key } from '@/store'
 import type { authActions } from '@/store/modules/AUTHEN/actions'
 import { ref } from 'vue'
@@ -65,6 +89,11 @@ const checkValidate = () => {
   }
   return ok
 }
+
+const removeValidate = (field: 'email' | 'password' | 'rePassword') => {
+  userAuthen.value[field].value = ''
+}
+
 const store = useStore(key)
 
 const onSubmit = async () => {
@@ -80,3 +109,5 @@ const onSubmit = async () => {
   }
 }
 </script>
+
+<style scoped></style>
