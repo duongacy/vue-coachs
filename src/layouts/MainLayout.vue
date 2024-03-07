@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
-    <div class="sticky w-full z-50 top-0 bg-white">
+  <div class="grid min-h-screen grid-rows-[auto_1fr_auto]">
+    <div class="sticky top-0 z-50 w-full bg-white">
       <slot name="header"></slot>
     </div>
     <div>

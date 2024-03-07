@@ -52,7 +52,7 @@ watchEffect(() => {
       <BaseTypography variant="small" class="mb-2">Using with custom style</BaseTypography>
       <AlertDialog>
         <AlertDialogTrigger>
-          <BaseButton variant="outline" class="block w-fit mx-auto"> Show dialog </BaseButton>
+          <BaseButton variant="outline" class="mx-auto block w-fit"> Show dialog </BaseButton>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>

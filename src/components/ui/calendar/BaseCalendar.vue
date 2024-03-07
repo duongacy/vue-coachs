@@ -83,7 +83,7 @@ const vCalendarSlots = computed(() => {
   <div class="relative">
     <div
       v-if="$attrs.mode !== 'time'"
-      class="absolute flex justify-between w-full px-4 top-3 z-[1]"
+      class="absolute top-3 z-[1] flex w-full justify-between px-4"
     >
       <button
         :class="
@@ -94,7 +94,7 @@ const vCalendarSlots = computed(() => {
         "
         @click="handleNav('prev')"
       >
-        <ChevronLeft class="w-4 h-4" />
+        <ChevronLeft class="h-4 w-4" />
       </button>
       <button
         :class="
@@ -105,7 +105,7 @@ const vCalendarSlots = computed(() => {
         "
         @click="handleNav('next')"
       >
-        <ChevronRight class="w-4 h-4" />
+        <ChevronRight class="h-4 w-4" />
       </button>
     </div>
 
@@ -142,13 +142,13 @@ const vCalendarSlots = computed(() => {
   @apply grid gap-4;
 }
 .calendar .vc-title {
-  @apply text-sm font-medium relative z-20;
+  @apply relative z-20 text-sm font-medium;
 }
 .vc-popover-content-wrapper .vc-popover-content {
-  @apply mt-3 rounded-md max-w-xs border bg-background;
+  @apply mt-3 max-w-xs rounded-md border bg-background;
 }
 .vc-popover-content-wrapper .vc-nav-header {
-  @apply flex justify-between items-center p-2;
+  @apply flex items-center justify-between p-2;
 }
 .vc-popover-content-wrapper .vc-nav-items {
   @apply grid grid-cols-4 gap-2 p-2;
@@ -157,7 +157,7 @@ const vCalendarSlots = computed(() => {
   @apply rounded-md px-2 py-1;
 }
 .vc-popover-content-wrapper .vc-nav-items .vc-nav-item:hover {
-  @apply text-muted-foreground bg-muted;
+  @apply bg-muted text-muted-foreground;
 }
 .vc-popover-content-wrapper .vc-nav-items .vc-nav-item.is-active {
   @apply bg-primary text-primary-foreground;
@@ -172,16 +172,16 @@ const vCalendarSlots = computed(() => {
   @apply justify-items-center;
 }
 .calendar .vc-weekday {
-  @apply text-muted-foreground rounded-md font-normal text-[0.8rem];
+  @apply rounded-md text-[0.8rem] font-normal text-muted-foreground;
 }
 .calendar .vc-weeks {
-  @apply w-full space-y-2 flex flex-col [&>_div]:grid [&>_div]:grid-cols-7;
+  @apply flex w-full flex-col space-y-2 [&>_div]:grid [&>_div]:grid-cols-7;
 }
 .calendar .vc-day:has(.vc-highlights) {
   @apply first:rounded-l-md last:rounded-r-md;
 }
 .calendar .vc-day.is-today:not(:has(.vc-day-layer)) .vc-day-content {
-  @apply bg-secondary text-primary rounded-md;
+  @apply rounded-md bg-secondary text-primary;
 }
 .calendar .vc-day:has(.vc-highlight-base-start) {
   @apply rounded-l-md;
@@ -196,7 +196,7 @@ const vCalendarSlots = computed(() => {
   @apply rounded-md;
 }
 .calendar .vc-day-content {
-  @apply text-center text-sm p-0 relative focus-within:relative focus-within:z-20 inline-flex items-center justify-center ring-offset-background hover:transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground h-9 w-9 font-normal aria-selected:opacity-100 select-none;
+  @apply relative inline-flex h-9 w-9 select-none items-center justify-center p-0 text-center text-sm font-normal ring-offset-background focus-within:relative focus-within:z-20 hover:bg-accent hover:text-accent-foreground hover:transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 aria-selected:opacity-100;
 }
 .calendar .vc-day-content:not(.vc-highlight-content-light) {
   @apply rounded-md;
@@ -219,7 +219,7 @@ const vCalendarSlots = computed(() => {
   @apply overflow-hidden;
 }
 .calendar .vc-pane-container {
-  @apply w-full relative;
+  @apply relative w-full;
 }
 :root {
   --vc-slide-translate: 22px;
@@ -322,34 +322,34 @@ const vCalendarSlots = computed(() => {
   @apply pointer-events-none opacity-50;
 }
 .vc-time-picker.vc-attached {
-  @apply border-t border-solid border-secondary mt-2;
+  @apply mt-2 border-t border-solid border-secondary;
 }
 .vc-time-picker > * + * {
   @apply mt-1;
 }
 .vc-time-header {
-  @apply flex items-center text-sm font-semibold uppercase mt-1 px-1 leading-6;
+  @apply mt-1 flex items-center px-1 text-sm font-semibold uppercase leading-6;
 }
 .vc-time-select-group {
-  @apply inline-flex items-center px-1 rounded-md bg-primary-foreground border border-solid border-secondary;
+  @apply inline-flex items-center rounded-md border border-solid border-secondary bg-primary-foreground px-1;
 }
 .vc-time-select-group .vc-base-icon {
-  @apply mr-1 text-primary stroke-primary;
+  @apply mr-1 stroke-primary text-primary;
 }
 .vc-time-select-group select {
-  @apply bg-primary-foreground p-1 appearance-none outline-none text-center;
+  @apply appearance-none bg-primary-foreground p-1 text-center outline-none;
 }
 .vc-time-weekday {
-  @apply text-muted-foreground tracking-wide;
+  @apply tracking-wide text-muted-foreground;
 }
 .vc-time-month {
-  @apply text-primary ml-2;
+  @apply ml-2 text-primary;
 }
 .vc-time-day {
-  @apply text-primary ml-1;
+  @apply ml-1 text-primary;
 }
 .vc-time-year {
-  @apply text-muted-foreground ml-2;
+  @apply ml-2 text-muted-foreground;
 }
 .vc-time-colon {
   @apply mb-0.5;

@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { ref, watch } from 'vue'
 
 const firstName = ref('')
@@ -17,5 +16,4 @@ const firstName = ref('')
 const onInput = (e: Event) => {
   console.log((e.target as HTMLInputElement).value)
 }
-
 </script>

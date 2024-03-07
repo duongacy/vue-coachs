@@ -20,8 +20,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <label
     :class="
-      cn('inline-flex gap-2 items-center cursor-pointer select-none', props.class, {
-        'opacity-70 pointer-events-none': props.disabled
+      cn('inline-flex cursor-pointer select-none items-center gap-2', props.class, {
+        'pointer-events-none opacity-70': props.disabled
       })
     "
   >

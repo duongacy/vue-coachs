@@ -6,8 +6,8 @@ import { AUTHEN } from './modules/AUTHEN'
 
 type AuthenState = any
 export type TState = {
-  COACHES: CoachesState,
-  REQUESTS: RequestState,
+  COACHES: CoachesState
+  REQUESTS: RequestState
   AUTHEN: AuthenState
   coachId: string
 }
@@ -19,5 +19,5 @@ export const store = createStore({
     COACHES,
     REQUESTS,
     AUTHEN
-  },
+  }
 })

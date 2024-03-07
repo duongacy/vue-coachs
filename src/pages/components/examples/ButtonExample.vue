@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseButton, type ButtonVariants } from '@/components/ui/button';
+import { BaseButton, type ButtonVariants } from '@/components/ui/button'
 
 const buttonVariants: ButtonVariants['variant'][] = [
   'default',
@@ -14,7 +14,7 @@ const buttonSizes: ButtonVariants['size'][] = ['sm', 'lg', 'icon']
 
 <template>
   <div class="grid gap-2 overflow-x-auto">
-    <div v-for="size in buttonSizes" :key="'button' + (size || '_')" class="flex gap-2 items-end">
+    <div v-for="size in buttonSizes" :key="'button' + (size || '_')" class="flex items-end gap-2">
       <div class="w-14">{{ size }}</div>
       <div v-for="variant in buttonVariants" :key="'button' + (variant || '_')">
         <BaseButton :variant="variant" :size="size">{{

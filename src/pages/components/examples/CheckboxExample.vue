@@ -122,7 +122,7 @@ const onSubmit = handleSubmit((values) => {
           </FormItem>
         </FormField>
 
-        <div class="flex justify-start mt-4">
+        <div class="mt-4 flex justify-start">
           <BaseButton type="submit"> Submit </BaseButton>
         </div>
       </form>

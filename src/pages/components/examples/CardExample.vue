@@ -38,7 +38,7 @@ const actionHandler = () => {
         action-type="submit"
         @cancel="cancelHandler"
       >
-        <div class="grid items-center w-full gap-4">
+        <div class="grid w-full items-center gap-4">
           <div class="flex flex-col space-y-1.5">
             <BaseLabel for="name">Name</BaseLabel>
             <BaseInput id="name" placeholder="Name of your project" />
@@ -69,7 +69,7 @@ const actionHandler = () => {
           <CardDescription>Deploy your new project in one-click.</CardDescription>
         </CardHeader>
       </template>
-      <div class="grid items-center w-full gap-4">
+      <div class="grid w-full items-center gap-4">
         <div class="flex flex-col space-y-1.5">
           <BaseLabel for="name">Name</BaseLabel>
           <BaseInput id="name" placeholder="Name of your project" />

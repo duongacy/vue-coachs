@@ -1,2 +1,2 @@
-import ComponentsPage from "./ComponentsPage.vue"
+import ComponentsPage from './ComponentsPage.vue'
 export default ComponentsPage

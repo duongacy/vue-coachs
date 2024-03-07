@@ -2,7 +2,7 @@
   <router-link
     :to="to"
     v-bind="$attrs"
-    class="text-neutral-400 inline-flex leading-[24px]"
+    class="inline-flex leading-[24px] text-neutral-400"
     v-slot="{ isActive }"
   >
     <span :class="cn('text-neutral-500', { 'text-neutral-900': isActive })">

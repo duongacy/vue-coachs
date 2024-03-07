@@ -1,17 +1,19 @@
 <template>
   <div>
     <div class="p-4">
-      <div class="border border-neutral-200 rounded-lg overflow-hidden p-4 flex flex-col gap-4">
+      <div class="flex flex-col gap-4 overflow-hidden rounded-lg border border-neutral-200 p-4">
         <div>
           <h3 class="text-base font-semibold leading-6 text-neutral-900">Requests</h3>
-          <p class="mt-1 text-sm text-neutral-500" v-if="!requests.length">Don't have any requests.</p>
+          <p class="mt-1 text-sm text-neutral-500" v-if="!requests.length">
+            Don't have any requests.
+          </p>
         </div>
         <div class="h-[1px] bg-neutral-200" v-if="!!requests.length"></div>
         <div class="grid gap-4" v-if="!!requests.length">
           <div
             v-for="request in requests"
             :key="request.id"
-            class="shadow-lg rounded-md overflow-hidden p-4"
+            class="overflow-hidden rounded-md p-4 shadow-lg"
           >
             <a :href="'mailto:' + request.userEmail" class="text-sm font-bold text-neutral-900">{{
               request.userEmail
@@ -23,9 +25,9 @@
         </div>
       </div>
     </div>
-    <base-dialog :show="!!error" @close="onCloseErrorDialog" @ok="onCloseErrorDialog" ok-text="OK"
+    <!-- <base-dialog :show="!!error" @close="onCloseErrorDialog" @ok="onCloseErrorDialog" ok-text="OK"
       >{{ error }}
-    </base-dialog>
+    </base-dialog> -->
   </div>
 </template>
 

@@ -1,4 +1,4 @@
-export type TUserAuthen = {
-    email: string;
-    password: string;
+export type TTheAuthenticationen = {
+  email: string
+  password: string
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <div class="border border-neutral-200 rounded-lg overflow-hidden py-6">
+    <div class="overflow-hidden rounded-lg border border-neutral-200 py-6">
       <div class="bg-white px-4">
         <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
           <div class="ml-4 mt-4">
@@ -14,8 +14,8 @@
           </div>
         </div>
       </div>
-      <div class="h-[1px] bg-neutral-200 my-4"></div>
-      <div class="bg-white px-4 grid md:grid-cols-2 gap-4">
+      <div class="my-4 h-[1px] bg-neutral-200"></div>
+      <div class="grid gap-4 bg-white px-4 md:grid-cols-2">
         <coach-item :item="coach" v-for="coach in coaches" :key="coach.id"></coach-item>
       </div>
     </div>
@@ -23,14 +23,11 @@
 </template>
 
 <script setup lang="ts">
+import { BaseButton } from '@/components/ui/button'
+import CoachItem from '@/pages/coaches/CoachItem.vue'
 import { key } from '@/store'
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import CoachItem from './CoachItem.vue'
-import { BaseCard } from '@/components/ui/card'
-import { BaseTypography } from '@/components/ui/typography'
-import { BaseBadge } from '@/components/ui/badge'
-import { BaseButton } from '@/components/ui/button'
 
 const store = useStore(key)
 const coaches = computed(() => {

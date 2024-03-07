@@ -10,13 +10,12 @@
       <button @click="logout" v-else>Logout</button>
     </div>
   </div> -->
-  <div class="flex gap-8 h-12 items-center">
+  <div class="flex h-12 items-center gap-8">
     <BaseTypography variant="p" weight="bold">YLVN-vue</BaseTypography>
-    <div class="flex gap-4 px-4 flex-grow">
+    <div class="flex flex-grow gap-4 px-4">
       <router-link to="/coaches">Coaches</router-link>
       <router-link to="/requests-received">Requests received</router-link>
       <router-link to="/components">Components</router-link>
-      <router-link to="/themes">Themes</router-link>
     </div>
     <div>
       <BaseButton variant="link" v-if="isAuthenticated" @click="logout">Logout</BaseButton>

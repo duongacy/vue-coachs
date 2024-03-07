@@ -39,7 +39,7 @@ const clickActionHandler = computed(() => {
 </script>
 
 <template>
-  <div :class="cn('rounded-lg border p-4 bg-card text-card-foreground shadow-sm', props.class)">
+  <div :class="cn('rounded-lg border bg-card p-4 text-card-foreground shadow-sm', props.class)">
     <slot name="header">
       <CardHeader v-if="!!title || !!description">
         <CardTitle v-if="!!title">{{ title }}</CardTitle>

@@ -1,17 +1,14 @@
-
 import { store } from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 
-const NotFound = () => import('@/pages/NotFound.vue')
-const UserAuth = () => import('@/pages/auth/UserAuth.vue')
+const TheAuthentication = () => import('@/pages/auth/TheAuthentication.vue')
 const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue')
-const AddCoach = () => import('@/pages/coaches/AddCoach.vue')
+const CoachAdd = () => import('@/pages/coaches/CoachAdd.vue')
 const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
 const RequestForm = () => import('@/pages/requests/RequestForm.vue')
 const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue')
 const ComponentsPage = () => import('@/pages/components')
-const ThemesPage = () => import('@/pages/themes')
-
+const NotFound = () => import('@/pages/NotFound.vue')
 
 export const routes = [
   {
@@ -34,14 +31,14 @@ export const routes = [
         path: 'request',
         name: 'request-form',
         props: true,
-        component: RequestForm,
+        component: RequestForm
       }
     ]
   },
   {
     path: '/coaches/add',
     name: 'add-coach',
-    component: AddCoach,
+    component: CoachAdd,
     meta: {
       requireAuth: true
     }
@@ -57,7 +54,7 @@ export const routes = [
   {
     path: '/auth',
     name: 'authen',
-    component: UserAuth,
+    component: TheAuthentication,
     meta: {
       requireUnauth: true
     }
@@ -74,11 +71,7 @@ export const routes = [
   {
     path: '/components',
     component: ComponentsPage
-  },
-  {
-    path: '/themes',
-    component: ThemesPage
-  },
+  }
 ]
 
 const router = createRouter({
@@ -90,12 +83,9 @@ router.beforeEach((to, from, next) => {
   const isAuthenticated = store.getters['AUTHEN/isAuthenticated']
   if (to.meta.requireAuth && !isAuthenticated) {
     next('/auth')
-  } else if (
-    to.meta.requireUnauth && isAuthenticated
-  ) {
+  } else if (to.meta.requireUnauth && isAuthenticated) {
     next(from || '/coaches')
-  }
-  else {
+  } else {
     next()
   }
 })

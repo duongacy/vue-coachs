@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="pt-4">
-      <form class="bg-neutral-100 -mx-4 p-4 grid gap-y-4" @submit.prevent="onSubmit">
+      <form class="-mx-4 grid gap-y-4 bg-neutral-100 p-4" @submit.prevent="onSubmit">
         <div>
           <!-- form head -->
-          <h2 class="font-bold text-xl leading-7 text-neutral-900">Request</h2>
+          <h2 class="text-xl font-bold leading-7 text-neutral-900">Request</h2>
           <p class="mt-1 text-sm leading-6 text-neutral-600">
             This information will be displayed publicly so be careful what you share.
           </p>
         </div>
 
-        <div class="grid gap-y-4 mt-2">
+        <div class="mt-2 grid gap-y-4">
           <!-- form body -->
           <label class="grid gap-2">
             <span class="text-sm font-medium leading-6 text-neutral-900">Email</span>
@@ -20,14 +20,14 @@
               @change="cancelValidate('userEmail')"
               :class="
                 cn({
-                  'rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-primary-600 text-sm leading-6': true,
-                  'focus:ring-error-600 focus:ring-2 ring-error-600': !!request.userEmail.error
+                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
+                  'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.userEmail.error
                 })
               "
               placeholder="Please enter your email"
               v-model.trim="request.userEmail.value"
             />
-            <p class="text-sm leading-6 text-error-600" v-if="!!request.userEmail.error">
+            <p class="text-error-600 text-sm leading-6" v-if="!!request.userEmail.error">
               {{ request.userEmail.error }}
             </p>
           </label>
@@ -41,15 +41,15 @@
               @change="cancelValidate('message')"
               :class="
                 cn(
-                  'rounded-md border-0 py-1.5 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2 focus:ring-primary-600 text-sm leading-6',
+                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
                   {
-                    'focus:ring-error-600 focus:ring-2 ring-error-600': !!request.message.error
+                    'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.message.error
                   }
                 )
               "
               placeholder="Write a few sentences about yourself"
             />
-            <p class="text-sm leading-6 text-error-600" v-if="!!request.message.error">
+            <p class="text-error-600 text-sm leading-6" v-if="!!request.message.error">
               {{ request.message.error }}
             </p>
           </label>

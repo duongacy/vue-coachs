@@ -3,13 +3,13 @@
     <div>
       <BaseTypography variant="body" class="font-bold">{{ fullName }}</BaseTypography>
       <BaseTypography>{{ item.description }} </BaseTypography>
-      <div class="flex gap-2 mt-2">
+      <div class="mt-2 flex gap-2">
         <BaseBadge variant="destructive" v-for="area in item.areas" :key="area + '-area'">{{
           area
         }}</BaseBadge>
       </div>
     </div>
-    <div class="flex gap-4 justify-end">
+    <div class="flex justify-end gap-4">
       <BaseButton variant="outline">
         <router-link :to="detailsLink">Details</router-link>
       </BaseButton>

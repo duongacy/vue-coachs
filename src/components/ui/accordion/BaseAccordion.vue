@@ -28,7 +28,7 @@ const forwardedModel = defineModel<string[] | string>()
 
 <template>
   <AccordionRoot
-    class="p-4 pt-2 rounded-2xl overflow-hidden w-80"
+    class="w-80 overflow-hidden rounded-2xl p-4 pt-2"
     v-bind="forwarded"
     v-model="forwardedModel"
   >

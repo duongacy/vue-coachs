@@ -15,7 +15,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle
 } from '.'
-import { BaseButton } from '../button'
+import { BaseButton } from '@/components/ui/button'
 
 const props = defineProps<
   AlertDialogProps & {
@@ -48,7 +48,7 @@ const forwarded = useForwardPropsEmits(restProps)
 <template>
   <AlertDialogRoot v-bind="forwarded" @update:open="emits('update:open', $event)">
     <AlertDialogTrigger>
-      <BaseButton variant="outline" class="block w-fit mx-auto" v-if="!!triggerText">
+      <BaseButton variant="outline" class="mx-auto block w-fit" v-if="!!triggerText">
         {{ triggerText }}
       </BaseButton>
     </AlertDialogTrigger>

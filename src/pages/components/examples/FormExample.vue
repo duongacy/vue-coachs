@@ -39,7 +39,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <div class="grid gap-2 ">
+  <div class="grid gap-2">
     <form class="w-[350px] space-y-6" @submit="onSubmit">
       <FormField v-slot="{ componentField }" name="username">
         <FormItem>

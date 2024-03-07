@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen flex p-6">
-    <div class="w-full mx-auto max-w-screen-xl border flex rounded-xl overflow-hidden">
-      <div class="h-full flex-grow bg-neutral-800 p-8 flex flex-col justify-between">
+  <div class="flex min-h-screen p-6">
+    <div class="mx-auto flex w-full max-w-screen-xl overflow-hidden rounded-xl border">
+      <div class="flex h-full flex-grow flex-col justify-between bg-neutral-800 p-8">
         <div>
           <BaseTypography class="text-white" weight="medium" variant="h3">WTVue</BaseTypography>
         </div>
@@ -9,13 +9,13 @@
           <BaseTypography class="text-white" variant="h4">
             “This project is creating for learning purpose and try to show what are Vuejs can do.”
           </BaseTypography>
-          <BaseTypography class="text-white mt-2 italic">YLVN - Newbies community</BaseTypography>
+          <BaseTypography class="mt-2 italic text-white">YLVN - Newbies community</BaseTypography>
         </div>
       </div>
-      <div class="h-full w-1/2 max-w-[500px] flex flex-col justify-center">
-        <div class="w-[350px] mx-auto space-y-6 p-6">
+      <div class="flex h-full w-1/2 max-w-[500px] flex-col justify-center">
+        <div class="mx-auto w-[350px] space-y-6 p-6">
           <Component :is="authenComponent" />
-          <BaseTypography variant="small" class="uppercase text-center text-neutral-500"
+          <BaseTypography variant="small" class="text-center uppercase text-neutral-500"
             >If you don't have an account</BaseTypography
           >
           <BaseButton class="w-full" variant="outline" @click="toggleAuth">

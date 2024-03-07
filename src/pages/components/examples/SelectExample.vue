@@ -11,7 +11,7 @@ import {
 </script>
 
 <template>
-  <div class="grid gap-2 ">
+  <div class="grid gap-2">
     <BaseSelect>
       <SelectTrigger>
         <SelectValue placeholder="Select a fruit" />

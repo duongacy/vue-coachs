@@ -1,22 +1,4 @@
 <template>
-  <!-- <div class="min-h-screen flex flex-col">
-    <the-navigation></the-navigation>
-    <div class="h-12 flex items-center px-8">
-      <BaseTypography variant="p" weight="bold">shadcn-vue</BaseTypography>
-      <div class="flex gap-4 px-4">
-        <NavLink to="/components">Components</NavLink>
-        <NavLink to="/themes">Themes</NavLink>
-      </div>
-    </div>
-    <div class="flex-grow flex flex-col">
-      <router-view v-slot="slotProps">
-        <transition name="route" mode="out-in">
-          <component :is="slotProps.Component"></component>
-        </transition>
-      </router-view>
-    </div>
-    <the-footer></the-footer>
-  </div> -->
   <MainLayout v-if="!isAuthenTemplate">
     <template #header>
       <TheNavigation></TheNavigation>
@@ -37,21 +19,12 @@
 </template>
 
 <script setup lang="ts">
-import { BaseTypography } from '@/components/ui/typography'
+import { MainLayout } from '@/layouts'
 import TheFooter from '@/layouts/TheFooter.vue'
 import TheNavigation from '@/layouts/TheNavigation.vue'
+import { store } from '@/store'
 import { computed, onBeforeUnmount, onMounted } from 'vue'
-import { store } from './store'
 import { useRoute, useRouter } from 'vue-router'
-import { buttonVariants } from './components/ui/button'
-import {
-  NavigationMenuLink,
-  NavigationMenuItem,
-  NavigationMenu,
-  NavigationMenuContent
-} from './components/ui/navigation-menu'
-import { NavLink } from '@/components/ui/nav'
-import { MainLayout } from './layouts'
 const router = useRouter()
 const route = useRoute()
 

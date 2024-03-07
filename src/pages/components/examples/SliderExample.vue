@@ -7,7 +7,7 @@ const modelValue = ref([50])
 </script>
 
 <template>
-  <div class="grid gap-2 ">
+  <div class="grid gap-2">
     <BaseSlider
       v-model="modelValue"
       :max="100"

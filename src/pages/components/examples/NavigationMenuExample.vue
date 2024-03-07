@@ -49,7 +49,7 @@ const components: { title: string; href: string; description: string }[] = [
 </script>
 
 <template>
-  <div class="grid gap-2 ">
+  <div class="grid gap-2">
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>

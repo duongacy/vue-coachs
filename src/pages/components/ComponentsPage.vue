@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-full flex gap-4 p-2">
-    <div class="flex-grow flex-col flex gap-4">
+  <div class="flex min-h-full gap-4 p-2">
+    <div class="flex flex-grow flex-col gap-4">
       <div id="accordion">
         <ExampleSectionTemplate name="Accordion">
           <AccordionExample></AccordionExample>

@@ -7,12 +7,12 @@ const handleComplete = (e: string[]) => alert(e.join(''))
 </script>
 
 <template>
-  <div class="grid gap-2 ">
+  <div class="grid gap-2">
     <PinInput
       id="pin-input"
       v-model="value"
       placeholder="○"
-      class="flex gap-2 items-center mt-1"
+      class="mt-1 flex items-center gap-2"
       @complete="handleComplete"
     >
       <PinInputInput v-for="(id, index) in 5" :key="id" :index="index" />

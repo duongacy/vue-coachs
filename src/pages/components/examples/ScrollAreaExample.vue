@@ -6,7 +6,7 @@ const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length
 </script>
 
 <template>
-  <div class="grid gap-2 ">
+  <div class="grid gap-2">
     <ScrollArea class="h-72 w-[350px] rounded-md border">
       <div class="p-4">
         <h4 class="mb-4 text-sm font-medium leading-none">Tags</h4>

@@ -8,7 +8,7 @@
         >Enter your email and password
       </BaseTypography>
     </div>
-    <form class="space-y-4 mt-6" @submit.prevent="onSubmit">
+    <form class="mt-6 space-y-4" @submit.prevent="onSubmit">
       <div class="space-y-2">
         <div>
           <BaseInput
@@ -17,7 +17,7 @@
             @input="removeValidate('email')"
           />
           <BaseTypography
-            class="text-red-500 mt-1"
+            class="mt-1 text-red-500"
             variant="small"
             v-if="!!userAuthen.email.error"
             >{{ userAuthen.email.error }}</BaseTypography
@@ -31,7 +31,7 @@
             @input="removeValidate('password')"
           />
           <BaseTypography
-            class="text-red-500 mt-1"
+            class="mt-1 text-red-500"
             variant="small"
             v-if="!!userAuthen.password.error"
             >{{ userAuthen.password.error }}</BaseTypography
@@ -45,7 +45,7 @@
             @input="removeValidate('rePassword')"
           />
           <BaseTypography
-            class="text-red-500 mt-1"
+            class="mt-1 text-red-500"
             variant="small"
             v-if="!!userAuthen.rePassword.error"
             >{{ userAuthen.rePassword.error }}</BaseTypography
