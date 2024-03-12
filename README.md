@@ -66,3 +66,18 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+### PRACTICE:
+1. Generic Class
+Create a generic class called Stack that represents a stack data structure. The class should have methods for pushing an element onto the stack, popping an element from the stack, and returning the current size of the stack.
+2. Filtering Array Elements
+Write a generic function called filterArray that takes an array of items and a predicate function. The function should return a new array containing only the items that satisfy the predicate.
+3. Convert Object Keys to Uppercase
+Create a TypeScript function that takes an object as input and converts all the keys of the object to uppercase using mapped types.
+4. Creates a type with all properties of T set to optional(Partial<T>)
+5. Creates a type with all properties of T set to required(Required<T>)
+6. Creates a type by picking the specified properties (K) from T(Pick<T, K>)
+7. Creates a type by omitting the specified properties (K) from T(Omit<T, K>)
+8. Creates an object type with keys of type K and values of type T(Record<K, T>)
+9. Creates a type by excluding all types from T that are assignable to U(Exclude<T, U>)
+10. Creates a type by extracting all types from T that are assignable to U(Extract<T, U>)
