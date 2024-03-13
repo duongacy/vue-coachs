@@ -4,47 +4,49 @@ import { BaseInput } from '@/components/ui/input'
 import { BaseTypography } from '@/components/ui/typography'
 import { EMAIL_REGEX, PASSWORD_REGEX } from '@/constants'
 import { key } from '@/store'
-import type { authActions } from '@/store/modules/AUTHEN/actions'
+import { type authActions } from '@/store/modules/AUTHEN/actions'
 import { toTypedSchema } from '@vee-validate/zod'
-import { useForm } from 'vee-validate'
+import { useForm, type SubmissionHandler, type InvalidSubmissionHandler } from 'vee-validate'
+import { ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import { useStore } from 'vuex'
-import * as z from 'zod'
+import { z } from 'zod'
 
-const zodSchema = z.object({
+const SignInSchema = z.object({
   email: z.string().refine((value) => EMAIL_REGEX.test(value), 'Your email is invalid'),
   password: z.string().refine((value) => PASSWORD_REGEX.test(value), 'Your password is invalid')
 })
-type LoginForm = z.infer<typeof zodSchema>
+type SignInType = z.infer<typeof SignInSchema>
 
 const store = useStore(key)
-const { errors, handleSubmit, defineField } = useForm<LoginForm>({
+const { errors, handleSubmit, defineField } = useForm<SignInType>({
   initialValues: { email: '', password: '' },
-  validationSchema: toTypedSchema(zodSchema)
+  validationSchema: toTypedSchema(SignInSchema)
 })
 
+const shouldShowValidate = ref(false)
 const [email] = defineField('email')
 const [password] = defineField('password')
 
-const onSubmit = handleSubmit(
-  async (data) => {
-    const signinAction: Parameters<typeof authActions.auth>[1] = {
-      type: 'signin',
-      payload: data
-    }
-    try {
-      await store.dispatch('AUTHEN/auth', signinAction)
-    } catch (error: any) {
-      alert(error.message)
-    }
-  },
-  (e) => {
-    const firstErrorField = document.querySelector(
-      `[name='${Object.keys(e.errors)[0]}']`
-    ) as HTMLInputElement
-    firstErrorField?.focus()
+const signInHandler: SubmissionHandler<SignInType> = async (data) => {
+  const signinAction: Parameters<typeof authActions.auth>[1] = {
+    type: 'signin',
+    payload: data
   }
-)
+  try {
+    await store.dispatch('AUTHEN/auth', signinAction)
+  } catch (error: any) {
+    alert(error.message)
+  }
+}
+const signInErrorHandler: InvalidSubmissionHandler<SignInType> = (e) => {
+  shouldShowValidate.value = true
+  const firstErrorField = document.querySelector(
+    `[name='${Object.keys(e.errors)[0]}']`
+  ) as HTMLInputElement
+  firstErrorField?.focus()
+}
+const onSubmit = handleSubmit(signInHandler, signInErrorHandler)
 
 onBeforeRouteLeave((_1, _2, next) => {
   const isAuthenticated = store.getters['AUTHEN/isAuthenticated']
@@ -69,8 +71,17 @@ onBeforeRouteLeave((_1, _2, next) => {
     <form class="mt-6 space-y-4" @submit.prevent="onSubmit">
       <div class="space-y-3">
         <div>
-          <BaseInput placeholder="Enter your email" v-model:model-value="email" name="email" />
-          <BaseTypography class="mt-1 text-red-500" variant="small" v-if="!!errors.email">
+          <BaseInput
+            placeholder="Enter your email"
+            v-model:model-value="email"
+            name="email"
+            @keypress="shouldShowValidate = false"
+          />
+          <BaseTypography
+            class="mt-1 text-red-500"
+            variant="small"
+            v-if="!!errors.email && shouldShowValidate"
+          >
             {{ errors.email }}
           </BaseTypography>
         </div>
@@ -80,8 +91,13 @@ onBeforeRouteLeave((_1, _2, next) => {
             v-model="password"
             name="password"
             type="password"
+            @keypress="shouldShowValidate = false"
           />
-          <BaseTypography class="mt-1 text-red-500" variant="small" v-if="!!errors.password">
+          <BaseTypography
+            class="mt-1 text-red-500"
+            variant="small"
+            v-if="!!errors.password && shouldShowValidate"
+          >
             {{ errors.password }}
           </BaseTypography>
         </div>
