@@ -11,6 +11,15 @@ import { ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import { useStore } from 'vuex'
 import { z } from 'zod'
+import {
+  BaseCard,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card'
+import { BaseLabel } from '@/components/ui/label'
 
 const SignInSchema = z.object({
   email: z.string().refine((value) => EMAIL_REGEX.test(value), 'Your email is invalid'),
@@ -59,50 +68,35 @@ onBeforeRouteLeave((_1, _2, next) => {
 })
 </script>
 <template>
-  <div>
-    <div>
-      <BaseTypography variant="h3" weight="medium" class="text-center"
-        >Sign In with your account
-      </BaseTypography>
-      <BaseTypography variant="detail" weight="regular" class="text-center text-neutral-500"
-        >Enter your email and password
-      </BaseTypography>
-    </div>
-    <form class="mt-6 space-y-4" @submit.prevent="onSubmit">
-      <div class="space-y-3">
-        <div>
-          <BaseInput
-            placeholder="Enter your email"
-            v-model:model-value="email"
-            name="email"
-            @keypress="shouldShowValidate = false"
-          />
-          <BaseTypography
-            class="mt-1 text-red-500"
-            variant="small"
-            v-if="!!errors.email && shouldShowValidate"
-          >
+  <form @submit.prevent="onSubmit">
+    <BaseCard>
+      <CardHeader>
+        <CardTitle>Sign In</CardTitle>
+        <CardDescription>
+          If you have an account, please sign-in with email and password.
+        </CardDescription>
+      </CardHeader>
+      <CardContent class="space-y-2">
+        <div class="space-y-1">
+          <BaseLabel for="email">Email</BaseLabel>
+          <BaseInput id="email" placeholder="Enter your email" v-model:model-value="email" name="email"
+            @keypress="shouldShowValidate = false" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="!!errors.email && shouldShowValidate">
             {{ errors.email }}
           </BaseTypography>
         </div>
-        <div>
-          <BaseInput
-            placeholder="Enter your password"
-            v-model="password"
-            name="password"
-            type="password"
-            @keypress="shouldShowValidate = false"
-          />
-          <BaseTypography
-            class="mt-1 text-red-500"
-            variant="small"
-            v-if="!!errors.password && shouldShowValidate"
-          >
+        <div class="space-y-1">
+          <BaseLabel for="username">Password</BaseLabel>
+          <BaseInput placeholder="Enter your password" id="password" v-model="password" name="password" type="password"
+            @keypress="shouldShowValidate = false" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="!!errors.password && shouldShowValidate">
             {{ errors.password }}
           </BaseTypography>
         </div>
-      </div>
-      <BaseButton class="w-full"> Sign In</BaseButton>
-    </form>
-  </div>
+      </CardContent>
+      <CardFooter>
+        <BaseButton type="submit" class="w-full">Sign In</BaseButton>
+      </CardFooter>
+    </BaseCard>
+  </form>
 </template>

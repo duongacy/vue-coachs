@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button'
+import {
+  BaseCard,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card'
 import { BaseInput } from '@/components/ui/input'
+import { BaseLabel } from '@/components/ui/label'
 import { BaseTypography } from '@/components/ui/typography'
 import { EMAIL_REGEX, PASSWORD_REGEX } from '@/constants'
 import { key } from '@/store'
@@ -29,8 +38,6 @@ const samePasswordError = computed(() => {
   if (Object.keys(errors.value)?.[0] === '') {
     msg = Object.values(errors.value)[0]
   }
-  console.log(msg)
-
   return msg
 })
 
@@ -63,74 +70,49 @@ const signUpErrorHandler: InvalidSubmissionHandler<SignUpType> = (e) => {
   let firstFieldName = Object.keys(e.errors)[0]
   if (firstFieldName === '') firstFieldName = 'rePassword'
   const firstErrorField = document.querySelector(`[name='${firstFieldName}']`) as HTMLInputElement
-  console.log('firstFieldName', firstFieldName)
-
   firstErrorField?.focus()
 }
 const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler)
 </script>
 
 <template>
-  <div>
-    <div>
-      <BaseTypography variant="h3" weight="medium" class="text-center"
-        >Create an account
-      </BaseTypography>
-      <BaseTypography variant="detail" weight="regular" class="text-center text-neutral-500"
-        >Enter your email and password
-      </BaseTypography>
-    </div>
-    <form class="mt-6 space-y-4" @submit.prevent="onSubmit">
-      <div class="space-y-2">
-        <div>
-          <BaseInput
-            placeholder="Enter your email"
-            v-model="email"
-            @keypress="shouldShowValidate = false"
-            name="email"
-          />
-          <BaseTypography
-            class="mt-1 text-red-500"
-            variant="small"
-            v-if="errors.email && shouldShowValidate"
-          >
+  <form @submit.prevent="onSubmit">
+    <BaseCard>
+      <CardHeader>
+        <CardTitle>Sign Up</CardTitle>
+        <CardDescription>
+          If you don't have an account, register a new account with some informations below.
+        </CardDescription>
+      </CardHeader>
+      <CardContent class="space-y-2">
+        <div class="space-y-1">
+          <BaseLabel for="email">Email</BaseLabel>
+          <BaseInput id="email" placeholder="Enter your email" v-model="email" @keypress="shouldShowValidate = false"
+            name="email" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="errors.email && shouldShowValidate">
             {{ errors.email }}
           </BaseTypography>
         </div>
-        <div>
-          <BaseInput
-            placeholder="Enter your password"
-            type="password"
-            v-model="password"
-            name="password"
-            @keypress="shouldShowValidate = false"
-          />
-          <BaseTypography
-            class="mt-1 text-red-500"
-            variant="small"
-            v-if="!!errors.password && shouldShowValidate"
-          >
+        <div class="space-y-1">
+          <BaseLabel for="password">Password</BaseLabel>
+          <BaseInput id="password" placeholder="Enter your password" type="password" v-model="password" name="password"
+            @keypress="shouldShowValidate = false" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="!!errors.password && shouldShowValidate">
             {{ errors.password }}
           </BaseTypography>
         </div>
-        <div>
-          <BaseInput
-            placeholder="Confirm your password"
-            type="password"
-            v-model="rePassword"
-            name="rePassword"
-            @keypress="shouldShowValidate = false"
-          />
-          <BaseTypography
-            class="mt-1 text-red-500"
-            variant="small"
-            v-if="!!samePasswordError && shouldShowValidate"
-          >
+        <div class="space-y-1">
+          <BaseLabel for="rePassword">Confirm password</BaseLabel>
+          <BaseInput id="rePassword" placeholder="Confirm your password" type="password" v-model="rePassword"
+            name="rePassword" @keypress="shouldShowValidate = false" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="!!samePasswordError && shouldShowValidate">
             {{ samePasswordError }}
           </BaseTypography>
         </div>
-      </div>
-      <BaseButton class="w-full"> Sign Up</BaseButton>
-    </form>
-  </div>
+      </CardContent>
+      <CardFooter>
+        <BaseButton class="w-full">Sign Up</BaseButton>
+      </CardFooter>
+    </BaseCard>
+  </form>
 </template>

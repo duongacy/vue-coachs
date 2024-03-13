@@ -16,7 +16,7 @@ import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/ta
 <template>
   <div class="grid gap-2">
     <BaseTabs default-value="account" class="w-[350px]">
-      <TabsList class="grid w-full grid-cols-2">
+      <TabsList class="grid grid-cols-2">
         <TabsTrigger value="account"> Account </TabsTrigger>
         <TabsTrigger value="password"> Password </TabsTrigger>
       </TabsList>
