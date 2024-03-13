@@ -10,15 +10,14 @@ import { useForm } from 'vee-validate'
 import { onBeforeRouteLeave } from 'vue-router'
 import { useStore } from 'vuex'
 import * as z from 'zod'
-const store = useStore(key)
 
 const zodSchema = z.object({
   email: z.string().refine((value) => EMAIL_REGEX.test(value), 'Your email is invalid'),
   password: z.string().refine((value) => PASSWORD_REGEX.test(value), 'Your password is invalid')
 })
-
 type LoginForm = z.infer<typeof zodSchema>
 
+const store = useStore(key)
 const { errors, handleSubmit, defineField } = useForm<LoginForm>({
   initialValues: { email: '', password: '' },
   validationSchema: toTypedSchema(zodSchema)
@@ -47,17 +46,24 @@ const onSubmit = handleSubmit(
   }
 )
 
-onBeforeRouteLeave(() => {
-  return window.confirm('Do you want to leave?')
+onBeforeRouteLeave((_1, _2, next) => {
+  const isAuthenticated = store.getters['AUTHEN/isAuthenticated']
+  if (!isAuthenticated) {
+    const answer = window.confirm('Are you sure?')
+    next(answer)
+    return
+  }
+  next()
 })
 </script>
 <template>
   <div>
     <div>
-      <BaseTypography variant="h3" weight="medium" class="text-center">Sign In with your account
+      <BaseTypography variant="h3" weight="medium" class="text-center"
+        >Sign In with your account
       </BaseTypography>
-      <BaseTypography variant="detail" weight="regular" class="text-center text-neutral-500">Enter your email and
-        password
+      <BaseTypography variant="detail" weight="regular" class="text-center text-neutral-500"
+        >Enter your email and password
       </BaseTypography>
     </div>
     <form class="mt-6 space-y-4" @submit.prevent="onSubmit">
@@ -69,7 +75,12 @@ onBeforeRouteLeave(() => {
           </BaseTypography>
         </div>
         <div>
-          <BaseInput placeholder="Enter your password" v-model="password" name="password" type="password" />
+          <BaseInput
+            placeholder="Enter your password"
+            v-model="password"
+            name="password"
+            type="password"
+          />
           <BaseTypography class="mt-1 text-red-500" variant="small" v-if="!!errors.password">
             {{ errors.password }}
           </BaseTypography>
