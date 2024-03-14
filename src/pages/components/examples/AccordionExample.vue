@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { BaseAccordion } from '@/components/ui/accordion'
+import {
+  BaseAccordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import { BaseCard, CardContent, CardFooter } from '@/components/ui/card'
 import { ref } from 'vue'
 
 const accordionItems = [
@@ -20,13 +26,59 @@ const accordionItems = [
   }
 ]
 
-const modelValue = ref<string>('item-1')
+const singleValue = ref('item-2')
+const multipleValue = ref(['item-1', 'item-3'])
 </script>
 
 <template>
-  <div>
-    <BaseAccordion :options="accordionItems" collapsible type="single" v-model="modelValue" class="w-[350px]">
-    </BaseAccordion>
-    Item opening: {{ modelValue }}
+  <div class="flex flex-wrap items-start gap-4">
+    <BaseCard title="Single" description="(Not collapsible)" class="border-none shadow-none">
+      <CardContent>
+        <BaseAccordion type="single" class="w-[350px]" v-model:model-value="singleValue">
+          <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+            <AccordionTrigger>{{ item.title }}</AccordionTrigger>
+            <AccordionContent>
+              {{ item.content }}
+            </AccordionContent>
+          </AccordionItem>
+        </BaseAccordion>
+      </CardContent>
+      <CardFooter> Selected value: {{ singleValue }} </CardFooter>
+    </BaseCard>
+
+    <BaseCard title="Single" description="(Collapsible)" class="border-none shadow-none">
+      <CardContent>
+        <BaseAccordion
+          type="single"
+          class="w-[350px]"
+          collapsible
+          v-model:model-value="singleValue"
+        >
+          <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+            <AccordionTrigger>{{ item.title }}</AccordionTrigger>
+            <AccordionContent>
+              {{ item.content }}
+            </AccordionContent>
+          </AccordionItem>
+        </BaseAccordion>
+      </CardContent>
+      <CardFooter> Selected value: {{ singleValue }} </CardFooter>
+    </BaseCard>
+
+    <BaseCard
+      title="Multiple"
+      description="(Multiple is auto collapsible)"
+      class="border-none shadow-none"
+    >
+      <BaseAccordion type="multiple" class="w-[350px]" v-model:model-value="multipleValue">
+        <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+          <AccordionTrigger>{{ item.title }}</AccordionTrigger>
+          <AccordionContent>
+            {{ item.content }}
+          </AccordionContent>
+        </AccordionItem>
+      </BaseAccordion>
+      <CardFooter> Selected value: {{ multipleValue.join(', ') }} </CardFooter>
+    </BaseCard>
   </div>
 </template>

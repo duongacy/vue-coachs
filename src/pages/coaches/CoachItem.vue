@@ -5,8 +5,8 @@
       <BaseTypography>{{ item.description }} </BaseTypography>
       <div class="mt-2 flex gap-2">
         <BaseBadge variant="destructive" v-for="area in item.areas" :key="area + '-area'">{{
-        area
-      }}</BaseBadge>
+          area
+        }}</BaseBadge>
       </div>
     </CardContent>
     <CardFooter class="flex justify-end gap-4">

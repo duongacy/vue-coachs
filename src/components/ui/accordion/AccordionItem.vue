@@ -4,8 +4,10 @@ import { AccordionItem, type AccordionItemProps, useForwardProps } from 'radix-v
 import { cn } from '@/lib/utils'
 
 const props = defineProps<AccordionItemProps & { class?: HTMLAttributes['class'] }>()
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
+
   return delegated
 })
 
