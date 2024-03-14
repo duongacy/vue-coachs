@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { type AlertVariants, alertVariants, AlertTitle, AlertDescription } from '.'
-import { cn } from '@/lib/utils'
-import { Terminal } from 'lucide-vue-next'
+import { cn } from '@/lib/utils';
+import type { Component, HTMLAttributes } from 'vue';
+import { AlertTitle, alertVariants, type AlertVariants } from '.';
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
   variant?: AlertVariants['variant']
-  title: string
-  description: string
-  icon?: any
+  icon?: Component
+  title?: string
 }>()
 </script>
 
 <template>
   <div :class="cn(alertVariants({ variant }), props.class)" role="alert">
-    <Terminal class="h-4 w-4" />
-    <AlertTitle>{{ title }}</AlertTitle>
-    <AlertDescription>{{ description }} </AlertDescription>
+    <div class="grid h-6 w-6 shrink-0 place-content-center" v-if="!!icon">
+      <component
+        :is="icon"
+        :class="cn('h-4 w-4 text-foreground', { 'text-destructive': variant === 'destructive' })"
+      />
+    </div>
+    <div class="grid gap-2">
+      <AlertTitle v-if="!!title">{{ title }}</AlertTitle>
+      <slot />
+    </div>
   </div>
 </template>

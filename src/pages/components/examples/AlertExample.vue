@@ -1,20 +1,23 @@
 <script setup lang="ts">
-import { BaseAlert } from '@/components/ui/alert'
+import { AlertDescription, BaseAlert } from '@/components/ui/alert'
+import { ExclamationTriangleIcon, RocketIcon } from '@radix-icons/vue'
 </script>
 
 <template>
-  <div class="grid gap-2">
-    <BaseAlert
-      variant="default"
-      description=" You can add components to your app using the cli."
-      title="Click here"
-    >
+  <div class="flex flex-wrap gap-4">
+    <BaseAlert title="Default Alert!" class="w-[350px]">
+      <AlertDescription> You can add components to your app using the cli. </AlertDescription>
+    </BaseAlert>
+    <BaseAlert :icon="RocketIcon" title="Default Alert with icon!" class="w-[350px]">
+      <AlertDescription> You can add components to your app using the cli. </AlertDescription>
     </BaseAlert>
     <BaseAlert
+      :icon="ExclamationTriangleIcon"
       variant="destructive"
-      description=" You can add components to your app using the cli."
-      title="Click here"
+      title="Destructive Alert with icon"
+      class="w-[350px]"
     >
+      <AlertDescription> You can add components to your app using the cli. </AlertDescription>
     </BaseAlert>
   </div>
 </template>
