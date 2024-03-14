@@ -25,7 +25,7 @@ const modelValue = ref<string>('item-1')
 
 <template>
   <div>
-    <BaseAccordion :options="accordionItems" collapsible type="single" v-model="modelValue">
+    <BaseAccordion :options="accordionItems" collapsible type="single" v-model="modelValue" class="w-[350px]">
     </BaseAccordion>
     Item opening: {{ modelValue }}
   </div>

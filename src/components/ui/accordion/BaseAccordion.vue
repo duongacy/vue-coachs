@@ -8,6 +8,7 @@ import {
 import AccordionItem from './AccordionItem.vue'
 import AccordionTrigger from './AccordionTrigger.vue'
 import AccordionContent from './AccordionContent.vue'
+import { cn } from '@/lib/utils'
 
 export type TAccordionOption = {
   value: string
@@ -17,7 +18,8 @@ export type TAccordionOption = {
 
 const props = defineProps<
   AccordionRootProps & {
-    options: TAccordionOption[]
+    options: TAccordionOption[],
+    class?: string
   }
 >()
 const emits = defineEmits<AccordionRootEmits>()
@@ -27,11 +29,8 @@ const forwardedModel = defineModel<string[] | string>()
 </script>
 
 <template>
-  <AccordionRoot
-    class="w-80 overflow-hidden rounded-2xl p-4 pt-2"
-    v-bind="forwarded"
-    v-model="forwardedModel"
-  >
+  <AccordionRoot :class="cn('overflow-hidden rounded-2xl p-4 pt-2', props.class)" v-bind="forwarded"
+    v-model="forwardedModel">
     <AccordionItem v-for="item in options" :key="item.value" :value="item.value">
       <AccordionTrigger>{{ item.title }}</AccordionTrigger>
       <AccordionContent>

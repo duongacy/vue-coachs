@@ -69,46 +69,21 @@ onBeforeRouteLeave((_1, _2, next) => {
 </script>
 <template>
   <form @submit.prevent="onSubmit">
-    <BaseCard>
-      <CardHeader>
-        <CardTitle>Sign In</CardTitle>
-        <CardDescription>
-          If you have an account, please sign-in with email and password.
-        </CardDescription>
-      </CardHeader>
+    <BaseCard title="Sign In" description="If you have an account, please sign-in with email and password.">
       <CardContent class="space-y-2">
         <div class="space-y-1">
           <BaseLabel for="email">Email</BaseLabel>
-          <BaseInput
-            id="email"
-            placeholder="Enter your email"
-            v-model:model-value="email"
-            name="email"
-            @keypress="shouldShowValidate = false"
-          />
-          <BaseTypography
-            class="mt-2 text-red-500"
-            variant="small"
-            v-if="!!errors.email && shouldShowValidate"
-          >
+          <BaseInput id="email" placeholder="Enter your email" v-model:model-value="email" name="email"
+            @keypress="shouldShowValidate = false" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="!!errors.email && shouldShowValidate">
             {{ errors.email }}
           </BaseTypography>
         </div>
         <div class="space-y-1">
           <BaseLabel for="username">Password</BaseLabel>
-          <BaseInput
-            placeholder="Enter your password"
-            id="password"
-            v-model="password"
-            name="password"
-            type="password"
-            @keypress="shouldShowValidate = false"
-          />
-          <BaseTypography
-            class="mt-2 text-red-500"
-            variant="small"
-            v-if="!!errors.password && shouldShowValidate"
-          >
+          <BaseInput placeholder="Enter your password" id="password" v-model="password" name="password" type="password"
+            @keypress="shouldShowValidate = false" />
+          <BaseTypography class="mt-2 text-red-500" variant="small" v-if="!!errors.password && shouldShowValidate">
             {{ errors.password }}
           </BaseTypography>
         </div>
