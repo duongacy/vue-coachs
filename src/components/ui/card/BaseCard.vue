@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
 import type { HTMLAttributes } from 'vue'
-import CardDescription from './CardDescription.vue'
+import { cn } from '@/lib/utils'
 import CardHeader from './CardHeader.vue'
 import CardTitle from './CardTitle.vue'
+import CardDescription from './CardDescription.vue'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']

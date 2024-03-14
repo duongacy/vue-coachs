@@ -1,72 +1,73 @@
 <script setup lang="ts">
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger
-} from '@/components/ui/alert-dialog'
-import BaseAlertDialog from '@/components/ui/alert-dialog/BaseAlertDialog.vue'
-import { BaseButton } from '@/components/ui/button'
-import { BaseTypography } from '@/components/ui/typography'
-import { ref, watchEffect } from 'vue'
-const model = ref()
+import { AlertDialogTrigger, BaseAlertDialog } from '@/components/ui/alert-dialog'
+import { BaseButton, buttonVariants } from '@/components/ui/button'
+import { BaseCard } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { ref } from 'vue'
 
-const cancelHandler = () => {
-  console.log('cancel')
+const open = ref(false)
+const onOk = () => {
+  open.value = false
 }
-const actionHandler = () => {
-  console.log('continue')
-}
-const onChangeOpen = (value: boolean) => {
-  console.log('open status:', value)
+const onCancel = () => {
+  open.value = false
 }
 
-watchEffect(() => {
-  console.log('model', model.value)
-})
+const open2 = ref(false)
 </script>
-
 <template>
-  <div class="flex gap-4">
-    <div>
-      <BaseTypography variant="list" weight="bold">Basic using</BaseTypography>
-      <BaseTypography variant="small" class="mb-2">Using with basic style</BaseTypography>
+  <div class="flex items-start gap-4">
+    <BaseCard
+      title="Control by default (Alert Dialog Trigger)"
+      description="Don't need to listen event to toggle status"
+      class="w-[350px]"
+    >
       <BaseAlertDialog
-        trigger-text="Show dialog"
-        action-text="Continue"
-        cancel-text="Cancel"
-        title="Are you sure to continue?"
-        description="All of your information will be published!"
-        @update:open="onChangeOpen"
-        @cancel="cancelHandler"
-        @action="actionHandler"
-      ></BaseAlertDialog>
-    </div>
-    <div>
-      <BaseTypography variant="list" weight="bold">Custom slot</BaseTypography>
-      <BaseTypography variant="small" class="mb-2">Using with custom style</BaseTypography>
-      <AlertDialog>
-        <AlertDialogTrigger>
-          <BaseButton variant="outline" class="mx-auto block w-fit"> Show dialog </BaseButton>
+        title="Are you absolutely sure?"
+        description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
+        okText="Continue"
+        cancelText="Cancel"
+      >
+        <AlertDialogTrigger :class="cn(buttonVariants({ variant: 'outline' }))">
+          Open
         </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure to continue?</AlertDialogTitle>
-            <AlertDialogDescription>
-              All of your information will be published!
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction> Continue </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-    </div>
+      </BaseAlertDialog>
+      Can't get status
+    </BaseCard>
+    <BaseCard
+      title="Control by v-bind (one-way binding)"
+      description="Need to listen event to toggle status"
+      class="w-[350px]"
+    >
+      <BaseAlertDialog
+        title="Are you absolutely sure?"
+        description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
+        okText="Continue"
+        cancelText="Cancel"
+        :open="open"
+        @cancel="onCancel"
+        @ok="onOk"
+      >
+      </BaseAlertDialog>
+      <BaseButton @click="open = true" variant="outline">Open by v-bind</BaseButton>
+      Status: {{ open }}
+    </BaseCard>
+
+    <BaseCard
+      title="Control by v-model (two-way binding)"
+      description="Don't need to listen event to toggle status"
+      class="w-[350px]"
+    >
+      <BaseAlertDialog
+        title="Are you absolutely sure?"
+        description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
+        okText="Continue"
+        cancelText="Cancel"
+        v-model:open="open2"
+      >
+      </BaseAlertDialog>
+      <BaseButton @click="open = true" variant="outline">Open by v-model </BaseButton>
+      Status: {{ open2 }}
+    </BaseCard>
   </div>
 </template>

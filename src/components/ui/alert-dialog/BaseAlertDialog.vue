@@ -5,7 +5,6 @@ import {
   AlertDialogRoot,
   useForwardPropsEmits
 } from 'radix-vue'
-import AlertDialogTrigger from './AlertDialogTrigger.vue'
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -15,58 +14,41 @@ import {
   AlertDialogHeader,
   AlertDialogTitle
 } from '.'
-import { BaseButton } from '@/components/ui/button'
 
 const props = defineProps<
   AlertDialogProps & {
-    triggerText?: string
     title?: string
     description?: string
     cancelText?: string
-    actionText?: string
+    okText?: string
   }
 >()
 const emits = defineEmits<
   AlertDialogEmits & {
     cancel: []
-    action: []
+    ok: []
   }
 >()
 
-const {
-  triggerText: _1,
-  title: _2,
-  description: _3,
-  cancelText: _4,
-  actionText: _5,
-  ...restProps
-} = props
-
-const forwarded = useForwardPropsEmits(restProps)
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <AlertDialogRoot v-bind="forwarded" @update:open="emits('update:open', $event)">
-    <AlertDialogTrigger>
-      <BaseButton variant="outline" class="mx-auto block w-fit" v-if="!!triggerText">
-        {{ triggerText }}
-      </BaseButton>
-    </AlertDialogTrigger>
+  <AlertDialogRoot v-bind="forwarded">
     <AlertDialogContent>
-      <AlertDialogHeader>
+      <AlertDialogHeader v-if="!!title || !!description">
         <AlertDialogTitle v-if="!!title">{{ title }}</AlertDialogTitle>
-        <AlertDialogDescription v-if="!!description">
-          {{ description }}
-        </AlertDialogDescription>
+        <AlertDialogDescription v-if="!!description">{{ description }}</AlertDialogDescription>
       </AlertDialogHeader>
-      <AlertDialogFooter>
-        <AlertDialogCancel @click="emits('cancel')" v-if="!!cancelText">{{
+      <AlertDialogFooter v-if="!!cancelText || !!okText">
+        <AlertDialogCancel v-if="!!cancelText" @click.prevent="emits('cancel')">{{
           cancelText
         }}</AlertDialogCancel>
-        <AlertDialogAction @click="emits('action')" v-if="!!actionText">{{
-          actionText
+        <AlertDialogAction v-if="!!okText" @click.prevent="emits('ok')">{{
+          okText
         }}</AlertDialogAction>
       </AlertDialogFooter>
     </AlertDialogContent>
+    <slot />
   </AlertDialogRoot>
 </template>
