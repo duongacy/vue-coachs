@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/card';
 import { BaseInput } from '@/components/ui/input';
 import { BaseLabel } from '@/components/ui/label';
-import { BaseTypography } from '@/components/ui/typography';
 import { EMAIL_REGEX, PASSWORD_REGEX } from '@/constants';
 import { key } from '@/store';
 import type { authActions } from '@/store/modules/AUTHEN/actions';
@@ -94,13 +93,13 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
             @keypress="shouldShowValidate = false"
             name="email"
           />
-          <BaseTypography
+          <p
             class="mt-2 text-red-500"
             variant="small"
             v-if="errors.email && shouldShowValidate"
           >
             {{ errors.email }}
-          </BaseTypography>
+          </p>
         </div>
         <div class="space-y-1">
           <BaseLabel for="password">Password</BaseLabel>
@@ -112,13 +111,13 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
             name="password"
             @keypress="shouldShowValidate = false"
           />
-          <BaseTypography
+          <p
             class="mt-2 text-red-500"
             variant="small"
             v-if="!!errors.password && shouldShowValidate"
           >
             {{ errors.password }}
-          </BaseTypography>
+          </p>
         </div>
         <div class="space-y-1">
           <BaseLabel for="rePassword">Confirm password</BaseLabel>
@@ -130,13 +129,13 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
             name="rePassword"
             @keypress="shouldShowValidate = false"
           />
-          <BaseTypography
+          <p
             class="mt-2 text-red-500"
             variant="small"
             v-if="!!samePasswordError && shouldShowValidate"
           >
             {{ samePasswordError }}
-          </BaseTypography>
+          </p>
         </div>
       </CardContent>
       <CardFooter>

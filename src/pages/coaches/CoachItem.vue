@@ -1,12 +1,8 @@
 <template>
   <BaseCard class="grid gap-4">
     <CardContent>
-      <BaseTypography
-        variant="body"
-        class="font-bold"
-        >{{ fullName }}</BaseTypography
-      >
-      <BaseTypography>{{ item.description }} </BaseTypography>
+      <p class="font-bold">{{ fullName }}</p>
+      <p>{{ item.description }}</p>
       <div class="mt-2 flex gap-2">
         <BaseBadge
           variant="destructive"
@@ -32,7 +28,6 @@ import type { TCoach } from '@/types/coach';
 import { computed } from 'vue';
 import { cn } from '@/lib/utils';
 import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
-import { BaseTypography } from '@/components/ui/typography';
 import { BaseBadge } from '@/components/ui/badge';
 import { BaseButton } from '@/components/ui/button';
 

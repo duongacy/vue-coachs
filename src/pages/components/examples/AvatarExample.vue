@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { BaseAvatar, type AvatarVariants } from '@/components/ui/avatar';
-import { BaseTypography } from '@/components/ui/typography';
 const avatarVariants = {
   size: ['lg', 'base', 'sm', undefined] as AvatarVariants['size'][],
   shape: ['square', 'circle', undefined] as AvatarVariants['shape'][],
@@ -27,18 +26,8 @@ const avatarVariants = {
         >
         </BaseAvatar>
         <div>
-          <BaseTypography
-            variant="detail"
-            class="whitespace-nowrap"
-          >
-            Size: {{ size || 'default' }}
-          </BaseTypography>
-          <BaseTypography
-            variant="detail"
-            class="whitespace-nowrap"
-          >
-            Shape: {{ shape || 'default' }}
-          </BaseTypography>
+          <p class="whitespace-nowrap">Size: {{ size || 'default' }}</p>
+          <p class="whitespace-nowrap">Shape: {{ shape || 'default' }}</p>
         </div>
       </div>
     </div>

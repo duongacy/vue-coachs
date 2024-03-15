@@ -1,10 +1,6 @@
 <template>
   <div class="flex h-12 items-center gap-8">
-    <BaseTypography
-      variant="p"
-      weight="bold"
-      >WTVue</BaseTypography
-    >
+    <p class="text-heading5 font-bold">WTVue</p>
     <div class="flex flex-grow gap-4 px-4">
       <router-link to="/coaches">Coaches</router-link>
       <router-link to="/requests-received">Requests received</router-link>
@@ -29,7 +25,6 @@
 
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
-import { BaseTypography } from '@/components/ui/typography';
 import { store } from '@/store';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';

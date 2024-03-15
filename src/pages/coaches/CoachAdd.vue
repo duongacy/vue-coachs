@@ -4,7 +4,7 @@
     <base-radio-group></base-radio-group>
     <base-checkbox></base-checkbox>
     <base-listbox></base-listbox>
-    <base-typography variant="heading1" weight="bold"> Text </base-typography> -->
+   -->
   </form>
 </template>
 

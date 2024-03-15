@@ -1,6 +1,51 @@
 <template>
   <div class="flex min-h-full gap-4 p-2">
     <div class="flex flex-grow flex-col gap-4">
+      <div id="Input">
+        <ExampleSectionTemplate name="Typography">
+          <TypographyExample></TypographyExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="Input">
+        <ExampleSectionTemplate name="Input">
+          <InputExample></InputExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="TagsInput">
+        <ExampleSectionTemplate name="TagsInput">
+          <TagsInputExample></TagsInputExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="PINInput">
+        <ExampleSectionTemplate name="PINInput">
+          <PINInputExample></PINInputExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="Textarea">
+        <ExampleSectionTemplate name="Textarea">
+          <TextareaExample></TextareaExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="RadioGroup">
+        <ExampleSectionTemplate name="RadioGroup">
+          <RadioGroupExample></RadioGroupExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="Select">
+        <ExampleSectionTemplate name="Select">
+          <SelectExample></SelectExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="Toggle">
+        <ExampleSectionTemplate name="Toggle">
+          <ToggleExample></ToggleExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="checkbox">
+        <ExampleSectionTemplate name="Checkbox">
+          <CheckboxExample></CheckboxExample>
+        </ExampleSectionTemplate>
+      </div>
       <div id="accordion">
         <ExampleSectionTemplate name="Accordion">
           <AccordionExample></AccordionExample>
@@ -31,11 +76,11 @@
           <ButtonExample></ButtonExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="calendar">
+      <!-- <div id="calendar">
         <ExampleSectionTemplate name="Calendar">
           <CalendarExample></CalendarExample>
         </ExampleSectionTemplate>
-      </div>
+      </div> -->
       <div id="card">
         <ExampleSectionTemplate name="Card">
           <CardExample></CardExample>
@@ -46,11 +91,7 @@
           <CarouselExample></CarouselExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="checkbox">
-        <ExampleSectionTemplate name="Checkbox">
-          <CheckboxExample></CheckboxExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="collapsible">
         <ExampleSectionTemplate name="Collapsible">
           <CollapsibleExample></CollapsibleExample>
@@ -61,11 +102,11 @@
           <ComboboxExample></ComboboxExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="Command">
+      <!-- <div id="Command">
         <ExampleSectionTemplate name="Command">
           <CommandExample></CommandExample>
         </ExampleSectionTemplate>
-      </div>
+      </div> -->
       <div id="ContextMenu">
         <ExampleSectionTemplate name="ContextMenu">
           <ContextMenuExample></ContextMenuExample>
@@ -96,16 +137,7 @@
           <HoverCardExample></HoverCardExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="Input">
-        <ExampleSectionTemplate name="Input">
-          <InputExample></InputExample>
-        </ExampleSectionTemplate>
-      </div>
-      <div id="Label">
-        <ExampleSectionTemplate name="Label">
-          <LabelExample></LabelExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="Menubar">
         <ExampleSectionTemplate name="Menubar">
           <MenubarExample></MenubarExample>
@@ -121,11 +153,7 @@
           <PaginationExample></PaginationExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="PINInput">
-        <ExampleSectionTemplate name="PINInput">
-          <PINInputExample></PINInputExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="Popover">
         <ExampleSectionTemplate name="Popover">
           <PopoverExample></PopoverExample>
@@ -136,21 +164,13 @@
           <ProgressExample></ProgressExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="RadioGroup">
-        <ExampleSectionTemplate name="RadioGroup">
-          <RadioGroupExample></RadioGroupExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="ScrollArea">
         <ExampleSectionTemplate name="ScrollArea">
           <ScrollAreaExample></ScrollAreaExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="Select">
-        <ExampleSectionTemplate name="Select">
-          <SelectExample></SelectExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="Separator">
         <ExampleSectionTemplate name="Separator">
           <SeparatorExample></SeparatorExample>
@@ -191,26 +211,13 @@
           <TabsExample></TabsExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="TagsInput">
-        <ExampleSectionTemplate name="TagsInput">
-          <TagsInputExample></TagsInputExample>
-        </ExampleSectionTemplate>
-      </div>
-      <div id="Textarea">
-        <ExampleSectionTemplate name="Textarea">
-          <TextareaExample></TextareaExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="Toast">
         <ExampleSectionTemplate name="Toast">
           <ToastExample></ToastExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="Toggle">
-        <ExampleSectionTemplate name="Toggle">
-          <ToggleExample></ToggleExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="ToggleGroup">
         <ExampleSectionTemplate name="ToggleGroup">
           <ToggleGroupExample></ToggleGroupExample>
@@ -271,4 +278,5 @@ import ToastExample from './examples/ToastExample.vue';
 import ToggleExample from './examples/ToggleExample.vue';
 import ToggleGroupExample from './examples/ToggleGroupExample.vue';
 import TooltipExample from './examples/TooltipExample.vue';
+import TypographyExample from './examples/TypographyExample.vue';
 </script>

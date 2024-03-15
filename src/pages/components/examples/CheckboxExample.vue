@@ -9,7 +9,6 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { BaseTypography } from '@/components/ui/typography';
 import { toTypedSchema } from '@vee-validate/zod';
 import { useForm } from 'vee-validate';
 import { ref, watchEffect } from 'vue';
@@ -78,11 +77,7 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <div class="grid gap-4">
     <div class="grid gap-2">
-      <BaseTypography
-        variant="list"
-        weight="bold"
-        >Basic using</BaseTypography
-      >
+      <p>Basic using</p>
       <div class="flex gap-2">
         <BaseCheckbox
           label="Checkbox"
@@ -96,11 +91,7 @@ const onSubmit = handleSubmit((values) => {
       </div>
     </div>
     <div class="grid gap-2">
-      <BaseTypography
-        variant="list"
-        weight="bold"
-        >With vee-validate</BaseTypography
-      >
+      <p>With vee-validate</p>
       <form @submit="onSubmit">
         <FormField name="items">
           <FormItem>

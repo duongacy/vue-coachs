@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
 import { BaseInput } from '@/components/ui/input';
-import { BaseTypography } from '@/components/ui/typography';
 import { EMAIL_REGEX, PASSWORD_REGEX } from '@/constants';
 import { key } from '@/store';
 import { type authActions } from '@/store/modules/AUTHEN/actions';
@@ -83,13 +82,13 @@ onBeforeRouteLeave((_1, _2, next) => {
             name="email"
             @keypress="shouldShowValidate = false"
           />
-          <BaseTypography
+          <p
             class="mt-2 text-red-500"
             variant="small"
             v-if="!!errors.email && shouldShowValidate"
           >
             {{ errors.email }}
-          </BaseTypography>
+          </p>
         </div>
         <div class="space-y-1">
           <BaseLabel for="username">Password</BaseLabel>
@@ -101,13 +100,13 @@ onBeforeRouteLeave((_1, _2, next) => {
             type="password"
             @keypress="shouldShowValidate = false"
           />
-          <BaseTypography
+          <p
             class="mt-2 text-red-500"
             variant="small"
             v-if="!!errors.password && shouldShowValidate"
           >
             {{ errors.password }}
-          </BaseTypography>
+          </p>
         </div>
       </CardContent>
       <CardFooter>

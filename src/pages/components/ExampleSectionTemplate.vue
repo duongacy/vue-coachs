@@ -1,17 +1,11 @@
 <template>
   <div class="grid gap-4 border p-4">
-    <BaseTypography
-      variant="h3"
-      weight="bold"
-      >{{ name }}</BaseTypography
-    >
+    <p class="text-heading5 font-bold">{{ name }}</p>
     <slot></slot>
   </div>
 </template>
 
 <script setup lang="ts">
-import { BaseTypography } from '@/components/ui/typography';
-
 defineProps<{ name: string }>();
 </script>
 
