@@ -67,7 +67,10 @@ import {
           <MenubarCheckboxItem checked> Always Show Full URLs </MenubarCheckboxItem>
           <MenubarSeparator />
           <MenubarItem inset> Reload <MenubarShortcut>⌘R</MenubarShortcut> </MenubarItem>
-          <MenubarItem disabled inset>
+          <MenubarItem
+            disabled
+            inset
+          >
             Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarSeparator />

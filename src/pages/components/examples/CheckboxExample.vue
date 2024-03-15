@@ -78,18 +78,29 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <div class="grid gap-4">
     <div class="grid gap-2">
-      <BaseTypography variant="list" weight="bold">Basic using</BaseTypography>
+      <BaseTypography
+        variant="list"
+        weight="bold"
+        >Basic using</BaseTypography
+      >
       <div class="flex gap-2">
         <BaseCheckbox
           label="Checkbox"
           @update:checked="updateCheckedHandler"
           :checked="result"
         ></BaseCheckbox>
-        <BaseCheckbox label="Checkbox disabled" disabled></BaseCheckbox>
+        <BaseCheckbox
+          label="Checkbox disabled"
+          disabled
+        ></BaseCheckbox>
       </div>
     </div>
     <div class="grid gap-2">
-      <BaseTypography variant="list" weight="bold">With vee-validate</BaseTypography>
+      <BaseTypography
+        variant="list"
+        weight="bold"
+        >With vee-validate</BaseTypography
+      >
       <form @submit="onSubmit">
         <FormField name="items">
           <FormItem>
@@ -111,7 +122,10 @@ const onSubmit = handleSubmit((values) => {
             >
               <FormItem class="flex flex-row items-start space-x-3 space-y-0">
                 <FormControl>
-                  <BaseCheckbox :checked="value.includes(item.id)" @update:checked="handleChange" />
+                  <BaseCheckbox
+                    :checked="value.includes(item.id)"
+                    @update:checked="handleChange"
+                  />
                 </FormControl>
                 <FormLabel class="font-normal">
                   {{ item.label }}

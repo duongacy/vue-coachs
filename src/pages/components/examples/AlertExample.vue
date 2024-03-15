@@ -5,10 +5,17 @@ import { ExclamationTriangleIcon, RocketIcon } from '@radix-icons/vue';
 
 <template>
   <div class="flex flex-wrap gap-4">
-    <BaseAlert title="Default Alert!" class="w-[350px]">
+    <BaseAlert
+      title="Default Alert!"
+      class="w-[350px]"
+    >
       <AlertDescription> You can add components to your app using the cli. </AlertDescription>
     </BaseAlert>
-    <BaseAlert :icon="RocketIcon" title="Default Alert with icon!" class="w-[350px]">
+    <BaseAlert
+      :icon="RocketIcon"
+      title="Default Alert with icon!"
+      class="w-[350px]"
+    >
       <AlertDescription> You can add components to your app using the cli. </AlertDescription>
     </BaseAlert>
     <BaseAlert

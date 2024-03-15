@@ -111,7 +111,11 @@ onBeforeRouteLeave((_1, _2, next) => {
         </div>
       </CardContent>
       <CardFooter>
-        <BaseButton type="submit" class="w-full">Sign In</BaseButton>
+        <BaseButton
+          type="submit"
+          class="w-full"
+          >Sign In</BaseButton
+        >
       </CardFooter>
     </BaseCard>
   </form>

@@ -64,7 +64,10 @@ const components: { title: string; href: string; description: string }[] = [
                     class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <img src="https://www.radix-vue.com/logo.svg" class="h-6 w-6" />
+                    <img
+                      src="https://www.radix-vue.com/logo.svg"
+                      class="h-6 w-6"
+                    />
                     <div class="mb-2 mt-4 text-lg font-medium">shadcn/ui</div>
                     <p class="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components built with Radix UI and Tailwind CSS.
@@ -72,13 +75,22 @@ const components: { title: string; href: string; description: string }[] = [
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
+              <ListItem
+                href="/docs"
+                title="Introduction"
+              >
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
+              <ListItem
+                href="/docs/installation"
+                title="Installation"
+              >
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
+              <ListItem
+                href="/docs/primitives/typography"
+                title="Typography"
+              >
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
@@ -100,7 +112,10 @@ const components: { title: string; href: string; description: string }[] = [
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/docs" :class="navigationMenuTriggerStyle()">
+          <NavigationMenuLink
+            href="/docs"
+            :class="navigationMenuTriggerStyle()"
+          >
             Documentation
           </NavigationMenuLink>
         </NavigationMenuItem>

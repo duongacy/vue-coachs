@@ -14,7 +14,10 @@ const avatarVariants = {
       :key="size || '_' + 'avatarVariants.size'"
       class="flex items-end gap-2"
     >
-      <div v-for="shape in avatarVariants.shape" :key="(size || '_') + (shape || '_') + 'avatar'">
+      <div
+        v-for="shape in avatarVariants.shape"
+        :key="(size || '_') + (shape || '_') + 'avatar'"
+      >
         <BaseAvatar
           :size="size"
           :shape="shape"
@@ -24,10 +27,16 @@ const avatarVariants = {
         >
         </BaseAvatar>
         <div>
-          <BaseTypography variant="detail" class="whitespace-nowrap">
+          <BaseTypography
+            variant="detail"
+            class="whitespace-nowrap"
+          >
             Size: {{ size || 'default' }}
           </BaseTypography>
-          <BaseTypography variant="detail" class="whitespace-nowrap">
+          <BaseTypography
+            variant="detail"
+            class="whitespace-nowrap"
+          >
             Shape: {{ shape || 'default' }}
           </BaseTypography>
         </div>

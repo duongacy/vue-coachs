@@ -24,7 +24,10 @@ import {
           <div class="grid w-full items-center gap-4">
             <div class="flex flex-col space-y-1.5">
               <BaseLabel for="name">Name</BaseLabel>
-              <BaseInput id="name" placeholder="Name of your project" />
+              <BaseInput
+                id="name"
+                placeholder="Name of your project"
+              />
             </div>
             <div class="flex flex-col space-y-1.5">
               <BaseLabel for="framework">Framework</BaseLabel>

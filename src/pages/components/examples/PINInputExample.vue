@@ -15,7 +15,11 @@ const handleComplete = (e: string[]) => alert(e.join(''));
       class="mt-1 flex items-center gap-2"
       @complete="handleComplete"
     >
-      <PinInputInput v-for="(id, index) in 5" :key="id" :index="index" />
+      <PinInputInput
+        v-for="(id, index) in 5"
+        :key="id"
+        :index="index"
+      />
     </PinInput>
   </div>
 </template>

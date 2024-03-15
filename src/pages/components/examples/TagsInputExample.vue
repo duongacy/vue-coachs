@@ -14,7 +14,11 @@ const modelValue = ref(['Apple', 'Banana']);
 <template>
   <div class="grid gap-2">
     <TagsInput v-model="modelValue">
-      <TagsInputItem v-for="item in modelValue" :key="item" :value="item">
+      <TagsInputItem
+        v-for="item in modelValue"
+        :key="item"
+        :value="item"
+      >
         <TagsInputItemText />
         <TagsInputItemDelete />
       </TagsInputItem>

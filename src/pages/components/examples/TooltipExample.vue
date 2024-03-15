@@ -13,7 +13,12 @@ import {
     <TooltipProvider>
       <BaseTooltip>
         <TooltipTrigger as-child>
-          <BaseButton variant="outline" class="w-fit"> Hover </BaseButton>
+          <BaseButton
+            variant="outline"
+            class="w-fit"
+          >
+            Hover
+          </BaseButton>
         </TooltipTrigger>
         <TooltipContent>
           <p>Add to library</p>

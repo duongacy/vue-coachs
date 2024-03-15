@@ -68,7 +68,10 @@ const invoices = [
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow v-for="invoice in invoices" :key="invoice.invoice">
+        <TableRow
+          v-for="invoice in invoices"
+          :key="invoice.invoice"
+        >
           <TableCell class="font-medium">
             {{ invoice.invoice }}
           </TableCell>

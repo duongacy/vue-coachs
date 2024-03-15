@@ -32,10 +32,22 @@ const multipleValue = ref(['item-1', 'item-3']);
 
 <template>
   <div class="flex flex-wrap items-start gap-4">
-    <BaseCard title="Single" description="(Not collapsible)" class="border-none shadow-none">
+    <BaseCard
+      title="Single"
+      description="(Not collapsible)"
+      class="border-none shadow-none"
+    >
       <CardContent>
-        <BaseAccordion type="single" class="w-[350px]" v-model:model-value="singleValue">
-          <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+        <BaseAccordion
+          type="single"
+          class="w-[350px]"
+          v-model:model-value="singleValue"
+        >
+          <AccordionItem
+            v-for="item in accordionItems"
+            :key="item.value"
+            :value="item.value"
+          >
             <AccordionTrigger>{{ item.title }}</AccordionTrigger>
             <AccordionContent>
               {{ item.content }}
@@ -46,7 +58,11 @@ const multipleValue = ref(['item-1', 'item-3']);
       <CardFooter> Selected value: {{ singleValue }} </CardFooter>
     </BaseCard>
 
-    <BaseCard title="Single" description="(Collapsible)" class="border-none shadow-none">
+    <BaseCard
+      title="Single"
+      description="(Collapsible)"
+      class="border-none shadow-none"
+    >
       <CardContent>
         <BaseAccordion
           type="single"
@@ -54,7 +70,11 @@ const multipleValue = ref(['item-1', 'item-3']);
           collapsible
           v-model:model-value="singleValue"
         >
-          <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+          <AccordionItem
+            v-for="item in accordionItems"
+            :key="item.value"
+            :value="item.value"
+          >
             <AccordionTrigger>{{ item.title }}</AccordionTrigger>
             <AccordionContent>
               {{ item.content }}
@@ -70,8 +90,16 @@ const multipleValue = ref(['item-1', 'item-3']);
       description="(Multiple is auto collapsible)"
       class="border-none shadow-none"
     >
-      <BaseAccordion type="multiple" class="w-[350px]" v-model:model-value="multipleValue">
-        <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+      <BaseAccordion
+        type="multiple"
+        class="w-[350px]"
+        v-model:model-value="multipleValue"
+      >
+        <AccordionItem
+          v-for="item in accordionItems"
+          :key="item.value"
+          :value="item.value"
+        >
           <AccordionTrigger>{{ item.title }}</AccordionTrigger>
           <AccordionContent>
             {{ item.content }}

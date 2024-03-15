@@ -1,6 +1,10 @@
 <template>
   <div class="grid gap-4 border p-4">
-    <BaseTypography variant="h3" weight="bold">{{ name }}</BaseTypography>
+    <BaseTypography
+      variant="h3"
+      weight="bold"
+      >{{ name }}</BaseTypography
+    >
     <slot></slot>
   </div>
 </template>

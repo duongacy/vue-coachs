@@ -7,15 +7,24 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
   <div class="grid gap-2">
     <RadioGroup default-value="comfortable">
       <div class="flex items-center space-x-2">
-        <RadioGroupItem id="r1" value="default" />
+        <RadioGroupItem
+          id="r1"
+          value="default"
+        />
         <BaseLabel for="r1">Default</BaseLabel>
       </div>
       <div class="flex items-center space-x-2">
-        <RadioGroupItem id="r2" value="comfortable" />
+        <RadioGroupItem
+          id="r2"
+          value="comfortable"
+        />
         <BaseLabel for="r2">Comfortable</BaseLabel>
       </div>
       <div class="flex items-center space-x-2">
-        <RadioGroupItem id="r3" value="compact" />
+        <RadioGroupItem
+          id="r3"
+          value="compact"
+        />
         <BaseLabel for="r3">Compact</BaseLabel>
       </div>
     </RadioGroup>

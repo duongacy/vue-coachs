@@ -29,12 +29,30 @@ import {
         </SheetHeader>
         <div class="grid gap-4 py-4">
           <div class="grid grid-cols-4 items-center gap-4">
-            <BaseLabel for="name" class="text-right"> Name </BaseLabel>
-            <BaseInput id="name" value="Pedro Duarte" class="col-span-3" />
+            <BaseLabel
+              for="name"
+              class="text-right"
+            >
+              Name
+            </BaseLabel>
+            <BaseInput
+              id="name"
+              value="Pedro Duarte"
+              class="col-span-3"
+            />
           </div>
           <div class="grid grid-cols-4 items-center gap-4">
-            <BaseLabel for="username" class="text-right"> Username </BaseLabel>
-            <BaseInput id="username" value="@peduarte" class="col-span-3" />
+            <BaseLabel
+              for="username"
+              class="text-right"
+            >
+              Username
+            </BaseLabel>
+            <BaseInput
+              id="username"
+              value="@peduarte"
+              class="col-span-3"
+            />
           </div>
         </div>
         <SheetFooter>

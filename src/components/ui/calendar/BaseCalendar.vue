@@ -119,8 +119,14 @@ const vCalendarSlots = computed(() => {
       :transition="'none'"
       :columns="columns"
     >
-      <template v-for="(_, slot) of vCalendarSlots" #[slot]="scope">
-        <slot :name="slot" v-bind="scope" />
+      <template
+        v-for="(_, slot) of vCalendarSlots"
+        #[slot]="scope"
+      >
+        <slot
+          :name="slot"
+          v-bind="scope"
+        />
       </template>
 
       <template #nav-prev-button>

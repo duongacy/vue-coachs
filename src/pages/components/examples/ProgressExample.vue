@@ -12,6 +12,9 @@ watchEffect((cleanupFn) => {
 
 <template>
   <div class="grid gap-2">
-    <BaseProgress v-model="progress" class="w-[350px]" />
+    <BaseProgress
+      v-model="progress"
+      class="w-[350px]"
+    />
   </div>
 </template>

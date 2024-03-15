@@ -4,6 +4,10 @@ import { BaseInput } from '@/components/ui/input';
 
 <template>
   <div class="">
-    <BaseInput type="email" placeholder="Email" class="w-[350px]" />
+    <BaseInput
+      type="email"
+      placeholder="Email"
+      class="w-[350px]"
+    />
   </div>
 </template>

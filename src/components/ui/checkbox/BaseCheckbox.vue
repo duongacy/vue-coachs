@@ -37,6 +37,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
         </slot>
       </CheckboxIndicator>
     </CheckboxRoot>
-    <span class="text-sm font-medium leading-none" v-if="!!label"> {{ label }} </span>
+    <span
+      class="text-sm font-medium leading-none"
+      v-if="!!label"
+    >
+      {{ label }}
+    </span>
   </label>
 </template>

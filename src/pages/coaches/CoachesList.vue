@@ -10,13 +10,21 @@
             </p>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <BaseButton variant="outline" to="/coaches/add">Create new coach </BaseButton>
+            <BaseButton
+              variant="outline"
+              to="/coaches/add"
+              >Create new coach
+            </BaseButton>
           </div>
         </div>
       </div>
       <div class="my-4 h-[1px] bg-neutral-200"></div>
       <div class="grid gap-4 bg-white px-4 md:grid-cols-2">
-        <coach-item :item="coach" v-for="coach in coaches" :key="coach.id"></coach-item>
+        <coach-item
+          :item="coach"
+          v-for="coach in coaches"
+          :key="coach.id"
+        ></coach-item>
       </div>
     </div>
   </div>

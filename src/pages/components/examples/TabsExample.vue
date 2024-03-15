@@ -15,7 +15,10 @@ import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/ta
 
 <template>
   <div class="grid gap-2">
-    <BaseTabs default-value="account" class="w-[350px]">
+    <BaseTabs
+      default-value="account"
+      class="w-[350px]"
+    >
       <TabsList class="grid grid-cols-2">
         <TabsTrigger value="account"> Account </TabsTrigger>
         <TabsTrigger value="password"> Password </TabsTrigger>
@@ -31,11 +34,17 @@ import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/ta
           <CardContent class="space-y-2">
             <div class="space-y-1">
               <BaseLabel for="name">Name</BaseLabel>
-              <BaseInput id="name" default-value="Pedro Duarte" />
+              <BaseInput
+                id="name"
+                default-value="Pedro Duarte"
+              />
             </div>
             <div class="space-y-1">
               <BaseLabel for="username">Username</BaseLabel>
-              <BaseInput id="username" default-value="@peduarte" />
+              <BaseInput
+                id="username"
+                default-value="@peduarte"
+              />
             </div>
           </CardContent>
           <CardFooter>
@@ -54,11 +63,17 @@ import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/ta
           <CardContent class="space-y-2">
             <div class="space-y-1">
               <BaseLabel for="current">Current password</BaseLabel>
-              <BaseInput id="current" type="password" />
+              <BaseInput
+                id="current"
+                type="password"
+              />
             </div>
             <div class="space-y-1">
               <BaseLabel for="new">New password</BaseLabel>
-              <BaseInput id="new" type="password" />
+              <BaseInput
+                id="new"
+                type="password"
+              />
             </div>
           </CardContent>
           <CardFooter>

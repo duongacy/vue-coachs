@@ -1,12 +1,19 @@
 <template>
   <BaseCard class="grid gap-4">
     <CardContent>
-      <BaseTypography variant="body" class="font-bold">{{ fullName }}</BaseTypography>
+      <BaseTypography
+        variant="body"
+        class="font-bold"
+        >{{ fullName }}</BaseTypography
+      >
       <BaseTypography>{{ item.description }} </BaseTypography>
       <div class="mt-2 flex gap-2">
-        <BaseBadge variant="destructive" v-for="area in item.areas" :key="area + '-area'">{{
-          area
-        }}</BaseBadge>
+        <BaseBadge
+          variant="destructive"
+          v-for="area in item.areas"
+          :key="area + '-area'"
+          >{{ area }}</BaseBadge
+        >
       </div>
     </CardContent>
     <CardFooter class="flex justify-end gap-4">

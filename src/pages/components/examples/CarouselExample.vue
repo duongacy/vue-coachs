@@ -13,7 +13,10 @@ import { BaseCard, CardContent } from '@/components/ui/card';
   <div class="grid gap-2 px-12">
     <BaseCarousel class="relative">
       <CarouselContent>
-        <CarouselItem v-for="(_, index) in 5" :key="index">
+        <CarouselItem
+          v-for="(_, index) in 5"
+          :key="index"
+        >
           <div class="p-1">
             <BaseCard>
               <CardContent class="flex aspect-[16/9] items-center justify-center p-6">
