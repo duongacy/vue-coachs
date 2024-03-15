@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { cn } from '@/lib/utils';
 import {
   ScrollAreaCorner,
   ScrollAreaRoot,
+  ScrollAreaViewport,
   type ScrollAreaRootProps,
-  ScrollAreaViewport
-} from 'radix-vue'
-import ScrollBar from './ScrollBar.vue'
-import { cn } from '@/lib/utils'
+} from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
+import ScrollBar from './ScrollBar.vue';
 
-const props = defineProps<ScrollAreaRootProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<ScrollAreaRootProps & { class?: HTMLAttributes['class'] }>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 </script>
 
 <template>

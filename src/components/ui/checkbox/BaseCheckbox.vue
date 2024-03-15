@@ -1,27 +1,29 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import type { CheckboxRootEmits, CheckboxRootProps } from 'radix-vue'
-import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'radix-vue'
-import { Check } from 'lucide-vue-next'
-import { cn } from '@/lib/utils'
+import { type HTMLAttributes, computed } from 'vue';
+import type { CheckboxRootEmits, CheckboxRootProps } from 'radix-vue';
+import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'radix-vue';
+import { Check } from 'lucide-vue-next';
+import { cn } from '@/lib/utils';
 
-const props = defineProps<CheckboxRootProps & { class?: HTMLAttributes['class']; label?: string }>()
-const emits = defineEmits<CheckboxRootEmits>()
+const props = defineProps<
+  CheckboxRootProps & { class?: HTMLAttributes['class']; label?: string }
+>();
+const emits = defineEmits<CheckboxRootEmits>();
 
 const delegatedProps = computed(() => {
-  const { class: _, disabled: __, label: ___, ...delegated } = props
+  const { class: _, disabled: __, label: ___, ...delegated } = props;
 
-  return delegated
-})
+  return delegated;
+});
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>
   <label
     :class="
       cn('inline-flex cursor-pointer select-none items-center gap-2', props.class, {
-        'pointer-events-none opacity-70': props.disabled
+        'pointer-events-none opacity-70': props.disabled,
       })
     "
   >

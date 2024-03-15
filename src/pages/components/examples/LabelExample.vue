@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseCheckbox } from '@/components/ui/checkbox'
-import { BaseLabel } from '@/components/ui/label'
+import { BaseCheckbox } from '@/components/ui/checkbox';
+import { BaseLabel } from '@/components/ui/label';
 </script>
 
 <template>

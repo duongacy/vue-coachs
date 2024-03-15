@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
-import { BaseInput } from '@/components/ui/input'
-import { BaseLabel } from '@/components/ui/label'
+import { BaseButton } from '@/components/ui/button';
+import { BaseInput } from '@/components/ui/input';
+import { BaseLabel } from '@/components/ui/label';
 import {
   BaseSheet,
   SheetClose,
@@ -10,8 +10,8 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger
-} from '@/components/ui/sheet'
+  SheetTrigger,
+} from '@/components/ui/sheet';
 </script>
 
 <template>

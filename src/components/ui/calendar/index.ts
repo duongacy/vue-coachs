@@ -1,5 +1,5 @@
-export { default as BaseCalendar } from './BaseCalendar.vue'
-import type { CalendarSlotName } from 'v-calendar/dist/types/src/components/Calendar/CalendarSlot.vue.d.ts'
+export { default as BaseCalendar } from './BaseCalendar.vue';
+import type { CalendarSlotName } from 'v-calendar/dist/types/src/components/Calendar/CalendarSlot.vue.d.ts';
 
 export function isVCalendarSlot(slotName: string): slotName is CalendarSlotName {
   const validSlots: CalendarSlotName[] = [
@@ -15,8 +15,8 @@ export function isVCalendarSlot(slotName: string): slotName is CalendarSlotName 
     'nav-prev-button',
     'nav-next-button',
     'page',
-    'time-header'
-  ]
+    'time-header',
+  ];
 
-  return validSlots.includes(slotName as CalendarSlotName)
+  return validSlots.includes(slotName as CalendarSlotName);
 }

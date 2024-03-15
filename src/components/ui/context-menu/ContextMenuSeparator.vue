@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import { ContextMenuSeparator, type ContextMenuSeparatorProps } from 'radix-vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
+import { ContextMenuSeparator, type ContextMenuSeparatorProps } from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<ContextMenuSeparatorProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<ContextMenuSeparatorProps & { class?: HTMLAttributes['class'] }>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 </script>
 
 <template>

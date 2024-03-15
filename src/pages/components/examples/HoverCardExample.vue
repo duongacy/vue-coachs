@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { CalendarDays } from 'lucide-vue-next'
-import { BaseAvatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { BaseButton } from '@/components/ui/button'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
+import { CalendarDays } from 'lucide-vue-next';
+import { BaseAvatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { BaseButton } from '@/components/ui/button';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 </script>
 
 <template>

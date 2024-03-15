@@ -1,25 +1,24 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { cn } from '@/lib/utils';
+import { Check } from 'lucide-vue-next';
 import {
   MenubarCheckboxItem,
+  MenubarItemIndicator,
+  useForwardPropsEmits,
   type MenubarCheckboxItemEmits,
   type MenubarCheckboxItemProps,
-  MenubarItemIndicator,
-  useForwardPropsEmits
-} from 'radix-vue'
-import { Check } from 'lucide-vue-next'
-import { cn } from '@/lib/utils'
+} from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<MenubarCheckboxItemProps & { class?: HTMLAttributes['class'] }>()
-const emits = defineEmits<MenubarCheckboxItemEmits>()
+const props = defineProps<MenubarCheckboxItemProps & { class?: HTMLAttributes['class'] }>();
+const emits = defineEmits<MenubarCheckboxItemEmits>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 
-  return delegated
-})
-
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>
@@ -28,7 +27,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :class="
       cn(
         'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-        props.class
+        props.class,
       )
     "
   >

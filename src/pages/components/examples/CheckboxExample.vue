@@ -1,78 +1,78 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
-import { BaseCheckbox } from '@/components/ui/checkbox'
+import { BaseButton } from '@/components/ui/button';
+import { BaseCheckbox } from '@/components/ui/checkbox';
 import {
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '@/components/ui/form'
-import { BaseTypography } from '@/components/ui/typography'
-import { toTypedSchema } from '@vee-validate/zod'
-import { useForm } from 'vee-validate'
-import { ref, watchEffect } from 'vue'
-import * as z from 'zod'
+  FormMessage,
+} from '@/components/ui/form';
+import { BaseTypography } from '@/components/ui/typography';
+import { toTypedSchema } from '@vee-validate/zod';
+import { useForm } from 'vee-validate';
+import { ref, watchEffect } from 'vue';
+import * as z from 'zod';
 
-const result = ref<boolean>()
+const result = ref<boolean>();
 
 const updateCheckedHandler = (value: boolean) => {
-  result.value = value
-}
+  result.value = value;
+};
 watchEffect(() => {
-  console.log(result.value)
-})
+  console.log(result.value);
+});
 
 const items = [
   {
     id: 'recents',
-    label: 'Recents'
+    label: 'Recents',
   },
   {
     id: 'home',
-    label: 'Home'
+    label: 'Home',
   },
   {
     id: 'applications',
-    label: 'Applications'
+    label: 'Applications',
   },
   {
     id: 'desktop',
-    label: 'Desktop'
+    label: 'Desktop',
   },
   {
     id: 'downloads',
-    label: 'Downloads'
+    label: 'Downloads',
   },
   {
     id: 'documents',
-    label: 'Documents'
-  }
-] as const
+    label: 'Documents',
+  },
+] as const;
 
 const formSchema = toTypedSchema(
   z.object({
     items: z.array(z.string()).refine((value) => value.some((item) => item), {
-      message: 'You have to select at least one item.'
-    })
-  })
-)
+      message: 'You have to select at least one item.',
+    }),
+  }),
+);
 
 const { handleSubmit, errors } = useForm({
   validationSchema: formSchema,
   initialValues: {
-    items: ['recents', 'home']
-  }
-})
+    items: ['recents', 'home'],
+  },
+});
 
 watchEffect(() => {
-  console.log('errors', errors.value)
-})
+  console.log('errors', errors.value);
+});
 
 const onSubmit = handleSubmit((values) => {
-  console.log('submited', values)
-})
+  console.log('submited', values);
+});
 </script>
 
 <template>

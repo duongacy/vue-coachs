@@ -23,22 +23,22 @@
 </template>
 
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
-import CoachItem from '@/pages/coaches/CoachItem.vue'
-import { key } from '@/store'
-import { computed, onMounted } from 'vue'
-import { useStore } from 'vuex'
+import { BaseButton } from '@/components/ui/button';
+import CoachItem from '@/pages/coaches/CoachItem.vue';
+import { key } from '@/store';
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 
-const store = useStore(key)
+const store = useStore(key);
 const coaches = computed(() => {
-  return store.state.COACHES.coaches
-})
+  return store.state.COACHES.coaches;
+});
 
 onMounted(async () => {
   try {
-    store.dispatch('COACHES/loadAllAction')
+    store.dispatch('COACHES/loadAllAction');
   } catch (error: any) {
-    console.log(error.message)
+    console.log(error.message);
   }
-})
+});
 </script>

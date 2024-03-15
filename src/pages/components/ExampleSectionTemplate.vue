@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { BaseTypography } from '@/components/ui/typography'
+import { BaseTypography } from '@/components/ui/typography';
 
-defineProps<{ name: string }>()
+defineProps<{ name: string }>();
 </script>
 
 <style scoped></style>

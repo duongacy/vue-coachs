@@ -25,9 +25,9 @@
           'font-[700]': weight === 'bold',
           'font-[500]': weight === 'medium',
           'font-[300]': weight === 'regular',
-          'font-[100]': weight === 'thin'
+          'font-[100]': weight === 'thin',
         },
-        props.class
+        props.class,
       )
     "
   >
@@ -36,10 +36,10 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
-import { reactive } from 'vue'
+import { cn } from '@/lib/utils';
+import { reactive } from 'vue';
 
-export type TTypographyWeight = 'heavy' | 'bold' | 'medium' | 'regular' | 'thin'
+export type TTypographyWeight = 'heavy' | 'bold' | 'medium' | 'regular' | 'thin';
 export type TTypographyVariant =
   | 'h1'
   | 'h2'
@@ -57,13 +57,13 @@ export type TTypographyVariant =
   | 'blockquote'
   | 'inline-code'
   | 'table-head'
-  | 'table-item'
+  | 'table-item';
 
 const props = defineProps<{
-  weight?: TTypographyWeight
-  variant?: TTypographyVariant
-  class?: string
-}>()
+  weight?: TTypographyWeight;
+  variant?: TTypographyVariant;
+  class?: string;
+}>();
 
-const { weight = 'regular', variant = 'body' } = reactive(props)
+const { weight = 'regular', variant = 'body' } = reactive(props);
 </script>

@@ -13,10 +13,10 @@ import {
   Settings,
   User,
   UserPlus,
-  Users
-} from 'lucide-vue-next'
+  Users,
+} from 'lucide-vue-next';
 
-import { BaseButton } from '@/components/ui/button'
+import { BaseButton } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,8 +29,8 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 </script>
 
 <template>

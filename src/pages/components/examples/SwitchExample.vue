@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseLabel } from '@/components/ui/label'
-import { BaseSwitch } from '@/components/ui/switch'
+import { BaseLabel } from '@/components/ui/label';
+import { BaseSwitch } from '@/components/ui/switch';
 </script>
 
 <template>

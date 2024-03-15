@@ -21,7 +21,7 @@
               :class="
                 cn({
                   'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
-                  'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.userEmail.error
+                  'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.userEmail.error,
                 })
               "
               placeholder="Please enter your email"
@@ -43,8 +43,8 @@
                 cn(
                   'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
                   {
-                    'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.message.error
-                  }
+                    'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.message.error,
+                  },
                 )
               "
               placeholder="Write a few sentences about yourself"
@@ -80,68 +80,68 @@
 </template>
 
 <script setup lang="ts">
-import { key } from '@/store'
-import type { TRequest } from '@/types/request'
-import { cn } from '@/lib/utils'
-import { onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
+import { key } from '@/store';
+import type { TRequest } from '@/types/request';
+import { cn } from '@/lib/utils';
+import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
-const store = useStore(key)
-const router = useRouter()
-const error = ref<string>('')
+const store = useStore(key);
+const router = useRouter();
+const error = ref<string>('');
 const onCloseErrorDialog = () => {
-  error.value = ''
-}
+  error.value = '';
+};
 
-const props = defineProps<{ coachId: string }>()
+const props = defineProps<{ coachId: string }>();
 const request = ref({
   userEmail: { value: '', error: '' },
-  message: { value: '', error: '' }
-})
-const emailRef = ref<HTMLInputElement>()
-const messageRef = ref<HTMLTextAreaElement>()
+  message: { value: '', error: '' },
+});
+const emailRef = ref<HTMLInputElement>();
+const messageRef = ref<HTMLTextAreaElement>();
 
 const checkValidate = () => {
   if (!request.value.userEmail.value.includes('@')) {
-    request.value.userEmail.error = 'Email is not valid!'
-    emailRef.value?.focus()
-    return false
+    request.value.userEmail.error = 'Email is not valid!';
+    emailRef.value?.focus();
+    return false;
   }
   if (request.value.message.value === '') {
-    request.value.message.error = 'Please enter message!'
-    messageRef.value?.focus()
-    return false
+    request.value.message.error = 'Please enter message!';
+    messageRef.value?.focus();
+    return false;
   }
-  return true
-}
+  return true;
+};
 
 const cancelValidate = (key: keyof typeof request.value) => {
-  request.value[key].error = ''
-}
+  request.value[key].error = '';
+};
 
 const onCancel = () => {
-  router.back()
-}
+  router.back();
+};
 
 onMounted(() => {
-  emailRef.value?.focus()
-})
+  emailRef.value?.focus();
+});
 
 const onSubmit = async () => {
-  if (!checkValidate()) return
+  if (!checkValidate()) return;
   const data: TRequest = {
     id: new Date().getTime().toString(),
     coachId: props.coachId,
     userEmail: request.value.userEmail.value,
-    message: request.value.message.value
-  }
+    message: request.value.message.value,
+  };
   try {
-    await store.dispatch('REQUESTS/addAction', data)
-    router.back()
+    await store.dispatch('REQUESTS/addAction', data);
+    router.back();
   } catch (err: any) {
-    console.log(err)
-    error.value = err?.message || 'Something went wrong'
+    console.log(err);
+    error.value = err?.message || 'Something went wrong';
   }
-}
+};
 </script>

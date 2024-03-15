@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { cn } from '@/lib/utils'
-import { BaseSlider } from '@/components/ui/slider'
+import { ref } from 'vue';
+import { cn } from '@/lib/utils';
+import { BaseSlider } from '@/components/ui/slider';
 
-const modelValue = ref([50])
+const modelValue = ref([50]);
 </script>
 
 <template>

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import { PinInputInput, type PinInputInputProps, useForwardProps } from 'radix-vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
+import { PinInputInput, useForwardProps, type PinInputInputProps } from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<PinInputInputProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<PinInputInputProps & { class?: HTMLAttributes['class'] }>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-  return delegated
-})
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 
-const forwardedProps = useForwardProps(delegatedProps)
+const forwardedProps = useForwardProps(delegatedProps);
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="
       cn(
         'flex h-10 w-10 rounded-md border border-input bg-background text-center text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-        props.class
+        props.class,
       )
     "
   />

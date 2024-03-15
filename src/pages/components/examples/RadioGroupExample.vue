@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseLabel } from '@/components/ui/label'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { BaseLabel } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 </script>
 
 <template>

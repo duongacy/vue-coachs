@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
+import { BaseButton } from '@/components/ui/button';
 import {
   BaseCard,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
-} from '@/components/ui/card'
-import { BaseInput } from '@/components/ui/input'
-import { BaseLabel } from '@/components/ui/label'
-import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+  CardTitle,
+} from '@/components/ui/card';
+import { BaseInput } from '@/components/ui/input';
+import { BaseLabel } from '@/components/ui/label';
+import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 </script>
 
 <template>

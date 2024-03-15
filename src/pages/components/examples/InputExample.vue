@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseInput } from '@/components/ui/input'
+import { BaseInput } from '@/components/ui/input';
 </script>
 
 <template>

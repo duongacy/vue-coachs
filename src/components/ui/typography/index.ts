@@ -1,1 +1,1 @@
-export { default as BaseTypography } from './BaseTypography.vue'
+export { default as BaseTypography } from './BaseTypography.vue';

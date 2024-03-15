@@ -1,1 +1,1 @@
-export { default as BaseProgress } from './BaseProgress.vue'
+export { default as BaseProgress } from './BaseProgress.vue';

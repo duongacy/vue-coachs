@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BaseBadge, type BadgeVariants } from '@/components/ui/badge'
-const variants: BadgeVariants['variant'][] = ['default', 'destructive', 'outline', 'secondary']
+import { BaseBadge, type BadgeVariants } from '@/components/ui/badge';
+const variants: BadgeVariants['variant'][] = ['default', 'destructive', 'outline', 'secondary'];
 </script>
 
 <template>

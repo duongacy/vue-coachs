@@ -1,53 +1,53 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { Check, ChevronsUpDown } from 'lucide-vue-next'
-import { cn } from '@/lib/utils'
-import { BaseButton } from '@/components/ui/button'
+import { computed, ref } from 'vue';
+import { Check, ChevronsUpDown } from 'lucide-vue-next';
+import { cn } from '@/lib/utils';
+import { BaseButton } from '@/components/ui/button';
 import {
   BaseCommand,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList
-} from '@/components/ui/command'
-import { BasePopover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import type { SelectEvent } from 'node_modules/radix-vue/dist/Combobox/ComboboxItem'
-import type { AcceptableValue } from 'node_modules/radix-vue/dist/Combobox/ComboboxRoot'
-import type { ComboboxOption } from '.'
+  CommandList,
+} from '@/components/ui/command';
+import { BasePopover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import type { SelectEvent } from 'node_modules/radix-vue/dist/Combobox/ComboboxItem';
+import type { AcceptableValue } from 'node_modules/radix-vue/dist/Combobox/ComboboxRoot';
+import type { ComboboxOption } from '.';
 
 const props = withDefaults(
   defineProps<{
-    options: ComboboxOption[]
-    value: string
-    noOptionsText?: string
-    selectPlaceHolder?: string
-    searchPlaceHolder?: string
+    options: ComboboxOption[];
+    value: string;
+    noOptionsText?: string;
+    selectPlaceHolder?: string;
+    searchPlaceHolder?: string;
   }>(),
   {
     noOptionsText: 'No option found.',
     selectPlaceHolder: 'Select option...',
-    searchPlaceHolder: 'Search option...'
-  }
-)
+    searchPlaceHolder: 'Search option...',
+  },
+);
 const emits = defineEmits<{
-  'update:value': [value: string]
-}>()
+  'update:value': [value: string];
+}>();
 
-const open = ref(false)
+const open = ref(false);
 
 const selectHandler = (ev: SelectEvent<AcceptableValue>) => {
   if (typeof ev.detail.value === 'string') {
-    emits('update:value', ev.detail.value)
+    emits('update:value', ev.detail.value);
   }
-  open.value = false
-}
+  open.value = false;
+};
 
 const calcLabel = computed(() => {
   return props.value
     ? props.options.find((option) => option.value === props.value)?.label
-    : props.selectPlaceHolder
-})
+    : props.selectPlaceHolder;
+});
 </script>
 
 <template>

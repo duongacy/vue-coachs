@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { PinInput, PinInputInput } from '@/components/ui/pin-input'
+import { ref } from 'vue';
+import { PinInput, PinInputInput } from '@/components/ui/pin-input';
 
-const value = ref<string[]>([])
-const handleComplete = (e: string[]) => alert(e.join(''))
+const value = ref<string[]>([]);
+const handleComplete = (e: string[]) => alert(e.join(''));
 </script>
 
 <template>

@@ -1,25 +1,25 @@
-import { store } from '@/store'
-import { createRouter, createWebHistory } from 'vue-router'
+import { store } from '@/store';
+import { createRouter, createWebHistory } from 'vue-router';
 
-const TheAuthentication = () => import('@/pages/auth/TheAuthentication.vue')
-const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue')
-const CoachAdd = () => import('@/pages/coaches/CoachAdd.vue')
-const CoachesList = () => import('@/pages/coaches/CoachesList.vue')
-const RequestForm = () => import('@/pages/requests/RequestForm.vue')
-const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue')
-const ComponentsPage = () => import('@/pages/components')
-const NotFound = () => import('@/pages/NotFound.vue')
+const TheAuthentication = () => import('@/pages/auth/TheAuthentication.vue');
+const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue');
+const CoachAdd = () => import('@/pages/coaches/CoachAdd.vue');
+const CoachesList = () => import('@/pages/coaches/CoachesList.vue');
+const RequestForm = () => import('@/pages/requests/RequestForm.vue');
+const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue');
+const ComponentsPage = () => import('@/pages/components');
+const NotFound = () => import('@/pages/NotFound.vue');
 
 export const routes = [
   {
     path: '/',
     name: 'home',
-    redirect: '/coaches'
+    redirect: '/coaches',
   },
   {
     path: '/coaches',
     name: 'coaches',
-    component: CoachesList
+    component: CoachesList,
   },
   {
     path: '/coaches/:coachId',
@@ -31,63 +31,63 @@ export const routes = [
         path: 'request',
         name: 'request-form',
         props: true,
-        component: RequestForm
-      }
-    ]
+        component: RequestForm,
+      },
+    ],
   },
   {
     path: '/coaches/add',
     name: 'add-coach',
     component: CoachAdd,
     meta: {
-      requireAuth: true
-    }
+      requireAuth: true,
+    },
   },
   {
     path: '/requests-received',
     name: 'requests-received',
     component: RequestsReceived,
     meta: {
-      requireAuth: true
-    }
+      requireAuth: true,
+    },
   },
   {
     path: '/auth',
     name: 'authen',
     component: TheAuthentication,
     meta: {
-      requireUnauth: true
-    }
+      requireUnauth: true,
+    },
   },
   {
     path: '/not-found',
     name: 'not-found',
-    component: NotFound
+    component: NotFound,
   },
   {
     path: '/:catchAll(.*)',
-    redirect: '/not-found'
+    redirect: '/not-found',
   },
   {
     path: '/components',
-    component: ComponentsPage
-  }
-]
+    component: ComponentsPage,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = store.getters['AUTHEN/isAuthenticated']
+  const isAuthenticated = store.getters['AUTHEN/isAuthenticated'];
   if (to.meta.requireAuth && !isAuthenticated) {
-    next('/auth')
+    next('/auth');
   } else if (to.meta.requireUnauth && isAuthenticated) {
-    next(from || '/coaches')
+    next(from || '/coaches');
   } else {
-    next()
+    next();
   }
-})
+});
 
-export default router
+export default router;

@@ -4,9 +4,9 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel'
-import { BaseCard, CardContent } from '@/components/ui/card'
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import { BaseCard, CardContent } from '@/components/ui/card';
 </script>
 
 <template>

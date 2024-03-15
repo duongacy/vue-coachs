@@ -1,1 +1,1 @@
-export { default as BaseToaster } from './BaseSonner.vue'
+export { default as BaseToaster } from './BaseSonner.vue';

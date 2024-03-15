@@ -1,23 +1,22 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { cn } from '@/lib/utils';
 import {
   TagsInputRoot,
+  useForwardPropsEmits,
   type TagsInputRootEmits,
   type TagsInputRootProps,
-  useForwardPropsEmits
-} from 'radix-vue'
-import { cn } from '@/lib/utils'
+} from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<TagsInputRootProps & { class?: HTMLAttributes['class'] }>()
-const emits = defineEmits<TagsInputRootEmits>()
+const props = defineProps<TagsInputRootProps & { class?: HTMLAttributes['class'] }>();
+const emits = defineEmits<TagsInputRootEmits>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 
-  return delegated
-})
-
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>
@@ -26,7 +25,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :class="
       cn(
         'flex flex-wrap items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm',
-        props.class
+        props.class,
       )
     "
   >

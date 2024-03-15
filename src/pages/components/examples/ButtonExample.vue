@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseButton, type ButtonVariants } from '@/components/ui/button'
+import { BaseButton, type ButtonVariants } from '@/components/ui/button';
 
 const buttonVariants: ButtonVariants['variant'][] = [
   'default',
@@ -7,9 +7,9 @@ const buttonVariants: ButtonVariants['variant'][] = [
   'outline',
   'secondary',
   'ghost',
-  'link'
-]
-const buttonSizes: ButtonVariants['size'][] = ['sm', 'lg', 'icon']
+  'link',
+];
+const buttonSizes: ButtonVariants['size'][] = ['sm', 'lg', 'icon'];
 </script>
 
 <template>

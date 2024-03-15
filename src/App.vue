@@ -19,41 +19,41 @@
 </template>
 
 <script setup lang="ts">
-import { MainLayout } from '@/layouts'
-import TheFooter from '@/layouts/TheFooter.vue'
-import TheNavigation from '@/layouts/TheNavigation.vue'
-import { store } from '@/store'
-import { computed, onBeforeUnmount, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-const router = useRouter()
-const route = useRoute()
+import { MainLayout } from '@/layouts';
+import TheFooter from '@/layouts/TheFooter.vue';
+import TheNavigation from '@/layouts/TheNavigation.vue';
+import { store } from '@/store';
+import { computed, onBeforeUnmount, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+const router = useRouter();
+const route = useRoute();
 
-const isAuthenTemplate = computed(() => route.name === 'authen')
+const isAuthenTemplate = computed(() => route.name === 'authen');
 
 const authenSuccessEventHandler = () => {
   if (route.redirectedFrom) {
-    router.replace(route.redirectedFrom)
+    router.replace(route.redirectedFrom);
   } else {
-    router.replace('/coaches')
+    router.replace('/coaches');
   }
-}
+};
 
 const removeAuthenSuccessEventHandler = () => {
   if (route.meta.requireAuth) {
-    router.replace('/coaches')
+    router.replace('/coaches');
   }
-}
+};
 
 onMounted(() => {
-  store.dispatch('AUTHEN/autoSignin')
-  window.addEventListener('authenSuccess', authenSuccessEventHandler)
-  window.addEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler)
-})
+  store.dispatch('AUTHEN/autoSignin');
+  window.addEventListener('authenSuccess', authenSuccessEventHandler);
+  window.addEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler);
+});
 
 onBeforeUnmount(() => {
-  window.removeEventListener('authenSuccess', authenSuccessEventHandler)
-  window.removeEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler)
-})
+  window.removeEventListener('authenSuccess', authenSuccessEventHandler);
+  window.removeEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler);
+});
 </script>
 <style>
 .route-enter-active,

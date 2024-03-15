@@ -14,22 +14,22 @@
 </template>
 
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
-import { BaseTypography } from '@/components/ui/typography'
-import { store } from '@/store'
-import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { BaseButton } from '@/components/ui/button';
+import { BaseTypography } from '@/components/ui/typography';
+import { store } from '@/store';
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
-const isAuthenticated = computed(() => store.getters['AUTHEN/isAuthenticated'])
+const router = useRouter();
+const isAuthenticated = computed(() => store.getters['AUTHEN/isAuthenticated']);
 const logout = async () => {
   try {
-    await store.dispatch('AUTHEN/signout')
+    await store.dispatch('AUTHEN/signout');
   } catch (error) {
-    alert('Logout error')
+    alert('Logout error');
   }
-}
+};
 const loginHandler = () => {
-  router.push('/auth')
-}
+  router.push('/auth');
+};
 </script>

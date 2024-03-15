@@ -21,20 +21,20 @@
 </template>
 
 <script setup lang="ts">
-import type { TCoach } from '@/types/coach'
-import { computed } from 'vue'
-import { cn } from '@/lib/utils'
-import { BaseCard, CardContent, CardFooter } from '@/components/ui/card'
-import { BaseTypography } from '@/components/ui/typography'
-import { BaseBadge } from '@/components/ui/badge'
-import { BaseButton } from '@/components/ui/button'
+import type { TCoach } from '@/types/coach';
+import { computed } from 'vue';
+import { cn } from '@/lib/utils';
+import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
+import { BaseTypography } from '@/components/ui/typography';
+import { BaseBadge } from '@/components/ui/badge';
+import { BaseButton } from '@/components/ui/button';
 
-const emits = defineEmits(['delete'])
+const emits = defineEmits(['delete']);
 
-const detailsLink = computed(() => '/coaches/' + props.item.id)
-const requestLink = computed(() => detailsLink.value + '/request')
+const detailsLink = computed(() => '/coaches/' + props.item.id);
+const requestLink = computed(() => detailsLink.value + '/request');
 
-const fullName = computed(() => props.item.firstName + ' ' + props.item.lastName)
+const fullName = computed(() => props.item.firstName + ' ' + props.item.lastName);
 
-const props = defineProps<{ item: TCoach }>()
+const props = defineProps<{ item: TCoach }>();
 </script>

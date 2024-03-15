@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
-import { BaseCard, CardContent, CardFooter } from '@/components/ui/card'
-import { BaseInput } from '@/components/ui/input'
-import { BaseLabel } from '@/components/ui/label'
+import { BaseButton } from '@/components/ui/button';
+import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
+import { BaseInput } from '@/components/ui/input';
+import { BaseLabel } from '@/components/ui/label';
 import {
   BaseSelect,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
+  SelectValue,
+} from '@/components/ui/select';
 </script>
 
 <template>

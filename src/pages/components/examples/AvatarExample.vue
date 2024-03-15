@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { BaseAvatar, type AvatarVariants } from '@/components/ui/avatar'
-import { BaseTypography } from '@/components/ui/typography'
+import { BaseAvatar, type AvatarVariants } from '@/components/ui/avatar';
+import { BaseTypography } from '@/components/ui/typography';
 const avatarVariants = {
   size: ['lg', 'base', 'sm', undefined] as AvatarVariants['size'][],
-  shape: ['square', 'circle', undefined] as AvatarVariants['shape'][]
-}
+  shape: ['square', 'circle', undefined] as AvatarVariants['shape'][],
+};
 </script>
 
 <template>

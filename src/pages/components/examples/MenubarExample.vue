@@ -12,8 +12,8 @@ import {
   MenubarSub,
   MenubarSubContent,
   MenubarSubTrigger,
-  MenubarTrigger
-} from '@/components/ui/menubar'
+  MenubarTrigger,
+} from '@/components/ui/menubar';
 </script>
 
 <template>

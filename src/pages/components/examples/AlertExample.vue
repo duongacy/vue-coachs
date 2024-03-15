@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AlertDescription, BaseAlert } from '@/components/ui/alert'
-import { ExclamationTriangleIcon, RocketIcon } from '@radix-icons/vue'
+import { AlertDescription, BaseAlert } from '@/components/ui/alert';
+import { ExclamationTriangleIcon, RocketIcon } from '@radix-icons/vue';
 </script>
 
 <template>

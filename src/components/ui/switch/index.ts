@@ -1,1 +1,1 @@
-export { default as BaseSwitch } from './BaseSwitch.vue'
+export { default as BaseSwitch } from './BaseSwitch.vue';

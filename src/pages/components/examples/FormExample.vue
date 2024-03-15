@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { h } from 'vue'
-import { useForm } from 'vee-validate'
-import { toTypedSchema } from '@vee-validate/zod'
-import * as z from 'zod'
+import { h } from 'vue';
+import { useForm } from 'vee-validate';
+import { toTypedSchema } from '@vee-validate/zod';
+import * as z from 'zod';
 
-import { BaseButton } from '@/components/ui/button'
+import { BaseButton } from '@/components/ui/button';
 import {
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '@/components/ui/form'
-import { BaseInput } from '@/components/ui/input'
-import { toast } from '@/components/ui/toast'
+  FormMessage,
+} from '@/components/ui/form';
+import { BaseInput } from '@/components/ui/input';
+import { toast } from '@/components/ui/toast';
 
 const formSchema = toTypedSchema(
   z.object({
-    username: z.string().min(2).max(50)
-  })
-)
+    username: z.string().min(2).max(50),
+  }),
+);
 
 const { handleSubmit } = useForm({
-  validationSchema: formSchema
-})
+  validationSchema: formSchema,
+});
 
 const onSubmit = handleSubmit((values) => {
   toast({
@@ -32,10 +32,10 @@ const onSubmit = handleSubmit((values) => {
     description: h(
       'pre',
       { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' },
-      h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))
-    )
-  })
-})
+      h('code', { class: 'text-white' }, JSON.stringify(values, null, 2)),
+    ),
+  });
+});
 </script>
 
 <template>

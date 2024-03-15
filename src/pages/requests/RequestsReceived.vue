@@ -32,26 +32,26 @@
 </template>
 
 <script setup lang="ts">
-import { key } from '@/store'
-import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
+import { key } from '@/store';
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
 
-const error = ref<string>('')
-const store = useStore(key)
+const error = ref<string>('');
+const store = useStore(key);
 const requests = computed(() => {
-  return store.state.REQUESTS.requests
-})
+  return store.state.REQUESTS.requests;
+});
 const loadAllRequests = async () => {
   try {
-    await store.dispatch('REQUESTS/loadAllAction')
+    await store.dispatch('REQUESTS/loadAllAction');
   } catch (err: any) {
-    error.value = err.message
+    error.value = err.message;
   }
-}
+};
 
-loadAllRequests()
+loadAllRequests();
 
 const onCloseErrorDialog = () => {
-  error.value = ''
-}
+  error.value = '';
+};
 </script>

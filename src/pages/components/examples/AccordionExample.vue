@@ -3,31 +3,31 @@ import {
   BaseAccordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion'
-import { BaseCard, CardContent, CardFooter } from '@/components/ui/card'
-import { ref } from 'vue'
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
+import { ref } from 'vue';
 
 const accordionItems = [
   {
     value: 'item-1',
     title: 'Is it accessible?',
-    content: 'Yes. It adheres to the WAI-ARIA design pattern.'
+    content: 'Yes. It adheres to the WAI-ARIA design pattern.',
   },
   {
     value: 'item-2',
     title: 'Is it unstyled?',
-    content: "Yes. It's unstyled by default, giving you freedom over the look and feel."
+    content: "Yes. It's unstyled by default, giving you freedom over the look and feel.",
   },
   {
     value: 'item-3',
     title: 'Can it be animated?',
-    content: 'Yes! You can use the transition prop to configure the animation.'
-  }
-]
+    content: 'Yes! You can use the transition prop to configure the animation.',
+  },
+];
 
-const singleValue = ref('item-2')
-const multipleValue = ref(['item-1', 'item-3'])
+const singleValue = ref('item-2');
+const multipleValue = ref(['item-1', 'item-3']);
 </script>
 
 <template>

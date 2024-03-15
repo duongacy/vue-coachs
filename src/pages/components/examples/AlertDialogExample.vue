@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { AlertDialogTrigger, BaseAlertDialog } from '@/components/ui/alert-dialog'
-import { BaseButton, buttonVariants } from '@/components/ui/button'
-import { BaseCard } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
-import { ref } from 'vue'
+import { AlertDialogTrigger, BaseAlertDialog } from '@/components/ui/alert-dialog';
+import { BaseButton, buttonVariants } from '@/components/ui/button';
+import { BaseCard } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+import { ref } from 'vue';
 
-type ConfirmStatus = 'DONT_HAVE_CONFIRMED' | 'DECLINE' | 'ACCEPT'
+type ConfirmStatus = 'DONT_HAVE_CONFIRMED' | 'DECLINE' | 'ACCEPT';
 
-const dialog1ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED')
+const dialog1ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED');
 const handleConfirmDialog1 = (value: boolean) => {
-  dialog1ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE'
-}
+  dialog1ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE';
+};
 
-const dialog2OpenStatus = ref(false)
-const dialog2ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED')
+const dialog2OpenStatus = ref(false);
+const dialog2ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED');
 const onUpdateOpenDialog2 = () => {
-  dialog2OpenStatus.value = false
-}
+  dialog2OpenStatus.value = false;
+};
 const handleConfirmDialog2 = (value: boolean) => {
-  dialog2ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE'
-}
+  dialog2ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE';
+};
 
-const dialog3OpenStatus = ref(false)
-const dialog3ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED')
+const dialog3OpenStatus = ref(false);
+const dialog3ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED');
 const handleConfirmDialog3 = (value: boolean) => {
-  dialog3ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE'
-}
+  dialog3ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE';
+};
 </script>
 <template>
   <div class="flex items-start gap-4">

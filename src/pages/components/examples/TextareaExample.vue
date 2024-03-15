@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseTextarea } from '@/components/ui/textarea'
+import { BaseTextarea } from '@/components/ui/textarea';
 </script>
 
 <template>

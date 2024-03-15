@@ -1,1 +1,1 @@
-export { default as BaseSeparator } from './BaseSeparator.vue'
+export { default as BaseSeparator } from './BaseSeparator.vue';

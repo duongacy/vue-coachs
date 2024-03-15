@@ -7,10 +7,10 @@ import {
   PaginationList,
   PaginationListItem,
   PaginationNext,
-  PaginationPrev
-} from '@/components/ui/pagination'
+  PaginationPrev,
+} from '@/components/ui/pagination';
 
-import { BaseButton } from '@/components/ui/button'
+import { BaseButton } from '@/components/ui/button';
 </script>
 
 <template>

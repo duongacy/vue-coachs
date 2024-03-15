@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { BasePopover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { BaseButton } from '@/components/ui/button'
-import { BaseLabel } from '@/components/ui/label'
-import { BaseInput } from '@/components/ui/input'
+import { BasePopover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { BaseButton } from '@/components/ui/button';
+import { BaseLabel } from '@/components/ui/label';
+import { BaseInput } from '@/components/ui/input';
 </script>
 
 <template>

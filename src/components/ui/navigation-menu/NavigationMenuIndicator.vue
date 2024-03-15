@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { cn } from '@/lib/utils';
 import {
   NavigationMenuIndicator,
+  useForwardProps,
   type NavigationMenuIndicatorProps,
-  useForwardProps
-} from 'radix-vue'
-import { cn } from '@/lib/utils'
+} from 'radix-vue';
+import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<NavigationMenuIndicatorProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NavigationMenuIndicatorProps & { class?: HTMLAttributes['class'] }>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 
-  return delegated
-})
-
-const forwardedProps = useForwardProps(delegatedProps)
+const forwardedProps = useForwardProps(delegatedProps);
 </script>
 
 <template>
@@ -24,7 +23,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="
       cn(
         'top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in',
-        props.class
+        props.class,
       )
     "
   >

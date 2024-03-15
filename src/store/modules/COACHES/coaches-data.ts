@@ -1,4 +1,4 @@
-import type { TCoach } from '@/types/coach'
+import type { TCoach } from '@/types/coach';
 
 export const coaches: TCoach[] = [
   {
@@ -7,7 +7,7 @@ export const coaches: TCoach[] = [
     lastName: 'Doe',
     areas: ['frontend'],
     description: 'Experienced frontend developer',
-    hourlyRate: 50
+    hourlyRate: 50,
   },
   {
     id: '2',
@@ -15,7 +15,7 @@ export const coaches: TCoach[] = [
     lastName: 'Smith',
     areas: ['backend'],
     description: 'Skilled backend developer',
-    hourlyRate: 60
+    hourlyRate: 60,
   },
   {
     id: '3',
@@ -23,7 +23,7 @@ export const coaches: TCoach[] = [
     lastName: 'Johnson',
     areas: ['fullstack'],
     description: 'Fullstack developer with a passion for innovation',
-    hourlyRate: 55
+    hourlyRate: 55,
   },
   {
     id: '4',
@@ -31,7 +31,7 @@ export const coaches: TCoach[] = [
     lastName: 'Williams',
     areas: ['frontend', 'backend'],
     description: 'Versatile developer with expertise in both frontend and backend',
-    hourlyRate: 65
+    hourlyRate: 65,
   },
   {
     id: '5',
@@ -39,7 +39,7 @@ export const coaches: TCoach[] = [
     lastName: 'Brown',
     areas: ['fullstack'],
     description: 'Experienced fullstack developer with a focus on performance',
-    hourlyRate: 70
+    hourlyRate: 70,
   },
   {
     id: '6',
@@ -47,7 +47,7 @@ export const coaches: TCoach[] = [
     lastName: 'Miller',
     areas: ['frontend'],
     description: 'Creative frontend developer with a keen eye for design',
-    hourlyRate: 55
+    hourlyRate: 55,
   },
   {
     id: '7',
@@ -55,7 +55,7 @@ export const coaches: TCoach[] = [
     lastName: 'Jones',
     areas: ['backend'],
     description: 'Backend developer specializing in database optimization',
-    hourlyRate: 60
+    hourlyRate: 60,
   },
   {
     id: '8',
@@ -63,7 +63,7 @@ export const coaches: TCoach[] = [
     lastName: 'Davis',
     areas: ['fullstack'],
     description: 'Fullstack developer with expertise in modern frameworks',
-    hourlyRate: 75
+    hourlyRate: 75,
   },
   {
     id: '9',
@@ -71,7 +71,7 @@ export const coaches: TCoach[] = [
     lastName: 'Wilson',
     areas: ['frontend', 'backend'],
     description: 'Versatile developer with a focus on user experience',
-    hourlyRate: 65
+    hourlyRate: 65,
   },
   {
     id: '10',
@@ -79,6 +79,6 @@ export const coaches: TCoach[] = [
     lastName: 'Anderson',
     areas: ['fullstack'],
     description: 'Fullstack developer passionate about building scalable applications',
-    hourlyRate: 70
-  }
-]
+    hourlyRate: 70,
+  },
+];

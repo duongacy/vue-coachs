@@ -25,7 +25,7 @@
                   cn({
                     'fill-error-500': area === 'frontend',
                     'fill-yellow-500': area === 'backend',
-                    'fill-green-500': area === 'fullstack'
+                    'fill-green-500': area === 'fullstack',
                   })
                 "
                 class="capitalize"
@@ -102,23 +102,23 @@
 </template>
 
 <script setup lang="ts">
-import { PaperClipIcon } from '@heroicons/vue/20/solid'
-import { key } from '@/store'
-import { computed, onMounted } from 'vue'
-import { useStore } from 'vuex'
-import { cn } from '@/lib/utils'
+import { PaperClipIcon } from '@heroicons/vue/20/solid';
+import { key } from '@/store';
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import { cn } from '@/lib/utils';
 
-const props = defineProps<{ coachId: string }>()
-const store = useStore(key)
+const props = defineProps<{ coachId: string }>();
+const store = useStore(key);
 
 const coach = computed(() => {
-  return store.state.COACHES.selectedCoach
-})
+  return store.state.COACHES.selectedCoach;
+});
 const registerLink = computed(() => {
-  return `/coaches/${props.coachId}/request`
-})
+  return `/coaches/${props.coachId}/request`;
+});
 
 onMounted(() => {
-  store.dispatch('COACHES/loadByIdAction', props.coachId)
-})
+  store.dispatch('COACHES/loadByIdAction', props.coachId);
+});
 </script>

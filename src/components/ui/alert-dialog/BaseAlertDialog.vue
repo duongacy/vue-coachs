@@ -3,9 +3,9 @@ import {
   AlertDialogRoot,
   useForwardProps,
   type AlertDialogEmits,
-  type AlertDialogProps
-} from 'radix-vue'
-import { computed } from 'vue'
+  type AlertDialogProps,
+} from 'radix-vue';
+import { computed } from 'vue';
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -13,29 +13,29 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogTitle
-} from '.'
+  AlertDialogTitle,
+} from '.';
 
 const props = defineProps<
   AlertDialogProps & {
-    title?: string
-    description?: string
-    cancelText?: string
-    okText?: string
+    title?: string;
+    description?: string;
+    cancelText?: string;
+    okText?: string;
   }
->()
+>();
 
 const originalProps = computed(() => {
-  const { title, description, cancelText, okText, ...rest } = props
-  return rest
-})
+  const { title, description, cancelText, okText, ...rest } = props;
+  return rest;
+});
 const emits = defineEmits<
   AlertDialogEmits & {
-    confirm: [value: boolean]
+    confirm: [value: boolean];
   }
->()
+>();
 
-const forwardedProps = useForwardProps(originalProps)
+const forwardedProps = useForwardProps(originalProps);
 </script>
 
 <template>
@@ -47,11 +47,11 @@ const forwardedProps = useForwardProps(originalProps)
       </AlertDialogHeader>
       <AlertDialogFooter v-if="!!cancelText || !!okText">
         <AlertDialogCancel v-if="!!cancelText" @click="emits('confirm', false)">{{
-          cancelText
-        }}</AlertDialogCancel>
+    cancelText
+  }}</AlertDialogCancel>
         <AlertDialogAction v-if="!!okText" @click="emits('confirm', true)">{{
           okText
-        }}</AlertDialogAction>
+          }}</AlertDialogAction>
       </AlertDialogFooter>
     </AlertDialogContent>
     <slot />

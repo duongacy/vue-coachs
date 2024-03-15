@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
+import { BaseButton } from '@/components/ui/button';
 import {
   BaseDialog,
   DialogContent,
@@ -7,10 +7,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
-} from '@/components/ui/dialog'
-import { BaseInput } from '@/components/ui/input'
-import { BaseLabel } from '@/components/ui/label'
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { BaseInput } from '@/components/ui/input';
+import { BaseLabel } from '@/components/ui/label';
 </script>
 
 <template>

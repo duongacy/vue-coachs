@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { BaseSeparator } from '@/components/ui/separator'
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { BaseSeparator } from '@/components/ui/separator';
 
-const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
+const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`);
 </script>
 
 <template>

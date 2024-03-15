@@ -12,8 +12,8 @@ import {
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-  ContextMenuTrigger
-} from '@/components/ui/context-menu'
+  ContextMenuTrigger,
+} from '@/components/ui/context-menu';
 </script>
 
 <template>

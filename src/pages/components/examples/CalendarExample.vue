@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
-import { BaseCalendar } from '@/components/ui/calendar'
+import { ref, watchEffect } from 'vue';
+import { BaseCalendar } from '@/components/ui/calendar';
 
-const date = ref(new Date())
+const date = ref(new Date());
 watchEffect(() => {
-  console.log('date:', date.value)
-})
+  console.log('date:', date.value);
+});
 </script>
 
 <template>

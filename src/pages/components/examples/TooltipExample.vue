@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button'
+import { BaseButton } from '@/components/ui/button';
 import {
   BaseTooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 </script>
 
 <template>
