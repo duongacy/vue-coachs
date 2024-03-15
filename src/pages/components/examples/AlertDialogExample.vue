@@ -5,15 +5,27 @@ import { BaseCard } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { ref } from 'vue'
 
-const open = ref(false)
-const onOk = () => {
-  open.value = false
-}
-const onCancel = () => {
-  open.value = false
+type ConfirmStatus = 'DONT_HAVE_CONFIRMED' | 'DECLINE' | 'ACCEPT'
+
+const dialog1ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED')
+const handleConfirmDialog1 = (value: boolean) => {
+  dialog1ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE'
 }
 
-const open2 = ref(false)
+const dialog2OpenStatus = ref(false)
+const dialog2ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED')
+const onUpdateOpenDialog2 = () => {
+  dialog2OpenStatus.value = false
+}
+const handleConfirmDialog2 = (value: boolean) => {
+  dialog2ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE'
+}
+
+const dialog3OpenStatus = ref(false)
+const dialog3ConfirmStatus = ref<ConfirmStatus>('DONT_HAVE_CONFIRMED')
+const handleConfirmDialog3 = (value: boolean) => {
+  dialog3ConfirmStatus.value = value ? 'ACCEPT' : 'DECLINE'
+}
 </script>
 <template>
   <div class="flex items-start gap-4">
@@ -27,13 +39,18 @@ const open2 = ref(false)
         description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
         okText="Continue"
         cancelText="Cancel"
+        @confirm="handleConfirmDialog1"
       >
         <AlertDialogTrigger :class="cn(buttonVariants({ variant: 'outline' }))">
           Open
         </AlertDialogTrigger>
       </BaseAlertDialog>
-      Can't get status
+      <div>
+        <div>Dialog status: Can't get dialog status</div>
+        <div>Confirm status: {{ dialog1ConfirmStatus }}</div>
+      </div>
     </BaseCard>
+
     <BaseCard
       title="Control by v-bind (one-way binding)"
       description="Need to listen event to toggle status"
@@ -44,13 +61,16 @@ const open2 = ref(false)
         description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
         okText="Continue"
         cancelText="Cancel"
-        :open="open"
-        @cancel="onCancel"
-        @ok="onOk"
+        :open="dialog2OpenStatus"
+        @update:open="onUpdateOpenDialog2"
+        @confirm="handleConfirmDialog2"
       >
       </BaseAlertDialog>
-      <BaseButton @click="open = true" variant="outline">Open by v-bind</BaseButton>
-      Status: {{ open }}
+      <BaseButton @click="dialog2OpenStatus = true" variant="outline">Open by v-bind</BaseButton>
+      <div>
+        <div>Dialog status: {{ dialog2OpenStatus }}</div>
+        <div>Confirm status: {{ dialog2ConfirmStatus }}</div>
+      </div>
     </BaseCard>
 
     <BaseCard
@@ -63,11 +83,15 @@ const open2 = ref(false)
         description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
         okText="Continue"
         cancelText="Cancel"
-        v-model:open="open2"
+        v-model:open="dialog3OpenStatus"
+        @confirm="handleConfirmDialog3"
       >
       </BaseAlertDialog>
-      <BaseButton @click="open = true" variant="outline">Open by v-model </BaseButton>
-      Status: {{ open2 }}
+      <BaseButton @click="dialog3OpenStatus = true" variant="outline">Open by v-model </BaseButton>
+      <div>
+        <div>Dialog status: {{ dialog3OpenStatus }}</div>
+        <div>Confirm status: {{ dialog3ConfirmStatus }}</div>
+      </div>
     </BaseCard>
   </div>
 </template>
