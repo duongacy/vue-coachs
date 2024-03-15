@@ -32,21 +32,21 @@ type ActionType = typeof actionTypes
 
 type Action =
   | {
-      type: ActionType['ADD_TOAST']
-      toast: ToasterToast
-    }
+    type: ActionType['ADD_TOAST']
+    toast: ToasterToast
+  }
   | {
-      type: ActionType['UPDATE_TOAST']
-      toast: Partial<ToasterToast>
-    }
+    type: ActionType['UPDATE_TOAST']
+    toast: Partial<ToasterToast>
+  }
   | {
-      type: ActionType['DISMISS_TOAST']
-      toastId?: ToasterToast['id']
-    }
+    type: ActionType['DISMISS_TOAST']
+    toastId?: ToasterToast['id']
+  }
   | {
-      type: ActionType['REMOVE_TOAST']
-      toastId?: ToasterToast['id']
-    }
+    type: ActionType['REMOVE_TOAST']
+    toastId?: ToasterToast['id']
+  }
 
 interface State {
   toasts: ToasterToast[]
@@ -98,9 +98,9 @@ function dispatch(action: Action) {
       state.value.toasts = state.value.toasts.map((t) =>
         t.id === toastId || toastId === undefined
           ? {
-              ...t,
-              open: false
-            }
+            ...t,
+            open: false
+          }
           : t
       )
       break
