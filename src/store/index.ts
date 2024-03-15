@@ -1,8 +1,8 @@
-import { COACHES, type CoachesState } from './modules/COACHES'
 import { type InjectionKey } from 'vue'
-import { createStore, Store } from 'vuex'
-import { REQUESTS, type RequestState } from './modules/REQUESTS'
+import { Store, createStore } from 'vuex'
 import { AUTHEN } from './modules/AUTHEN'
+import { COACHES, type CoachesState } from './modules/COACHES'
+import { REQUESTS, type RequestState } from './modules/REQUESTS'
 
 type AuthenState = any
 export type TState = {

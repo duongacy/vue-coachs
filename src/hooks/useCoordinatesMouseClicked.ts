@@ -1,4 +1,4 @@
-import { onBeforeUnmount, onMounted, ref, type Ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, type Ref } from 'vue';
 export type TCoordinates = { x: number; y: number }
 export const useCoordinatesMouseClicked = (
   refElement: Ref<HTMLElement | undefined>

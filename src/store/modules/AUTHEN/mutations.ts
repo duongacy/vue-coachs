@@ -1,4 +1,4 @@
-import type { TAuthState } from './types'
+import type { TAuthState } from './types';
 
 export const authMutations = {
   setUser(state: TAuthState, action: { payload: { token: string; userId: string } }) {

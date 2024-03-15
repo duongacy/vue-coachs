@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {
-  type AlertDialogEmits,
-  type AlertDialogProps,
   AlertDialogRoot,
-  useForwardPropsEmits,
-  useForwardProps
+  useForwardProps,
+  type AlertDialogEmits,
+  type AlertDialogProps
 } from 'radix-vue'
+import { computed } from 'vue'
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -15,7 +15,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle
 } from '.'
-import { computed } from 'vue'
 
 const props = defineProps<
   AlertDialogProps & {
