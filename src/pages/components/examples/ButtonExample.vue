@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { BaseButton, type ButtonVariants } from '@/components/ui/button';
+import { BaseButton, type ButtonProps } from '@/components/ui/button';
 
-const buttonVariants: ButtonVariants['variant'][] = [
+const buttonVariants: ButtonProps['variant'][] = [
   'default',
   'destructive',
   'outline',
@@ -9,7 +9,7 @@ const buttonVariants: ButtonVariants['variant'][] = [
   'ghost',
   'link',
 ];
-const buttonSizes: ButtonVariants['size'][] = ['sm', 'lg', 'icon'];
+const buttonSizes: ButtonProps['size'][] = ['sm', 'lg', 'default', 'icon'];
 </script>
 
 <template>
@@ -27,8 +27,8 @@ const buttonSizes: ButtonVariants['size'][] = ['sm', 'lg', 'icon'];
         <BaseButton
           :variant="variant"
           :size="size"
-          >{{ size === 'icon' ? 'icon' : variant }}</BaseButton
-        >
+          >{{ size === 'icon' ? variant?.substring(0, 3) : variant }}
+        </BaseButton>
       </div>
     </div>
   </div>

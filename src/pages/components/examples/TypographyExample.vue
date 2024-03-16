@@ -25,7 +25,7 @@ const textClasses = [
 </script>
 
 <template>
-  <div class="grid">
+  <div class="grid overflow-auto">
     <div
       v-for="fontWeightClass in fontWeightClasses"
       :key="fontWeightClass"
@@ -34,7 +34,7 @@ const textClasses = [
       <p class="w-20">{{ fontWeightClass.split('-')[1] }}</p>
       <p
         v-for="textClass in textClasses"
-        :key="textClass"
+        :key="textClass + fontWeightClass"
         :class="[textClass, fontWeightClass]"
       >
         {{ textClass.split('-')[1] }}
