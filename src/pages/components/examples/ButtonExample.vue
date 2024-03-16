@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { BaseButton, type ButtonProps } from '@/components/ui/button';
+import { BaseButton, buttonVariants, type ButtonProps } from '@/components/ui/button';
 
-const buttonVariants: ButtonProps['variant'][] = [
+const variants: ButtonProps['variant'][] = [
   'default',
   'destructive',
   'outline',
@@ -21,15 +21,20 @@ const buttonSizes: ButtonProps['size'][] = ['sm', 'lg', 'default', 'icon'];
     >
       <div class="w-14">{{ size }}</div>
       <div
-        v-for="variant in buttonVariants"
+        v-for="variant in variants"
         :key="'button' + (variant || '_')"
       >
         <BaseButton
           :variant="variant"
           :size="size"
+          as="div"
           >{{ size === 'icon' ? variant?.substring(0, 3) : variant }}
         </BaseButton>
       </div>
+    </div>
+    <div>
+      With buttonVariants:
+      <div :class="buttonVariants({ class: 'inline-flex w-fit' })">Button</div>
     </div>
   </div>
 </template>

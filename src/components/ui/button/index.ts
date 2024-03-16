@@ -5,7 +5,7 @@ export { default as BaseButton } from './BaseButton.vue';
 
 export type ButtonProps = PrimitiveProps & {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
-  size: 'default' | 'sm' | 'lg' | 'icon';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
   class?: HTMLAttributes['class'];
 };
 
@@ -15,7 +15,7 @@ export const buttonVariants = ({
   ...props
 }: ButtonProps) => {
   return cn(
-    'rounded-md',
+    'rounded-md flex items-center',
     {
       'bg-primary text-primary-foreground hover:bg-primary/90': variant === 'default',
       'bg-destructive text-destructive-foreground hover:bg-destructive/90':
@@ -29,7 +29,7 @@ export const buttonVariants = ({
       'h-10 px-4 py-2': size === 'default',
       'h-9 px-3': size === 'sm',
       'h-11 px-8': size === 'lg',
-      'h-10 w-10': size === 'icon',
+      'h-10 w-10 justify-center': size === 'icon',
     },
     props.class,
   );

@@ -4,7 +4,6 @@ import { buttonVariants, type ButtonProps } from '.';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   as: 'button',
-  size: 'default',
 });
 </script>
 

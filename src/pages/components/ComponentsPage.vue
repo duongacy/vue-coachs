@@ -1,9 +1,14 @@
 <template>
   <div class="flex min-h-full gap-4 p-2">
     <div class="flex flex-grow flex-col gap-4">
-      <div id="Input">
+      <div id="Typography">
         <ExampleSectionTemplate name="Typography">
           <TypographyExample></TypographyExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="Button">
+        <ExampleSectionTemplate name="Button">
+          <ButtonExample></ButtonExample>
         </ExampleSectionTemplate>
       </div>
       <div id="Input">
@@ -71,11 +76,7 @@
           <BadgeExample></BadgeExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="button">
-        <ExampleSectionTemplate name="Button">
-          <ButtonExample></ButtonExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <!-- <div id="calendar">
         <ExampleSectionTemplate name="Calendar">
           <CalendarExample></CalendarExample>
