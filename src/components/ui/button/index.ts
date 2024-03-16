@@ -7,6 +7,7 @@ export type ButtonProps = PrimitiveProps & {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   class?: HTMLAttributes['class'];
+  disabled?: boolean;
 };
 
 export const buttonVariants = ({
@@ -15,11 +16,15 @@ export const buttonVariants = ({
   ...props
 }: ButtonProps) => {
   return cn(
-    'rounded-md flex items-center',
+    'rounded-md flex items-center cusor-pointer',
     {
+      'pointer-events-none opacity-60': props.disabled,
+
       'bg-primary text-primary-foreground hover:bg-primary/90': variant === 'default',
+      'opacity-80': props.disabled && variant === 'default',
       'bg-destructive text-destructive-foreground hover:bg-destructive/90':
         variant === 'destructive',
+      'opacity-80 ': props.disabled && variant === 'destructive',
       'border border-input bg-background hover:bg-accent hover:text-accent-foreground':
         variant === 'outline',
       'bg-secondary text-secondary-foreground hover:bg-secondary/80': variant === 'secondary',
