@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { BaseAvatar, type AvatarVariants } from '@/components/ui/avatar';
 const avatarVariants = {
-  size: ['lg', 'base', 'sm', undefined] as AvatarVariants['size'][],
-  shape: ['square', 'circle', undefined] as AvatarVariants['shape'][],
+  size: [undefined, 'base', 'lg'] as AvatarVariants['size'][],
+  shape: [undefined, 'square'] as AvatarVariants['shape'][],
 };
 </script>
 
@@ -20,14 +20,14 @@ const avatarVariants = {
         <BaseAvatar
           :size="size"
           :shape="shape"
-          src="https://github.com/radix-vue.png"
+          src="/src/assets/avatar.jpeg"
           fallback="CN"
           alt="@radix-vue"
         >
         </BaseAvatar>
         <div>
-          <p class="whitespace-nowrap">Size: {{ size || 'default' }}</p>
-          <p class="whitespace-nowrap">Shape: {{ shape || 'default' }}</p>
+          <p class="whitespace-nowrap">Size: {{ size || 'sm(default)' }}</p>
+          <p class="whitespace-nowrap">Shape: {{ shape || 'circle(default)' }}</p>
         </div>
       </div>
     </div>
