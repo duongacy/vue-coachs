@@ -25,7 +25,7 @@ const textClasses = [
 </script>
 
 <template>
-  <div class="grid overflow-auto">
+  <div class="grid overflow-x-auto overflow-y-hidden">
     <div
       v-for="fontWeightClass in fontWeightClasses"
       :key="fontWeightClass"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
 import { Label, type LabelProps } from 'radix-vue';
-import { computed, ref, type HTMLAttributes } from 'vue';
+import { computed, ref, type HTMLAttributes, watchEffect } from 'vue';
 
 const props = defineProps<LabelProps & { class?: HTMLAttributes['class'] }>();
 
@@ -11,7 +11,17 @@ const delegatedProps = computed(() => {
 });
 
 const labelRef = ref<HTMLLabelElement>();
-const disabled = computed(() => labelRef.value?.querySelector('input')?.disabled);
+const disabled = computed(() => {
+  return labelRef.value?.querySelector('input')?.disabled;
+});
+
+watchEffect(() => {
+  const input = labelRef.value?.querySelector('input');
+  labelRef.value?.addEventListener('click', (e) => {
+    e.preventDefault();
+    input?.focus();
+  });
+});
 </script>
 
 <template>

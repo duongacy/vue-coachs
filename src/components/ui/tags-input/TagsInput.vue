@@ -8,7 +8,9 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<TagsInputRootProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<
+  TagsInputRootProps & { class?: HTMLAttributes['class']; isError?: boolean }
+>();
 const emits = defineEmits<TagsInputRootEmits>();
 
 const delegatedProps = computed(() => {
@@ -24,7 +26,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     v-bind="forwarded"
     :class="
       cn(
-        'flex flex-wrap items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm',
+        'flex flex-wrap items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
+        {
+          'border-destructive focus-within:ring-destructive': isError && !disabled,
+        },
         props.class,
       )
     "
