@@ -16,7 +16,7 @@ export const buttonVariants = ({
   ...props
 }: ButtonProps) => {
   return cn(
-    'rounded-md flex items-center cusor-pointer',
+    'rounded-md flex items-center cusor-pointer justify-center',
     {
       'pointer-events-none opacity-60': props.disabled,
 

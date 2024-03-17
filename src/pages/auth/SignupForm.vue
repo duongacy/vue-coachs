@@ -14,6 +14,7 @@ import { EMAIL_REGEX, PASSWORD_REGEX } from '@/constants';
 import { key } from '@/store';
 import type { authActions } from '@/store/modules/AUTHEN/actions';
 import { toTypedSchema } from '@vee-validate/zod';
+import { Lock, Mail } from 'lucide-vue-next';
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
@@ -83,60 +84,57 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
           If you don't have an account, register a new account with some informations below.
         </CardDescription>
       </CardHeader>
-      <CardContent class="space-y-2">
-        <div class="space-y-1">
-          <BaseLabel for="email">Email</BaseLabel>
+      <CardContent class="grid gap-3">
+        <BaseLabel class="grid gap-1">
+          <span>Email</span>
           <BaseInput
-            id="email"
             placeholder="Enter your email"
-            v-model="email"
+            v-model:value="email"
             @keypress="shouldShowValidate = false"
             name="email"
+            :start-icon="Mail"
           />
           <p
-            class="mt-2 text-red-500"
-            variant="small"
+            class="text-small text-red-500"
             v-if="errors.email && shouldShowValidate"
           >
             {{ errors.email }}
           </p>
-        </div>
-        <div class="space-y-1">
-          <BaseLabel for="password">Password</BaseLabel>
+        </BaseLabel>
+        <BaseLabel class="grid gap-1">
+          <span>Password</span>
           <BaseInput
-            id="password"
             placeholder="Enter your password"
             type="password"
             v-model="password"
             name="password"
             @keypress="shouldShowValidate = false"
+            :start-icon="Lock"
           />
           <p
-            class="mt-2 text-red-500"
-            variant="small"
+            class="text-small text-red-500"
             v-if="!!errors.password && shouldShowValidate"
           >
             {{ errors.password }}
           </p>
-        </div>
-        <div class="space-y-1">
-          <BaseLabel for="rePassword">Confirm password</BaseLabel>
+        </BaseLabel>
+        <BaseLabel class="grid gap-1">
+          <span>Confirm password</span>
           <BaseInput
-            id="rePassword"
             placeholder="Confirm your password"
             type="password"
-            v-model="rePassword"
+            v-model:value="rePassword"
             name="rePassword"
             @keypress="shouldShowValidate = false"
+            :start-icon="Lock"
           />
           <p
-            class="mt-2 text-red-500"
-            variant="small"
+            class="text-small text-red-500"
             v-if="!!samePasswordError && shouldShowValidate"
           >
             {{ samePasswordError }}
           </p>
-        </div>
+        </BaseLabel>
       </CardContent>
       <CardFooter>
         <BaseButton class="w-full">Sign Up</BaseButton>

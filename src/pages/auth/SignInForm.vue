@@ -1,24 +1,18 @@
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
+import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
 import { BaseInput } from '@/components/ui/input';
+import { BaseLabel } from '@/components/ui/label';
 import { EMAIL_REGEX, PASSWORD_REGEX } from '@/constants';
 import { key } from '@/store';
 import { type authActions } from '@/store/modules/AUTHEN/actions';
 import { toTypedSchema } from '@vee-validate/zod';
-import { useForm, type SubmissionHandler, type InvalidSubmissionHandler } from 'vee-validate';
+import { Lock, Mail } from 'lucide-vue-next';
+import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { ref } from 'vue';
 import { onBeforeRouteLeave } from 'vue-router';
 import { useStore } from 'vuex';
 import { z } from 'zod';
-import {
-  BaseCard,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { BaseLabel } from '@/components/ui/label';
 
 const SignInSchema = z.object({
   email: z.string().refine((value) => EMAIL_REGEX.test(value), 'Your email is invalid'),
@@ -72,15 +66,15 @@ onBeforeRouteLeave((_1, _2, next) => {
       title="Sign In"
       description="If you have an account, please sign-in with email and password."
     >
-      <CardContent class="space-y-2">
-        <div class="space-y-1">
-          <BaseLabel for="email">Email</BaseLabel>
+      <CardContent class="grid gap-3">
+        <BaseLabel class="grid gap-1">
+          <span>Email</span>
           <BaseInput
-            id="email"
             placeholder="Enter your email"
-            v-model:model-value="email"
+            v-model:value="email"
             name="email"
             @keypress="shouldShowValidate = false"
+            :start-icon="Mail"
           />
           <p
             class="mt-2 text-red-500"
@@ -89,16 +83,16 @@ onBeforeRouteLeave((_1, _2, next) => {
           >
             {{ errors.email }}
           </p>
-        </div>
-        <div class="space-y-1">
-          <BaseLabel for="username">Password</BaseLabel>
+        </BaseLabel>
+        <BaseLabel class="grid gap-1">
+          <span>Password</span>
           <BaseInput
             placeholder="Enter your password"
-            id="password"
-            v-model="password"
+            v-model:value="password"
             name="password"
             type="password"
             @keypress="shouldShowValidate = false"
+            :start-icon="Lock"
           />
           <p
             class="mt-2 text-red-500"
@@ -107,7 +101,7 @@ onBeforeRouteLeave((_1, _2, next) => {
           >
             {{ errors.password }}
           </p>
-        </div>
+        </BaseLabel>
       </CardContent>
       <CardFooter>
         <BaseButton
