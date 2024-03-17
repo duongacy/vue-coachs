@@ -14,7 +14,10 @@ const delegatedProps = computed(() => {
 
 const labelRef = ref<HTMLLabelElement>();
 const disabled = computed(() => {
-  return labelRef.value?.querySelector('input')?.disabled;
+  return (
+    labelRef.value?.querySelector('input')?.disabled ||
+    labelRef.value?.querySelector('textarea')?.disabled
+  );
 });
 
 watchEffect(() => {
