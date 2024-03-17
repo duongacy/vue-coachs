@@ -1,64 +1,77 @@
 <script setup lang="ts">
-import BaseLabel from '@/components/ui/label/BaseLabel.vue';
-import { PinInput, PinInputInput } from '@/components/ui/pin-input';
 import { ref } from 'vue';
+import {
+  PinInput,
+  PinInputGroup,
+  PinInputInput,
+  PinInputSeparator,
+} from '@/components/ui/pin-input';
+import BaseLabel from '@/components/ui/label/BaseLabel.vue';
 
-const value = ref<string[]>([]);
-const handleComplete = (e: string[]) => {
-  setTimeout(() => {
-    alert(e.join(''));
-  }, 1);
-};
-
-const error = ref(true);
-const onReset = () => {
-  value.value = ['', '', '', '', '', ''];
-  error.value = false;
-};
+const value = ref<string[]>(['1', '2', '3']);
+const handleComplete = (e: string[]) => alert(e.join(''));
 </script>
 
 <template>
-  <div class="grid gap-2">
-    <div class="grid gap-2">
-      <p class="text-heading6 font-bold">Default</p>
-      <BaseLabel class="grid gap-1">
-        <span>OTP</span>
+  <div class="flex flex-wrap gap-4">
+    <div>
+      <BaseLabel>
+        <span> Default </span>
         <PinInput
-          id="pin-input"
           v-model="value"
           placeholder="○"
-          class="mt-1 flex items-center gap-2"
           @complete="handleComplete"
-          type="number"
         >
-          <PinInputInput
-            v-for="(id, index) in 5"
-            :key="id"
-            :index="index"
-          />
+          <PinInputGroup>
+            <PinInputInput
+              v-for="(id, index) in 5"
+              :key="id"
+              :index="index"
+            />
+          </PinInputGroup>
         </PinInput>
       </BaseLabel>
     </div>
-    <div class="grid gap-2">
-      <p class="text-heading6 font-bold">Error</p>
-      <BaseLabel
-        class="grid gap-1"
-        @click="onReset"
-      >
-        <span>OTP</span>
+    <div>
+      <BaseLabel>
+        <span>Disabled</span>
         <PinInput
-          id="pin-input"
           v-model="value"
           placeholder="○"
-          class="mt-1 flex items-center gap-2"
-          type="number"
+          disabled
         >
-          <PinInputInput
-            v-for="(id, index) in 5"
-            :key="id"
-            :index="index"
-            :isError="error"
-          />
+          <PinInputGroup>
+            <PinInputInput
+              v-for="(id, index) in 5"
+              :key="id"
+              :index="index"
+            />
+          </PinInputGroup>
+        </PinInput>
+      </BaseLabel>
+    </div>
+    <div>
+      <BaseLabel preventDelegation>
+        <span> Separator </span>
+        <PinInput
+          v-model="value"
+          placeholder="○"
+          @complete="handleComplete"
+        >
+          <PinInputGroup class="gap-1">
+            <template
+              v-for="(id, index) in 5"
+              :key="id"
+            >
+              <PinInputInput
+                class="rounded-md border"
+                :index="index"
+              />
+              <template v-if="index !== 4">
+                <PinInputSeparator />
+              </template>
+            </template>
+          </PinInputGroup>
         </PinInput>
       </BaseLabel>
     </div>

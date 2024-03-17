@@ -3,7 +3,9 @@ import { cn } from '@/lib/utils';
 import { Label, type LabelProps } from 'radix-vue';
 import { computed, ref, type HTMLAttributes, watchEffect } from 'vue';
 
-const props = defineProps<LabelProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<
+  LabelProps & { class?: HTMLAttributes['class']; preventDelegation?: boolean }
+>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;
@@ -19,7 +21,9 @@ watchEffect(() => {
   const input = labelRef.value?.querySelector('input');
   labelRef.value?.addEventListener('click', (e) => {
     e.preventDefault();
-    input?.focus();
+    if (!props.preventDelegation) {
+      input?.focus();
+    }
   });
 });
 </script>
