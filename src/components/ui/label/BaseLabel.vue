@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
 import { Label, type LabelProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed, ref, type HTMLAttributes } from 'vue';
 
 const props = defineProps<LabelProps & { class?: HTMLAttributes['class'] }>();
 
@@ -9,18 +9,23 @@ const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;
   return delegated;
 });
+
+const labelRef = ref<HTMLLabelElement>();
+const disabled = computed(() => labelRef.value?.querySelector('input')?.disabled);
 </script>
 
 <template>
-  <Label
+  <label
+    ref="labelRef"
     v-bind="delegatedProps"
     :class="
       cn(
-        'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+        'text-sm font-medium leading-none ',
+        { 'pointer-events-none opacity-60': disabled },
         props.class,
       )
     "
   >
     <slot />
-  </Label>
+  </label>
 </template>

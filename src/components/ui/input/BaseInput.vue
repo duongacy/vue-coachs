@@ -1,31 +1,69 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue';
 import { cn } from '@/lib/utils';
 import { useVModel } from '@vueuse/core';
+import { ref, type Component, type HTMLAttributes } from 'vue';
+import type { Size } from '../types';
 
 const props = defineProps<{
-  defaultValue?: string | number;
-  modelValue?: string | number;
+  value?: string | number;
   class?: HTMLAttributes['class'];
+  size?: Size;
+  startIcon?: Component;
+  endIcon?: Component;
+  disabled?: boolean;
+  placeholder?: string;
+  isError?: boolean;
 }>();
 
 const emits = defineEmits<{
-  'update:modelValue': [value: string];
+  'update:value': [value: string];
 }>();
-const modelValue = useVModel(props, 'modelValue', emits, {
-  passive: true,
-  defaultValue: props.defaultValue,
-});
+
+const modelValue = useVModel(props, 'value', emits);
 </script>
 
 <template>
-  <input
-    v-model="modelValue"
+  <div
     :class="
       cn(
-        'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        'relative flex h-10 overflow-hidden rounded-md border border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        {
+          'pointer-events-none': disabled,
+          'border-destructive text-destructive focus-within:ring-destructive': isError && !disabled,
+        },
         props.class,
       )
     "
-  />
+  >
+    <div
+      class="absolute inset-y-0 start-0 grid place-content-center justify-center px-2"
+      v-if="startIcon"
+    >
+      <component
+        :is="startIcon"
+        class="size-6 text-muted-foreground"
+      />
+    </div>
+    <div
+      class="absolute inset-y-0 end-0 grid place-content-center justify-center px-2"
+      v-if="endIcon"
+    >
+      <component
+        :is="endIcon"
+        class="size-6 text-muted-foreground"
+      />
+    </div>
+    <input
+      :disabled="disabled"
+      v-model="modelValue"
+      ref="inputRef"
+      :placeholder="placeholder"
+      :class="
+        cn('h-full w-full px-3 py-2 focus:outline-none', {
+          'pl-9': startIcon,
+          'pr-9': endIcon,
+        })
+      "
+    />
+  </div>
 </template>
