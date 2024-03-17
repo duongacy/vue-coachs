@@ -21,10 +21,11 @@ const disabled = computed(() => {
 });
 
 watchEffect(() => {
-  const input = labelRef.value?.querySelector('input');
   labelRef.value?.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (!props.preventDelegation) {
+    // Special case for TagsInput
+    if (!!labelRef.value?.querySelector('.TagsInput')) {
+      const input = labelRef.value?.querySelector('input');
+      e.preventDefault();
       input?.focus();
     }
   });

@@ -33,7 +33,10 @@ const modelValue = ref(['Apple', 'Banana']);
     </div>
     <div class="grid gap-2">
       <p class="text-heading6 font-bold">Disabled</p>
-      <BaseLabel class="grid w-[350px] gap-2">
+      <BaseLabel
+        class="grid w-[350px] gap-2"
+        preventDelegation
+      >
         <span>Fruits</span>
         <TagsInput
           v-model="modelValue"

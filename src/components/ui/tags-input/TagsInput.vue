@@ -20,13 +20,12 @@ const delegatedProps = computed(() => {
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
-
 <template>
   <TagsInputRoot
     v-bind="forwarded"
     :class="
       cn(
-        'flex flex-wrap items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
+        'TagsInput flex flex-wrap items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
         {
           'border-destructive focus-within:ring-destructive': isError && !disabled,
         },
