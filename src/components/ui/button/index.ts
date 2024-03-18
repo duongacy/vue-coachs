@@ -1,30 +1,26 @@
 import { cn } from '@/lib/utils';
 import type { PrimitiveProps } from 'radix-vue';
-import type { HTMLAttributes } from 'vue';
+import { type HTMLAttributes } from 'vue';
 export { default as BaseButton } from './BaseButton.vue';
 
 export type ButtonProps = PrimitiveProps & {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   class?: HTMLAttributes['class'];
-  disabled?: boolean;
 };
 
 export const buttonVariants = ({
   variant = 'default',
   size = 'default',
   ...props
-}: ButtonProps) => {
+}: Pick<ButtonProps, 'variant' | 'class' | 'size'>) => {
   return cn(
-    'rounded-md flex items-center cusor-pointer justify-center',
+    'rounded-md flex items-center cursor-pointer justify-center disabled:cursor-not-allowed disabled:opacity-60',
     {
-      'pointer-events-none opacity-60': props.disabled,
-
-      'bg-primary text-primary-foreground hover:bg-primary/90': variant === 'default',
-      'opacity-80': props.disabled && variant === 'default',
-      'bg-destructive text-destructive-foreground hover:bg-destructive/90':
+      'bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-80':
+        variant === 'default',
+      'bg-destructive text-destructive-foreground hover:bg-destructive/90 disabled:opacity-80':
         variant === 'destructive',
-      'opacity-80 ': props.disabled && variant === 'destructive',
       'border border-input bg-background hover:bg-accent hover:text-accent-foreground':
         variant === 'outline',
       'bg-secondary text-secondary-foreground hover:bg-secondary/80': variant === 'secondary',
