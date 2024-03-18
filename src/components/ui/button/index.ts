@@ -1,18 +1,17 @@
 import { cn } from '@/lib/utils';
 import type { PrimitiveProps } from 'radix-vue';
-import { type HTMLAttributes } from 'vue';
 export { default as BaseButton } from './BaseButton.vue';
 
 export type ButtonProps = PrimitiveProps & {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
   size?: 'default' | 'sm' | 'lg' | 'icon';
-  class?: HTMLAttributes['class'];
+  class?: string;
 };
 
 export const buttonVariants = ({
   variant = 'default',
   size = 'default',
-  ...props
+  class: _class,
 }: Pick<ButtonProps, 'variant' | 'class' | 'size'>) => {
   return cn(
     'rounded-md flex items-center cursor-pointer justify-center disabled:cursor-not-allowed disabled:opacity-60',
@@ -32,6 +31,6 @@ export const buttonVariants = ({
       'h-11 px-8': size === 'lg',
       'h-10 w-10 justify-center': size === 'icon',
     },
-    props.class,
+    _class,
   );
 };
