@@ -30,7 +30,7 @@ const forwarded = useForwardPropsEmits(delegateProps, emits);
 </script>
 
 <template>
-  <div :class="cn('min-w-[350px]', props.class)">
+  <div :class="cn('', props.class)">
     <SelectRoot v-bind="forwarded">
       <SelectTrigger :id="id">
         <SelectValue :placeholder="placeholder" />

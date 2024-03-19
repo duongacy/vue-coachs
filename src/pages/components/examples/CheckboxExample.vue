@@ -1,136 +1,57 @@
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button';
-import { BaseCheckbox } from '@/components/ui/checkbox';
-import {
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { toTypedSchema } from '@vee-validate/zod';
-import { useForm } from 'vee-validate';
-import { ref, watchEffect } from 'vue';
-import * as z from 'zod';
+import { CheckboxGroup } from '@/components/ui/checkbox';
+import type { CheckboxOption } from '@/components/ui/checkbox/CheckboxGroup.vue';
+import { BaseLabel } from '@/components/ui/label';
+import { computed, ref } from 'vue';
 
-const result = ref<boolean>();
-
-const updateCheckedHandler = (value: boolean) => {
-  result.value = value;
-};
-watchEffect(() => {
-  console.log(result.value);
-});
-
-const items = [
+const options: CheckboxOption[] = [
   {
-    id: 'recents',
     label: 'Recents',
+    value: 'recents',
   },
   {
-    id: 'home',
     label: 'Home',
+    value: 'home',
+    disabled: true,
   },
   {
-    id: 'applications',
-    label: 'Applications',
+    label: 'Restaurant',
+    value: 'restaurant',
   },
+];
+const values = ref(['home']);
+
+const options2: CheckboxOption[] = [
   {
-    id: 'desktop',
-    label: 'Desktop',
+    label: 'Use different settings for my mobile devices',
+    description: 'You can manage your mobile notifications in the mobile settings page.',
+    value: '',
   },
-  {
-    id: 'downloads',
-    label: 'Downloads',
-  },
-  {
-    id: 'documents',
-    label: 'Documents',
-  },
-] as const;
+];
+const values2 = ref([]);
 
-const formSchema = toTypedSchema(
-  z.object({
-    items: z.array(z.string()).refine((value) => value.some((item) => item), {
-      message: 'You have to select at least one item.',
-    }),
-  }),
-);
-
-const { handleSubmit, errors } = useForm({
-  validationSchema: formSchema,
-  initialValues: {
-    items: ['recents', 'home'],
-  },
-});
-
-watchEffect(() => {
-  console.log('errors', errors.value);
-});
-
-const onSubmit = handleSubmit((values) => {
-  console.log('submited', values);
+const value2Computed = computed(() => {
+  return values2.value.length === 1;
 });
 </script>
 
 <template>
-  <div class="grid gap-4">
-    <div class="grid gap-2">
-      <p>Basic using</p>
-      <div class="flex gap-2">
-        <BaseCheckbox
-          label="Checkbox"
-          :checked="result"
-          @update:checked="updateCheckedHandler"
-        ></BaseCheckbox>
-        <BaseCheckbox
-          label="Checkbox disabled"
-          disabled
-        ></BaseCheckbox>
-      </div>
+  <div class="flex gap-4">
+    <div class="grid w-[350px] gap-2">
+      <BaseLabel>Select type</BaseLabel>
+      <CheckboxGroup
+        :options="options"
+        v-model:model-value="values"
+      ></CheckboxGroup>
+      Selected: {{ values }}
     </div>
     <div class="grid gap-2">
-      <p>With vee-validate</p>
-      <form @submit="onSubmit">
-        <FormField name="items">
-          <FormItem>
-            <div class="mb-4">
-              <FormLabel class="text-base"> Sidebar </FormLabel>
-              <FormDescription>
-                Select the items you want to display in the sidebar.
-              </FormDescription>
-            </div>
-
-            <FormField
-              v-for="item in items"
-              v-slot="{ value, handleChange }"
-              :key="item.id"
-              type="checkbox"
-              :value="item.id"
-              :unchecked-value="false"
-              name="items"
-            >
-              <FormItem class="flex flex-row items-start space-x-3 space-y-0">
-                <FormControl>
-                  <BaseCheckbox
-                    :checked="value.includes(item.id)"
-                    @update:checked="handleChange"
-                  />
-                </FormControl>
-                <FormLabel class="font-normal">
-                  {{ item.label }}
-                </FormLabel>
-              </FormItem>
-            </FormField>
-            <FormMessage />
-          </FormItem>
-        </FormField>
-
-        <div class="mt-4 flex justify-start">
-          <BaseButton type="submit"> Submit </BaseButton>
-        </div>
-      </form>
+      <BaseLabel>Select type</BaseLabel>
+      <CheckboxGroup
+        :options="options2"
+        v-model:model-value="values2"
+      ></CheckboxGroup>
+      Selected: {{ value2Computed }}
     </div>
   </div>
 </template>
