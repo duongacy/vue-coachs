@@ -5,19 +5,19 @@
         <div>
           <h3 class="text-base font-semibold leading-6 text-neutral-900">Requests</h3>
           <p
-            class="mt-1 text-sm text-neutral-500"
             v-if="!requests.length"
+            class="mt-1 text-sm text-neutral-500"
           >
             Don't have any requests.
           </p>
         </div>
         <div
-          class="h-[1px] bg-neutral-200"
           v-if="!!requests.length"
+          class="h-[1px] bg-neutral-200"
         ></div>
         <div
-          class="grid gap-4"
           v-if="!!requests.length"
+          class="grid gap-4"
         >
           <div
             v-for="request in requests"

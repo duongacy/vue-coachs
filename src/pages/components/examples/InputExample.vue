@@ -24,8 +24,8 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With left icon</span>
           <BaseInput
-            :startIcon="Mail"
             v-model:value="value"
+            :start-icon="Mail"
             placeholder="Text here"
             class="w-[350px]"
           >
@@ -35,8 +35,8 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With right icon</span>
           <BaseInput
-            :endIcon="Search"
             v-model:value="value"
+            :end-icon="Search"
             placeholder="Text here"
             class="w-[350px]"
           >
@@ -45,9 +45,9 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With left and right icon</span>
           <BaseInput
-            :startIcon="AlbumIcon"
-            :endIcon="Search"
             v-model:value="value"
+            :start-icon="AlbumIcon"
+            :end-icon="Search"
             placeholder="Text here"
             class="w-[350px]"
           >
@@ -64,18 +64,18 @@ const value = ref();
             v-model:value="value"
             placeholder="Text here"
             class="w-[350px]"
-            isError
+            is-error
           >
           </BaseInput>
         </BaseLabel>
         <BaseLabel class="grid gap-2">
           <span>With left icon</span>
           <BaseInput
-            :startIcon="Mail"
             v-model:value="value"
+            :start-icon="Mail"
             placeholder="Text here"
             class="w-[350px]"
-            isError
+            is-error
           >
           </BaseInput>
         </BaseLabel>
@@ -83,23 +83,23 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With right icon</span>
           <BaseInput
-            :endIcon="Search"
             v-model:value="value"
+            :end-icon="Search"
             placeholder="Text here"
             class="w-[350px]"
-            isError
+            is-error
           >
           </BaseInput>
         </BaseLabel>
         <BaseLabel class="grid gap-2">
           <span>With left and right icon</span>
           <BaseInput
-            :startIcon="AlbumIcon"
-            :endIcon="Search"
             v-model:value="value"
+            :start-icon="AlbumIcon"
+            :end-icon="Search"
             placeholder="Text here"
             class="w-[350px]"
-            isError
+            is-error
           >
           </BaseInput>
         </BaseLabel>
@@ -121,8 +121,8 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With left icon</span>
           <BaseInput
-            :startIcon="Mail"
             v-model:value="value"
+            :start-icon="Mail"
             placeholder="Text here"
             class="w-[350px]"
             disabled
@@ -133,8 +133,8 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With right icon</span>
           <BaseInput
-            :endIcon="Search"
             v-model:value="value"
+            :end-icon="Search"
             placeholder="Text here"
             class="w-[350px]"
             disabled
@@ -144,9 +144,9 @@ const value = ref();
         <BaseLabel class="grid gap-2">
           <span>With left and right icon</span>
           <BaseInput
-            :startIcon="AlbumIcon"
-            :endIcon="Search"
             v-model:value="value"
+            :start-icon="AlbumIcon"
+            :end-icon="Search"
             placeholder="Text here"
             class="w-[350px]"
             disabled

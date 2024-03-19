@@ -37,8 +37,8 @@ const handleConfirmDialog3 = (value: boolean) => {
       <BaseAlertDialog
         title="Are you absolutely sure?"
         description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
-        okText="Continue"
-        cancelText="Cancel"
+        ok-text="Continue"
+        cancel-text="Cancel"
         @confirm="handleConfirmDialog1"
       >
         <AlertDialogTrigger :class="cn(buttonVariants({ variant: 'outline' }))">
@@ -59,16 +59,16 @@ const handleConfirmDialog3 = (value: boolean) => {
       <BaseAlertDialog
         title="Are you absolutely sure?"
         description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
-        okText="Continue"
-        cancelText="Cancel"
+        ok-text="Continue"
+        cancel-text="Cancel"
         :open="dialog2OpenStatus"
         @update:open="onUpdateOpenDialog2"
         @confirm="handleConfirmDialog2"
       >
       </BaseAlertDialog>
       <BaseButton
-        @click="dialog2OpenStatus = true"
         variant="outline"
+        @click="dialog2OpenStatus = true"
         >Open by v-bind</BaseButton
       >
       <div>
@@ -83,17 +83,17 @@ const handleConfirmDialog3 = (value: boolean) => {
       class="w-[350px]"
     >
       <BaseAlertDialog
+        v-model:open="dialog3OpenStatus"
         title="Are you absolutely sure?"
         description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
-        okText="Continue"
-        cancelText="Cancel"
-        v-model:open="dialog3OpenStatus"
+        ok-text="Continue"
+        cancel-text="Cancel"
         @confirm="handleConfirmDialog3"
       >
       </BaseAlertDialog>
       <BaseButton
-        @click="dialog3OpenStatus = true"
         variant="outline"
+        @click="dialog3OpenStatus = true"
         >Open by v-model
       </BaseButton>
       <div>

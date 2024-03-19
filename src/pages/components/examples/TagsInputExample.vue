@@ -35,7 +35,7 @@ const modelValue = ref(['Apple', 'Banana']);
       <p class="text-heading6 font-bold">Disabled</p>
       <BaseLabel
         class="grid w-[350px] gap-2"
-        preventDelegation
+        prevent-delegation
       >
         <span>Fruits</span>
         <TagsInput
@@ -60,7 +60,7 @@ const modelValue = ref(['Apple', 'Banana']);
         <span>Fruits</span>
         <TagsInput
           v-model="modelValue"
-          isError
+          is-error
         >
           <TagsInputItem
             v-for="item in modelValue"

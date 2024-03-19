@@ -1,8 +1,8 @@
 <template>
   <div class="p-4">
     <div
-      class="overflow-hidden rounded-lg border border-neutral-200 px-4 py-6"
       v-if="!!coach"
+      class="overflow-hidden rounded-lg border border-neutral-200 px-4 py-6"
     >
       <div>
         <h3 class="text-base font-semibold leading-7 text-neutral-900">Applicant Information</h3>
@@ -24,7 +24,7 @@
               <base-badge
                 v-for="area in coach.areas"
                 :key="area"
-                :dotClass="
+                :dot-class="
                   cn({
                     'fill-error-500': area === 'frontend',
                     'fill-yellow-500': area === 'backend',

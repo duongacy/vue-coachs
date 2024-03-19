@@ -81,8 +81,8 @@ const onSubmit = handleSubmit((values) => {
       <div class="flex gap-2">
         <BaseCheckbox
           label="Checkbox"
-          @update:checked="updateCheckedHandler"
           :checked="result"
+          @update:checked="updateCheckedHandler"
         ></BaseCheckbox>
         <BaseCheckbox
           label="Checkbox disabled"

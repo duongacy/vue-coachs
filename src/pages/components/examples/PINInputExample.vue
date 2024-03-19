@@ -51,7 +51,7 @@ const handleComplete = (e: string[]) => alert(e.join(''));
       </BaseLabel>
     </div>
     <div>
-      <BaseLabel preventDelegation>
+      <BaseLabel prevent-delegation>
         <span> Separator </span>
         <PinInput
           v-model="value"

@@ -18,9 +18,9 @@
           <label class="grid gap-2">
             <span class="text-sm font-medium leading-6 text-neutral-900">Email</span>
             <input
-              type="text"
               ref="emailRef"
-              @change="cancelValidate('userEmail')"
+              v-model.trim="request.userEmail.value"
+              type="text"
               :class="
                 cn({
                   'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
@@ -28,11 +28,11 @@
                 })
               "
               placeholder="Please enter your email"
-              v-model.trim="request.userEmail.value"
+              @change="cancelValidate('userEmail')"
             />
             <p
-              class="text-error-600 text-sm leading-6"
               v-if="!!request.userEmail.error"
+              class="text-error-600 text-sm leading-6"
             >
               {{ request.userEmail.error }}
             </p>
@@ -42,9 +42,8 @@
             <span class="text-sm font-medium leading-6 text-neutral-900">Message</span>
             <textarea
               ref="messageRef"
-              rows="3"
               v-model.trim="request.message.value"
-              @change="cancelValidate('message')"
+              rows="3"
               :class="
                 cn(
                   'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
@@ -54,10 +53,11 @@
                 )
               "
               placeholder="Write a few sentences about yourself"
+              @change="cancelValidate('message')"
             />
             <p
-              class="text-error-600 text-sm leading-6"
               v-if="!!request.message.error"
+              class="text-error-600 text-sm leading-6"
             >
               {{ request.message.error }}
             </p>
@@ -84,10 +84,10 @@
     </div>
     <base-dialog
       :show="!!error"
-      @close="onCloseErrorDialog"
-      @ok="onCloseErrorDialog"
       title="Request fail"
       ok-text="OK"
+      @close="onCloseErrorDialog"
+      @ok="onCloseErrorDialog"
     >
       <p class="text-sm text-neutral-500">
         <!-- {{ error }} -->

@@ -88,15 +88,15 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
         <BaseLabel class="grid gap-1">
           <span>Email</span>
           <BaseInput
-            placeholder="Enter your email"
             v-model:value="email"
-            @keypress="shouldShowValidate = false"
+            placeholder="Enter your email"
             name="email"
             :start-icon="Mail"
+            @keypress="shouldShowValidate = false"
           />
           <p
-            class="text-small text-red-500"
             v-if="errors.email && shouldShowValidate"
+            class="text-small text-red-500"
           >
             {{ errors.email }}
           </p>
@@ -104,16 +104,16 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
         <BaseLabel class="grid gap-1">
           <span>Password</span>
           <BaseInput
+            v-model="password"
             placeholder="Enter your password"
             type="password"
-            v-model="password"
             name="password"
-            @keypress="shouldShowValidate = false"
             :start-icon="Lock"
+            @keypress="shouldShowValidate = false"
           />
           <p
-            class="text-small text-red-500"
             v-if="!!errors.password && shouldShowValidate"
+            class="text-small text-red-500"
           >
             {{ errors.password }}
           </p>
@@ -121,16 +121,16 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
         <BaseLabel class="grid gap-1">
           <span>Confirm password</span>
           <BaseInput
+            v-model:value="rePassword"
             placeholder="Confirm your password"
             type="password"
-            v-model:value="rePassword"
             name="rePassword"
-            @keypress="shouldShowValidate = false"
             :start-icon="Lock"
+            @keypress="shouldShowValidate = false"
           />
           <p
-            class="text-small text-red-500"
             v-if="!!samePasswordError && shouldShowValidate"
+            class="text-small text-red-500"
           >
             {{ samePasswordError }}
           </p>

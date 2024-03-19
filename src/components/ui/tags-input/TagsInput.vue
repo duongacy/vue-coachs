@@ -8,6 +8,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
+defineOptions({ inheritAttrs: false });
 const props = defineProps<
   TagsInputRootProps & { class?: HTMLAttributes['class']; isError?: boolean }
 >();

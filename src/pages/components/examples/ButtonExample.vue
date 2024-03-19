@@ -23,9 +23,9 @@ const buttonSizes: ButtonProps['size'][] = ['sm', 'lg', 'default', 'icon'];
       <div class="grid gap-2">
         <div class="flex gap-2">
           <BaseButton
-            :title="'size: ' + size + ', variant: ' + variant"
             v-for="variant in variants"
             :key="'button' + (variant || '_')"
+            :title="'size: ' + size + ', variant: ' + variant"
             :variant="variant"
             :size="size"
             >{{ size === 'icon' ? variant?.substring(0, 3) : variant }}

@@ -8,14 +8,14 @@
     </div>
     <div>
       <BaseButton
-        variant="link"
         v-if="isAuthenticated"
+        variant="link"
         @click="logout"
         >Logout</BaseButton
       >
       <BaseButton
-        variant="link"
         v-else
+        variant="link"
         @click="loginHandler"
         >Login</BaseButton
       >

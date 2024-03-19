@@ -38,8 +38,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
       </CheckboxIndicator>
     </CheckboxRoot>
     <span
-      class="text-sm font-medium leading-none"
       v-if="!!label"
+      class="text-sm font-medium leading-none"
     >
       {{ label }}
     </span>

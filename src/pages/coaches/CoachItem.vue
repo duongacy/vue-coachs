@@ -5,9 +5,9 @@
       <p>{{ item.description }}</p>
       <div class="mt-2 flex gap-2">
         <BaseBadge
-          variant="destructive"
           v-for="area in item.areas"
           :key="area + '-area'"
+          variant="destructive"
           >{{ area }}</BaseBadge
         >
       </div>

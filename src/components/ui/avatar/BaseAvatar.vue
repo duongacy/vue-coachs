@@ -16,6 +16,10 @@ const props = withDefaults(
   {
     size: 'sm',
     shape: 'circle',
+    class: '',
+    src: '',
+    fallback: '',
+    alt: '',
   },
 );
 </script>
@@ -23,9 +27,9 @@ const props = withDefaults(
 <template>
   <AvatarRoot :class="cn(avatarVariant({ size, shape }), props.class)">
     <AvatarImage
+      v-if="!!src"
       :src="src"
       :alt="alt"
-      v-if="!!src"
     />
     <AvatarFallback v-if="!!fallback">{{ fallback }}</AvatarFallback>
   </AvatarRoot>

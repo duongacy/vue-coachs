@@ -39,9 +39,9 @@ const multipleValue = ref(['item-1', 'item-3']);
     >
       <CardContent>
         <BaseAccordion
+          v-model:model-value="singleValue"
           type="single"
           class="w-[350px]"
-          v-model:model-value="singleValue"
         >
           <AccordionItem
             v-for="item in accordionItems"
@@ -65,10 +65,10 @@ const multipleValue = ref(['item-1', 'item-3']);
     >
       <CardContent>
         <BaseAccordion
+          v-model:model-value="singleValue"
           type="single"
           class="w-[350px]"
           collapsible
-          v-model:model-value="singleValue"
         >
           <AccordionItem
             v-for="item in accordionItems"
@@ -91,9 +91,9 @@ const multipleValue = ref(['item-1', 'item-3']);
       class="border-none shadow-none"
     >
       <BaseAccordion
+        v-model:model-value="multipleValue"
         type="multiple"
         class="w-[350px]"
-        v-model:model-value="multipleValue"
       >
         <AccordionItem
           v-for="item in accordionItems"

@@ -17,8 +17,8 @@ const props = defineProps<{
     role="alert"
   >
     <div
-      class="grid h-6 w-6 shrink-0 place-content-center"
       v-if="!!icon"
+      class="grid h-6 w-6 shrink-0 place-content-center"
     >
       <component
         :is="icon"

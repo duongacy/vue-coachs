@@ -70,16 +70,16 @@ onBeforeRouteLeave((_1, _2, next) => {
         <BaseLabel class="grid gap-1">
           <span>Email</span>
           <BaseInput
-            placeholder="Enter your email"
             v-model:value="email"
+            placeholder="Enter your email"
             name="email"
-            @keypress="shouldShowValidate = false"
             :start-icon="Mail"
+            @keypress="shouldShowValidate = false"
           />
           <p
+            v-if="!!errors.email && shouldShowValidate"
             class="mt-2 text-red-500"
             variant="small"
-            v-if="!!errors.email && shouldShowValidate"
           >
             {{ errors.email }}
           </p>
@@ -87,17 +87,17 @@ onBeforeRouteLeave((_1, _2, next) => {
         <BaseLabel class="grid gap-1">
           <span>Password</span>
           <BaseInput
-            placeholder="Enter your password"
             v-model:value="password"
+            placeholder="Enter your password"
             name="password"
             type="password"
-            @keypress="shouldShowValidate = false"
             :start-icon="Lock"
+            @keypress="shouldShowValidate = false"
           />
           <p
+            v-if="!!errors.password && shouldShowValidate"
             class="mt-2 text-red-500"
             variant="small"
-            v-if="!!errors.password && shouldShowValidate"
           >
             {{ errors.password }}
           </p>
