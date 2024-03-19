@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { BaseAvatar, type AvatarVariants } from '@/components/ui/avatar';
 const avatarVariants = {
-  size: [undefined, 'base', 'lg'] as AvatarVariants['size'][],
-  shape: [undefined, 'square'] as AvatarVariants['shape'][],
+  size: ['lg', 'base', undefined] as AvatarVariants['size'][],
+  shape: ['square', undefined] as AvatarVariants['shape'][],
 };
 </script>
 
 <template>
   <div class="grid gap-2 overflow-x-auto">
     <div
-      v-for="size in avatarVariants.size"
-      :key="size || '_' + 'avatarVariants.size'"
+      v-for="shape in avatarVariants.shape"
+      :key="shape || '_' + 'avatarVariants.shape'"
       class="flex items-end gap-2"
     >
       <div
-        v-for="shape in avatarVariants.shape"
+        v-for="size in avatarVariants.size"
         :key="(size || '_') + (shape || '_') + 'avatar'"
       >
         <BaseAvatar

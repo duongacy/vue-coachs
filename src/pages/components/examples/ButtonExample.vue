@@ -13,15 +13,15 @@ const buttonSizes: ButtonProps['size'][] = ['sm', 'lg', 'default', 'icon'];
 </script>
 
 <template>
-  <div class="grid gap-2 overflow-x-auto">
+  <div class="grid gap-4 overflow-x-auto">
     <div
       v-for="size in buttonSizes"
       :key="'button' + (size || '_')"
       class="flex items-end gap-2"
     >
       <div class="w-14">{{ size }}</div>
-      <div class="grid gap-2">
-        <div class="flex gap-2">
+      <div class="grid gap-4">
+        <div class="flex gap-4">
           <BaseButton
             v-for="variant in variants"
             :key="'button' + (variant || '_')"
@@ -42,10 +42,6 @@ const buttonSizes: ButtonProps['size'][] = ['sm', 'lg', 'default', 'icon'];
           </BaseButton>
         </div>
       </div>
-    </div>
-    <div>
-      With buttonVariants:
-      <div :class="buttonVariants({ class: 'inline-flex w-fit' })">Button</div>
     </div>
   </div>
 </template>

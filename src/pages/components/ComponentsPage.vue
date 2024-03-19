@@ -1,9 +1,14 @@
 <template>
   <div class="flex min-h-full gap-4 p-2">
     <div class="flex flex-grow flex-col gap-4">
-      <div id="Typography">
-        <ExampleSectionTemplate name="Typography">
-          <TypographyExample></TypographyExample>
+      <div id="NavigationMenu">
+        <ExampleSectionTemplate name="NavigationMenu">
+          <NavigationMenuExample></NavigationMenuExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="avatar">
+        <ExampleSectionTemplate name="Avatar">
+          <AvatarExample></AvatarExample>
         </ExampleSectionTemplate>
       </div>
       <div id="Button">
@@ -11,6 +16,12 @@
           <ButtonExample></ButtonExample>
         </ExampleSectionTemplate>
       </div>
+      <div id="Typography">
+        <ExampleSectionTemplate name="Typography">
+          <TypographyExample></TypographyExample>
+        </ExampleSectionTemplate>
+      </div>
+
       <div id="Input">
         <ExampleSectionTemplate name="Input">
           <InputExample></InputExample>
@@ -66,11 +77,7 @@
           <AlertDialogExample></AlertDialogExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="avatar">
-        <ExampleSectionTemplate name="Avatar">
-          <AvatarExample></AvatarExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="badge">
         <ExampleSectionTemplate name="Badge">
           <BadgeExample></BadgeExample>
@@ -144,11 +151,7 @@
           <MenubarExample></MenubarExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="NavigationMenu">
-        <ExampleSectionTemplate name="NavigationMenu">
-          <NavigationMenuExample></NavigationMenuExample>
-        </ExampleSectionTemplate>
-      </div>
+
       <div id="Pagination">
         <ExampleSectionTemplate name="Pagination">
           <PaginationExample></PaginationExample>
