@@ -7,16 +7,20 @@ import {
   type RadioGroupRootProps,
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
+import { BaseLabel } from '../label';
+import { RadioGroupItem } from '.';
 
-const props = defineProps<RadioGroupRootProps & { class?: HTMLAttributes['class'] }>();
+export type RadioOption = { value: string; label: string; disabled?: boolean };
+const props = defineProps<
+  RadioGroupRootProps & { class?: HTMLAttributes['class']; options: RadioOption[] }
+>();
 const emits = defineEmits<RadioGroupRootEmits>();
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
-  return delegated;
+const delegateProps = computed(() => {
+  const { options, ...delegate } = props;
+  return delegate;
 });
-
-const forwarded = useForwardPropsEmits(delegatedProps, emits);
+const forwarded = useForwardPropsEmits(delegateProps, emits);
 </script>
 
 <template>
@@ -24,6 +28,20 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     :class="cn('grid gap-2', props.class)"
     v-bind="forwarded"
   >
-    <slot />
+    <BaseLabel
+      v-for="option in options"
+      :key="option.value"
+      :class="
+        cn('flex items-center gap-1', {
+          'opacity-60': option.disabled,
+        })
+      "
+    >
+      <RadioGroupItem
+        :value="option.value"
+        :disabled="option.disabled"
+      />
+      <span>{{ option.label }}</span>
+    </BaseLabel>
   </RadioGroupRoot>
 </template>
