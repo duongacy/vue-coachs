@@ -46,7 +46,7 @@ const value2Computed = computed(() => {
       Selected: {{ values }}
     </div>
     <div class="grid gap-2">
-      <BaseLabel>Select type</BaseLabel>
+      <BaseLabel>Select type(With description)</BaseLabel>
       <CheckboxGroup
         :options="options2"
         v-model:model-value="values2"
