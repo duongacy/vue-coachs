@@ -41,14 +41,14 @@
           <SelectExample></SelectExample>
         </ExampleSectionTemplate>
       </div>
-      <div id="Toggle">
-        <ExampleSectionTemplate name="Toggle">
-          <ToggleExample></ToggleExample>
-        </ExampleSectionTemplate>
-      </div>
       <div id="checkbox">
         <ExampleSectionTemplate name="Checkbox">
           <CheckboxExample></CheckboxExample>
+        </ExampleSectionTemplate>
+      </div>
+      <div id="Toggle">
+        <ExampleSectionTemplate name="Toggle">
+          <ToggleExample></ToggleExample>
         </ExampleSectionTemplate>
       </div>
       <div id="accordion">

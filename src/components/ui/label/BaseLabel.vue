@@ -4,7 +4,12 @@ import { Label } from 'radix-vue';
 import { ref, useAttrs, watchEffect } from 'vue';
 
 const attrs = useAttrs();
-defineProps<{ preventDelegation?: boolean }>();
+const props = defineProps<{
+  preventDelegation?: boolean;
+  class?: string;
+  for?: string;
+  disabled?: boolean;
+}>();
 const labelRef = ref<HTMLLabelElement>();
 
 watchEffect(() => {
@@ -22,10 +27,13 @@ watchEffect(() => {
 <template>
   <label
     ref="labelRef"
+    v-bind="attrs"
+    :for="props.for"
     :class="
       cn(
         'text-sm font-medium leading-none [&:has(input[disabled])]:opacity-70 [&:has(textarea[disabled])]:opacity-70',
-        attrs.class as string,
+        { 'opacity-70': disabled },
+        props.class as string,
       )
     "
   >

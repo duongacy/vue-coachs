@@ -12,7 +12,11 @@ import { RadioGroupItem } from '.';
 
 export type RadioOption = { value: string; label: string; disabled?: boolean };
 const props = defineProps<
-  RadioGroupRootProps & { class?: HTMLAttributes['class']; options: RadioOption[] }
+  RadioGroupRootProps & {
+    class?: HTMLAttributes['class'];
+    options: RadioOption[];
+    disabled?: boolean;
+  }
 >();
 const emits = defineEmits<RadioGroupRootEmits>();
 
@@ -33,13 +37,13 @@ const forwarded = useForwardPropsEmits(delegateProps, emits);
       :key="option.value"
       :class="
         cn('flex items-center gap-1', {
-          'opacity-60': option.disabled,
+          'cursor-not-allowed opacity-60': option.disabled || disabled,
         })
       "
     >
       <RadioGroupItem
         :value="option.value"
-        :disabled="option.disabled"
+        :disabled="option.disabled || disabled"
       />
       <span>{{ option.label }}</span>
     </BaseLabel>

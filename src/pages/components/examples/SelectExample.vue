@@ -1,31 +1,70 @@
 <script setup lang="ts">
-import {
-  BaseSelect,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { BaseLabel } from '@/components/ui/label';
+import { BaseSelect } from '@/components/ui/select';
+import type { SelectOption } from '@/components/ui/select/BaseSelect.vue';
+import { ref } from 'vue';
+
+const options: SelectOption[] = [
+  {
+    value: 'apple',
+    label: 'Apple',
+  },
+  {
+    value: 'banana',
+    label: 'Banana',
+  },
+  {
+    value: 'grapes',
+    label: 'Grapes',
+    disabled: true,
+  },
+];
+const value = ref();
 </script>
 
 <template>
-  <div class="grid gap-2">
-    <BaseSelect>
-      <SelectTrigger>
-        <SelectValue placeholder="Select a fruit" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple"> Apple </SelectItem>
-          <SelectItem value="banana"> Banana </SelectItem>
-          <SelectItem value="blueberry"> Blueberry </SelectItem>
-          <SelectItem value="grapes"> Grapes </SelectItem>
-          <SelectItem value="pineapple"> Pineapple </SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </BaseSelect>
+  <div class="flex gap-4">
+    <div class="grid gap-2">
+      <BaseLabel for="fruits">Select Fruit(with default value)</BaseLabel>
+      <BaseSelect
+        id="fruits"
+        :options="options"
+        default-value="banana"
+        v-model:model-value="value"
+        placeholder="Select fruits"
+        class="w-fit"
+        label="Fruits"
+      >
+      </BaseSelect>
+    </div>
+    <div class="grid gap-2">
+      <BaseLabel for="fruits2">Select Fruit(with placeholder)</BaseLabel>
+      <BaseSelect
+        id="fruits2"
+        :options="options"
+        v-model:model-value="value"
+        placeholder="Select fruits"
+        class="w-fit"
+        label="Fruits"
+      >
+      </BaseSelect>
+    </div>
+    <div class="grid gap-2">
+      <BaseLabel
+        for="fruits3"
+        disabled
+        >Select Fruit(disabled)</BaseLabel
+      >
+      <BaseSelect
+        disabled
+        id="fruits3"
+        :options="options"
+        v-model:model-value="value"
+        placeholder="Select fruits"
+        class="w-fit"
+        label="Fruits"
+      >
+      </BaseSelect>
+    </div>
   </div>
 </template>
