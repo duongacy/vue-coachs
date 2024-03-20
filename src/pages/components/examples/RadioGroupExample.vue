@@ -27,21 +27,21 @@ const value = ref('compact');
     <div class="grid min-w-[350px] gap-2">
       <BaseLabel>Select type</BaseLabel>
       <RadioGroup
+        v-model:model-value="value"
         default-value="comfortable"
         :options="options"
-        v-model:model-value="value"
-        class="flex gap-3"
+        class="mx-1 flex gap-3"
       >
       </RadioGroup>
     </div>
     <div class="grid min-w-[350px] gap-2">
       <BaseLabel disabled>Select type(Disabled all)</BaseLabel>
       <RadioGroup
+        v-model:model-value="value"
         disabled
         default-value="comfortable"
         :options="options"
-        v-model:model-value="value"
-        class="flex gap-3"
+        class="mx-1 flex gap-3"
       >
       </RadioGroup>
     </div>

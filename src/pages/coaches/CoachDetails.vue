@@ -59,10 +59,10 @@
               >
                 <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
                   <div class="flex w-0 flex-1 items-center">
-                    <PaperClipIcon
+                    <!-- <PaperClipIcon
                       class="h-5 w-5 flex-shrink-0 text-neutral-400"
                       aria-hidden="true"
-                    />
+                    /> -->
                     <div class="ml-4 flex min-w-0 flex-1 gap-2">
                       <span class="truncate font-medium">resume_back_end_developer.pdf</span>
                       <span class="flex-shrink-0 text-neutral-400">2.4mb</span>
@@ -78,10 +78,10 @@
                 </li>
                 <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
                   <div class="flex w-0 flex-1 items-center">
-                    <PaperClipIcon
+                    <!-- <PaperClipIcon
                       class="h-5 w-5 flex-shrink-0 text-neutral-400"
                       aria-hidden="true"
-                    />
+                    /> -->
                     <div class="ml-4 flex min-w-0 flex-1 gap-2">
                       <span class="truncate font-medium">coverletter_back_end_developer.pdf</span>
                       <span class="flex-shrink-0 text-neutral-400">4.5mb</span>
@@ -112,11 +112,11 @@
 </template>
 
 <script setup lang="ts">
-import { PaperClipIcon } from '@heroicons/vue/20/solid';
+import { cn } from '@/lib/utils';
 import { key } from '@/store';
+// import { PaperClipIcon } from '@heroicons/vue/20/solid';
 import { computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
-import { cn } from '@/lib/utils';
 
 const props = defineProps<{ coachId: string }>();
 const store = useStore(key);

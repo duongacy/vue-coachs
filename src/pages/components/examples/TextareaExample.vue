@@ -9,29 +9,29 @@ const value = ref('');
 <template>
   <div>
     <div class="flex flex-wrap gap-4">
-      <BaseLabel class="grid gap-2">
+      <BaseLabel class="grid w-[350px] gap-2">
         <span>Description</span>
         <BaseTextarea
           v-model:value="value"
           placeholder="Type your message here."
-          class="w-[350px]"
+          class="mx-1"
         />
       </BaseLabel>
-      <BaseLabel class="grid gap-2">
+      <BaseLabel class="grid w-[350px] gap-2">
         <span>Description</span>
         <BaseTextarea
           v-model:value="value"
           placeholder="Type your message here."
-          class="w-[350px]"
+          class="mx-1"
           is-error
         />
       </BaseLabel>
-      <BaseLabel class="grid gap-2">
+      <BaseLabel class="grid w-[350px] gap-2">
         <span>Description</span>
         <BaseTextarea
           v-model:value="value"
           placeholder="Type your message here."
-          class="w-[350px]"
+          class="mx-1"
           disabled
         />
       </BaseLabel>

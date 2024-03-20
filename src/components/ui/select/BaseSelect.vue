@@ -40,9 +40,9 @@ const forwarded = useForwardPropsEmits(delegateProps, emits);
           <SelectLabel v-if="!!label">{{ label }}</SelectLabel>
           <SelectItem
             v-for="option in options"
+            :key="'select-option' + option.value"
             :value="option.value"
             :disabled="option.disabled"
-            :key="'select-option' + option.value"
           >
             {{ option.label }}
           </SelectItem>

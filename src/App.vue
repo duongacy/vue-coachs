@@ -13,7 +13,7 @@
         </transition>
       </router-view>
     </template>
-    <template #footer?>
+    <template #footer>
       <TheFooter></TheFooter>
     </template>
   </MainLayout>

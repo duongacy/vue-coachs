@@ -24,44 +24,44 @@ const value = ref();
 
 <template>
   <div class="flex gap-4">
-    <div class="grid gap-2">
+    <div class="grid w-[350px] gap-2">
       <BaseLabel for="fruits">Select Fruit(with default value)</BaseLabel>
       <BaseSelect
         id="fruits"
+        v-model:model-value="value"
         :options="options"
         default-value="banana"
-        v-model:model-value="value"
         placeholder="Select fruits"
-        class="w-fit"
+        class="mx-1"
         label="Fruits"
       >
       </BaseSelect>
     </div>
-    <div class="grid gap-2">
+    <div class="grid w-[350px] gap-2">
       <BaseLabel for="fruits2">Select Fruit(with placeholder)</BaseLabel>
       <BaseSelect
         id="fruits2"
-        :options="options"
         v-model:model-value="value"
+        :options="options"
         placeholder="Select fruits"
-        class="w-fit"
+        class="mx-1"
         label="Fruits"
       >
       </BaseSelect>
     </div>
-    <div class="grid gap-2">
+    <div class="grid w-[350px] gap-2">
       <BaseLabel
         for="fruits3"
         disabled
         >Select Fruit(disabled)</BaseLabel
       >
       <BaseSelect
-        disabled
         id="fruits3"
-        :options="options"
         v-model:model-value="value"
+        disabled
+        :options="options"
         placeholder="Select fruits"
-        class="w-fit"
+        class="mx-1"
         label="Fruits"
       >
       </BaseSelect>

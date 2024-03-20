@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import BaseLabel from '@/components/ui/label/BaseLabel.vue';
 import {
   TagsInput,
   TagsInputInput,
@@ -7,18 +7,21 @@ import {
   TagsInputItemDelete,
   TagsInputItemText,
 } from '@/components/ui/tags-input';
-import BaseLabel from '@/components/ui/label/BaseLabel.vue';
+import { ref } from 'vue';
 
 const modelValue = ref(['Apple', 'Banana']);
 </script>
 
 <template>
-  <div class="grid gap-4">
+  <div class="grid gap-4 overflow-auto overflow-y-hidden">
     <div class="grid gap-2">
       <p class="text-heading6 font-bold">Default</p>
       <BaseLabel class="grid w-[350px] gap-2">
         <span>Fruits</span>
-        <TagsInput v-model="modelValue">
+        <TagsInput
+          v-model="modelValue"
+          class="m-1"
+        >
           <TagsInputItem
             v-for="item in modelValue"
             :key="item"
@@ -41,6 +44,7 @@ const modelValue = ref(['Apple', 'Banana']);
         <TagsInput
           v-model="modelValue"
           disabled
+          class="m-1"
         >
           <TagsInputItem
             v-for="item in modelValue"
@@ -61,6 +65,7 @@ const modelValue = ref(['Apple', 'Banana']);
         <TagsInput
           v-model="modelValue"
           is-error
+          class="m-1"
         >
           <TagsInputItem
             v-for="item in modelValue"
