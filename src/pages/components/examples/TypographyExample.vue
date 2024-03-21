@@ -57,6 +57,7 @@ const textClasses = [
         :light="fontWeightClass === 'font-light'"
         :extralight="fontWeightClass === 'font-extralight'"
         :thin="fontWeightClass === 'font-thin'"
+        class="text-neutral-800"
       >
         {{ textClass.split('-')[1] }}
       </BaseText>

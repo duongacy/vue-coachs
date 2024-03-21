@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import type { toggleVariants } from '@/components/ui/toggle';
 import { cn } from '@/lib/utils';
 import type { VariantProps } from 'class-variance-authority';
@@ -41,4 +41,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
   >
     <slot />
   </ToggleGroupRoot>
+</template> -->
+<template>
+  <div></div>
 </template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped></style>

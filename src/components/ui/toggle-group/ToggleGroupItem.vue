@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import type { VariantProps } from 'class-variance-authority';
 import { type HTMLAttributes, computed, inject } from 'vue';
 import { ToggleGroupItem, type ToggleGroupItemProps, useForwardProps } from 'radix-vue';
@@ -40,4 +40,17 @@ const forwardedProps = useForwardProps(delegatedProps);
   >
     <slot />
   </ToggleGroupItem>
+</template> -->
+<template>
+  <div></div>
 </template>
+
+<script>
+export default {
+  setup() {
+    return {};
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>
