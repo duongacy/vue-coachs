@@ -78,6 +78,11 @@
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationRouterLink to="/components">Components</NavigationRouterLink>
+        </NavigationMenuItem>
+
         <NavigationMenuItem>
           <NavigationMenuTrigger>Examples</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -94,18 +99,6 @@
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <router-link
-            to="/components"
-            :class="
-              cn(navigationMenuTriggerStyle(), {
-                '[&.router-link-active]:bg-accent': true,
-              })
-            "
-          >
-            Components
-          </router-link>
         </NavigationMenuItem>
 
         <NavigationMenuItem class="ml-auto">
@@ -137,6 +130,7 @@ import { store } from '@/store';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import ListItem from './NavigationMenuDemoItem.vue';
+import NavigationRouterLink from '@/components/ui/navigation-menu/NavigationRouterLink.vue';
 
 const projects: { title: string; href: string; description: string }[] = [
   {
