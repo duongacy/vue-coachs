@@ -47,7 +47,7 @@
                         src="https://www.radix-vue.com/logo.svg"
                         class="w-full"
                       /> -->
-                    <div class="mb-2 mt-4 text-lg font-bold">YLVN</div>
+                    <div class="mb-2 mt-4 text-lg font-bold">Y Lee</div>
                     <p class="text-sm leading-tight text-muted-foreground">
                       Frontend developer
                       <!-- Passionate about aesthetics and technology. -->
