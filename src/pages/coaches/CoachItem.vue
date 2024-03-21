@@ -4,12 +4,9 @@
       <p class="font-bold">{{ fullName }}</p>
       <p>{{ item.description }}</p>
       <div class="mt-2 flex gap-2">
-        <BaseBadge
-          v-for="area in item.areas"
-          :key="area + '-area'"
-          variant="destructive"
-          >{{ area }}</BaseBadge
-        >
+        <BaseBadge v-for="area in item.areas" :key="area + '-area'" variant="destructive">{{
+          area
+        }}</BaseBadge>
       </div>
     </CardContent>
     <CardFooter class="flex justify-end gap-4">

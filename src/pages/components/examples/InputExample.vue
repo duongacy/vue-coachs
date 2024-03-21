@@ -14,32 +14,17 @@ const value = ref();
       <div class="flex flex-wrap gap-4">
         <BaseLabel class="grid w-[350px] gap-2">
           <span>No Icon</span>
-          <BaseInput
-            v-model:value="value"
-            placeholder="Text here"
-            class="mx-1"
-          >
-          </BaseInput>
+          <BaseInput v-model:value="value" placeholder="Text here" class="mx-1"> </BaseInput>
         </BaseLabel>
         <BaseLabel class="grid w-[350px] gap-2">
           <span>With left icon</span>
-          <BaseInput
-            v-model:value="value"
-            :start-icon="Mail"
-            placeholder="Text here"
-            class="mx-1"
-          >
+          <BaseInput v-model:value="value" :start-icon="Mail" placeholder="Text here" class="mx-1">
           </BaseInput>
         </BaseLabel>
 
         <BaseLabel class="grid w-[350px] gap-2">
           <span>With right icon</span>
-          <BaseInput
-            v-model:value="value"
-            :end-icon="Search"
-            placeholder="Text here"
-            class="mx-1"
-          >
+          <BaseInput v-model:value="value" :end-icon="Search" placeholder="Text here" class="mx-1">
           </BaseInput>
         </BaseLabel>
         <BaseLabel class="grid w-[350px] gap-2">
@@ -60,12 +45,7 @@ const value = ref();
       <div class="flex flex-wrap gap-4">
         <BaseLabel class="grid w-[350px] gap-2">
           <span>No Icon</span>
-          <BaseInput
-            v-model:value="value"
-            placeholder="Text here"
-            class="mx-1"
-            is-error
-          >
+          <BaseInput v-model:value="value" placeholder="Text here" class="mx-1" is-error>
           </BaseInput>
         </BaseLabel>
         <BaseLabel class="grid w-[350px] gap-2">
@@ -110,12 +90,7 @@ const value = ref();
       <div class="flex flex-wrap gap-4">
         <BaseLabel class="grid w-[350px] gap-2">
           <span>No Icon</span>
-          <BaseInput
-            v-model:value="value"
-            placeholder="Text here"
-            class="mx-1"
-            disabled
-          >
+          <BaseInput v-model:value="value" placeholder="Text here" class="mx-1" disabled>
           </BaseInput>
         </BaseLabel>
         <BaseLabel class="grid w-[350px] gap-2">

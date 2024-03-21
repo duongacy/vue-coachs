@@ -16,55 +16,26 @@ const handleComplete = (e: string[]) => alert(e.join(''));
   <div class="flex flex-wrap gap-4">
     <BaseLabel class="grid w-[350px] gap-2">
       <span> Default </span>
-      <PinInput
-        v-model="value"
-        placeholder="○"
-        @complete="handleComplete"
-      >
+      <PinInput v-model="value" placeholder="○" @complete="handleComplete">
         <PinInputGroup>
-          <PinInputInput
-            v-for="(id, index) in 5"
-            :key="id"
-            :index="index"
-          />
+          <PinInputInput v-for="(id, index) in 5" :key="id" :index="index" />
         </PinInputGroup>
       </PinInput>
     </BaseLabel>
     <BaseLabel class="grid w-[350px] gap-2">
       <span>Disabled</span>
-      <PinInput
-        v-model="value"
-        placeholder="○"
-        disabled
-      >
+      <PinInput v-model="value" placeholder="○" disabled>
         <PinInputGroup>
-          <PinInputInput
-            v-for="(id, index) in 5"
-            :key="id"
-            :index="index"
-          />
+          <PinInputInput v-for="(id, index) in 5" :key="id" :index="index" />
         </PinInputGroup>
       </PinInput>
     </BaseLabel>
-    <BaseLabel
-      prevent-delegation
-      class="grid w-[350px] gap-2"
-    >
+    <BaseLabel prevent-delegation class="grid w-[350px] gap-2">
       <span> Separator </span>
-      <PinInput
-        v-model="value"
-        placeholder="○"
-        @complete="handleComplete"
-      >
+      <PinInput v-model="value" placeholder="○" @complete="handleComplete">
         <PinInputGroup class="gap-1">
-          <template
-            v-for="(id, index) in 5"
-            :key="id"
-          >
-            <PinInputInput
-              class="rounded-md border"
-              :index="index"
-            />
+          <template v-for="(id, index) in 5" :key="id">
+            <PinInputInput class="rounded-md border" :index="index" />
             <template v-if="index !== 4">
               <PinInputSeparator />
             </template>

@@ -26,11 +26,7 @@ const props = withDefaults(
 
 <template>
   <AvatarRoot :class="cn(avatarVariant({ size, shape }), props.class)">
-    <AvatarImage
-      v-if="!!src"
-      :src="src"
-      :alt="alt"
-    />
+    <AvatarImage v-if="!!src" :src="src" :alt="alt" />
     <AvatarFallback v-if="!!fallback">{{ fallback }}</AvatarFallback>
   </AvatarRoot>
 </template>

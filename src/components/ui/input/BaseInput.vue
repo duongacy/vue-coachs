@@ -32,23 +32,11 @@ const modelValue = defineModel('value');
       )
     "
   >
-    <div
-      v-if="startIcon"
-      class="absolute inset-y-0 start-0 grid place-content-center px-2"
-    >
-      <component
-        :is="startIcon"
-        class="size-4 text-muted-foreground"
-      />
+    <div v-if="startIcon" class="absolute inset-y-0 start-0 grid place-content-center px-2">
+      <component :is="startIcon" class="size-4 text-muted-foreground" />
     </div>
-    <div
-      v-if="endIcon"
-      class="absolute inset-y-0 end-0 grid place-content-center px-2"
-    >
-      <component
-        :is="endIcon"
-        class="size-4 text-muted-foreground"
-      />
+    <div v-if="endIcon" class="absolute inset-y-0 end-0 grid place-content-center px-2">
+      <component :is="endIcon" class="size-4 text-muted-foreground" />
     </div>
     <input
       v-bind="attrs"

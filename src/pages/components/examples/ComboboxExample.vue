@@ -17,8 +17,5 @@ watchEffect(() => {
 </script>
 
 <template>
-  <BaseCombobox
-    v-model:value="value"
-    :options="frameworks"
-  ></BaseCombobox>
+  <BaseCombobox v-model:value="value" :options="frameworks"></BaseCombobox>
 </template>

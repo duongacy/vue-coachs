@@ -13,10 +13,7 @@ const avatarVariants = {
       :key="shape || '_' + 'avatarVariants.shape'"
       class="flex items-end gap-2"
     >
-      <div
-        v-for="size in avatarVariants.size"
-        :key="(size || '_') + (shape || '_') + 'avatar'"
-      >
+      <div v-for="size in avatarVariants.size" :key="(size || '_') + (shape || '_') + 'avatar'">
         <BaseAvatar
           :size="size"
           :shape="shape"

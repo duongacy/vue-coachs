@@ -28,10 +28,7 @@ const forwarded = useForwardPropsEmits(delegateProps, emits);
 </script>
 
 <template>
-  <RadioGroupRoot
-    :class="cn('grid gap-2', props.class)"
-    v-bind="forwarded"
-  >
+  <RadioGroupRoot :class="cn('grid gap-2', props.class)" v-bind="forwarded">
     <BaseLabel
       v-for="option in options"
       :key="option.value"
@@ -41,10 +38,7 @@ const forwarded = useForwardPropsEmits(delegateProps, emits);
         })
       "
     >
-      <RadioGroupItem
-        :value="option.value"
-        :disabled="option.disabled || disabled"
-      />
+      <RadioGroupItem :value="option.value" :disabled="option.disabled || disabled" />
       <span>{{ option.label }}</span>
     </BaseLabel>
   </RadioGroupRoot>

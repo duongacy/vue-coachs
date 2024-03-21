@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="pt-4">
-      <form
-        class="-mx-4 grid gap-y-4 bg-neutral-100 p-4"
-        @submit.prevent="onSubmit"
-      >
+      <form class="-mx-4 grid gap-y-4 bg-neutral-100 p-4" @submit.prevent="onSubmit">
         <div>
           <!-- form head -->
           <h2 class="text-xl font-bold leading-7 text-neutral-900">Request</h2>
@@ -30,10 +27,7 @@
               placeholder="Please enter your email"
               @change="cancelValidate('userEmail')"
             />
-            <p
-              v-if="!!request.userEmail.error"
-              class="text-error-600 text-sm leading-6"
-            >
+            <p v-if="!!request.userEmail.error" class="text-error-600 text-sm leading-6">
               {{ request.userEmail.error }}
             </p>
           </label>
@@ -55,10 +49,7 @@
               placeholder="Write a few sentences about yourself"
               @change="cancelValidate('message')"
             />
-            <p
-              v-if="!!request.message.error"
-              class="text-error-600 text-sm leading-6"
-            >
+            <p v-if="!!request.message.error" class="text-error-600 text-sm leading-6">
               {{ request.message.error }}
             </p>
           </label>
@@ -66,19 +57,10 @@
 
         <div class="flex justify-end gap-x-4">
           <!-- form footer -->
-          <base-button
-            variant="secondary"
-            size="large"
-            type="button"
-            @click="onCancel"
+          <base-button variant="secondary" size="large" type="button" @click="onCancel"
             >Cancel</base-button
           >
-          <base-button
-            variant="primary"
-            size="large"
-            type="submit"
-            >Submit</base-button
-          >
+          <base-button variant="primary" size="large" type="submit">Submit</base-button>
         </div>
       </form>
     </div>

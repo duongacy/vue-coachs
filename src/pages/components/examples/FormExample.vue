@@ -40,22 +40,12 @@ const onSubmit = handleSubmit((values) => {
 
 <template>
   <div class="grid gap-2">
-    <form
-      class="w-[350px] space-y-6"
-      @submit="onSubmit"
-    >
-      <FormField
-        v-slot="{ componentField }"
-        name="username"
-      >
+    <form class="w-[350px] space-y-6" @submit="onSubmit">
+      <FormField v-slot="{ componentField }" name="username">
         <FormItem>
           <FormLabel>Username</FormLabel>
           <FormControl>
-            <BaseInput
-              type="text"
-              placeholder="shadcn"
-              v-bind="componentField"
-            />
+            <BaseInput type="text" placeholder="shadcn" v-bind="componentField" />
           </FormControl>
           <FormDescription> This is your public display name. </FormDescription>
           <FormMessage />

@@ -30,19 +30,14 @@ const props = withDefaults(
   }>(),
   {
     as: 'p',
-    body: true,
-    normal: true,
   },
 );
 </script>
 <template>
-  <component
-    :is="props.as"
-    v-bind="attrs"
-  >
+  <component :is="props.as" v-bind="attrs">
     <span
       :class="
-        cn({
+        cn('text-body font-normal', {
           'text-heading1': heading1,
           'text-heading2': heading2,
           'text-heading3': heading3,

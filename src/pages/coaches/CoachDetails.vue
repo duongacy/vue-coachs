@@ -1,9 +1,6 @@
 <template>
   <div class="p-4">
-    <div
-      v-if="!!coach"
-      class="overflow-hidden rounded-lg border border-neutral-200 px-4 py-6"
-    >
+    <div v-if="!!coach" class="overflow-hidden rounded-lg border border-neutral-200 px-4 py-6">
       <div>
         <h3 class="text-base font-semibold leading-7 text-neutral-900">Applicant Information</h3>
         <p class="mt-1 max-w-2xl text-sm leading-6 text-neutral-500">
@@ -69,9 +66,7 @@
                     </div>
                   </div>
                   <div class="ml-4 flex-shrink-0">
-                    <a
-                      href="#"
-                      class="text-primary-600 hover:text-primary-500 font-medium"
+                    <a href="#" class="text-primary-600 hover:text-primary-500 font-medium"
                       >Download</a
                     >
                   </div>
@@ -88,9 +83,7 @@
                     </div>
                   </div>
                   <div class="ml-4 flex-shrink-0">
-                    <a
-                      href="#"
-                      class="text-primary-600 hover:text-primary-500 font-medium"
+                    <a href="#" class="text-primary-600 hover:text-primary-500 font-medium"
                       >Download</a
                     >
                   </div>
@@ -100,10 +93,7 @@
           </div>
         </dl>
       </div>
-      <base-button
-        variant="primary"
-        size="extra-large"
-        :to="registerLink"
+      <base-button variant="primary" size="extra-large" :to="registerLink"
         >Request a coach</base-button
       >
       <router-view></router-view>

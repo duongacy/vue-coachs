@@ -11,24 +11,13 @@ watchEffect(() => {
 <template>
   <div class="grid gap-4">
     <div class="w-[350px]">
-      <BaseCalendar
-        v-model="date"
-        class="rounded-md border"
-      />
+      <BaseCalendar v-model="date" class="rounded-md border" />
     </div>
     <div class="w-[710px]">
-      <BaseCalendar
-        v-model="date"
-        class="flex gap-10 rounded-md border"
-        :columns="2"
-      />
+      <BaseCalendar v-model="date" class="flex gap-10 rounded-md border" :columns="2" />
     </div>
     <div class="w-[710px]">
-      <BaseCalendar
-        v-model="date"
-        class="flex gap-10 rounded-md border"
-        type="range"
-      />
+      <BaseCalendar v-model="date" class="flex gap-10 rounded-md border" type="range" />
     </div>
   </div>
 </template>

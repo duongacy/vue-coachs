@@ -113,22 +113,9 @@ const projects: { title: string; href: string; description: string }[] = [
                   </NavigationMenuLink>
                 </div>
                 <div class="flex flex-col gap-y-1 px-2 py-6">
-                  <ListItem
-                    href="/docs"
-                    title="Email"
-                  >
-                    duongy96@gmail.com
-                  </ListItem>
-                  <ListItem
-                    href="/docs/installation"
-                    title="Phone"
-                  >
-                    (+84)976888738
-                  </ListItem>
-                  <ListItem
-                    href="/docs/primitives/typography"
-                    title="Github"
-                  >
+                  <ListItem href="/docs" title="Email"> duongy96@gmail.com </ListItem>
+                  <ListItem href="/docs/installation" title="Phone"> (+84)976888738 </ListItem>
+                  <ListItem href="/docs/primitives/typography" title="Github">
                     https://github.com/duongacy
                   </ListItem>
                 </div>
@@ -172,21 +159,13 @@ const projects: { title: string; href: string; description: string }[] = [
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <router-link
-              to="/components"
-              :class="navigationMenuTriggerStyle()"
-            >
+            <router-link to="/components" :class="navigationMenuTriggerStyle()">
               Components
             </router-link>
           </NavigationMenuItem>
 
           <NavigationMenuItem class="ml-auto">
-            <router-link
-              to="/auth"
-              :class="navigationMenuTriggerStyle()"
-            >
-              Sign in
-            </router-link>
+            <router-link to="/auth" :class="navigationMenuTriggerStyle()"> Sign in </router-link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

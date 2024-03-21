@@ -39,20 +39,12 @@ const value2Computed = computed(() => {
   <div class="flex gap-4">
     <div class="grid w-[350px] gap-2">
       <BaseLabel>Select type</BaseLabel>
-      <CheckboxGroup
-        v-model:model-value="values"
-        :options="options"
-        class="mx-1"
-      ></CheckboxGroup>
+      <CheckboxGroup v-model:model-value="values" :options="options" class="mx-1"></CheckboxGroup>
       Selected: {{ values }}
     </div>
     <div class="grid gap-2">
       <BaseLabel>Select type(With description)</BaseLabel>
-      <CheckboxGroup
-        v-model:model-value="values2"
-        :options="options2"
-        class="mx-1"
-      ></CheckboxGroup>
+      <CheckboxGroup v-model:model-value="values2" :options="options2" class="mx-1"></CheckboxGroup>
       Selected: {{ value2Computed }}
     </div>
   </div>

@@ -11,11 +11,7 @@ const value = ref('');
     <div class="flex flex-wrap gap-4">
       <BaseLabel class="grid w-[350px] gap-2">
         <span>Description</span>
-        <BaseTextarea
-          v-model:value="value"
-          placeholder="Type your message here."
-          class="mx-1"
-        />
+        <BaseTextarea v-model:value="value" placeholder="Type your message here." class="mx-1" />
       </BaseLabel>
       <BaseLabel class="grid w-[350px] gap-2">
         <span>Description</span>

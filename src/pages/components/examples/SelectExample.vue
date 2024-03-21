@@ -50,11 +50,7 @@ const value = ref();
       </BaseSelect>
     </div>
     <div class="grid w-[350px] gap-2">
-      <BaseLabel
-        for="fruits3"
-        disabled
-        >Select Fruit(disabled)</BaseLabel
-      >
+      <BaseLabel for="fruits3" disabled>Select Fruit(disabled)</BaseLabel>
       <BaseSelect
         id="fruits3"
         v-model:model-value="value"

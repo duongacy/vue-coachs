@@ -12,14 +12,8 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div
-    :class="cn(alertVariants({ variant }), props.class)"
-    role="alert"
-  >
-    <div
-      v-if="!!icon"
-      class="grid h-6 w-6 shrink-0 place-content-center"
-    >
+  <div :class="cn(alertVariants({ variant }), props.class)" role="alert">
+    <div v-if="!!icon" class="grid h-6 w-6 shrink-0 place-content-center">
       <component
         :is="icon"
         :class="cn('h-4 w-4 text-foreground', { 'text-destructive': variant === 'destructive' })"

@@ -66,11 +66,7 @@ const handleConfirmDialog3 = (value: boolean) => {
         @confirm="handleConfirmDialog2"
       >
       </BaseAlertDialog>
-      <BaseButton
-        variant="outline"
-        @click="dialog2OpenStatus = true"
-        >Open by v-bind</BaseButton
-      >
+      <BaseButton variant="outline" @click="dialog2OpenStatus = true">Open by v-bind</BaseButton>
       <div>
         <div>Dialog status: {{ dialog2OpenStatus }}</div>
         <div>Confirm status: {{ dialog2ConfirmStatus }}</div>
@@ -91,11 +87,7 @@ const handleConfirmDialog3 = (value: boolean) => {
         @confirm="handleConfirmDialog3"
       >
       </BaseAlertDialog>
-      <BaseButton
-        variant="outline"
-        @click="dialog3OpenStatus = true"
-        >Open by v-model
-      </BaseButton>
+      <BaseButton variant="outline" @click="dialog3OpenStatus = true">Open by v-model </BaseButton>
       <div>
         <div>Dialog status: {{ dialog3OpenStatus }}</div>
         <div>Confirm status: {{ dialog3ConfirmStatus }}</div>

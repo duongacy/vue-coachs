@@ -11,10 +11,7 @@ const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length
       <div class="p-4">
         <h4 class="mb-4 text-sm font-medium leading-none">Tags</h4>
 
-        <div
-          v-for="tag in tags"
-          :key="tag"
-        >
+        <div v-for="tag in tags" :key="tag">
           <div class="text-sm">
             {{ tag }}
           </div>

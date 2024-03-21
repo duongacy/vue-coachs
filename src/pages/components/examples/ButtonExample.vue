@@ -14,11 +14,7 @@ const buttonSizes: ButtonProps['size'][] = ['sm', 'lg', 'default', 'icon'];
 
 <template>
   <div class="grid gap-4 overflow-x-auto">
-    <div
-      v-for="size in buttonSizes"
-      :key="'button' + (size || '_')"
-      class="flex items-end gap-2"
-    >
+    <div v-for="size in buttonSizes" :key="'button' + (size || '_')" class="flex items-end gap-2">
       <div class="w-14">{{ size }}</div>
       <div class="grid gap-4">
         <div class="flex gap-4">

@@ -18,15 +18,8 @@ const modelValue = ref(['Apple', 'Banana']);
       <p class="text-heading6 font-bold">Default</p>
       <BaseLabel class="grid w-[350px] gap-2">
         <span>Fruits</span>
-        <TagsInput
-          v-model="modelValue"
-          class="m-1"
-        >
-          <TagsInputItem
-            v-for="item in modelValue"
-            :key="item"
-            :value="item"
-          >
+        <TagsInput v-model="modelValue" class="m-1">
+          <TagsInputItem v-for="item in modelValue" :key="item" :value="item">
             <TagsInputItemText />
             <TagsInputItemDelete @click="$event.preventDefault()" />
           </TagsInputItem>
@@ -36,21 +29,10 @@ const modelValue = ref(['Apple', 'Banana']);
     </div>
     <div class="grid gap-2">
       <p class="text-heading6 font-bold">Disabled</p>
-      <BaseLabel
-        class="grid w-[350px] gap-2"
-        prevent-delegation
-      >
+      <BaseLabel class="grid w-[350px] gap-2" prevent-delegation>
         <span>Fruits</span>
-        <TagsInput
-          v-model="modelValue"
-          disabled
-          class="m-1"
-        >
-          <TagsInputItem
-            v-for="item in modelValue"
-            :key="item"
-            :value="item"
-          >
+        <TagsInput v-model="modelValue" disabled class="m-1">
+          <TagsInputItem v-for="item in modelValue" :key="item" :value="item">
             <TagsInputItemText />
             <TagsInputItemDelete @click="$event.preventDefault()" />
           </TagsInputItem>
@@ -62,16 +44,8 @@ const modelValue = ref(['Apple', 'Banana']);
       <p class="text-heading6 font-bold">Error</p>
       <BaseLabel class="grid w-[350px] gap-2">
         <span>Fruits</span>
-        <TagsInput
-          v-model="modelValue"
-          is-error
-          class="m-1"
-        >
-          <TagsInputItem
-            v-for="item in modelValue"
-            :key="item"
-            :value="item"
-          >
+        <TagsInput v-model="modelValue" is-error class="m-1">
+          <TagsInputItem v-for="item in modelValue" :key="item" :value="item">
             <TagsInputItemText />
             <TagsInputItemDelete @click="$event.preventDefault()" />
           </TagsInputItem>

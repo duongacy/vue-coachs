@@ -6,26 +6,14 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 <template>
   <div class="grid gap-2">
-    <ToggleGroup
-      type="multiple"
-      class="w-fit"
-    >
-      <ToggleGroupItem
-        value="bold"
-        aria-label="Toggle bold"
-      >
+    <ToggleGroup type="multiple" class="w-fit">
+      <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <Bold class="h-4 w-4" />
       </ToggleGroupItem>
-      <ToggleGroupItem
-        value="italic"
-        aria-label="Toggle italic"
-      >
+      <ToggleGroupItem value="italic" aria-label="Toggle italic">
         <Italic class="h-4 w-4" />
       </ToggleGroupItem>
-      <ToggleGroupItem
-        value="underline"
-        aria-label="Toggle underline"
-      >
+      <ToggleGroupItem value="underline" aria-label="Toggle underline">
         <Underline class="h-4 w-4" />
       </ToggleGroupItem>
     </ToggleGroup>

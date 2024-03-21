@@ -27,10 +27,7 @@ const delegatedProps = computed(() => {
       )
     "
   >
-    <ComboboxLabel
-      v-if="heading"
-      class="px-2 py-1.5 text-xs font-medium text-muted-foreground"
-    >
+    <ComboboxLabel v-if="heading" class="px-2 py-1.5 text-xs font-medium text-muted-foreground">
       {{ heading }}
     </ComboboxLabel>
     <slot />

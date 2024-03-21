@@ -65,10 +65,7 @@ const calcLabel = computed(() => {
     </PopoverTrigger>
     <PopoverContent class="w-[350px] p-0">
       <BaseCommand>
-        <CommandInput
-          class="h-9"
-          :placeholder="searchPlaceHolder"
-        />
+        <CommandInput class="h-9" :placeholder="searchPlaceHolder" />
         <CommandEmpty>{{ noOptionsText }}</CommandEmpty>
         <CommandList>
           <CommandGroup>

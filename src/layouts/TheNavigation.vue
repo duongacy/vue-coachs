@@ -31,47 +31,27 @@
             <div class="grid w-[456px] grid-cols-[auto_1fr] gap-x-3">
               <div class="p-1">
                 <NavigationMenuLink as-child>
-                  <a
+                  <router-link
                     class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-5 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    to="/profile"
                   >
                     <BaseAvatar
                       size="lg"
                       shape="square"
                       src="/src/assets/avatar.jpeg"
-                      fallback="CN"
-                      alt="@radix-vue"
+                      fallback="avatar"
+                      alt="cn"
                     >
                     </BaseAvatar>
-                    <!-- <img
-                        src="https://www.radix-vue.com/logo.svg"
-                        class="w-full"
-                      /> -->
                     <div class="mb-2 mt-4 text-lg font-bold">Y Lee</div>
-                    <p class="text-sm leading-tight text-muted-foreground">
-                      Frontend developer
-                      <!-- Passionate about aesthetics and technology. -->
-                    </p>
-                  </a>
+                    <p class="text-sm leading-tight text-muted-foreground">Frontend developer</p>
+                  </router-link>
                 </NavigationMenuLink>
               </div>
               <div class="flex flex-col gap-y-1 px-2 py-6">
-                <ListItem
-                  href="/docs"
-                  title="Email"
-                >
-                  duongy96@gmail.com
-                </ListItem>
-                <ListItem
-                  href="/docs/installation"
-                  title="Phone"
-                >
-                  (+84)976888738
-                </ListItem>
-                <ListItem
-                  href="/docs/primitives/typography"
-                  title="Github"
-                >
+                <ListItem href="/docs" title="Email"> duongy96@gmail.com </ListItem>
+                <ListItem href="/docs/installation" title="Phone"> (+84)976888738 </ListItem>
+                <ListItem href="/docs/primitives/typography" title="Github">
                   https://github.com/duongacy
                 </ListItem>
               </div>
@@ -102,12 +82,7 @@
         </NavigationMenuItem>
 
         <NavigationMenuItem class="ml-auto">
-          <router-link
-            to="/auth"
-            :class="navigationMenuTriggerStyle()"
-          >
-            Sign in
-          </router-link>
+          <router-link to="/auth" :class="navigationMenuTriggerStyle()"> Sign in </router-link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

@@ -1,26 +1,3 @@
-<template>
-  <MainLayout v-if="!isAuthenTemplate">
-    <template #header>
-      <TheNavigation></TheNavigation>
-    </template>
-    <template #content>
-      <router-view v-slot="slotProps">
-        <transition
-          name="route"
-          mode="out-in"
-        >
-          <component :is="slotProps.Component"></component>
-        </transition>
-      </router-view>
-    </template>
-    <template #footer>
-      <TheFooter></TheFooter>
-    </template>
-  </MainLayout>
-
-  <router-view v-else></router-view>
-</template>
-
 <script setup lang="ts">
 import { MainLayout } from '@/layouts';
 import TheFooter from '@/layouts/TheFooter.vue';
@@ -32,6 +9,7 @@ const router = useRouter();
 const route = useRoute();
 
 const isAuthenTemplate = computed(() => route.name === 'authen');
+const isProfileTemplate = computed(() => route.name === 'profile');
 
 const authenSuccessEventHandler = () => {
   if (route.redirectedFrom) {
@@ -58,6 +36,25 @@ onBeforeUnmount(() => {
   window.removeEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler);
 });
 </script>
+<template>
+  <MainLayout v-if="!isAuthenTemplate && !isProfileTemplate">
+    <template #header>
+      <TheNavigation></TheNavigation>
+    </template>
+    <template #content>
+      <router-view v-slot="slotProps">
+        <transition name="route" mode="out-in">
+          <component :is="slotProps.Component"></component>
+        </transition>
+      </router-view>
+    </template>
+    <template #footer>
+      <TheFooter></TheFooter>
+    </template>
+  </MainLayout>
+
+  <router-view v-else></router-view>
+</template>
 <style>
 .route-enter-active,
 .route-leave-active {
