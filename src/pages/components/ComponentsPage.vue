@@ -29,10 +29,7 @@
         <SelectExample></SelectExample>
       </ExampleSectionTemplate>
       <ExampleSectionTemplate id="checkbox" name="Checkbox">
-        <CheckboxExample></CheckboxExample>
-      </ExampleSectionTemplate>
-      <ExampleSectionTemplate id="Toggle" name="Toggle">
-        <ToggleExample></ToggleExample>
+        <CheckboxGroupExample></CheckboxGroupExample>
       </ExampleSectionTemplate>
       <ExampleSectionTemplate id="accordion" name="Accordion">
         <AccordionExample></AccordionExample>
@@ -133,10 +130,6 @@
       <ExampleSectionTemplate id="Toast" name="Toast">
         <ToastExample></ToastExample>
       </ExampleSectionTemplate>
-
-      <ExampleSectionTemplate id="ToggleGroup" name="ToggleGroup">
-        <ToggleGroupExample></ToggleGroupExample>
-      </ExampleSectionTemplate>
       <ExampleSectionTemplate id="Tooltip" name="Tooltip">
         <TooltipExample></TooltipExample>
       </ExampleSectionTemplate>
@@ -154,7 +147,7 @@ import BadgeExample from './examples/BadgeExample.vue';
 import ButtonExample from './examples/ButtonExample.vue';
 import CardExample from './examples/CardExample.vue';
 import CarouselExample from './examples/CarouselExample.vue';
-import CheckboxExample from './examples/CheckboxExample.vue';
+import CheckboxGroupExample from './examples/CheckboxGroupExample.vue';
 import CollapsibleExample from './examples/CollapsibleExample.vue';
 import ComboboxExample from './examples/ComboboxExample.vue';
 import ContextMenuExample from './examples/ContextMenuExample.vue';
@@ -184,8 +177,6 @@ import TabsExample from './examples/TabsExample.vue';
 import TagsInputExample from './examples/TagsInputExample.vue';
 import TextareaExample from './examples/TextareaExample.vue';
 import ToastExample from './examples/ToastExample.vue';
-import ToggleExample from './examples/ToggleExample.vue';
-import ToggleGroupExample from './examples/ToggleGroupExample.vue';
 import TooltipExample from './examples/TooltipExample.vue';
 import TypographyExample from './examples/TypographyExample.vue';
 </script>
