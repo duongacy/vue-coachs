@@ -31,6 +31,9 @@
       <ExampleSectionTemplate id="checkbox" name="Checkbox">
         <CheckboxGroupExample></CheckboxGroupExample>
       </ExampleSectionTemplate>
+      <ExampleSectionTemplate id="toggle-group" name="Toggle Group">
+        <ToggleGroupExample></ToggleGroupExample>
+      </ExampleSectionTemplate>
       <ExampleSectionTemplate id="accordion" name="Accordion">
         <AccordionExample></AccordionExample>
       </ExampleSectionTemplate>
@@ -177,6 +180,7 @@ import TabsExample from './examples/TabsExample.vue';
 import TagsInputExample from './examples/TagsInputExample.vue';
 import TextareaExample from './examples/TextareaExample.vue';
 import ToastExample from './examples/ToastExample.vue';
+import ToggleGroupExample from './examples/ToggleGroupExample.vue';
 import TooltipExample from './examples/TooltipExample.vue';
 import TypographyExample from './examples/TypographyExample.vue';
 </script>
