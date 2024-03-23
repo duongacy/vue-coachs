@@ -4,8 +4,8 @@
       <BaseAvatar size="lg" shape="square" src="/src/assets/avatar.jpeg" fallback="avatar" alt="cn">
       </BaseAvatar>
       <div>
-        <BaseText heading4 extrabold class="mt-4 text-neutral-800"> Le Van Nhu Y </BaseText>
-        <BaseText heading6 bold class="mt-1 text-violet-700">Middle Frontend Developer </BaseText>
+        <BaseText heading4 bold class="mt-4 text-neutral-800"> Le Van Nhu Y </BaseText>
+        <BaseText heading6 semibold class="mt-1 text-pink-700">Middle Frontend Developer </BaseText>
         <BaseText light caption class="mt-2 leading-5 text-neutral-600">
           Experienced Middle Frontend Developer with 4 years of hands-on experience in building and
           optimizing user interfaces for web applications. Skilled in frontend technologies and
@@ -14,7 +14,7 @@
         </BaseText>
       </div>
     </div>
-    <div class="flex gap-4 bg-violet-50 p-4 text-neutral-500">
+    <div class="flex gap-4 bg-neutral-50 p-4 text-neutral-500">
       <BaseText thin as="a" class="flex items-center gap-x-1">
         <Mail class="size-6 stroke-[1px]" />
         <span>duongy96@gmail.com</span>
