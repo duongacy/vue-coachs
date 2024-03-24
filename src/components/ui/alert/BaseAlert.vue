@@ -1,26 +1,35 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
-import type { Component, HTMLAttributes } from 'vue';
-import { AlertTitle, alertVariants, type AlertVariants } from '.';
+import type { Component } from 'vue';
 
 const props = defineProps<{
   class?: string;
-  variant?: AlertVariants['variant'];
+  variant?: 'default' | 'destructive';
   icon?: Component;
   title?: string;
 }>();
 </script>
 
 <template>
-  <div :class="cn(alertVariants({ variant }), props.class)" role="alert">
-    <div v-if="!!icon" class="grid h-6 w-6 shrink-0 place-content-center">
-      <component
-        :is="icon"
-        :class="cn('h-4 w-4 text-foreground', { 'text-destructive': variant === 'destructive' })"
-      />
+  <div
+    :class="
+      cn(
+        'relative flex gap-1 rounded-lg border p-4',
+        {
+          'bg-background text-foreground': variant === 'default',
+          'border-destructive/50 text-destructive dark:border-destructive':
+            variant === 'destructive',
+        },
+        props.class,
+      )
+    "
+    role="alert"
+  >
+    <div v-if="!!icon" class="grid h-6 w-6 shrink-0 place-content-center text-inherit">
+      <component :is="icon" :class="cn('h-4 w-4 text-inherit')" />
     </div>
     <div class="grid gap-2">
-      <AlertTitle v-if="!!title">{{ title }}</AlertTitle>
+      <h5 class="font-medium leading-none tracking-tight" v-if="!!title">{{ title }}</h5>
       <slot />
     </div>
   </div>
