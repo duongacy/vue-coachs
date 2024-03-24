@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue';
-import { AvatarRoot } from 'radix-vue';
-import { type AvatarVariants, avatarVariant, AvatarFallback, AvatarImage } from '.';
 import { cn } from '@/lib/utils';
+import { AvatarRoot, AvatarFallback, AvatarImage } from 'radix-vue';
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const props = withDefaults(
   defineProps<{
     class?: string;
-    size?: AvatarVariants['size'];
-    shape?: AvatarVariants['shape'];
+    size?: 'sm' | 'base' | 'lg';
+    shape?: 'circle' | 'square';
     src?: string;
     fallback?: string;
     alt?: string;
@@ -25,8 +27,22 @@ const props = withDefaults(
 </script>
 
 <template>
-  <AvatarRoot :class="cn(avatarVariant({ size, shape }), props.class)">
-    <AvatarImage v-if="!!src" :src="src" :alt="alt" />
+  <AvatarRoot
+    :class="
+      cn(
+        'inline-flex shrink-0 select-none items-center justify-center overflow-hidden bg-secondary font-normal text-foreground',
+        {
+          'h-10 w-10 text-xs': props.size === 'sm',
+          'h-16 w-16 text-2xl': props.size === 'base',
+          'h-32 w-32 text-5xl': props.size === 'lg',
+          'rounded-full': props.shape === 'circle',
+          'rounded-md': props.shape === 'square',
+        },
+        props.class,
+      )
+    "
+  >
+    <AvatarImage v-if="!!src" :src="src" :alt="alt" class="h-full w-full object-cover" />
     <AvatarFallback v-if="!!fallback">{{ fallback }}</AvatarFallback>
   </AvatarRoot>
 </template>

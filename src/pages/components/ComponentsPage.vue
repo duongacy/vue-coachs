@@ -41,9 +41,6 @@
       <ExampleSectionTemplate id="card" name="Card">
         <CardExample></CardExample>
       </ExampleSectionTemplate>
-      <ExampleSectionTemplate id="carousel" name="Carousel">
-        <CarouselExample></CarouselExample>
-      </ExampleSectionTemplate>
 
       <ExampleSectionTemplate id="collapsible" name="Collapsible">
         <CollapsibleExample></CollapsibleExample>
@@ -83,7 +80,6 @@ import AvatarExample from './examples/AvatarExample.vue';
 import BadgeExample from './examples/BadgeExample.vue';
 import ButtonExample from './examples/ButtonExample.vue';
 import CardExample from './examples/CardExample.vue';
-import CarouselExample from './examples/CarouselExample.vue';
 import CheckboxGroupExample from './examples/CheckboxGroupExample.vue';
 import CollapsibleExample from './examples/CollapsibleExample.vue';
 import DialogExample from './examples/DialogExample.vue';
