@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { ContextMenuSeparator, type ContextMenuSeparatorProps } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<ContextMenuSeparatorProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<ContextMenuSeparatorProps & { class?: string }>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;

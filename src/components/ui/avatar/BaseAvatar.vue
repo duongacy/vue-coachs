@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 const props = withDefaults(
   defineProps<{
-    class?: HTMLAttributes['class'];
+    class?: string;
     size?: AvatarVariants['size'];
     shape?: AvatarVariants['shape'];
     src?: string;

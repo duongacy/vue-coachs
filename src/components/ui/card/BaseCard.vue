@@ -6,7 +6,7 @@ import CardTitle from './CardTitle.vue';
 import CardDescription from './CardDescription.vue';
 
 const props = defineProps<{
-  class?: HTMLAttributes['class'];
+  class?: string;
   title?: string;
   description?: string;
 }>();

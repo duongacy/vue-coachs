@@ -3,11 +3,11 @@
     <BaseText heading5 bold class="uppercase text-pink-700">Frameworks/ libraries</BaseText>
     <div class="mt-4 flex flex-col gap-2">
       <BaseText
+        v-for="{ label, description } in libraries"
+        :key="label"
         semibold
         heading6
         class="leading-7 text-neutral-800"
-        v-for="{ label, description } in libraries"
-        :key="label"
       >
         {{ label }}:
         <span class="font-extralight text-neutral-600">

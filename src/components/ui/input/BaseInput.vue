@@ -10,13 +10,14 @@ defineProps<{
   isError?: boolean;
   startIcon?: Component;
   endIcon?: Component;
+  value?: string;
 }>();
 
 defineEmits<{
   'update:value': [value: string];
 }>();
 
-const modelValue = defineModel('value');
+const modelValue = defineModel<string>('value');
 </script>
 
 <template>
@@ -42,7 +43,7 @@ const modelValue = defineModel('value');
       v-bind="attrs"
       v-model="modelValue"
       :class="
-        cn('h-full w-full bg-white px-3 py-2 focus:outline-none', {
+        cn('BaseInput', 'h-full w-full bg-white px-3 py-2 focus:outline-none', {
           'pl-9': startIcon,
           'pr-9': endIcon,
         })

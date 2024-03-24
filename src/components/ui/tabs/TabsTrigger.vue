@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { TabsTrigger, useForwardProps, type TabsTriggerProps } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<TabsTriggerProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<TabsTriggerProps & { class?: string }>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;

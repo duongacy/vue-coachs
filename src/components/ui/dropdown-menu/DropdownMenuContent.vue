@@ -9,12 +9,10 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = withDefaults(
-  defineProps<DropdownMenuContentProps & { class?: HTMLAttributes['class'] }>(),
-  {
-    sideOffset: 4,
-  },
-);
+const props = withDefaults(defineProps<DropdownMenuContentProps & { class?: string }>(), {
+  sideOffset: 4,
+  class: '',
+});
 const emits = defineEmits<DropdownMenuContentEmits>();
 
 const delegatedProps = computed(() => {

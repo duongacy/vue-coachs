@@ -8,7 +8,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<DropdownMenuSubContentProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<DropdownMenuSubContentProps & { class?: string }>();
 const emits = defineEmits<DropdownMenuSubContentEmits>();
 
 const delegatedProps = computed(() => {

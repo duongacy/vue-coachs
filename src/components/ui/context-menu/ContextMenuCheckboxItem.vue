@@ -10,7 +10,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<ContextMenuCheckboxItemProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<ContextMenuCheckboxItemProps & { class?: string }>();
 const emits = defineEmits<ContextMenuCheckboxItemEmits>();
 
 const delegatedProps = computed(() => {

@@ -3,7 +3,7 @@
     <BaseText heading5 bold class="uppercase text-pink-700">Noteworthy Projects</BaseText>
     <div class="mt-4 flex flex-col gap-3">
       <div
-        v-for="({ name, timeRange, description, responsibilities, techs }, index) in projects"
+        v-for="{ name, timeRange, description, responsibilities, techs } in projects"
         :key="name + timeRange"
         class="rounded-xl bg-neutral-50 p-6"
       >
@@ -37,7 +37,7 @@
           </li>
         </BaseText>
         <div class="mt-4 flex gap-2">
-          <BaseBadge variant="destructive" v-for="tech in techs" :key="tech">{{ tech }}</BaseBadge>
+          <BaseBadge v-for="tech in techs" :key="tech" variant="destructive">{{ tech }}</BaseBadge>
         </div>
       </div>
     </div>

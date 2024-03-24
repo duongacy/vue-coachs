@@ -14,7 +14,7 @@ import { type SheetVariants, sheetVariants } from '.';
 import { cn } from '@/lib/utils';
 
 interface SheetContentProps extends DialogContentProps {
-  class?: HTMLAttributes['class'];
+  class?: string;
   side?: SheetVariants['side'];
 }
 

@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const props = defineProps<{
   variant?: BadgeVariants['variant'];
-  class?: HTMLAttributes['class'];
+  class?: string;
 }>();
 </script>
 

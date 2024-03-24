@@ -4,9 +4,10 @@ import type { ComboboxRootEmits, ComboboxRootProps } from 'radix-vue';
 import { ComboboxRoot, useForwardPropsEmits } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = withDefaults(defineProps<ComboboxRootProps & { class?: HTMLAttributes['class'] }>(), {
+const props = withDefaults(defineProps<ComboboxRootProps & { class?: string }>(), {
   open: true,
   modelValue: '',
+  class: '',
 });
 
 const emits = defineEmits<ComboboxRootEmits>();

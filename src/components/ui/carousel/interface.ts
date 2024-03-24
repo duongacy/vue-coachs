@@ -16,5 +16,5 @@ export interface CarouselEmits {
 }
 
 export interface WithClassAsProps {
-  class?: HTMLAttributes['class'];
+  class?: string;
 }

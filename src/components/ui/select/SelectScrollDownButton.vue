@@ -8,7 +8,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<SelectScrollDownButtonProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<SelectScrollDownButtonProps & { class?: string }>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;

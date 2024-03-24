@@ -13,7 +13,7 @@ import { RadioGroupItem } from '.';
 export type RadioOption = { value: string; label: string; disabled?: boolean };
 const props = defineProps<
   RadioGroupRootProps & {
-    class?: HTMLAttributes['class'];
+    class?: string;
     options: RadioOption[];
     disabled?: boolean;
   }

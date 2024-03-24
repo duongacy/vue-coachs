@@ -9,7 +9,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<ContextMenuContentProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<ContextMenuContentProps & { class?: string }>();
 const emits = defineEmits<ContextMenuContentEmits>();
 
 const delegatedProps = computed(() => {

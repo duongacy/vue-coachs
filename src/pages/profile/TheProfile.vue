@@ -1,8 +1,8 @@
 <template>
   <div class="mx-auto min-h-screen w-full max-w-[1200px] px-8 py-6">
-    <div class="flex flex-grow flex-col gap-10 mb-10">
+    <div class="mb-10 flex flex-grow flex-col gap-10">
       <ProfileHeader />
-      <ProfileTechstack/>
+      <ProfileTechstack />
       <ProfileDevelopment />
       <ProfileLibraries />
       <ProfileExperience />

@@ -8,7 +8,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<DropdownMenuSubTriggerProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<DropdownMenuSubTriggerProps & { class?: string }>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;

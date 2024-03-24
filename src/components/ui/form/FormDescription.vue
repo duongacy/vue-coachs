@@ -4,7 +4,7 @@ import { useFormField } from './useFormField';
 import { cn } from '@/lib/utils';
 
 const props = defineProps<{
-  class?: HTMLAttributes['class'];
+  class?: string;
 }>();
 
 const { formDescriptionId } = useFormField();

@@ -36,7 +36,7 @@ const textClasses = [
     >
       <p class="w-20">{{ fontWeightClass.split('-')[1] }}</p>
       <div v-for="[textClass, info] in textClasses" :key="textClass + fontWeightClass">
-        <BaseText small bold class="text-red-800" v-if="fontWeightClass === 'font-black'"
+        <BaseText v-if="fontWeightClass === 'font-black'" small bold class="text-red-800"
           >{{ info }}
         </BaseText>
         <BaseText

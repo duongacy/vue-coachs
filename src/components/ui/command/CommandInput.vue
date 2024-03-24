@@ -10,7 +10,7 @@ defineOptions({
 
 const props = defineProps<
   ComboboxInputProps & {
-    class?: HTMLAttributes['class'];
+    class?: string;
   }
 >();
 

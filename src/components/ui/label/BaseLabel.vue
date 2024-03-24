@@ -31,7 +31,11 @@ watchEffect(() => {
     :for="props.for"
     :class="
       cn(
-        'text-sm font-medium leading-none [&:has(input[disabled])]:opacity-70 [&:has(textarea[disabled])]:opacity-70',
+        `text-sm font-medium leading-none 
+        [&:has(.BaseInput[disabled])]:opacity-70 
+        [&:has(.BaseSwitch[disabled])]:opacity-70 
+        [&:has(.BaseTextarea[disabled])]:opacity-70 
+        [&:has(.TagsInput[data-disabled])]:opacity-70`,
         { 'opacity-70': disabled },
         props.class as string,
       )

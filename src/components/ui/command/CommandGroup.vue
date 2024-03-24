@@ -6,7 +6,7 @@ import { computed, type HTMLAttributes } from 'vue';
 
 const props = defineProps<
   ComboboxGroupProps & {
-    class?: HTMLAttributes['class'];
+    class?: string;
     heading?: string;
   }
 >();

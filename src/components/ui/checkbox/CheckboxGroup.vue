@@ -16,7 +16,7 @@ export type CheckboxOption = {
 defineOptions({ inheritAttrs: false });
 const props = defineProps<
   CheckboxRootProps & {
-    class?: HTMLAttributes['class'];
+    class?: string;
     options: CheckboxOption[];
     modelValue: string[];
     id?: string;

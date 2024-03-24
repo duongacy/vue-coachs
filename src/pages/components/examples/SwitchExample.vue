@@ -5,7 +5,13 @@ import { BaseSwitch } from '@/components/ui/switch';
 
 <template>
   <div class="flex items-center gap-2">
-    <BaseSwitch id="airplane-mode" />
-    <BaseLabel for="airplane-mode">Airplane Mode</BaseLabel>
+    <BaseLabel class="flex items-center gap-1">
+      <BaseSwitch />
+      <span> Airplane Mode </span>
+    </BaseLabel>
+    <BaseLabel class="flex items-center gap-1">
+      <BaseSwitch disabled />
+      <span> Airplane Mode </span>
+    </BaseLabel>
   </div>
 </template>

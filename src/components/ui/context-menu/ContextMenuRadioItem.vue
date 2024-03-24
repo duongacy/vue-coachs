@@ -10,7 +10,7 @@ import {
 } from 'radix-vue';
 import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<ContextMenuRadioItemProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<ContextMenuRadioItemProps & { class?: string }>();
 const emits = defineEmits<ContextMenuRadioItemEmits>();
 
 const delegatedProps = computed(() => {

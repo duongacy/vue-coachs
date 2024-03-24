@@ -32,7 +32,7 @@ export const toastVariants = cva(
 type ToastVariants = VariantProps<typeof toastVariants>;
 
 export interface ToastProps extends ToastRootProps {
-  class?: HTMLAttributes['class'];
+  class?: string;
   variant?: ToastVariants['variant'];
   onOpenChange?: ((value: boolean) => void) | undefined;
 }

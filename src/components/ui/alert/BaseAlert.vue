@@ -4,7 +4,7 @@ import type { Component, HTMLAttributes } from 'vue';
 import { AlertTitle, alertVariants, type AlertVariants } from '.';
 
 const props = defineProps<{
-  class?: HTMLAttributes['class'];
+  class?: string;
   variant?: AlertVariants['variant'];
   icon?: Component;
   title?: string;

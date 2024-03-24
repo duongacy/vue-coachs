@@ -9,7 +9,7 @@ import {
 import { computed, type HTMLAttributes } from 'vue';
 import NavigationMenuViewport from './NavigationMenuViewport.vue';
 
-const props = defineProps<NavigationMenuRootProps & { class?: HTMLAttributes['class'] }>();
+const props = defineProps<NavigationMenuRootProps & { class?: string }>();
 
 const emits = defineEmits<NavigationMenuRootEmits>();
 

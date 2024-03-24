@@ -10,7 +10,7 @@ import { useId } from 'radix-vue';
 import { cn } from '@/lib/utils';
 
 const props = defineProps<{
-  class?: HTMLAttributes['class'];
+  class?: string;
 }>();
 
 const id = useId();
