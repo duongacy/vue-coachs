@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import { ChevronRight } from 'lucide-vue-next';
 import { ContextMenuSubTrigger, useForwardProps, type ContextMenuSubTriggerProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<ContextMenuSubTriggerProps & { class?: string; inset?: boolean }>();
 

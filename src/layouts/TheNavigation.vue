@@ -82,7 +82,7 @@
         </NavigationMenuItem>
 
         <NavigationMenuItem class="ml-auto">
-          <router-link to="/auth" :class="navigationMenuTriggerStyle()"> Sign in </router-link>
+          <router-link to="/auth" :class="navigationMenuTriggerStyle"> Sign in </router-link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -100,12 +100,11 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { cn } from '@/lib/utils';
+import NavigationRouterLink from '@/components/ui/navigation-menu/NavigationRouterLink.vue';
 import { store } from '@/store';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import ListItem from './NavigationMenuDemoItem.vue';
-import NavigationRouterLink from '@/components/ui/navigation-menu/NavigationRouterLink.vue';
 
 const projects: { title: string; href: string; description: string }[] = [
   {

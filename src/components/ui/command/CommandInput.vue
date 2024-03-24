@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import { Search } from 'lucide-vue-next';
 import { ComboboxInput, useForwardProps, type ComboboxInputProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 defineOptions({
   inheritAttrs: false,

@@ -7,7 +7,7 @@ import { navigationMenuTriggerStyle } from '.';
   <router-link
     to="/components"
     :class="
-      cn(navigationMenuTriggerStyle(), {
+      cn(navigationMenuTriggerStyle, {
         '[&.router-link-active]:bg-accent': true,
       })
     "

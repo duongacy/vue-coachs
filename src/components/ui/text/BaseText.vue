@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useAttrs } from 'vue';
 import { cn } from '@/lib/utils';
+import { useAttrs } from 'vue';
 
 const attrs = useAttrs();
 const props = withDefaults(

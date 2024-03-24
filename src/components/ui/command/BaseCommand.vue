@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import type { ComboboxRootEmits, ComboboxRootProps } from 'radix-vue';
 import { ComboboxRoot, useForwardPropsEmits } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = withDefaults(defineProps<ComboboxRootProps & { class?: string }>(), {
   open: true,

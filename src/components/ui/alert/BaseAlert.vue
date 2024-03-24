@@ -29,7 +29,7 @@ const props = defineProps<{
       <component :is="icon" :class="cn('h-4 w-4 text-inherit')" />
     </div>
     <div class="grid gap-2">
-      <h5 class="font-medium leading-none tracking-tight" v-if="!!title">{{ title }}</h5>
+      <h5 v-if="!!title" class="font-medium leading-none tracking-tight">{{ title }}</h5>
       <slot />
     </div>
   </div>

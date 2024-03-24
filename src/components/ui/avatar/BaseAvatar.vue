@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
-import { AvatarRoot, AvatarFallback, AvatarImage } from 'radix-vue';
+import { AvatarFallback, AvatarImage, AvatarRoot } from 'radix-vue';
 
 defineOptions({
   inheritAttrs: false,

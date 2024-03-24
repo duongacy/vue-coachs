@@ -7,7 +7,7 @@ import {
   useForwardProps,
   type RadioGroupItemProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<RadioGroupItemProps & { class?: string }>();
 

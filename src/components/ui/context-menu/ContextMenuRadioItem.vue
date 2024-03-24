@@ -8,7 +8,7 @@ import {
   type ContextMenuRadioItemEmits,
   type ContextMenuRadioItemProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<ContextMenuRadioItemProps & { class?: string }>();
 const emits = defineEmits<ContextMenuRadioItemEmits>();

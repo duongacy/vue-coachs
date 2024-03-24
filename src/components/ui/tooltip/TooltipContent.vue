@@ -7,7 +7,7 @@ import {
   type TooltipContentEmits,
   type TooltipContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 defineOptions({
   inheritAttrs: false,

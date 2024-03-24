@@ -51,9 +51,6 @@
       <ExampleSectionTemplate id="DropdownMenu" name="DropdownMenu">
         <DropdownMenuExample></DropdownMenuExample>
       </ExampleSectionTemplate>
-      <ExampleSectionTemplate id="Form" name="Form">
-        <FormExample></FormExample>
-      </ExampleSectionTemplate>
 
       <ExampleSectionTemplate id="Pagination" name="Pagination">
         <PaginationExample></PaginationExample>
@@ -61,9 +58,6 @@
 
       <ExampleSectionTemplate id="Separator" name="Separator">
         <SeparatorExample></SeparatorExample>
-      </ExampleSectionTemplate>
-      <ExampleSectionTemplate id="Sonner" name="Sonner">
-        <SonnerExample></SonnerExample>
       </ExampleSectionTemplate>
       <ExampleSectionTemplate id="Tabs" name="Tabs">
         <TabsExample></TabsExample>
@@ -84,13 +78,11 @@ import CheckboxGroupExample from './examples/CheckboxGroupExample.vue';
 import CollapsibleExample from './examples/CollapsibleExample.vue';
 import DialogExample from './examples/DialogExample.vue';
 import DropdownMenuExample from './examples/DropdownMenuExample.vue';
-import FormExample from './examples/FormExample.vue';
 import InputExample from './examples/InputExample.vue';
 import PaginationExample from './examples/PaginationExample.vue';
 import RadioGroupExample from './examples/RadioGroupExample.vue';
 import SelectExample from './examples/SelectExample.vue';
 import SeparatorExample from './examples/SeparatorExample.vue';
-import SonnerExample from './examples/SonnerExample.vue';
 import SwitchExample from './examples/SwitchExample.vue';
 import TabsExample from './examples/TabsExample.vue';
 import TextareaExample from './examples/TextareaExample.vue';

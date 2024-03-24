@@ -7,7 +7,7 @@ import {
   type ContextMenuContentEmits,
   type ContextMenuContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<ContextMenuContentProps & { class?: string }>();
 const emits = defineEmits<ContextMenuContentEmits>();

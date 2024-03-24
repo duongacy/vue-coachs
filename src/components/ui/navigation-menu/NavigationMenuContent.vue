@@ -6,7 +6,7 @@ import {
   type NavigationMenuContentEmits,
   type NavigationMenuContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<NavigationMenuContentProps & { class?: string }>();
 

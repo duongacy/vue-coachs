@@ -8,7 +8,7 @@ import {
   type DropdownMenuCheckboxItemEmits,
   type DropdownMenuCheckboxItemProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<DropdownMenuCheckboxItemProps & { class?: string }>();
 const emits = defineEmits<DropdownMenuCheckboxItemEmits>();

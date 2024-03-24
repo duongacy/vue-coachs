@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import type { ComboboxContentEmits, ComboboxContentProps } from 'radix-vue';
 import { ComboboxContent, useForwardPropsEmits } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<ComboboxContentProps & { class?: string }>();
 const emits = defineEmits<ComboboxContentEmits>();

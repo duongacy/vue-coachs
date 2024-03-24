@@ -6,7 +6,7 @@ import {
   type DropdownMenuSubContentEmits,
   type DropdownMenuSubContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<DropdownMenuSubContentProps & { class?: string }>();
 const emits = defineEmits<DropdownMenuSubContentEmits>();

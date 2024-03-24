@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-vue-next';
 import { NavigationMenuTrigger, useForwardProps, type NavigationMenuTriggerProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 import { navigationMenuTriggerStyle } from '.';
 
 const props = defineProps<NavigationMenuTriggerProps & { class?: string }>();
@@ -18,7 +18,7 @@ const forwardedProps = useForwardProps(delegatedProps);
 <template>
   <NavigationMenuTrigger
     v-bind="forwardedProps"
-    :class="cn(navigationMenuTriggerStyle(), 'group', props.class)"
+    :class="cn(navigationMenuTriggerStyle, 'group', props.class)"
   >
     <slot />
     <ChevronDown

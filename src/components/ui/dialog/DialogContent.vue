@@ -10,7 +10,7 @@ import {
   type DialogContentEmits,
   type DialogContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<DialogContentProps & { class?: string }>();
 const emits = defineEmits<DialogContentEmits>();

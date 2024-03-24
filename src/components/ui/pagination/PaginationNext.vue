@@ -3,7 +3,7 @@ import { BaseButton } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ChevronRight } from 'lucide-vue-next';
 import { PaginationNext, type PaginationNextProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = withDefaults(defineProps<PaginationNextProps & { class?: string }>(), {
   asChild: true,

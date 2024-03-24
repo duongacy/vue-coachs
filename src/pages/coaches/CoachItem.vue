@@ -21,12 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import type { TCoach } from '@/types/coach';
-import { computed } from 'vue';
-import { cn } from '@/lib/utils';
-import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
 import { BaseBadge } from '@/components/ui/badge';
 import { BaseButton } from '@/components/ui/button';
+import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
+import type { TCoach } from '@/types/coach';
+import { computed } from 'vue';
 
 const emits = defineEmits(['delete']);
 

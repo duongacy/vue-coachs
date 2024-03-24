@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { AlertDialogTrigger, BaseAlertDialog } from '@/components/ui/alert-dialog';
-import { BaseButton, buttonVariants } from '@/components/ui/button';
+import { BaseAlertDialog } from '@/components/ui/alert-dialog';
+import { BaseButton } from '@/components/ui/button';
 import { BaseCard } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
 import { ref } from 'vue';
 
 type ConfirmStatus = 'DONT_HAVE_CONFIRMED' | 'DECLINE' | 'ACCEPT';

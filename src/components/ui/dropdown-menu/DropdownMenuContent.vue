@@ -7,7 +7,7 @@ import {
   type DropdownMenuContentEmits,
   type DropdownMenuContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = withDefaults(defineProps<DropdownMenuContentProps & { class?: string }>(), {
   sideOffset: 4,

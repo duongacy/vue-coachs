@@ -14,13 +14,13 @@
   </div>
 </template>
 <script setup lang="ts">
+import ProfileCertifications from './ProfileCertifications.vue';
+import ProfileCommunity from './ProfileCommunity.vue';
+import ProfileDevelopment from './ProfileDevelopment.vue';
+import ProfileEducation from './ProfileEducation.vue';
 import ProfileExperience from './ProfileExperience.vue';
 import ProfileHeader from './ProfileHeader.vue';
-import ProfileEducation from './ProfileEducation.vue';
-import ProfileCommunity from './ProfileCommunity.vue';
-import ProfileProjects from './ProfileProjects.vue';
-import ProfileDevelopment from './ProfileDevelopment.vue';
-import ProfileCertifications from './ProfileCertifications.vue';
 import ProfileLibraries from './ProfileLibraries.vue';
+import ProfileProjects from './ProfileProjects.vue';
 import ProfileTechstack from './ProfileTechstack.vue';
 </script>

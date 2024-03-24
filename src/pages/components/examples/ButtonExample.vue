@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseButton, buttonVariants, type ButtonProps } from '@/components/ui/button';
+import { BaseButton, type ButtonProps } from '@/components/ui/button';
 
 const variants: ButtonProps['variant'][] = [
   'default',

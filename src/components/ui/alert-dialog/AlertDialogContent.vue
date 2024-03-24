@@ -8,7 +8,7 @@ import {
   type AlertDialogContentEmits,
   type AlertDialogContentProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<AlertDialogContentProps & { class?: string }>();
 const emits = defineEmits<AlertDialogContentEmits>();

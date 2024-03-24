@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Primitive } from 'radix-vue';
-import { buttonVariants, type ButtonProps } from '.';
 import { useAttrs } from 'vue';
+import { buttonVariants, type ButtonProps } from '.';
 
 const attrs = useAttrs();
 defineOptions({

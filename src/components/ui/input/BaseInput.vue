@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
-import { useAttrs, type Component, type HTMLAttributes } from 'vue';
+import { useAttrs, type Component } from 'vue';
 import type { Size } from '../types';
 
 const attrs = useAttrs();

@@ -8,7 +8,7 @@ import {
   type ContextMenuCheckboxItemEmits,
   type ContextMenuCheckboxItemProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<ContextMenuCheckboxItemProps & { class?: string }>();
 const emits = defineEmits<ContextMenuCheckboxItemEmits>();

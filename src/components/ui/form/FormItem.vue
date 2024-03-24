@@ -1,15 +1,14 @@
 <script lang="ts">
-import type { HTMLAttributes, InjectionKey } from 'vue';
+import type { InjectionKey } from 'vue';
 
 export const FORM_ITEM_INJECTION_KEY = Symbol() as InjectionKey<string>;
 </script>
 
 <script lang="ts" setup>
-import { provide } from 'vue';
+import { provideimport { cn } from '@/lib/utils';
 import { useId } from 'radix-vue';
-import { cn } from '@/lib/utils';
-
-const props = defineProps<{
+import { provide } from 'vue';
+efineProps<{
   class?: string;
 }>();
 

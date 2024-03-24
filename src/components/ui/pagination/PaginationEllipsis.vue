@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils';
 import { MoreHorizontal } from 'lucide-vue-next';
 import { PaginationEllipsis, type PaginationEllipsisProps } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<PaginationEllipsisProps & { class?: string }>();
 

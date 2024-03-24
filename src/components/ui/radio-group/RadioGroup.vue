@@ -6,9 +6,9 @@ import {
   type RadioGroupRootEmits,
   type RadioGroupRootProps,
 } from 'radix-vue';
-import { computed, type HTMLAttributes } from 'vue';
-import { BaseLabel } from '../label';
+import { computed } from 'vue';
 import { RadioGroupItem } from '.';
+import { BaseLabel } from '../label';
 
 export type RadioOption = { value: string; label: string; disabled?: boolean };
 const props = defineProps<

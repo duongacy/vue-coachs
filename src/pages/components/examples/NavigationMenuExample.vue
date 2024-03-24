@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { BaseAvatar } from '@/components/ui/avatar';
-import ListItem from './NavigationMenuDemoItem.vue';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,6 +9,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import ListItem from './NavigationMenuDemoItem.vue';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -159,13 +159,13 @@ const projects: { title: string; href: string; description: string }[] = [
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <router-link to="/components" :class="navigationMenuTriggerStyle()">
+            <router-link to="/components" :class="navigationMenuTriggerStyle">
               Components
             </router-link>
           </NavigationMenuItem>
 
           <NavigationMenuItem class="ml-auto">
-            <router-link to="/auth" :class="navigationMenuTriggerStyle()"> Sign in </router-link>
+            <router-link to="/auth" :class="navigationMenuTriggerStyle"> Sign in </router-link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
