@@ -7,9 +7,14 @@
         :key="company + position + timeRange"
         class="rounded-xl bg-neutral-50 p-6"
       >
-        <BaseText semibold heading6 class="text-neutral-800">
-          {{ position }} -
-          <span class="font-light text-neutral-600"> {{ company }} </span>
+        <BaseText as="div" semibold heading6 class="flex gap-4 text-neutral-800">
+          <span>
+            {{ position }}
+          </span>
+          <div class="h-6 w-[1px] bg-neutral-400"></div>
+          <span class="font-light">
+            {{ company }}
+          </span>
         </BaseText>
         <BaseText thin body class="mt-1">{{ timeRange }}</BaseText>
         <BaseText
@@ -63,11 +68,9 @@ const workExperiences = [
     position: 'Teaching Assistant (Part time)',
     timeRange: 'Feb 2021 - Aug 2021, Vietnam',
     responsibilities: [
-      `Offering technical assistance to students who encounter problems with their frontend projects or assignments, 
-      involve debugging code, troubleshooting browser compatibility issues, and clarifying coding concepts.`,
-      `Reviewing student code submissions to provide constructive feedback and suggestions for improvement.`,
-      `Tracking student progress and performance, providing support and encouragement to help struggling students overcome obstacles.`,
-      `Stay updated on emerging technologies, industry trends, and best practices in web and mobile development, continuously improving skills and adopting new tools and techniques to enhance productivity and efficiency.`,
+      `Offering technical assistance to students.`,
+      `Reviewing/feedback student code submissions and suggestions for coding improvement.`,
+      `Tracking student progress and performance.`,
     ],
   },
   {

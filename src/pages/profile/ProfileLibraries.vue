@@ -24,11 +24,11 @@ const libraries = [
   {
     label: 'React/ React Native',
     description:
-      'Proficient in building dynamic and responsive web applications using React, fundamental for building mobile applications.',
+      'Fundamental in building dynamic and responsive web/mobile applications using React/React Native.',
   },
   {
-    label: 'Vue.js',
-    description: 'Experienced in developing interactive and scalable web applications with Vue.js.',
+    label: 'Vuejs',
+    description: 'Experienced in developing interactive and scalable web applications with Vuejs.',
   },
   {
     label: 'Redux',
@@ -58,7 +58,7 @@ const libraries = [
   {
     label: 'React Hook Form',
     description:
-      'Proficient in building forms with React Hook Form for managing form state and validation in React applications, enhancing user experience and developer productivity.',
+      'Proficient in building forms with React Hook Form for managing form state and combine with some TypeScript-first schema like Zod, Yub,... for validation in React applications, enhancing user experience and developer productivity.',
   },
 ];
 </script>

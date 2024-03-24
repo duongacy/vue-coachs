@@ -1,18 +1,15 @@
 <template>
-  <div class="mx-auto flex min-h-screen w-full max-w-[1200px] gap-x-4 px-8 py-6">
-    <div class="flex flex-grow flex-col gap-10">
+  <div class="mx-auto min-h-screen w-full max-w-[1200px] px-8 py-6">
+    <div class="flex flex-grow flex-col gap-10 mb-10">
       <ProfileHeader />
+      <ProfileTechstack/>
       <ProfileDevelopment />
       <ProfileLibraries />
       <ProfileExperience />
       <ProfileProjects />
-      <ProfileEducation />
       <ProfileCertifications />
+      <ProfileEducation />
       <ProfileCommunity />
-    </div>
-    <div class="flex w-[260px] flex-col gap-8">
-      <div></div>
-      <div></div>
     </div>
   </div>
 </template>
@@ -25,4 +22,5 @@ import ProfileProjects from './ProfileProjects.vue';
 import ProfileDevelopment from './ProfileDevelopment.vue';
 import ProfileCertifications from './ProfileCertifications.vue';
 import ProfileLibraries from './ProfileLibraries.vue';
+import ProfileTechstack from './ProfileTechstack.vue';
 </script>

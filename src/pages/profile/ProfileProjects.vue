@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseText heading5 bold class="uppercase text-pink-700">Projects</BaseText>
+    <BaseText heading5 bold class="uppercase text-pink-700">Noteworthy Projects</BaseText>
     <div class="mt-4 flex flex-col gap-3">
       <div
         v-for="({ name, timeRange, description, responsibilities, techs }, index) in projects"
