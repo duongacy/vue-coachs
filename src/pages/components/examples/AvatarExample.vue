@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { BaseAvatar, type AvatarVariants } from '@/components/ui/avatar';
+import { BaseAvatar } from '@/components/ui/avatar';
 const avatarVariants = {
-  size: ['lg', 'base', undefined] as AvatarVariants['size'][],
-  shape: ['square', undefined] as AvatarVariants['shape'][],
+  size: ['lg', 'base', undefined] as const,
+  shape: ['square', undefined] as const,
 };
 </script>
 

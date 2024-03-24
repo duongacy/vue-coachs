@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
 
+export type BadgeVariants = 'default' | 'secondary' | 'destructive' | 'outline';
 const props = withDefaults(
   defineProps<{
-    variant?: 'default' | 'secondary' | 'destructive' | 'outline';
+    variant?: BadgeVariants;
     class?: string;
   }>(),
   { class: '', variant: 'default' },
