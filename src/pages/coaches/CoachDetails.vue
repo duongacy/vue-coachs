@@ -2,22 +2,22 @@
   <div class="p-4">
     <div v-if="!!coach" class="overflow-hidden rounded-lg border border-neutral-200 px-4 py-6">
       <div>
-        <h3 class="text-base font-semibold leading-7 text-neutral-900">Applicant Information</h3>
-        <p class="mt-1 max-w-2xl text-sm leading-6 text-neutral-500">
+        <h3 class="text-body font-semibold leading-7 text-neutral-900">Applicant Information</h3>
+        <p class="mt-1 max-w-2xl text-caption leading-6 text-neutral-500">
           Personal details and application.
         </p>
       </div>
       <div class="mt-6">
         <dl class="grid grid-cols-2">
           <div class="border-t border-neutral-100 py-6">
-            <dt class="text-sm font-medium leading-6 text-neutral-900">Full name</dt>
-            <dd class="mt-1 text-sm leading-6 text-neutral-700">
+            <dt class="text-caption font-medium leading-6 text-neutral-900">Full name</dt>
+            <dd class="mt-1 text-caption leading-6 text-neutral-700">
               {{ coach?.firstName + ' ' + coach?.lastName }}
             </dd>
           </div>
           <div class="border-t border-neutral-100 py-6">
-            <dt class="text-sm font-medium leading-6 text-neutral-900">Application for</dt>
-            <dd class="mt-1 flex gap-4 text-sm leading-6 text-neutral-700">
+            <dt class="text-caption font-medium leading-6 text-neutral-900">Application for</dt>
+            <dd class="mt-1 flex gap-4 text-caption leading-6 text-neutral-700">
               <base-badge
                 v-for="area in coach.areas"
                 :key="area"
@@ -34,27 +34,29 @@
             </dd>
           </div>
           <div class="border-t border-neutral-100 py-6">
-            <dt class="text-sm font-medium leading-6 text-neutral-900">Email address</dt>
-            <dd class="mt-1 text-sm leading-6 text-neutral-700">margotfoster@example.com</dd>
+            <dt class="text-caption font-medium leading-6 text-neutral-900">Email address</dt>
+            <dd class="mt-1 text-caption leading-6 text-neutral-700">margotfoster@example.com</dd>
           </div>
           <div class="border-t border-neutral-100 py-6">
-            <dt class="text-sm font-medium leading-6 text-neutral-900">Salary expectation</dt>
-            <dd class="mt-1 text-sm leading-6 text-neutral-700">${{ coach.hourlyRate }}/hour</dd>
+            <dt class="text-caption font-medium leading-6 text-neutral-900">Salary expectation</dt>
+            <dd class="mt-1 text-caption leading-6 text-neutral-700">
+              ${{ coach.hourlyRate }}/hour
+            </dd>
           </div>
           <div class="col-span-2 border-t border-neutral-100 py-6">
-            <dt class="text-sm font-medium leading-6 text-neutral-900">Description</dt>
-            <dd class="mt-1 text-sm leading-6 text-neutral-700">
+            <dt class="text-caption font-medium leading-6 text-neutral-900">Description</dt>
+            <dd class="mt-1 text-caption leading-6 text-neutral-700">
               {{ coach.description }}
             </dd>
           </div>
           <div class="col-span-2 border-t border-neutral-100 py-6">
-            <dt class="text-sm font-medium leading-6 text-neutral-900">Attachments</dt>
-            <dd class="mt-2 text-sm text-neutral-900">
+            <dt class="text-caption font-medium leading-6 text-neutral-900">Attachments</dt>
+            <dd class="mt-2 text-caption text-neutral-900">
               <ul
                 role="list"
                 class="divide-y divide-neutral-100 rounded-md border border-neutral-200"
               >
-                <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                <li class="flex items-center justify-between py-4 pl-4 pr-5 text-caption leading-6">
                   <div class="flex w-0 flex-1 items-center">
                     <!-- <PaperClipIcon
                       class="h-5 w-5 flex-shrink-0 text-neutral-400"
@@ -71,7 +73,7 @@
                     >
                   </div>
                 </li>
-                <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                <li class="flex items-center justify-between py-4 pl-4 pr-5 text-caption leading-6">
                   <div class="flex w-0 flex-1 items-center">
                     <!-- <PaperClipIcon
                       class="h-5 w-5 flex-shrink-0 text-neutral-400"

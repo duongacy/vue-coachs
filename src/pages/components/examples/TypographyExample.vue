@@ -22,7 +22,7 @@ const textClasses = [
   ['text-heading6', '20/24'],
   ['text-body', '16/20'],
   ['text-caption', '14/22'],
-  ['text-small', '12/18'],
+  ['text-captionall', '12/18'],
   ['text-tiny', '10/16'],
 ];
 </script>
@@ -48,7 +48,7 @@ const textClasses = [
           :heading6="textClass === 'text-heading6'"
           :body="textClass === 'text-body'"
           :caption="textClass === 'text-caption'"
-          :small="textClass === 'text-small'"
+          :small="textClass === 'text-captionall'"
           :tiny="textClass === 'text-tiny'"
           :black="fontWeightClass === 'font-black'"
           :extrabold="fontWeightClass === 'font-extrabold'"

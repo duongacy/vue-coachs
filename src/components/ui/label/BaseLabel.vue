@@ -31,7 +31,8 @@ watchEffect(() => {
     :for="props.for"
     :class="
       cn(
-        `text-sm font-medium leading-none 
+        `text-caption font-medium leading-none 
+        [&:has(.BaseSelect[disabled])]:opacity-70
         [&:has(.BaseInput[disabled])]:opacity-70 
         [&:has(.BaseSwitch[disabled])]:opacity-70 
         [&:has(.BaseTextarea[disabled])]:opacity-70 

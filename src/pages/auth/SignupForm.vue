@@ -94,7 +94,7 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
             :start-icon="Mail"
             @keypress="shouldShowValidate = false"
           />
-          <p v-if="errors.email && shouldShowValidate" class="text-small text-red-500">
+          <p v-if="errors.email && shouldShowValidate" class="text-captionall text-red-500">
             {{ errors.email }}
           </p>
         </BaseLabel>
@@ -108,7 +108,7 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
             :start-icon="Lock"
             @keypress="shouldShowValidate = false"
           />
-          <p v-if="!!errors.password && shouldShowValidate" class="text-small text-red-500">
+          <p v-if="!!errors.password && shouldShowValidate" class="text-captionall text-red-500">
             {{ errors.password }}
           </p>
         </BaseLabel>
@@ -122,7 +122,7 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
             :start-icon="Lock"
             @keypress="shouldShowValidate = false"
           />
-          <p v-if="!!samePasswordError && shouldShowValidate" class="text-small text-red-500">
+          <p v-if="!!samePasswordError && shouldShowValidate" class="text-captionall text-red-500">
             {{ samePasswordError }}
           </p>
         </BaseLabel>

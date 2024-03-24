@@ -4,8 +4,8 @@
       <form class="-mx-4 grid gap-y-4 bg-neutral-100 p-4" @submit.prevent="onSubmit">
         <div>
           <!-- form head -->
-          <h2 class="text-xl font-bold leading-7 text-neutral-900">Request</h2>
-          <p class="mt-1 text-sm leading-6 text-neutral-600">
+          <h2 class="text-heading6 font-bold leading-7 text-neutral-900">Request</h2>
+          <p class="mt-1 text-caption leading-6 text-neutral-600">
             This information will be displayed publicly so be careful what you share.
           </p>
         </div>
@@ -13,34 +13,34 @@
         <div class="mt-2 grid gap-y-4">
           <!-- form body -->
           <label class="grid gap-2">
-            <span class="text-sm font-medium leading-6 text-neutral-900">Email</span>
+            <span class="text-caption font-medium leading-6 text-neutral-900">Email</span>
             <input
               ref="emailRef"
               v-model.trim="request.userEmail.value"
               type="text"
               :class="
                 cn({
-                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
+                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-caption leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
                   'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.userEmail.error,
                 })
               "
               placeholder="Please enter your email"
               @change="cancelValidate('userEmail')"
             />
-            <p v-if="!!request.userEmail.error" class="text-error-600 text-sm leading-6">
+            <p v-if="!!request.userEmail.error" class="text-error-600 text-caption leading-6">
               {{ request.userEmail.error }}
             </p>
           </label>
 
           <label class="grid gap-2">
-            <span class="text-sm font-medium leading-6 text-neutral-900">Message</span>
+            <span class="text-caption font-medium leading-6 text-neutral-900">Message</span>
             <textarea
               ref="messageRef"
               v-model.trim="request.message.value"
               rows="3"
               :class="
                 cn(
-                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-sm leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
+                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-caption leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
                   {
                     'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.message.error,
                   },
@@ -49,7 +49,7 @@
               placeholder="Write a few sentences about yourself"
               @change="cancelValidate('message')"
             />
-            <p v-if="!!request.message.error" class="text-error-600 text-sm leading-6">
+            <p v-if="!!request.message.error" class="text-error-600 text-caption leading-6">
               {{ request.message.error }}
             </p>
           </label>
@@ -71,7 +71,7 @@
       @close="onCloseErrorDialog"
       @ok="onCloseErrorDialog"
     >
-      <p class="text-sm text-neutral-500">
+      <p class="text-caption text-neutral-500">
         <!-- {{ error }} -->
         Something went wrong
       </p>

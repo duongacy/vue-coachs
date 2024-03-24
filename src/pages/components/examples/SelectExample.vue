@@ -50,17 +50,18 @@ const value = ref();
       </BaseSelect>
     </div>
     <div class="grid w-[350px] gap-2">
-      <BaseLabel for="fruits3" disabled>Select Fruit(disabled)</BaseLabel>
-      <BaseSelect
-        id="fruits3"
-        v-model:model-value="value"
-        disabled
-        :options="options"
-        placeholder="Select fruits"
-        class="mx-1"
-        label="Fruits"
-      >
-      </BaseSelect>
+      <BaseLabel class="grid gap-2">
+        <span>Select Fruit(disabled) </span>
+        <BaseSelect
+          v-model:model-value="value"
+          disabled
+          :options="options"
+          placeholder="Select fruits"
+          class="mx-1"
+          label="Fruits"
+        >
+        </BaseSelect>
+      </BaseLabel>
     </div>
   </div>
 </template>

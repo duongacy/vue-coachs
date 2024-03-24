@@ -104,8 +104,8 @@ const projects: { title: string; href: string; description: string }[] = [
                         src="https://www.radix-vue.com/logo.svg"
                         class="w-full"
                       /> -->
-                      <div class="mb-2 mt-4 text-lg font-bold">YLVN</div>
-                      <p class="text-sm leading-tight text-muted-foreground">
+                      <div class="mb-2 mt-4 text-heading6 font-bold">YLVN</div>
+                      <p class="text-caption leading-tight text-muted-foreground">
                         Frontend developer
                         <!-- Passionate about aesthetics and technology. -->
                       </p>

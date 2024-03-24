@@ -32,8 +32,8 @@ const props = withDefaults(
       cn(
         'inline-flex shrink-0 select-none items-center justify-center overflow-hidden bg-secondary font-normal text-foreground',
         {
-          'h-10 w-10 text-xs': props.size === 'sm',
-          'h-16 w-16 text-2xl': props.size === 'base',
+          'h-10 w-10 text-captionall': props.size === 'sm',
+          'h-16 w-16 text-heading5': props.size === 'base',
           'h-32 w-32 text-5xl': props.size === 'lg',
           'rounded-full': props.shape === 'circle',
           'rounded-md': props.shape === 'square',

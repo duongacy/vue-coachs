@@ -20,7 +20,7 @@ import {
   <div class="grid gap-2">
     <ContextMenu>
       <ContextMenuTrigger
-        class="flex h-[150px] w-[350px] items-center justify-center rounded-md border border-dashed text-sm"
+        class="flex h-[150px] w-[350px] items-center justify-center rounded-md border border-dashed text-caption"
       >
         Right click here
       </ContextMenuTrigger>

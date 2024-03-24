@@ -47,7 +47,7 @@ const props = withDefaults(
         'text-heading6': heading6,
         'text-body': body,
         'text-caption': caption,
-        'text-small': small,
+        'text-captionall': small,
         'text-tiny': tiny,
 
         'font-black': black,

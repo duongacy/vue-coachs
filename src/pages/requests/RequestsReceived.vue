@@ -3,8 +3,8 @@
     <div class="p-4">
       <div class="flex flex-col gap-4 overflow-hidden rounded-lg border border-neutral-200 p-4">
         <div>
-          <h3 class="text-base font-semibold leading-6 text-neutral-900">Requests</h3>
-          <p v-if="!requests.length" class="mt-1 text-sm text-neutral-500">
+          <h3 class="text-body font-semibold leading-6 text-neutral-900">Requests</h3>
+          <p v-if="!requests.length" class="mt-1 text-caption text-neutral-500">
             Don't have any requests.
           </p>
         </div>
@@ -15,10 +15,12 @@
             :key="request.id"
             class="overflow-hidden rounded-md p-4 shadow-lg"
           >
-            <a :href="'mailto:' + request.userEmail" class="text-sm font-bold text-neutral-900">{{
-              request.userEmail
-            }}</a>
-            <div class="mt-4 space-y-6 text-base italic text-neutral-600">
+            <a
+              :href="'mailto:' + request.userEmail"
+              class="text-caption font-bold text-neutral-900"
+              >{{ request.userEmail }}</a
+            >
+            <div class="mt-4 space-y-6 text-body italic text-neutral-600">
               {{ request.message }}
             </div>
           </div>

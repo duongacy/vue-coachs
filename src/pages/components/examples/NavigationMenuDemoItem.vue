@@ -17,8 +17,8 @@ defineProps<{ title?: string; href?: string }>();
           )
         "
       >
-        <div class="text-sm font-medium leading-none">{{ title }}</div>
-        <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
+        <div class="text-caption font-medium leading-none">{{ title }}</div>
+        <p class="line-clamp-2 text-caption leading-snug text-muted-foreground">
           <slot />
         </p>
       </a>

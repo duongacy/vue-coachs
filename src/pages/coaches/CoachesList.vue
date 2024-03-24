@@ -4,8 +4,8 @@
       <div class="bg-white px-4">
         <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
           <div class="ml-4 mt-4">
-            <h3 class="text-base font-semibold leading-6 text-neutral-900">Coaches</h3>
-            <p class="mt-1 text-sm text-neutral-500">
+            <h3 class="text-body font-semibold leading-6 text-neutral-900">Coaches</h3>
+            <p class="mt-1 text-caption text-neutral-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti consectetur.
             </p>
           </div>

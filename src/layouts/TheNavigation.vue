@@ -43,8 +43,10 @@
                       alt="cn"
                     >
                     </BaseAvatar>
-                    <div class="mb-2 mt-4 text-lg font-bold">Y Lee</div>
-                    <p class="text-sm leading-tight text-muted-foreground">Frontend developer</p>
+                    <div class="mb-2 mt-4 text-heading6 font-bold">Y Lee</div>
+                    <p class="text-caption leading-tight text-muted-foreground">
+                      Frontend developer
+                    </p>
                   </router-link>
                 </NavigationMenuLink>
               </div>

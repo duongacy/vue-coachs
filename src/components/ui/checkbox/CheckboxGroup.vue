@@ -61,7 +61,7 @@ const onChange = (value: string) => {
           <Check class="h-4 w-4" />
         </CheckboxIndicator>
       </CheckboxRoot>
-      <p class="grid gap-1 text-sm leading-none">
+      <p class="grid gap-1 text-caption leading-none">
         <span class="flex min-h-4 items-end font-medium">{{ option.label }}</span>
         <span v-if="!!option.description" class="font-light text-muted-foreground">
           {{ option.description }}

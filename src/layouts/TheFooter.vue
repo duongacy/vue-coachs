@@ -13,7 +13,7 @@ import { LogoBounding } from '@/components/ui/logo-bounding';
       <LogoBounding class="text-[#23be88]">VeeValidate</LogoBounding>
       <LogoBounding class="text-[#3068b7]">Zod</LogoBounding>
     </div>
-    <p class="mt-10 text-center text-xs leading-5 text-neutral-500">
+    <p class="mt-10 text-center text-captionall leading-5 text-neutral-500">
       &copy; 2024 WTVue, Inc. All rights reserved.
     </p>
   </footer>
