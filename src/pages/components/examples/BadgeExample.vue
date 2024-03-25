@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseBadge } from '@/components/ui/badge';
-const variants = ['default', 'destructive', 'outline', 'secondary'] as const;
+const variants = ['primary', 'destructive', 'outline', 'secondary'] as const;
 </script>
 
 <template>

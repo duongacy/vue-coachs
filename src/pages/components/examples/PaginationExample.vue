@@ -24,7 +24,7 @@ import { BaseButton } from '@/components/ui/button';
           <PaginationListItem v-if="item.type === 'page'" :key="index" :value="item.value" as-child>
             <BaseButton
               class="h-10 w-10 p-0"
-              :variant="item.value === page ? 'default' : 'outline'"
+              :variant="item.value === page ? 'primary' : 'outline'"
             >
               {{ item.value }}
             </BaseButton>
