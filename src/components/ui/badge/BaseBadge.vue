@@ -22,9 +22,9 @@ const props = withDefaults(
     :class="[
       // workaround when twMerge conflict text-size with text-color
       cn({
-        'text-small': size === 'sm',
-        'text-caption': size === 'md',
-        'text-body': size === 'lg',
+        'text-[14px]': size === 'sm',
+        'text-[16px]': size === 'md',
+        'text-[18px]': size === 'lg',
       }),
       cn(
         'inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
