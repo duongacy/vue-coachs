@@ -1,5 +1,5 @@
 <template>
-  <BaseCard class="grid gap-4">
+  <!-- <BaseCard class="grid gap-4">
     <CardContent>
       <p class="font-bold">{{ fullName }}</p>
       <p>{{ item.description }}</p>
@@ -17,17 +17,50 @@
         <BaseButton>Request</BaseButton>
       </router-link>
     </CardFooter>
-  </BaseCard>
+  </BaseCard> -->
+  <div class="rounded-2xl overflow-hidden shadow-lg">
+    <img
+      class="aspect-[3/2] w-full object-cover"
+      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+      alt=""
+    />
+    <div class="bg-neutral-50 p-4">
+      <BaseText semibold heading6 class="text-gray-900">Whitney Francis</BaseText>
+      <BaseText body extralight class="text-gray-600">Vietnam</BaseText>
+      <div class="flex gap-x-1 mt-1 items-center">
+        <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
+        <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
+        <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
+        <StarHalfIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
+        <BaseText light caption class="text-neutral-500">(12,766)</BaseText>
+      </div>
+      <div class="flex gap-2 flex-wrap mt-2">
+        <BaseBadge variant="destructive">Algorithm</BaseBadge>
+        <BaseBadge variant="destructive">Web development</BaseBadge>
+        <BaseBadge variant="destructive">Machine learning</BaseBadge>
+      </div>
+      <div class="mt-4 flex justify-end gap-6">
+        <BaseButton size="lg" variant="outline" @click="emits('detail', item.id)"
+          >Details</BaseButton
+        >
+        <BaseButton size="lg" @click="emits('register', item.id)">Register</BaseButton>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { BaseBadge } from '@/components/ui/badge';
 import { BaseButton } from '@/components/ui/button';
-import { BaseCard, CardContent, CardFooter } from '@/components/ui/card';
+import { BaseText } from '@/components/ui/text';
 import type { TCoach } from '@/types/coach';
+import { StarHalfIcon, StarIcon } from 'lucide-vue-next';
 import { computed } from 'vue';
 
-const emits = defineEmits(['delete']);
+const emits = defineEmits<{
+  register: [id: string];
+  detail: [id: string];
+}>();
 
 const detailsLink = computed(() => '/coaches/' + props.item.id);
 const requestLink = computed(() => detailsLink.value + '/request');

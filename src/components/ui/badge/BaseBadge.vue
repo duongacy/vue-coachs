@@ -27,18 +27,16 @@ const props = withDefaults(
         'text-[18px]': size === 'lg',
       }),
       cn(
-        'inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+        'inline-flex items-center rounded-full border font-semibold transition-colors',
         {
           'px-3 py-1 ': size === 'sm',
           'px-4 py-2 ': size === 'md',
           'px-6 py-3 ': size === 'lg',
         },
         {
-          'border-transparent bg-primary text-primary-foreground hover:bg-primary/80':
-            variant === 'primary',
-          'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80':
-            variant === 'secondary',
-          'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80':
+          'border-transparent bg-primary text-primary-foreground': variant === 'primary',
+          'border-transparent bg-secondary text-secondary-foreground': variant === 'secondary',
+          'border-transparent bg-destructive text-destructive-foreground':
             variant === 'destructive',
           'text-foreground': variant === 'outline',
         },

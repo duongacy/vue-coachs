@@ -11,7 +11,7 @@
           <SignInForm />
         </TabsContent>
         <TabsContent value="sign-up">
-          <SignUpForm />
+          <SignupForm />
         </TabsContent>
       </BaseTabs>
     </div>
@@ -20,5 +20,5 @@
 <script setup lang="ts">
 import { BaseTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignInForm from './SignInForm.vue';
-import SignUpForm from './SignUpForm.vue';
+import SignupForm from './SignupForm.vue';
 </script>

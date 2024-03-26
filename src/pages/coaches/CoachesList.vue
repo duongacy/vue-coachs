@@ -1,5 +1,51 @@
 <template>
-  <div class="p-4">
+  <div class="px-4 py-6">
+    <BaseText heading3 bold class="text-neutral-800">Our coachs</BaseText>
+    <BaseText heading5 thin class="text-neutral-500 mt-2"
+      >We’re a dynamic group of individuals who are passionate about what we do and dedicated to
+      delivering the best results for our clients.</BaseText
+    >
+    <div class="columns-1 md:columns-2 lg:columns-3 mt-6 space-y-6 gap-6 lg:space-y-8 lg:gap-8">
+      <CoachItem
+        v-for="item in coaches"
+        :key="item.id"
+        :item="item"
+        class="rounded-2xl overflow-hidden shadow-lg"
+        @register="open = true"
+      >
+      </CoachItem>
+    </div>
+    <Teleport to="body">
+      <BaseDialog v-model:open="open">
+        <DialogContent class="w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Register</DialogTitle>
+            <DialogDescription> Your information will be private. </DialogDescription>
+          </DialogHeader>
+          <div class="grid gap-4 py-4">
+            <BaseLabel class="grid gap-2">
+              <span>Name</span>
+              <BaseInput placeholder="Enter your name" />
+            </BaseLabel>
+            <BaseLabel class="grid gap-2">
+              <span>Email</span>
+              <BaseInput placeholder="Enter your email" />
+            </BaseLabel>
+          </div>
+          <DialogFooter>
+            <div class="flex gap-4">
+              <BaseButton type="button" @click="open = false" variant="outline">
+                Cancel
+              </BaseButton>
+              <BaseButton type="submit"> Save changes </BaseButton>
+            </div>
+          </DialogFooter>
+        </DialogContent>
+      </BaseDialog>
+    </Teleport>
+  </div>
+
+  <!-- <div class="p-4">
     <div class="overflow-hidden rounded-lg border border-neutral-200 py-6">
       <div class="bg-white px-4">
         <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
@@ -19,15 +65,28 @@
         <coach-item v-for="coach in coaches" :key="coach.id" :item="coach"></coach-item>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
-import CoachItem from '@/pages/coaches/CoachItem.vue';
+import {
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import BaseDialog from '@/components/ui/dialog/BaseDialog.vue';
+import { BaseInput } from '@/components/ui/input';
+import { BaseLabel } from '@/components/ui/label';
+import { BaseText } from '@/components/ui/text';
 import { key } from '@/store';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
+import CoachItem from './CoachItem.vue';
+
+const open = ref(false);
 
 const store = useStore(key);
 const coaches = computed(() => {
@@ -41,4 +100,31 @@ onMounted(async () => {
     console.log(error.message);
   }
 });
+const people = [
+  {
+    name: 'Lindsay Walton',
+    country: 'Front-end Developer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
+  {
+    name: 'Lindsay Walton 2',
+    country: 'Front-end Developer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
+  {
+    name: 'Lindsay Walton 3',
+    country: 'Front-end Developer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
+  // More people...
+];
 </script>
