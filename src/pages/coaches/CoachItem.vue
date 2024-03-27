@@ -25,8 +25,9 @@
       alt=""
     />
     <div class="bg-neutral-50 p-4">
-      <BaseText semibold heading6 class="text-gray-900">Whitney Francis</BaseText>
-      <BaseText body extralight class="text-gray-600">Vietnam</BaseText>
+      <BaseText semibold heading6 class="text-gray-900"
+        >Whitney Francis <span class="font-extralight">(Vietnam)</span>
+      </BaseText>
       <div class="flex gap-x-1 mt-1 items-center">
         <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
         <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
@@ -34,16 +35,22 @@
         <StarHalfIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
         <BaseText light caption class="text-neutral-500">(12,766)</BaseText>
       </div>
-      <div class="flex gap-2 flex-wrap mt-2">
+      <BaseText light body class="mt-2 line-clamp-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium reiciendis eum
+        error reprehenderit. Fugiat nemo, commodi, nam doloribus, et enim dolorum magnam magni
+        nostrum a ipsam iste nobis. Suscipit.</BaseText
+      >
+      <div class="flex gap-2 flex-wrap mt-4">
         <BaseBadge variant="destructive">Algorithm</BaseBadge>
         <BaseBadge variant="destructive">Web development</BaseBadge>
         <BaseBadge variant="destructive">Machine learning</BaseBadge>
       </div>
-      <div class="mt-4 flex justify-end gap-6">
-        <BaseButton size="lg" variant="outline" @click="emits('detail', item.id)"
+
+      <div class="mt-4 flex justify-end gap-4">
+        <BaseButton size="md" variant="outline" @click="emits('detail', item.id)"
           >Details</BaseButton
         >
-        <BaseButton size="lg" @click="emits('register', item.id)">Register</BaseButton>
+        <BaseButton size="md" @click="emits('register', item.id)">Register</BaseButton>
       </div>
     </div>
   </div>

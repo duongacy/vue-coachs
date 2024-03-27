@@ -15,34 +15,28 @@
       >
       </CoachItem>
     </div>
-    <Teleport to="body">
-      <BaseDialog v-model:open="open">
-        <DialogContent class="w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Register</DialogTitle>
-            <DialogDescription> Your information will be private. </DialogDescription>
-          </DialogHeader>
-          <div class="grid gap-4 py-4">
-            <BaseLabel class="grid gap-2">
-              <span>Name</span>
-              <BaseInput placeholder="Enter your name" />
-            </BaseLabel>
-            <BaseLabel class="grid gap-2">
-              <span>Email</span>
-              <BaseInput placeholder="Enter your email" />
-            </BaseLabel>
-          </div>
-          <DialogFooter>
-            <div class="flex gap-4">
-              <BaseButton type="button" @click="open = false" variant="outline">
-                Cancel
-              </BaseButton>
-              <BaseButton type="submit"> Save changes </BaseButton>
-            </div>
-          </DialogFooter>
-        </DialogContent>
-      </BaseDialog>
-    </Teleport>
+
+    <BaseDialog
+      v-model:open="open"
+      modal
+      title="Lorem ipsum dolor sit amet."
+      description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, facere."
+      ok-text="Continue"
+      cancel-text="Cancel"
+      @ok="onOk"
+      @cancel="onCancel"
+    >
+      <div class="grid gap-4">
+        <BaseLabel class="grid gap-2">
+          <span>Name</span>
+          <BaseInput placeholder="Enter your name" />
+        </BaseLabel>
+        <BaseLabel class="grid gap-2">
+          <span>Email</span>
+          <BaseInput placeholder="Enter your email" />
+        </BaseLabel>
+      </div>
+    </BaseDialog>
   </div>
 
   <!-- <div class="p-4">
@@ -69,14 +63,6 @@
 </template>
 
 <script setup lang="ts">
-import { BaseButton } from '@/components/ui/button';
-import {
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
 import BaseDialog from '@/components/ui/dialog/BaseDialog.vue';
 import { BaseInput } from '@/components/ui/input';
 import { BaseLabel } from '@/components/ui/label';
@@ -86,12 +72,19 @@ import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import CoachItem from './CoachItem.vue';
 
-const open = ref(false);
+const open = ref();
 
 const store = useStore(key);
 const coaches = computed(() => {
   return store.state.COACHES.coaches;
 });
+
+const onOk = () => {
+  open.value = false;
+};
+const onCancel = () => {
+  open.value = false;
+};
 
 onMounted(async () => {
   try {

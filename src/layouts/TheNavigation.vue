@@ -64,10 +64,10 @@
         </NavigationMenuItem>
 
         <NavigationMenuItem class="ml-auto">
-          <button :class="navigationMenuTriggerStyle" v-if="isAuthenticated" @click="signout">
+          <button v-if="isAuthenticated" :class="navigationMenuTriggerStyle" @click="signout">
             Sign out
           </button>
-          <router-link to="/auth" :class="navigationMenuTriggerStyle" v-else="isAuthenticated">
+          <router-link v-else to="/auth" :class="navigationMenuTriggerStyle">
             Sign in
           </router-link>
         </NavigationMenuItem>

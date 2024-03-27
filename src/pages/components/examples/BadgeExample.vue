@@ -6,7 +6,7 @@ const sizes = ['sm', 'md', 'lg'] as const;
 
 <template>
   <div class="grid gap-2">
-    <div class="flex gap-2" v-for="size in sizes" :key="'badge' + size">
+    <div v-for="size in sizes" :key="'badge' + size" class="flex gap-2">
       <BaseBadge
         v-for="variant in variants"
         :key="'BaseBadge' + variant"
