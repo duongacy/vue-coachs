@@ -44,7 +44,7 @@ const props = withDefaults(
     "
   >
     <AvatarImage v-if="!!src" :src="src" :alt="alt" class="h-full w-full object-cover" />
-    <AvatarFallback class="text-neutral-500" v-else-if="!!fallback">{{ fallback }}</AvatarFallback>
+    <AvatarFallback v-else-if="!!fallback" class="text-neutral-500">{{ fallback }}</AvatarFallback>
     <PersonIcon v-else class="stroke-neutral-500" />
   </AvatarRoot>
 </template>

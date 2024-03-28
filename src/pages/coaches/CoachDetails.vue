@@ -2,9 +2,7 @@
   <BaseContainer class="pt-36">
     <div class="lg:flex-row gap-16 flex flex-col justify-between">
       <div class="w-full lg:max-w-lg lg:flex-auto">
-        <BaseText heading3 bold>
-          We’re always looking for awesome people to join us
-        </BaseText>
+        <BaseText heading3 bold> We’re always looking for awesome people to join us </BaseText>
         <BaseText heading6 light class="mt-3 text-neutral-600">
           Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non
           placerat nam arcu. Cras purus nibh cursus sit eu in id.

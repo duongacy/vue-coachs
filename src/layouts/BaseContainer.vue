@@ -1,5 +1,5 @@
 <template>
-  <div :class="cn('px-4 sm:px-6 lg:px-8',{'mx-auto max-w-7xl': !props.fluid}, props.class)">
+  <div :class="cn('px-4 sm:px-6 lg:px-8', { 'mx-auto max-w-7xl': !props.fluid }, props.class)">
     <slot></slot>
   </div>
 </template>
@@ -9,5 +9,5 @@ import { cn } from '@/lib/utils';
 defineOptions({
   inheritAttrs: false,
 });
-const props = defineProps<{ class?: string, fluid?: boolean }>();
+const props = defineProps<{ class?: string; fluid?: boolean }>();
 </script>
