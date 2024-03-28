@@ -42,11 +42,12 @@ onBeforeUnmount(() => {
       <TheNavigation></TheNavigation>
     </template>
     <template #content>
-      <router-view v-slot="slotProps">
+      <router-view></router-view>
+      <!-- <router-view v-slot="slotProps">
         <transition name="route" mode="out-in">
           <component :is="slotProps.Component"></component>
         </transition>
-      </router-view>
+      </router-view> -->
     </template>
     <template #footer>
       <TheFooter></TheFooter>

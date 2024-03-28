@@ -1,126 +1,95 @@
 <template>
-  <div class="p-4">
-    <div v-if="!!coach" class="overflow-hidden rounded-lg border border-neutral-200 px-4 py-6">
-      <div>
-        <h3 class="text-body font-semibold leading-7 text-neutral-900">Applicant Information</h3>
-        <p class="mt-1 max-w-2xl text-caption leading-6 text-neutral-500">
-          Personal details and application.
-        </p>
+  <BaseContainer class="pt-36">
+    <div class="lg:flex-row gap-16 flex flex-col justify-between">
+      <div class="w-full lg:max-w-lg lg:flex-auto">
+        <BaseText heading3 bold>
+          We’re always looking for awesome people to join us
+        </BaseText>
+        <BaseText heading6 light class="mt-3 text-neutral-600">
+          Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non
+          placerat nam arcu. Cras purus nibh cursus sit eu in id.
+        </BaseText>
+        <img
+          src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
+          alt=""
+          class="mt-16 aspect-[6/5] w-full rounded-2xl bg-neutral-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
+        />
       </div>
-      <div class="mt-6">
-        <dl class="grid grid-cols-2">
-          <div class="border-t border-neutral-100 py-6">
-            <dt class="text-caption font-medium leading-6 text-neutral-900">Full name</dt>
-            <dd class="mt-1 text-caption leading-6 text-neutral-700">
-              {{ coach?.firstName + ' ' + coach?.lastName }}
-            </dd>
-          </div>
-          <div class="border-t border-neutral-100 py-6">
-            <dt class="text-caption font-medium leading-6 text-neutral-900">Application for</dt>
-            <dd class="mt-1 flex gap-4 text-caption leading-6 text-neutral-700">
-              <base-badge
-                v-for="area in coach.areas"
-                :key="area"
-                :dot-class="
-                  cn({
-                    'fill-error-500': area === 'frontend',
-                    'fill-yellow-500': area === 'backend',
-                    'fill-green-500': area === 'fullstack',
-                  })
-                "
-                class="capitalize"
-                :text="area"
-              ></base-badge>
-            </dd>
-          </div>
-          <div class="border-t border-neutral-100 py-6">
-            <dt class="text-caption font-medium leading-6 text-neutral-900">Email address</dt>
-            <dd class="mt-1 text-caption leading-6 text-neutral-700">margotfoster@example.com</dd>
-          </div>
-          <div class="border-t border-neutral-100 py-6">
-            <dt class="text-caption font-medium leading-6 text-neutral-900">Salary expectation</dt>
-            <dd class="mt-1 text-caption leading-6 text-neutral-700">
-              ${{ coach.hourlyRate }}/hour
-            </dd>
-          </div>
-          <div class="col-span-2 border-t border-neutral-100 py-6">
-            <dt class="text-caption font-medium leading-6 text-neutral-900">Description</dt>
-            <dd class="mt-1 text-caption leading-6 text-neutral-700">
-              {{ coach.description }}
-            </dd>
-          </div>
-          <div class="col-span-2 border-t border-neutral-100 py-6">
-            <dt class="text-caption font-medium leading-6 text-neutral-900">Attachments</dt>
-            <dd class="mt-2 text-caption text-neutral-900">
-              <ul
-                role="list"
-                class="divide-y divide-neutral-100 rounded-md border border-neutral-200"
-              >
-                <li class="flex items-center justify-between py-4 pl-4 pr-5 text-caption leading-6">
-                  <div class="flex w-0 flex-1 items-center">
-                    <!-- <PaperClipIcon
-                      class="h-5 w-5 flex-shrink-0 text-neutral-400"
-                      aria-hidden="true"
-                    /> -->
-                    <div class="ml-4 flex min-w-0 flex-1 gap-2">
-                      <span class="truncate font-medium">resume_back_end_developer.pdf</span>
-                      <span class="flex-shrink-0 text-neutral-400">2.4mb</span>
-                    </div>
-                  </div>
-                  <div class="ml-4 flex-shrink-0">
-                    <a href="#" class="text-primary-600 hover:text-primary-500 font-medium"
-                      >Download</a
-                    >
-                  </div>
-                </li>
-                <li class="flex items-center justify-between py-4 pl-4 pr-5 text-caption leading-6">
-                  <div class="flex w-0 flex-1 items-center">
-                    <!-- <PaperClipIcon
-                      class="h-5 w-5 flex-shrink-0 text-neutral-400"
-                      aria-hidden="true"
-                    /> -->
-                    <div class="ml-4 flex min-w-0 flex-1 gap-2">
-                      <span class="truncate font-medium">coverletter_back_end_developer.pdf</span>
-                      <span class="flex-shrink-0 text-neutral-400">4.5mb</span>
-                    </div>
-                  </div>
-                  <div class="ml-4 flex-shrink-0">
-                    <a href="#" class="text-primary-600 hover:text-primary-500 font-medium"
-                      >Download</a
-                    >
-                  </div>
-                </li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
+      <div class="w-full lg:max-w-xl lg:flex-auto">
+        <h3 class="sr-only">Job openings</h3>
+        <ul class="-my-8 divide-y divide-neutral-100">
+          <li v-for="opening in jobOpenings" :key="opening.id" class="py-8">
+            <dl class="relative flex flex-wrap gap-x-3">
+              <dt class="sr-only">Role</dt>
+              <dd class="w-full flex-none text-lg font-semibold tracking-tight text-neutral-900">
+                <a :href="opening.href">
+                  {{ opening.role }}
+                  <span class="absolute inset-0" aria-hidden="true" />
+                </a>
+              </dd>
+              <dt class="sr-only">Description</dt>
+              <dd class="mt-2 w-full flex-none text-base leading-7 text-neutral-600">
+                {{ opening.description }}
+              </dd>
+              <dt class="sr-only">Salary</dt>
+              <dd class="mt-4 text-base font-semibold leading-7 text-neutral-900">
+                {{ opening.salary }}
+              </dd>
+              <dt class="sr-only">Location</dt>
+              <dd class="mt-4 flex items-center gap-x-3 text-base leading-7 text-neutral-500">
+                <svg
+                  viewBox="0 0 2 2"
+                  class="h-0.5 w-0.5 flex-none fill-neutral-300"
+                  aria-hidden="true"
+                >
+                  <circle cx="1" cy="1" r="1" />
+                </svg>
+                {{ opening.location }}
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <div class="mt-8 flex border-t border-neutral-100 pt-8">
+          <a href="#" class="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >View all openings <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
       </div>
-      <base-button variant="primary" size="extra-large" :to="registerLink"
-        >Request a coach</base-button
-      >
-      <router-view></router-view>
     </div>
-  </div>
+  </BaseContainer>
 </template>
 
-<script setup lang="ts">
-import { cn } from '@/lib/utils';
-import { key } from '@/store';
-// import { PaperClipIcon } from '@heroicons/vue/20/solid';
-import { computed, onMounted } from 'vue';
-import { useStore } from 'vuex';
+<script setup>
+import { BaseText } from '@/components/ui/text';
+import BaseContainer from '@/layouts/BaseContainer.vue';
 
-const props = defineProps<{ coachId: string }>();
-const store = useStore(key);
-
-const coach = computed(() => {
-  return store.state.COACHES.selectedCoach;
-});
-const registerLink = computed(() => {
-  return `/coaches/${props.coachId}/request`;
-});
-
-onMounted(() => {
-  store.dispatch('COACHES/loadByIdAction', props.coachId);
-});
+const jobOpenings = [
+  {
+    id: 1,
+    role: 'Full-time designer',
+    href: '#',
+    description:
+      'Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.',
+    salary: '$75,000 USD',
+    location: 'San Francisco, CA',
+  },
+  {
+    id: 2,
+    role: 'Laravel developer',
+    href: '#',
+    description:
+      'Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.',
+    salary: '$125,000 USD',
+    location: 'San Francisco, CA',
+  },
+  {
+    id: 3,
+    role: 'React Native developer',
+    href: '#',
+    description:
+      'Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.',
+    salary: '$105,000 USD',
+    location: 'San Francisco, CA',
+  },
+];
 </script>

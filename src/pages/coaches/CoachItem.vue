@@ -47,9 +47,12 @@
       </div>
 
       <div class="mt-4 flex justify-end gap-4">
-        <BaseButton size="md" variant="outline" @click="emits('detail', item.id)"
-          >Details</BaseButton
+        <router-link :class="buttonVariants({ size: 'md', variant: 'outline' })" :to="detailsLink"
+          >Details</router-link
         >
+        <!-- <BaseButton size="md" variant="outline" @click="emits('detail', item.id)"
+          >Details</BaseButton
+        > -->
         <BaseButton size="md" @click="emits('register', item.id)">Register</BaseButton>
       </div>
     </div>
@@ -58,7 +61,7 @@
 
 <script setup lang="ts">
 import { BaseBadge } from '@/components/ui/badge';
-import { BaseButton } from '@/components/ui/button';
+import { BaseButton, buttonVariants } from '@/components/ui/button';
 import { BaseText } from '@/components/ui/text';
 import type { TCoach } from '@/types/coach';
 import { StarHalfIcon, StarIcon } from 'lucide-vue-next';

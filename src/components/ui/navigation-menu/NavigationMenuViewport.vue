@@ -1,24 +1,25 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils';
+import { type HTMLAttributes, computed } from 'vue'
 import {
   NavigationMenuViewport,
-  useForwardProps,
   type NavigationMenuViewportProps,
-} from 'radix-vue';
-import { computed } from 'vue';
+  useForwardProps,
+} from 'radix-vue'
+import { cn } from '@/lib/utils'
 
-const props = defineProps<NavigationMenuViewportProps & { class?: string }>();
+const props = defineProps<NavigationMenuViewportProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
-  return delegated;
-});
+  const { class: _, ...delegated } = props
 
-const forwardedProps = useForwardProps(delegatedProps);
+  return delegated
+})
+
+const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <div class="absolute left-0 top-full flex w-full">
+  <div class="absolute left-0 top-full flex justify-center">
     <NavigationMenuViewport
       v-bind="forwardedProps"
       :class="

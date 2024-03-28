@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
+import { PersonIcon } from '@radix-icons/vue';
 import { AvatarFallback, AvatarImage, AvatarRoot } from 'radix-vue';
 
 defineOptions({
@@ -30,7 +31,7 @@ const props = withDefaults(
   <AvatarRoot
     :class="
       cn(
-        'inline-flex shrink-0 select-none items-center justify-center overflow-hidden bg-secondary font-normal text-foreground',
+        'inline-flex shrink-0 select-none items-center justify-center overflow-hidden bg-neutral-200 font-normal text-foreground',
         {
           'h-10 w-10 text-captionall': props.size === 'sm',
           'h-16 w-16 text-heading5': props.size === 'base',
@@ -43,6 +44,7 @@ const props = withDefaults(
     "
   >
     <AvatarImage v-if="!!src" :src="src" :alt="alt" class="h-full w-full object-cover" />
-    <AvatarFallback v-if="!!fallback">{{ fallback }}</AvatarFallback>
+    <AvatarFallback class="text-neutral-500" v-else-if="!!fallback">{{ fallback }}</AvatarFallback>
+    <PersonIcon v-else class="stroke-neutral-500" />
   </AvatarRoot>
 </template>
