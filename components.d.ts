@@ -10,6 +10,7 @@ declare module 'vue' {
     BaseContainer: typeof import('./src/layouts/BaseContainer.vue')['default']
     MainLayout: typeof import('./src/layouts/MainLayout.vue')['default']
     NavigationMenuDemoItem: typeof import('./src/layouts/NavigationMenuDemoItem.vue')['default']
+    NavigationMenuLink: typeof import('./src/layouts/NavigationMenuLink.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheFooter: typeof import('./src/layouts/TheFooter.vue')['default']

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { AlertDescription, BaseAlert } from '@/components/ui/alert';
+import { BaseAlert } from '@/components/ui/alert';
+import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
 import { ExclamationTriangleIcon, RocketIcon } from '@radix-icons/vue';
-import ExampleSectionTemplate from '../ExampleSectionTemplate.vue';
 </script>
 
 <template>
-  <ExampleSectionTemplate name="Typography">
+  <ExampleSectionTemplate name="Alert">
     <div class="flex flex-wrap gap-4">
       <BaseAlert title="Default Alert!" class="w-[350px]">
-        <AlertDescription> You can add components to your app using the cli. </AlertDescription>
+        You can add components to your app using the cli.
       </BaseAlert>
       <BaseAlert :icon="RocketIcon" title="Default Alert with icon!" class="w-[350px]">
-        <AlertDescription> You can add components to your app using the cli. </AlertDescription>
+        You can add components to your app using the cli.
       </BaseAlert>
       <BaseAlert
         :icon="ExclamationTriangleIcon"
@@ -19,7 +19,7 @@ import ExampleSectionTemplate from '../ExampleSectionTemplate.vue';
         title="Destructive Alert with icon"
         class="w-[350px]"
       >
-        <AlertDescription> You can add components to your app using the cli. </AlertDescription>
+        You can add components to your app using the cli.
       </BaseAlert>
     </div>
   </ExampleSectionTemplate>

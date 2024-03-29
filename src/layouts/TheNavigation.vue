@@ -16,7 +16,7 @@
                       to="/profile"
                     >
                       <img src="/src/assets/avatar.jpeg" class="w-full aspect-square rounded-xl" />
-                      <div class="mt-2 text-lg font-medium">Y Lee</div>
+                      <div class="mt-2 text-lg font-medium text-neutral-700">Y Lee</div>
                       <p class="text-sm font-light leading-tight text-muted-foreground">
                         Beautifully designed components built with Radix UI and Tailwind CSS.
                       </p>
@@ -36,7 +36,7 @@
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Design pattern</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <ListItem
@@ -126,26 +126,24 @@ import ListItem from './NavigationMenuDemoItem.vue';
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: 'Atomics',
-    href: '/docs/primitives/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
+    title: 'Content',
+    href: '/design-pattern/content',
+    description: 'Typography, Images, Tables, Figures,...',
   },
   {
-    title: 'Features',
-    href: '/docs/primitives/hover-card',
-    description: 'For sighted users to preview content available behind a link.',
+    title: 'Forms',
+    href: '/design-pattern/forms',
+    description: 'Select, Checkbox, Radio, Range, Input,...',
   },
   {
-    title: 'Layouts',
-    href: '/docs/primitives/progress',
-    description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+    title: 'Layout',
+    href: '/design-pattern/layouts',
+    description: 'Header, Footer, Container,...',
   },
   {
-    title: 'Floatings',
-    href: '/docs/primitives/scroll-area',
-    description: 'Visually or semantically separates content.',
+    title: 'Components',
+    href: '/design-pattern/components',
+    description: 'Accordion, Alerts, Badge, Breadcrumb,...',
   },
 ];
 

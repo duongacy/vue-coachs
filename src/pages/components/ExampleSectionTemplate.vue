@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="grid scroll-mt-16 gap-4 border p-4">
+  <div :id="id" class="grid gap-4 border p-4">
     <p class="text-heading5 font-bold">{{ name }}</p>
     <slot></slot>
   </div>

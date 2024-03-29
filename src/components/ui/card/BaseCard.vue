@@ -8,19 +8,33 @@ const props = defineProps<{
   class?: string;
   title?: string;
   description?: string;
+  imageFluid?: boolean;
+  footerFluid?: boolean;
+  contentFluid?: boolean;
 }>();
 </script>
 
 <template>
   <div
     :class="
-      cn('grid gap-6 rounded-lg border bg-card p-6 text-card-foreground shadow-sm', props.class)
+      cn(
+        'grid gap-6 overflow-hidden rounded-lg border bg-card p-6 text-card-foreground shadow-sm',
+        props.class,
+      )
     "
   >
-    <CardHeader v-if="!!title || !!description">
+    <div :class="cn({ '-m-6 mb-0': imageFluid })" v-if="$slots.image">
+      <slot name="image" />
+    </div>
+    <CardHeader>
       <CardTitle v-if="!!title">{{ title }}</CardTitle>
       <CardDescription v-if="!!description">{{ description }}</CardDescription>
     </CardHeader>
-    <slot></slot>
+    <div :class="cn({ '-mx-6': contentFluid })" v-if="$slots.default">
+      <slot name="default" />
+    </div>
+    <div :class="cn({ '-m-6 mt-0': footerFluid })" v-if="$slots.footer">
+      <slot name="footer" />
+    </div>
   </div>
 </template>

@@ -10,12 +10,32 @@ const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue');
 const ComponentsPage = () => import('@/pages/components');
 const NotFound = () => import('@/pages/NotFound.vue');
 const TheProfile = () => import('@/pages/profile/TheProfile.vue');
+const TheComponents = () => import('@/pages/design-pattern/components/TheComponents.vue');
+const TheContent = () => import('@/pages/design-pattern/content/TheContent.vue');
+const TheForms = () => import('@/pages/design-pattern/forms/TheForms.vue');
+const TheLayouts = () => import('@/pages/design-pattern/layouts/TheLayouts.vue');
 
 export const routes = [
   {
     path: '/',
     name: 'home',
     redirect: '/coaches',
+  },
+  {
+    path: '/design-pattern/content',
+    component: TheContent,
+  },
+  {
+    path: '/design-pattern/forms',
+    component: TheForms,
+  },
+  {
+    path: '/design-pattern/layouts',
+    component: TheLayouts,
+  },
+  {
+    path: '/design-pattern/components',
+    component: TheComponents,
   },
   {
     path: '/profile',
