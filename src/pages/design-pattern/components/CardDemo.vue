@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
-import { BaseCard } from '@/components/ui/card';
+import { BaseCard, CardFooter } from '@/components/ui/card';
 import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 </script>
 
@@ -15,12 +15,10 @@ import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplat
         <template #image>
           <img src="/src/assets/avatar.jpeg" class="aspect-[4/3] object-cover" alt="..." />
         </template>
-        <template #footer>
-          <div class="flex gap-4 justify-end">
-            <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
-            <BaseButton class="min-w-[80px]">Next</BaseButton>
-          </div>
-        </template>
+        <CardFooter>
+          <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
+          <BaseButton class="min-w-[80px]">Next</BaseButton>
+        </CardFooter>
       </BaseCard>
       <BaseCard
         class="w-[350px]"
@@ -29,14 +27,14 @@ import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplat
         image-fluid
       >
         <template #image>
-          <img src="/src/assets/avatar.jpeg" class="aspect-[4/3] object-cover" alt="..." />
-        </template>
-        <template #footer>
-          <div class="flex gap-4 justify-end">
-            <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
-            <BaseButton class="min-w-[80px]">Next</BaseButton>
+          <div class="-mx-6 -mt-6">
+            <img src="/src/assets/avatar.jpeg" class="aspect-[4/3] object-cover" alt="..." />
           </div>
         </template>
+        <CardFooter>
+          <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
+          <BaseButton class="min-w-[80px]">Next</BaseButton>
+        </CardFooter>
       </BaseCard>
       <BaseCard
         class="w-[350px]"
@@ -48,12 +46,10 @@ import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplat
         <template #image>
           <img src="/src/assets/avatar.jpeg" class="aspect-[4/3] object-cover" alt="..." />
         </template>
-        <template #footer>
-          <div class="flex gap-4 bg-neutral-100 py-3 px-6 justify-end">
-            <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
-            <BaseButton class="min-w-[80px]">Next</BaseButton>
-          </div>
-        </template>
+        <CardFooter class="flex gap-4 bg-neutral-100 -mb-6 -mx-6 py-3 px-6 justify-end">
+          <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
+          <BaseButton class="min-w-[80px]">Next</BaseButton>
+        </CardFooter>
       </BaseCard>
       <BaseCard
         class="w-[350px]"
@@ -61,12 +57,10 @@ import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplat
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
       >
         <p>Content</p>
-        <template #footer>
-          <div class="flex gap-4 justify-end">
-            <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
-            <BaseButton class="min-w-[80px]">Next</BaseButton>
-          </div>
-        </template>
+        <CardFooter>
+          <BaseButton variant="outline" class="min-w-[80px]">Cancel</BaseButton>
+          <BaseButton class="min-w-[80px]">Next</BaseButton>
+        </CardFooter>
       </BaseCard>
     </div>
   </ExampleSectionTemplate>

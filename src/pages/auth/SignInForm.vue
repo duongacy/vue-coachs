@@ -66,8 +66,8 @@ onBeforeRouteLeave((_1, _2, next) => {
       title="Sign In"
       description="If you have an account, please sign-in with email and password."
     >
-      <CardContent class="grid gap-3">
-        <BaseLabel class="grid gap-1">
+      <CardContent class="grid gap-4">
+        <BaseLabel class="grid gap-2">
           <span>Email</span>
           <BaseInput
             v-model:value="email"
@@ -80,7 +80,7 @@ onBeforeRouteLeave((_1, _2, next) => {
             {{ errors.email }}
           </p>
         </BaseLabel>
-        <BaseLabel class="grid gap-1">
+        <BaseLabel class="grid gap-2">
           <span>Password</span>
           <BaseInput
             v-model:value="password"

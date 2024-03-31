@@ -84,8 +84,8 @@ const onSubmit = handleSubmit(signUpHandler, signUpErrorHandler);
           If you don't have an account, register a new account with some informations below.
         </CardDescription>
       </CardHeader>
-      <CardContent class="grid gap-3">
-        <BaseLabel class="grid gap-1">
+      <CardContent class="grid gap-4">
+        <BaseLabel class="grid gap-2">
           <span>Email</span>
           <BaseInput
             v-model:value="email"
