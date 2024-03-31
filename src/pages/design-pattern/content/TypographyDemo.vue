@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 
 const textClasses = [
   'text-heading1',

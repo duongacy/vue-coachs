@@ -35,7 +35,7 @@ import {
   DropdownMenuSubTrigger,
 } from '@/components/ui/dropdown-menu';
 import DropdownMenuTrigger from '@/components/ui/dropdown-menu/DropdownMenuTrigger.vue';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 import type { DropdownMenuCheckboxItemProps } from 'radix-vue';
 import { computed, ref } from 'vue';
 type Checked = DropdownMenuCheckboxItemProps['checked'];
@@ -58,9 +58,9 @@ const position = ref('bottom');
       <BaseCard class="w-[350px]" title="Auto">
         <DropdownMenu>
           <DropdownMenuTrigger as-child>
-            <BaseButton ref="buttonRef" variant="outline" class="w-full"> Open </BaseButton>
+            <BaseButton ref="buttonRef" variant="outline"> Open </BaseButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent class="p-6" :style="'width:' + contentWidth">
+          <DropdownMenuContent class="p-6">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
@@ -145,9 +145,9 @@ const position = ref('bottom');
       <BaseCard class="w-[350px]" title="Fit trigger's width">
         <DropdownMenu>
           <DropdownMenuTrigger as-child>
-            <BaseButton ref="buttonRef" variant="outline"> Open </BaseButton>
+            <BaseButton ref="buttonRef" variant="outline" class="w-full"> Open </BaseButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent class="p-6">
+          <DropdownMenuContent class="p-6" :style="'width:' + contentWidth">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>

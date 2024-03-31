@@ -7,7 +7,6 @@ const CoachAdd = () => import('@/pages/coaches/CoachAdd.vue');
 const CoachesList = () => import('@/pages/coaches/CoachesList.vue');
 const RequestForm = () => import('@/pages/requests/RequestForm.vue');
 const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue');
-const ComponentsPage = () => import('@/pages/components');
 const NotFound = () => import('@/pages/NotFound.vue');
 const TheProfile = () => import('@/pages/profile/TheProfile.vue');
 const TheComponents = () => import('@/pages/design-pattern/components/TheComponents.vue');
@@ -93,10 +92,6 @@ export const routes = [
   {
     path: '/:catchAll(.*)',
     redirect: '/not-found',
-  },
-  {
-    path: '/components',
-    component: ComponentsPage,
   },
 ];
 

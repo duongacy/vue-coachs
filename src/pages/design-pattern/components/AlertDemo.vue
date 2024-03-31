@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseAlert } from '@/components/ui/alert';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 import { ExclamationTriangleIcon, RocketIcon } from '@radix-icons/vue';
 </script>
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
 import { BaseCard } from '@/components/ui/card';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 </script>
 
 <template>

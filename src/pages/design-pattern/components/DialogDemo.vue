@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dialog';
 import { BaseInput } from '@/components/ui/input';
 import { BaseLabel } from '@/components/ui/label';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseBadge } from '@/components/ui/badge';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 const variants = ['primary', 'destructive', 'outline', 'secondary'] as const;
 const sizes = ['sm', 'md', 'lg'] as const;
 </script>

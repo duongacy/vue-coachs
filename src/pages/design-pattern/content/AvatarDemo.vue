@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseAvatar } from '@/components/ui/avatar';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 const avatarVariants = {
   size: ['lg', 'base', undefined] as const,
   shape: ['square', undefined] as const,

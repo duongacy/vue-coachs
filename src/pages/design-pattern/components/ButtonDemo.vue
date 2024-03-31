@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { BaseButton } from '@/components/ui/button';
-import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
+import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplate.vue';
 
 const variants = ['primary', 'destructive', 'outline', 'secondary', 'ghost', 'link'] as const;
 const buttonSizes = ['icon', 'sm', 'md', 'lg'] as const;
