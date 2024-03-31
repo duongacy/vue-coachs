@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="flex min-h-full gap-4 p-2">
     <div class="flex flex-grow flex-col gap-4">
       <ExampleSectionTemplate id="Typography" name="Typography">
@@ -87,4 +87,19 @@ import SwitchExample from './examples/SwitchExample.vue';
 import TabsExample from './examples/TabsExample.vue';
 import TextareaExample from './examples/TextareaExample.vue';
 import TypographyExample from './examples/TypographyExample.vue';
+</script> -->
+<template>
+  <div></div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  setup() {
+    return {};
+  },
+});
 </script>
+
+<style scoped></style>

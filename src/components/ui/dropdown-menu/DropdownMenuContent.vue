@@ -9,10 +9,14 @@ import {
 } from 'radix-vue';
 import { computed } from 'vue';
 
-const props = withDefaults(defineProps<DropdownMenuContentProps & { class?: string }>(), {
-  sideOffset: 4,
-  class: '',
-});
+const props = withDefaults(
+  defineProps<DropdownMenuContentProps & { class?: string; style?: any }>(),
+  {
+    sideOffset: 4,
+    class: '',
+    style: {},
+  },
+);
 const emits = defineEmits<DropdownMenuContentEmits>();
 
 const delegatedProps = computed(() => {
@@ -33,6 +37,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
           props.class,
         )
       "
+      :style="style"
     >
       <slot />
     </DropdownMenuContent>

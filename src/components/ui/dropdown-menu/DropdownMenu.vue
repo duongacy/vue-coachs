@@ -5,11 +5,12 @@ import {
   type DropdownMenuRootEmits,
   type DropdownMenuRootProps,
 } from 'radix-vue';
+import { mergeProps } from 'vue';
 
 const props = defineProps<DropdownMenuRootProps>();
 const emits = defineEmits<DropdownMenuRootEmits>();
 
-const forwarded = useForwardPropsEmits(props, emits);
+const forwarded = useForwardPropsEmits(mergeProps, emits);
 </script>
 
 <template>

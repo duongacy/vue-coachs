@@ -10,13 +10,14 @@ import {
   type DialogContentEmits,
   type DialogContentProps,
 } from 'radix-vue';
-import { computed } from 'vue';
+import { computed, type HTMLAttributes } from 'vue';
 
-const props = defineProps<DialogContentProps & { class?: string }>();
+const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>();
 const emits = defineEmits<DialogContentEmits>();
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;
+
   return delegated;
 });
 
@@ -31,7 +32,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
       <DialogContent
         :class="
           cn(
-            'relative z-50 my-8 grid w-full max-w-lg gap-4 border border-border bg-background p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
+            'relative z-50 grid w-full max-w-lg my-8 gap-4 border border-border bg-background p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
             props.class,
           )
         "
@@ -52,9 +53,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
         <slot />
 
         <DialogClose
-          class="absolute right-3 top-3 rounded-md p-0.5 transition-colors hover:bg-secondary"
+          class="absolute top-3 right-3 p-0.5 transition-colors rounded-md hover:bg-secondary"
         >
-          <X class="h-4 w-4" />
+          <X class="w-4 h-4" />
           <span class="sr-only">Close</span>
         </DialogClose>
       </DialogContent>

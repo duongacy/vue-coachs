@@ -6,6 +6,8 @@
       <BadgeDemo />
       <ButtonDemo />
       <CardDemo />
+      <DropdownMenuDemo />
+      <DialogDemo />
     </div>
   </BaseContainer>
 </template>
@@ -16,4 +18,6 @@ import AlertDemo from './AlertDemo.vue';
 import BadgeDemo from './BadgeDemo.vue';
 import ButtonDemo from './ButtonDemo.vue';
 import CardDemo from './CardDemo.vue';
+import DialogDemo from './DialogDemo.vue';
+import DropdownMenuDemo from './DropdownMenuDemo.vue';
 </script>

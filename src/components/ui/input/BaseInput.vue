@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
+import type { Size } from '@/types/ui';
 import { useAttrs, type Component } from 'vue';
-import type { Size } from '../types';
 
 const attrs = useAttrs();
 defineOptions({ inheritAttrs: false });

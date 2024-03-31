@@ -9,7 +9,7 @@ const props = withDefaults(
     icon?: Component;
     title?: string;
   }>(),
-  { class: '', variant: 'default', title: '' },
+  { class: '', variant: 'default', title: '', icon: undefined },
 );
 </script>
 

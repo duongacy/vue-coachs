@@ -2,9 +2,6 @@
 import { BaseButton } from '@/components/ui/button';
 import { BaseCard } from '@/components/ui/card';
 import ExampleSectionTemplate from '@/pages/components/ExampleSectionTemplate.vue';
-
-const variants = ['primary', 'destructive', 'outline', 'secondary', 'ghost', 'link'] as const;
-const buttonSizes = ['icon', 'sm', 'md', 'lg'] as const;
 </script>
 
 <template>

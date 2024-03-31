@@ -2,14 +2,14 @@
   <ExampleSectionTemplate name="Typography">
     <div class="overflow-x-auto overflow-y-hidden">
       <div
-        class="flex gap-4 items-baseline"
         v-for="fontWeightClass in fontWeightClasses"
         :key="fontWeightClass"
+        class="flex gap-4 items-baseline"
       >
         <h1
-          :class="textClass + ' ' + fontWeightClass"
           v-for="textClass in textClasses"
           :key="textClass"
+          :class="textClass + ' ' + fontWeightClass"
         >
           {{ textClass.split('-')[1] }}
         </h1>

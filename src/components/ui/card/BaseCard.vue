@@ -23,17 +23,17 @@ const props = defineProps<{
       )
     "
   >
-    <div :class="cn({ '-m-6 mb-0': imageFluid })" v-if="$slots.image">
+    <div v-if="$slots.image" :class="cn({ '-m-6 mb-0': imageFluid })">
       <slot name="image" />
     </div>
     <CardHeader>
       <CardTitle v-if="!!title">{{ title }}</CardTitle>
       <CardDescription v-if="!!description">{{ description }}</CardDescription>
     </CardHeader>
-    <div :class="cn({ '-mx-6': contentFluid })" v-if="$slots.default">
+    <div v-if="$slots.default" :class="cn({ '-mx-6': contentFluid })">
       <slot name="default" />
     </div>
-    <div :class="cn({ '-m-6 mt-0': footerFluid })" v-if="$slots.footer">
+    <div v-if="$slots.footer" :class="cn({ '-m-6 mt-0': footerFluid })">
       <slot name="footer" />
     </div>
   </div>
