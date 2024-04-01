@@ -26,6 +26,7 @@ const removeAuthenSuccessEventHandler = () => {
 };
 
 onMounted(() => {
+  store.dispatch('PROFILE/getProfile');
   store.dispatch('AUTHEN/autoSignin');
   window.addEventListener('authenSuccess', authenSuccessEventHandler);
   window.addEventListener('removeAuthenSuccess', removeAuthenSuccessEventHandler);
