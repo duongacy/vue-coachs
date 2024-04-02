@@ -3,8 +3,8 @@
     <BaseText heading5 bold class="uppercase text-pink-700">Education</BaseText>
     <div class="mt-4 flex flex-col gap-3">
       <div
-        v-for="{ school, major, timeRange } in educations"
-        :key="school + major + timeRange"
+        v-for="{ organization, major, from, to } in educations"
+        :key="organization + major + from + to"
         class="relative flex items-center gap-2 p-6"
       >
         <div
@@ -30,10 +30,10 @@
             </span>
             <div class="h-6 w-[1px] bg-neutral-400"></div>
             <span class="font-light">
-              {{ school }}
+              {{ organization }}
             </span>
           </BaseText>
-          <BaseText thin body class="mt-1">{{ timeRange }}</BaseText>
+          <BaseText thin body class="mt-1">{{ from + ' - ' + to }}</BaseText>
         </div>
       </div>
     </div>
@@ -42,17 +42,20 @@
 
 <script setup lang="ts">
 import { BaseText } from '@/components/ui/text';
+import { store } from '@/store';
+import type { Profile } from '@/store/modules/PROFILE/types';
+const educations = (store.getters['PROFILE/profile'] as Profile).educations;
 
-const educations = [
-  {
-    school: 'Cybersoft Academy',
-    major: 'Web Development',
-    timeRange: 'Jan 2021 - Oct 2021',
-  },
-  {
-    school: 'HCMC University Of Pedagogy',
-    major: 'Software Engineering',
-    timeRange: 'Sep 2011 - Sep 2015',
-  },
-];
+// const educations = [
+//   {
+//     school: 'Cybersoft Academy',
+//     major: 'Web Development',
+//     timeRange: 'Jan 2021 - Oct 2021',
+//   },
+//   {
+//     school: 'HCMC University Of Pedagogy',
+//     major: 'Software Engineering',
+//     timeRange: 'Sep 2011 - Sep 2015',
+//   },
+// ];
 </script>

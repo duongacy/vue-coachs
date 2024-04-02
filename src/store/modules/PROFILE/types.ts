@@ -59,6 +59,8 @@ export type Project = {
   description: string;
   from: string;
   to: string;
+  company: Company;
+  libraries: Library[];
 };
 export type Experience = {
   id: number;
@@ -93,6 +95,7 @@ export type WorkExperience = {
 export type Library = {
   id: number;
   name: string;
+  url?: string;
   description: string;
   createdAt: string;
   updatedAt: string;
@@ -107,6 +110,7 @@ export type Profile = {
   name: string;
   role: string;
   description: string;
+  phone: string;
   mail: string;
   github: string;
   projects: Project[];
@@ -117,4 +121,5 @@ export type Profile = {
   educations: Education[];
   communities: Activity[];
   skills: Skill[];
+  libraries: Library[];
 };

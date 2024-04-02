@@ -1,11 +1,13 @@
-export const profileActions = {
-  async getProfile() {
-    console.log('getProfile');
-    fetch('http://localhost:1337/api/profile?populate=deep').then(async (rs) => {
-      const d = await rs.json();
-      console.log(d);
+import type { ProfileActionContext } from '.';
+import { type SET_PROFILE_MUTATION_PAYLOAD } from './mutations';
+import type { Profile } from './types';
 
-      // console.log(flattenObject(d.data));
+export const profileActions = {
+  async getProfile(context: ProfileActionContext) {
+    fetch('http://localhost:1337/api/profile?populate=deep').then(async (rs) => {
+      const profile: Profile = await rs.json();
+      const payload: SET_PROFILE_MUTATION_PAYLOAD = { type: 'SET_PROFILE', profile };
+      context.commit(payload);
     });
   },
 };

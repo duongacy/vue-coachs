@@ -14,6 +14,9 @@
   </div>
 </template>
 <script setup lang="ts">
+import { store } from '@/store';
+import type { Profile } from '@/store/modules/PROFILE/types';
+import { watchEffect } from 'vue';
 import ProfileCertifications from './ProfileCertifications.vue';
 import ProfileCommunity from './ProfileCommunity.vue';
 import ProfileDevelopment from './ProfileDevelopment.vue';
@@ -23,4 +26,6 @@ import ProfileHeader from './ProfileHeader.vue';
 import ProfileLibraries from './ProfileLibraries.vue';
 import ProfileProjects from './ProfileProjects.vue';
 import ProfileTechstack from './ProfileTechstack.vue';
+
+const profile = store.getters['PROFILE/profile'] as Profile;
 </script>

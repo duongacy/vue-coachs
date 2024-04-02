@@ -3,8 +3,8 @@
     <BaseText heading5 bold class="uppercase text-pink-700">Certifications</BaseText>
     <div class="mt-4 flex flex-col gap-3">
       <div
-        v-for="{ school, name, time } in educations"
-        :key="school + name + time"
+        v-for="{ organization, field, date } in educations"
+        :key="field + organization + date"
         class="relative flex items-center gap-2 p-6"
       >
         <div
@@ -26,12 +26,12 @@
         <div>
           <BaseText as="div" semibold heading6 class="flex gap-4 text-neutral-800">
             <span>
-              {{ name }}
+              {{ field }}
             </span>
             <div class="h-6 w-[1px] bg-neutral-400"></div>
-            <span class="font-light"> {{ school }} - {{ time }} </span>
+            <span class="font-light"> {{ organization }} </span>
           </BaseText>
-          <BaseText thin body class="mt-1">{{ time }}</BaseText>
+          <BaseText thin body class="mt-1">{{ date }}</BaseText>
         </div>
       </div>
     </div>
@@ -40,22 +40,25 @@
 
 <script setup lang="ts">
 import { BaseText } from '@/components/ui/text';
+import { store } from '@/store';
+import type { Profile } from '@/store/modules/PROFILE/types';
 
-const educations = [
-  {
-    school: 'Maximilian Schwarzmüller',
-    name: 'Vue - The Complete Guide',
-    time: 'Feb 2024',
-  },
-  {
-    school: 'Cybersoft Academy',
-    name: 'Web Development Certificate',
-    time: 'Oct 2021',
-  },
-  {
-    school: 'Ho Chi Minh City University Of Pedagogy',
-    name: 'Bachelor of Software Engineering',
-    time: 'Sep 2015',
-  },
-];
+const educations = (store.getters['PROFILE/profile'] as Profile).certifications;
+// const educations = [
+//   {
+//     school: 'Maximilian Schwarzmüller',
+//     name: 'Vue - The Complete Guide',
+//     time: 'Feb 2024',
+//   },
+//   {
+//     school: 'Cybersoft Academy',
+//     name: 'Web Development Certificate',
+//     time: 'Oct 2021',
+//   },
+//   {
+//     school: 'Ho Chi Minh City University Of Pedagogy',
+//     name: 'Bachelor of Software Engineering',
+//     time: 'Sep 2015',
+//   },
+// ];
 </script>
