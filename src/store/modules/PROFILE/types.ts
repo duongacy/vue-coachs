@@ -114,7 +114,7 @@ export type Profile = {
   mail: string;
   github: string;
   projects: Project[];
-  techstack: Library[];
+  techstack: string[];
   avatar: Image;
   experiences: Experience[];
   certifications: Certification[];

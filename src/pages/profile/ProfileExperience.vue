@@ -3,7 +3,7 @@
     <BaseText heading5 bold class="uppercase text-pink-700">Work Experience</BaseText>
     <div class="mt-4 flex flex-col gap-3">
       <div
-        v-for="{ company, role, from, to, location } in workExperiences"
+        v-for="{ company, role, from, to } in workExperiences"
         :key="company + role + from + to"
         class="rounded-xl bg-neutral-50 p-6"
       >
@@ -41,11 +41,7 @@ import { BaseText } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
-import { watchEffect } from 'vue';
 const workExperiences = (store.getters['PROFILE/profile'] as Profile).experiences;
-watchEffect(() => {
-  console.log('workExperiences', workExperiences);
-});
 // const workExperiences = [
 //   {
 //     company: 'FPT Software',

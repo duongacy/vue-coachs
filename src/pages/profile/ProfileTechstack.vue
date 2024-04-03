@@ -1,17 +1,15 @@
 <template>
   <div>
     <BaseText heading5 bold class="uppercase text-pink-700">Techstack 2024</BaseText>
-    <div class="mt-4 flex flex-wrap gap-2">
+    <div class="mt-4 flex flex-wrap gap-4">
       <BaseText
-        v-for="{ name, url } in techstack"
-        :key="name"
-        as="a"
-        :href="url"
-        heading4
-        extralight
-        class="border border-neutral-300 px-6 py-4 hover:border-pink-300 hover:text-pink-700"
+        v-for="tech in techstack"
+        :key="tech"
+        heading6
+        bold
+        class="border-[2px] border-neutral-300 text-foreground/80 px-6 py-4 hover:border-pink-300 hover:text-pink-700"
       >
-        {{ name }}
+        {{ tech }}
       </BaseText>
     </div>
   </div>
@@ -23,22 +21,4 @@ import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
 
 const techstack = (store.getters['PROFILE/profile'] as Profile)?.techstack || [];
-// const techstacks = [
-//   {
-//     name: 'Typescript',
-//     url: 'https://www.typescriptlang.org/',
-//   },
-//   {
-//     name: 'Nuxt',
-//     url: 'https://nuxt.com/',
-//   },
-//   {
-//     name: 'Tailwind',
-//     url: 'https://tailwindcss.com/',
-//   },
-//   {
-//     name: 'Strapi',
-//     url: 'https://strapi.io/',
-//   },
-// ];
 </script>

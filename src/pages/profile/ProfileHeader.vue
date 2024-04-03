@@ -49,6 +49,7 @@
 <script setup lang="ts">
 import { BaseAvatar } from '@/components/ui/avatar';
 import { BaseText } from '@/components/ui/text';
+import { API_HOST } from '@/consts';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
 import { GithubLogoIcon } from '@radix-icons/vue';
@@ -56,6 +57,6 @@ import { Mail, Phone } from 'lucide-vue-next';
 import { computed } from 'vue';
 const profile = store.getters['PROFILE/profile'] as Profile;
 const avatarUrl = computed(() => {
-  return 'http://localhost:1337' + profile.avatar.url;
+  return API_HOST + profile.avatar.url;
 });
 </script>
