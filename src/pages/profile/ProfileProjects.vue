@@ -37,7 +37,9 @@
           </li>
         </BaseText>
         <div class="mt-4 flex gap-2">
-          <BaseBadge v-for="tech in libraries" :key="tech.id" variant="destructive">{{ tech.name }}</BaseBadge>
+          <BaseBadge v-for="tech in libraries" :key="tech.id" variant="destructive">{{
+            tech.name
+          }}</BaseBadge>
         </div>
       </div>
     </div>

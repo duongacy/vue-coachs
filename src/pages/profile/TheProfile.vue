@@ -16,7 +16,6 @@
 <script setup lang="ts">
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
-import { watchEffect } from 'vue';
 import ProfileCertifications from './ProfileCertifications.vue';
 import ProfileCommunity from './ProfileCommunity.vue';
 import ProfileDevelopment from './ProfileDevelopment.vue';
