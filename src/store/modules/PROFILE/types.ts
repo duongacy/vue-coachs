@@ -96,7 +96,7 @@ export type Library = {
   id: number;
   name: string;
   url?: string;
-  description: string;
+  description?: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
