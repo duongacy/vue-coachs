@@ -10,9 +10,9 @@
         alt="cn"
       />
       <div class="min-w-96 w-fit self-end">
-        <p class="text-neutral-800 text-heading5 font-bold">{{ profile.name }}</p>
+        <p class="text-foreground/80 text-heading5 font-bold">{{ profile.name }}</p>
         <p class="mt-1 text-pink-700 text-body font-semibold">{{ profile.role }}</p>
-        <p class="mt-2 leading-5 text-neutral-600 font-light text-caption">
+        <p class="mt-2 leading-5 text-foreground/60 font-light text-caption">
           {{ profile.description }}
         </p>
       </div>

@@ -1,43 +1,41 @@
 <template>
-  <div>
-    <p class="uppercase text-pink-700 text-heading5 font-bold">Work Experience</p>
-    <div class="mt-4 flex flex-col gap-3">
+  <SectionTemplate title="Work Experience" class="flex flex-col gap-4">
+    <div
+      v-for="{ company, role, from, to } in workExperiences"
+      :key="company + role + from + to"
+      class="rounded-xl bg-neutral-50 p-6"
+    >
+      <div class="flex gap-4 text-foreground/80 font-semibold text-heading6">
+        <span>
+          {{ role }}
+        </span>
+        <div class="h-6 w-[1px] bg-neutral-400"></div>
+        <span class="font-light">
+          {{ company }}
+        </span>
+      </div>
+      <p class="mt-1 font-thin text-body">{{ from + ' - ' + to }}</p>
       <div
-        v-for="{ company, role, from, to } in workExperiences"
-        :key="company + role + from + to"
-        class="rounded-xl bg-neutral-50 p-6"
+        as="ul"
+        class="mt-3 flex flex-col gap-1 font-extralight text-heading6 leading-7 text-foreground/60"
       >
-        <div class="flex gap-4 text-neutral-800 font-semibold text-heading6">
-          <span>
-            {{ role }}
-          </span>
-          <div class="h-6 w-[1px] bg-neutral-400"></div>
-          <span class="font-light">
-            {{ company }}
-          </span>
-        </div>
-        <p class="mt-1 font-thin text-body">{{ from + ' - ' + to }}</p>
-        <div
-          as="ul"
-          class="mt-3 flex flex-col gap-1 font-extralight text-heading6 leading-7 text-neutral-600"
+        <li
+          v-for="item in role"
+          :key="item"
+          :class="cn({ 'list-inside list-disc': role.length > 1 })"
         >
-          <li
-            v-for="item in role"
-            :key="item"
-            :class="cn({ 'list-inside list-disc': role.length > 1 })"
-          >
-            {{ item }}
-          </li>
-        </div>
+          {{ item }}
+        </li>
       </div>
     </div>
-  </div>
+  </SectionTemplate>
 </template>
 
 <script setup lang="ts">
 import { cn } from '@/lib/utils';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
+import SectionTemplate from './SectionTemplate.vue';
 const workExperiences = (store.getters['PROFILE/profile'] as Profile).experiences;
 // const workExperiences = [
 //   {

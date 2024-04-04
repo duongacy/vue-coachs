@@ -24,14 +24,16 @@
         </div>
         <div class="flex items-center gap-4">
           <img src="/src/assets/certificate.svg" class="h-14 object-cover" />
-          <div>
-            <p class="flex gap-4 font-semibold text-heading6 text-foreground/80">
+          <div class="text-heading6 text-foreground/80">
+            <p class="flex gap-4 font-semibold">
               {{ major }}
             </p>
-            <p>{{ profileDate(from) }} - {{ profileDate(to) }}</p>
+            <p class="font-light text-foreground/60">
+              {{ profileDate(from) }} - {{ profileDate(to) }}
+            </p>
           </div>
         </div>
-        <span class="font-normal text-heading5 text-foreground/60">{{ organization }}</span>
+        <span class="font-light text-heading5 text-foreground/80">{{ organization }}</span>
       </div>
     </div>
   </div>
