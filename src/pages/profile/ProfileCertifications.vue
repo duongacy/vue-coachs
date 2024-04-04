@@ -1,11 +1,11 @@
 <template>
   <div>
-    <BaseText heading5 bold class="uppercase text-pink-700">Certifications</BaseText>
+    <p class="uppercase text-heading5 font-bold text-pink-700">Certifications</p>
     <div class="mt-4 flex flex-col gap-3">
       <div
-        v-for="{ organization, field, date } in educations"
+        v-for="{ organization, field, date } in certifications"
         :key="field + organization + date"
-        class="relative flex items-center gap-2 p-6"
+        class="relative p-6 flex flex-col gap-4"
       >
         <div
           class="absolute inset-0 z-[-1] bg-neutral-300"
@@ -22,43 +22,24 @@
         >
           <div class="absolute inset-[1px] bg-white" style="clip-path: inherit"></div>
         </div>
-        <img src="/src/assets/certificate.svg" class="h-14 object-cover" />
-        <div>
-          <BaseText as="div" semibold heading6 class="flex gap-4 text-neutral-800">
-            <span>
+        <div class="flex items-center gap-4">
+          <img src="/src/assets/certificate.svg" class="h-14 object-cover" />
+          <div>
+            <p class="flex gap-4 font-semibold text-heading6 text-foreground/80">
               {{ field }}
-            </span>
-            <div class="h-6 w-[1px] bg-neutral-400"></div>
-            <span class="font-light"> {{ organization }} </span>
-          </BaseText>
-          <BaseText thin body class="mt-1">{{ date }}</BaseText>
+            </p>
+            <p class="mt-1 font-light text-body text-foreground/60">{{ date }}</p>
+          </div>
         </div>
+        <span class="font-normal text-heading5 text-foreground/60">{{ organization }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { BaseText } from '@/components/ui/text';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
 
-const educations = (store.getters['PROFILE/profile'] as Profile).certifications;
-// const educations = [
-//   {
-//     school: 'Maximilian Schwarzmüller',
-//     name: 'Vue - The Complete Guide',
-//     time: 'Feb 2024',
-//   },
-//   {
-//     school: 'Cybersoft Academy',
-//     name: 'Web Development Certificate',
-//     time: 'Oct 2021',
-//   },
-//   {
-//     school: 'Ho Chi Minh City University Of Pedagogy',
-//     name: 'Bachelor of Software Engineering',
-//     time: 'Sep 2015',
-//   },
-// ];
+const certifications = (store.getters['PROFILE/profile'] as Profile).certifications;
 </script>

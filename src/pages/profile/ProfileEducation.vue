@@ -1,11 +1,11 @@
 <template>
   <div>
-    <BaseText heading5 bold class="uppercase text-pink-700">Education</BaseText>
+    <p class="uppercase text-heading5 font-bold text-pink-700">Educations</p>
     <div class="mt-4 flex flex-col gap-3">
       <div
-        v-for="{ organization, major, from, to } in educations"
-        :key="organization + major + from + to"
-        class="relative flex items-center gap-2 p-6"
+        v-for="{ organization, from, major, to, id } in educations"
+        :key="'Educations' + id"
+        class="relative p-6 flex flex-col gap-4"
       >
         <div
           class="absolute inset-0 z-[-1] bg-neutral-300"
@@ -22,40 +22,25 @@
         >
           <div class="absolute inset-[1px] bg-white" style="clip-path: inherit"></div>
         </div>
-        <img src="/src/assets/education.svg" class="h-14 object-cover" />
-        <div>
-          <BaseText as="div" semibold heading6 class="flex gap-4 text-neutral-800">
-            <span>
+        <div class="flex items-center gap-4">
+          <img src="/src/assets/certificate.svg" class="h-14 object-cover" />
+          <div>
+            <p class="flex gap-4 font-semibold text-heading6 text-foreground/80">
               {{ major }}
-            </span>
-            <div class="h-6 w-[1px] bg-neutral-400"></div>
-            <span class="font-light">
-              {{ organization }}
-            </span>
-          </BaseText>
-          <BaseText thin body class="mt-1">{{ from + ' - ' + to }}</BaseText>
+            </p>
+            <p>{{ profileDate(from) }} - {{ profileDate(to) }}</p>
+          </div>
         </div>
+        <span class="font-normal text-heading5 text-foreground/60">{{ organization }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { BaseText } from '@/components/ui/text';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
-const educations = (store.getters['PROFILE/profile'] as Profile).educations;
+import { profileDate } from './profileDate';
 
-// const educations = [
-//   {
-//     school: 'Cybersoft Academy',
-//     major: 'Web Development',
-//     timeRange: 'Jan 2021 - Oct 2021',
-//   },
-//   {
-//     school: 'HCMC University Of Pedagogy',
-//     major: 'Software Engineering',
-//     timeRange: 'Sep 2011 - Sep 2015',
-//   },
-// ];
+const educations = (store.getters['PROFILE/profile'] as Profile).educations;
 </script>
