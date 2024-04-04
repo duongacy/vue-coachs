@@ -18,13 +18,13 @@
       </router-link>
     </CardFooter>
   </BaseCard> -->
-  <div class="rounded-2xl overflow-hidden shadow-lg">
+  <div class="overflow-hidden shadow-lg">
     <img
       class="aspect-[3/2] w-full object-cover"
       src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
       alt=""
     />
-    <div class="bg-neutral-50 p-4">
+    <div class="bg-neutral-100 p-4">
       <p class="text-gray-900 font-semibold text-heading6">
         Whitney Francis <span class="font-extralight">(Vietnam)</span>
       </p>

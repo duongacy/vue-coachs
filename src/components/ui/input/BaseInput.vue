@@ -24,7 +24,7 @@ const modelValue = defineModel<string>('value');
   <div
     :class="
       cn(
-        'relative flex h-10 overflow-hidden rounded-md border border-input text-caption ring-offset-background placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
+        'relative flex h-10 overflow-hidden  border border-input text-caption ring-offset-background placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
         {
           'border-destructive text-destructive focus-within:ring-destructive':
             isError && !attrs.disabled,

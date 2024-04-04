@@ -15,7 +15,7 @@ const props = defineProps<{
   <div
     :class="
       cn(
-        'grid gap-6 overflow-hidden rounded-lg border bg-card p-6 text-card-foreground shadow-sm',
+        'grid gap-6 overflow-hidden border bg-card p-6 text-card-foreground shadow-sm',
         props.class,
       )
     "

@@ -22,7 +22,7 @@ import ExampleSectionTemplate from '@/pages/design-pattern/ExampleSectionTemplat
     <div class="grid gap-4">
       <ContextMenu>
         <ContextMenuTrigger
-          class="flex h-[150px] w-[350px] items-center justify-center rounded-md border border-dashed text-caption"
+          class="flex h-[150px] w-[350px] items-center justify-center border border-dashed text-caption"
         >
           Right click here
         </ContextMenuTrigger>

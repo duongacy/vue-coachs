@@ -3,7 +3,7 @@
     <div
       v-for="{ name, from, description, responsibilities, to, libraries, company } in projects"
       :key="name + from + to"
-      class="rounded-xl bg-neutral-50 p-6"
+      class="bg-neutral-100 p-6"
     >
       <p class="font-semibold text-heading5 text-foreground/80">
         {{ name }}

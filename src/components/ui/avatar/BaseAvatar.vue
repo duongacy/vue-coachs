@@ -37,7 +37,6 @@ const props = withDefaults(
           'h-16 w-16 text-heading5': props.size === 'base',
           'h-32 w-32 text-5xl': props.size === 'lg',
           'rounded-full': props.shape === 'circle',
-          'rounded-md': props.shape === 'square',
         },
         props.class,
       )

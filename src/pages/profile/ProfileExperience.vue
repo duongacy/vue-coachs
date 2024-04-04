@@ -3,7 +3,7 @@
     <div
       v-for="{ company, role, from, to, id } in workExperiences"
       :key="'workExperiences' + id"
-      class="rounded-xl bg-neutral-50 p-6"
+      class="l-50 p-6 bg-neutral-100"
     >
       <div class="flex gap-4 text-foreground/80 font-semibold text-heading6">
         <span>

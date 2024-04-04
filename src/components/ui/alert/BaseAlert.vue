@@ -17,7 +17,7 @@ const props = withDefaults(
   <div
     :class="
       cn(
-        'relative flex gap-2 rounded-lg border p-4',
+        'relative flex gap-2 border p-4',
         {
           'bg-background/20 text-foreground/80': variant === 'default',
           'border-destructive/50 text-destructive dark:border-destructive':

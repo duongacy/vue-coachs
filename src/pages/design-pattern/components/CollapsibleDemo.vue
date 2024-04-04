@@ -26,10 +26,10 @@ const isOpen = ref(false);
             </BaseButton>
           </CollapsibleTrigger>
         </div>
-        <div class="rounded-md border px-4 py-3 font-mono text-caption">@radix-ui/primitives</div>
+        <div class="border px-4 py-3 font-mono text-caption">@radix-ui/primitives</div>
         <CollapsibleContent class="space-y-2">
-          <div class="rounded-md border px-4 py-3 font-mono text-caption">@radix-ui/colors</div>
-          <div class="rounded-md border px-4 py-3 font-mono text-caption">@stitches/react</div>
+          <div class="border px-4 py-3 font-mono text-caption">@radix-ui/colors</div>
+          <div class="border px-4 py-3 font-mono text-caption">@stitches/react</div>
         </CollapsibleContent>
       </BaseCollapsible>
     </div>

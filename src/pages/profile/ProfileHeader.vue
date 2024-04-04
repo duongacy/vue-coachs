@@ -17,7 +17,7 @@
         </p>
       </div>
     </div>
-    <div class="flex flex-col sm:flex-row flex-wrap gap-4 bg-neutral-50 p-4 text-neutral-500">
+    <div class="flex flex-col sm:flex-row flex-wrap gap-4 bg-neutral-100 p-4 text-neutral-500">
       <a class="flex items-center font-light text-body gap-x-2" :href="'mailto:' + profile.mail">
         <div
           class="w-8 h-8 grid place-content-center rounded-full bg-foreground/5 text-foreground/50"

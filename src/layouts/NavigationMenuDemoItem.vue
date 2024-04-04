@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { NavigationMenuLink } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
+import { NavigationMenuItem } from 'radix-vue';
 
 defineProps<{ title?: string; href?: string }>();
 </script>
 
 <template>
-  <li class="list-none">
+  <NavigationMenuItem class="list-none">
     <NavigationMenuLink as-child>
       <router-link
         :to="href || ''"
         :class="
           cn(
-            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+            'block select-none space-y-1  p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
             $attrs.class || '',
           )
         "
@@ -23,5 +24,5 @@ defineProps<{ title?: string; href?: string }>();
         </p>
       </router-link>
     </NavigationMenuLink>
-  </li>
+  </NavigationMenuItem>
 </template>

@@ -10,7 +10,7 @@
         v-for="item in coaches"
         :key="item.id"
         :item="item"
-        class="rounded-2xl overflow-hidden shadow-lg"
+        class="overflow-hidden shadow-lg"
         @register="open = true"
       >
       </CoachItem>
@@ -40,7 +40,7 @@
   </BaseContainer>
 
   <!-- <div class="p-4">
-    <div class="overflow-hidden rounded-lg border border-neutral-200 py-6">
+    <div class="overflow-hidden  border border-neutral-200 py-6">
       <div class="bg-white px-4">
         <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
           <div class="ml-4 mt-4">

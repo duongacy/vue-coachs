@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="p-4">
-      <div class="flex flex-col gap-4 overflow-hidden rounded-lg border border-neutral-200 p-4">
+      <div class="flex flex-col gap-4 overflow-hidden border border-neutral-200 p-4">
         <div>
           <h3 class="text-body font-semibold leading-6 text-neutral-900">Requests</h3>
           <p v-if="!requests.length" class="mt-1 text-caption text-neutral-500">
@@ -10,11 +10,7 @@
         </div>
         <div v-if="!!requests.length" class="h-[1px] bg-neutral-200"></div>
         <div v-if="!!requests.length" class="grid gap-4">
-          <div
-            v-for="request in requests"
-            :key="request.id"
-            class="overflow-hidden rounded-md p-4 shadow-lg"
-          >
+          <div v-for="request in requests" :key="request.id" class="overflow-hidden p-4 shadow-lg">
             <a
               :href="'mailto:' + request.userEmail"
               class="text-caption font-bold text-neutral-900"

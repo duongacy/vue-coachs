@@ -1,5 +1,5 @@
 <template>
-  <SectionTemplate title="Development" class="mt-4 flex flex-col gap-4">
+  <SectionTemplate title="Development" class="mt-4 flex flex-col gap-4 bg-neutral-100 p-6">
     <p
       v-for="{ name, description, id } in developments"
       :key="'developments' + id"

@@ -20,7 +20,7 @@
               type="text"
               :class="
                 cn({
-                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-caption leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
+                  'focus:ring-primary-600 py-1.5 text-caption leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2': true,
                   'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.userEmail.error,
                 })
               "
@@ -40,7 +40,7 @@
               rows="3"
               :class="
                 cn(
-                  'focus:ring-primary-600 rounded-md border-0 py-1.5 text-caption leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
+                  'focus:ring-primary-600  border-0 py-1.5 text-caption leading-6 text-neutral-900 shadow-sm ring-1 ring-inset ring-neutral-300 placeholder:text-neutral-400 focus:ring-2',
                   {
                     'focus:ring-error-600 ring-error-600 focus:ring-2': !!request.message.error,
                   },

@@ -12,10 +12,10 @@
                 <li class="row-span-3">
                   <NavigationMenuLink as-child>
                     <router-link
-                      class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      class="flex h-full w-full select-none flex-col justify-end bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       to="/profile"
                     >
-                      <img src="/src/assets/avatar.jpeg" class="w-full aspect-square rounded-xl" />
+                      <img src="/src/assets/avatar.jpeg" class="w-full aspect-square" />
                       <div class="mt-2 text-lg font-medium text-neutral-700">Y Lee</div>
                       <p class="text-sm font-light leading-tight text-muted-foreground">
                         Beautifully designed components built with Radix UI and Tailwind CSS.
@@ -68,7 +68,7 @@
                 <div class="p-1">
                   <NavLink
                     as="router-link"
-                    class="flex h-full w-full select-none flex-col rounded-md bg-gradient-to-b from-muted/50 to-muted p-5 no-underline outline-none focus:shadow-md"
+                    class="flex h-full w-full select-none flex-col  bg-gradient-to-b from-muted/50 to-muted p-5 no-underline outline-none focus:shadow-md"
                     to="/profile"
                   >
                     <BaseAvatar

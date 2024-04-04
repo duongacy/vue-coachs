@@ -1,6 +1,10 @@
 <template>
   <SectionTemplate title="Community" class="mt-4 flex flex-col gap-4">
-    <div v-for="activity in communities" :key="activity.id" class="text-heading6">
+    <div
+      v-for="activity in communities"
+      :key="activity.id"
+      class="text-heading6 p-6 bg-neutral-100"
+    >
       <p class="text-foreground/80 font-semibold">
         {{ activity.name }}
       </p>
