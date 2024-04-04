@@ -1,8 +1,8 @@
 <template>
   <SectionTemplate title="Development" class="mt-4 flex flex-col gap-4">
     <p
-      v-for="{ name, description } in developments"
-      :key="name"
+      v-for="{ name, description, id } in developments"
+      :key="'developments' + id"
       class="leading-7 text-foreground/80 font-semibold text-heading6"
     >
       {{ name }}:

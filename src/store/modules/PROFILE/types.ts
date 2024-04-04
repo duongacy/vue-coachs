@@ -79,7 +79,6 @@ export type Experience = {
   id: number;
   from: string;
   to: string;
-  location: string;
   role: string;
   company: Company;
 };

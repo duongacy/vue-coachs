@@ -8,10 +8,10 @@
       <p class="font-semibold text-heading5 text-foreground/80">
         {{ name }}
       </p>
-      <div class="font-thin text-body mt-1 leading-5 text-foreground/80 flex gap-2">
-        <p>{{ profileDate(from) }} - {{ profileDate(to) }}</p>
+      <div class="font-thin text-body mt-1 leading-5 text-foreground/60 flex gap-2">
+        <span>{{ profileDate(from) }} - {{ profileDate(to) }}</span>
         <BaseSeparator orientation="vertical" class="h-4" />
-        <span class="font-extralight text-foreground/60">
+        <span>
           {{ company.name }}
         </span>
       </div>
@@ -21,7 +21,7 @@
       </div>
 
       <p class="mt-3 font-bold text-heading6 text-foreground/80">Responsibilities:</p>
-      <div
+      <ul
         class="mt-2 font-extralight text-heading6 flex flex-col gap-1 leading-7 text-foreground/60"
       >
         <li
@@ -31,7 +31,7 @@
         >
           {{ item }}
         </li>
-      </div>
+      </ul>
       <div class="mt-4 flex gap-2 flex-wrap">
         <BaseBadge v-for="tech in libraries" :key="tech.id" variant="destructive">{{
           tech.name

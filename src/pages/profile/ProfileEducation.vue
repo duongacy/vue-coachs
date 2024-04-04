@@ -23,7 +23,7 @@
           <div class="absolute inset-[1px] bg-white" style="clip-path: inherit"></div>
         </div>
         <div class="flex items-center gap-4">
-          <img src="/src/assets/certificate.svg" class="h-14 object-cover" />
+          <img src="/src/assets/education.svg" class="h-14 object-cover" />
           <div class="text-heading6 text-foreground/80">
             <p class="flex gap-4 font-semibold">
               {{ major }}
@@ -33,7 +33,7 @@
             </p>
           </div>
         </div>
-        <span class="font-light text-heading5 text-foreground/80">{{ organization }}</span>
+        <span class="font-light text-heading5 text-foreground/60">{{ organization }}</span>
       </div>
     </div>
   </div>
