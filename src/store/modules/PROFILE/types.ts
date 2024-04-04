@@ -31,6 +31,19 @@ export type Image = {
   formats: Record<'thumbnail' | 'small' | 'medium' | 'large', ImageFormat>;
 };
 
+export type Company = {
+  id: number;
+  name: string;
+  location: string;
+  description: string;
+};
+
+export type Library = {
+  id: number;
+  name: string;
+  url?: string;
+};
+
 export type Activity = {
   id: number;
   name: string;
@@ -75,15 +88,7 @@ export type Skill = {
   name: string;
   description: string;
 };
-export type Company = {
-  id: number;
-  name: string;
-  location: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-};
+
 export type WorkExperience = {
   id: number;
   from: string;
@@ -92,21 +97,8 @@ export type WorkExperience = {
   role: string;
 };
 
-export type Library = {
-  id: number;
-  name: string;
-  url?: string;
-  description?: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-};
-
 export type Profile = {
   id: number;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
   name: string;
   role: string;
   description: string;

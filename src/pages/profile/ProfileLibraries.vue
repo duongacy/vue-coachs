@@ -5,7 +5,7 @@
       <a
         v-for="library in libraries"
         :key="library.name"
-        class="border text-body font-semibold border-neutral-300 text-foreground/80 px-6 py-3"
+        class="border text-body font-semibold border-neutral-300 hover:opacity-75 text-foreground/80 px-6 py-3"
         :href="library.url"
         target="_blank"
       >
