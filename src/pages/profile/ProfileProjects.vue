@@ -23,11 +23,8 @@
         </div>
 
         <p class="mt-3 font-normal text-heading6 text-foreground/80">Responsibilities:</p>
-        <BaseText
-          extralight
-          heading6
-          as="ul"
-          class="mt-2 flex flex-col gap-1 leading-7 text-foreground/60"
+        <div
+          class="mt-2 font-extralight text-heading6 flex flex-col gap-1 leading-7 text-foreground/60"
         >
           <li
             v-for="item in responsibilities"
@@ -36,7 +33,7 @@
           >
             {{ item }}
           </li>
-        </BaseText>
+        </div>
         <div class="mt-4 flex gap-2 flex-wrap">
           <BaseBadge v-for="tech in libraries" :key="tech.id" variant="destructive">{{
             tech.name
@@ -50,7 +47,6 @@
 <script setup lang="ts">
 import { BaseBadge } from '@/components/ui/badge';
 import { BaseSeparator } from '@/components/ui/separator';
-import { BaseText } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';

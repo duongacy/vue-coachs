@@ -1,13 +1,13 @@
 <template>
   <div>
-    <BaseText heading5 bold class="uppercase text-pink-700">Work Experience</BaseText>
+    <p class="uppercase text-pink-700 text-heading5 font-bold">Work Experience</p>
     <div class="mt-4 flex flex-col gap-3">
       <div
         v-for="{ company, role, from, to } in workExperiences"
         :key="company + role + from + to"
         class="rounded-xl bg-neutral-50 p-6"
       >
-        <BaseText as="div" semibold heading6 class="flex gap-4 text-neutral-800">
+        <div class="flex gap-4 text-neutral-800 font-semibold text-heading6">
           <span>
             {{ role }}
           </span>
@@ -15,13 +15,11 @@
           <span class="font-light">
             {{ company }}
           </span>
-        </BaseText>
-        <BaseText thin body class="mt-1">{{ from + ' - ' + to }}</BaseText>
-        <BaseText
-          extralight
-          heading6
+        </div>
+        <p class="mt-1 font-thin text-body">{{ from + ' - ' + to }}</p>
+        <div
           as="ul"
-          class="mt-3 flex flex-col gap-1 leading-7 text-neutral-600"
+          class="mt-3 flex flex-col gap-1 font-extralight text-heading6 leading-7 text-neutral-600"
         >
           <li
             v-for="item in role"
@@ -30,14 +28,13 @@
           >
             {{ item }}
           </li>
-        </BaseText>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { BaseText } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';

@@ -25,21 +25,21 @@
       alt=""
     />
     <div class="bg-neutral-50 p-4">
-      <BaseText semibold heading6 class="text-gray-900"
-        >Whitney Francis <span class="font-extralight">(Vietnam)</span>
-      </BaseText>
+      <p class="text-gray-900 font-semibold text-heading6">
+        Whitney Francis <span class="font-extralight">(Vietnam)</span>
+      </p>
       <div class="flex gap-x-1 mt-1 items-center">
         <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
         <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
         <StarIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
         <StarHalfIcon class="stroke-yellow-700 fill-yellow-700 size-4" />
-        <BaseText light caption class="text-neutral-500">(12,766)</BaseText>
+        <p class="text-neutral-500 font-light text-caption">(12,766)</p>
       </div>
-      <BaseText light body class="mt-2 line-clamp-2">
+      <p class="mt-2 line-clamp-2 font-light text-body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium reiciendis eum
         error reprehenderit. Fugiat nemo, commodi, nam doloribus, et enim dolorum magnam magni
-        nostrum a ipsam iste nobis. Suscipit.</BaseText
-      >
+        nostrum a ipsam iste nobis. Suscipit.
+      </p>
       <div class="flex gap-2 flex-wrap mt-4">
         <BaseBadge variant="destructive">Algorithm</BaseBadge>
         <BaseBadge variant="destructive">Web development</BaseBadge>
@@ -62,7 +62,6 @@
 <script setup lang="ts">
 import { BaseBadge } from '@/components/ui/badge';
 import { BaseButton, buttonVariants } from '@/components/ui/button';
-import { BaseText } from '@/components/ui/text';
 import type { TCoach } from '@/types/coach';
 import { StarHalfIcon, StarIcon } from 'lucide-vue-next';
 import { computed } from 'vue';

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseText heading5 bold class="uppercase text-pink-700">libraries/ frameworks</BaseText>
+    <p class="uppercase text-heading5 font-bold text-pink-700">libraries/ frameworks</p>
     <div class="mt-4 flex flex-wrap gap-4">
       <a
         v-for="library in libraries"
@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { BaseText } from '@/components/ui/text';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
 const libraries = (store.getters['PROFILE/profile'] as Profile).libraries;

@@ -1,10 +1,10 @@
 <template>
   <BaseContainer>
-    <BaseText heading3 bold class="text-neutral-800">Our coachs</BaseText>
-    <BaseText heading5 thin class="text-neutral-500 mt-2"
-      >We’re a dynamic group of individuals who are passionate about what we do and dedicated to
-      delivering the best results for our clients.</BaseText
-    >
+    <p class="text-neutral-800 text-heading3 font-bold">Our coachs</p>
+    <p class="text-neutral-500 text-heading5 font-thin mt-2">
+      We’re a dynamic group of individuals who are passionate about what we do and dedicated to
+      delivering the best results for our clients.
+    </p>
     <div class="columns-1 md:columns-2 lg:columns-3 mt-6 space-y-6 gap-6 lg:space-y-8 lg:gap-8">
       <CoachItem
         v-for="item in coaches"
@@ -66,7 +66,6 @@
 import BaseDialog from '@/components/ui/dialog/BaseDialog.vue';
 import { BaseInput } from '@/components/ui/input';
 import { BaseLabel } from '@/components/ui/label';
-import { BaseText } from '@/components/ui/text';
 import { key } from '@/store';
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';

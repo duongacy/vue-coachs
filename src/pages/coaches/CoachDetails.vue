@@ -2,11 +2,11 @@
   <BaseContainer class="pt-36">
     <div class="lg:flex-row gap-16 flex flex-col justify-between">
       <div class="w-full lg:max-w-lg lg:flex-auto">
-        <BaseText heading3 bold> We’re always looking for awesome people to join us </BaseText>
-        <BaseText heading6 light class="mt-3 text-neutral-600">
+        <p class="text-heading3 font-bold">We’re always looking for awesome people to join us</p>
+        <p class="mt-3 text-heading6 font-light text-neutral-600">
           Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non
           placerat nam arcu. Cras purus nibh cursus sit eu in id.
-        </BaseText>
+        </p>
         <img
           src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
           alt=""
@@ -58,7 +58,6 @@
 </template>
 
 <script setup>
-import { BaseText } from '@/components/ui/text';
 import BaseContainer from '@/layouts/BaseContainer.vue';
 
 const jobOpenings = [

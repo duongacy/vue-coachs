@@ -10,11 +10,11 @@
         alt="cn"
       />
       <div class="min-w-96 w-fit self-end">
-        <BaseText heading5 bold class="text-neutral-800"> {{ profile.name }} </BaseText>
-        <BaseText body semibold class="mt-1 text-pink-700">{{ profile.role }} </BaseText>
-        <BaseText light caption class="mt-2 leading-5 text-neutral-600">
+        <p class="text-neutral-800 text-heading5 font-bold">{{ profile.name }}</p>
+        <p class="mt-1 text-pink-700 text-body font-semibold">{{ profile.role }}</p>
+        <p class="mt-2 leading-5 text-neutral-600 font-light text-caption">
           {{ profile.description }}
-        </BaseText>
+        </p>
       </div>
     </div>
     <div class="flex flex-col sm:flex-row flex-wrap gap-4 bg-neutral-50 p-4 text-neutral-500">
@@ -48,7 +48,6 @@
 
 <script setup lang="ts">
 import { BaseAvatar } from '@/components/ui/avatar';
-import { BaseText } from '@/components/ui/text';
 import { API_HOST } from '@/consts';
 import { store } from '@/store';
 import type { Profile } from '@/store/modules/PROFILE/types';
