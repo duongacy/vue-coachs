@@ -27,7 +27,7 @@ const props = withDefaults(
         'text-[18px]': size === 'lg',
       }),
       cn(
-        'inline-flex items-center rounded-full border font-semibold transition-colors',
+        'inline-flex items-center rounded-full border font-semibold transition-colors whitespace-nowrap',
         {
           'px-3 py-1 ': size === 'sm',
           'px-4 py-2 ': size === 'md',
