@@ -38,24 +38,21 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-  <MainLayout v-if="!isAuthenTemplate && !isProfileTemplate">
+  <MainLayout v-if="!isAuthenTemplate">
     <template #header>
       <TheNavigation></TheNavigation>
     </template>
     <template #content>
-      <router-view></router-view>
-      <!-- <router-view v-slot="slotProps">
+      <router-view v-slot="slotProps">
         <transition name="route" mode="out-in">
           <component :is="slotProps.Component"></component>
         </transition>
-      </router-view> -->
+      </router-view>
     </template>
-    <template #footer>
+    <template v-if="!isProfileTemplate" #footer>
       <TheFooter></TheFooter>
     </template>
   </MainLayout>
-
-  <router-view v-else></router-view>
 </template>
 <style>
 .route-enter-active,

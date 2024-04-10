@@ -1,7 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    margin: 0mm;
+    size: auto;
+  }
+  .the-navigation,
+  .print-button {
+    display: none;
+  }
+}
+title {
+  display: none;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow-md">
+  <div class="shadow-md the-navigation">
     <BaseContainer class="py-4 flex gap-4 items-center">
       <NavigationMenu>
         <NavigationMenuList>
