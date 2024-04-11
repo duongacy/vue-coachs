@@ -3,106 +3,38 @@
     <BaseContainer class="py-4 flex gap-4 items-center">
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>About me</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul
-                class="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[minmax(0,.75fr)_minmax(0,1fr)]"
-              >
-                <li class="row-span-3">
-                  <NavigationMenuLink as-child>
-                    <router-link
-                      class="flex h-full w-full select-none flex-col justify-end bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      to="/profile"
-                    >
-                      <img src="/src/assets/avatar.jpeg" class="w-full aspect-square" />
-                      <div class="mt-2 text-lg font-medium text-neutral-700">Y Lee</div>
-                      <p class="text-sm font-light leading-tight text-muted-foreground">
-                        Beautifully designed components built with Radix UI and Tailwind CSS.
-                      </p>
-                    </router-link>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="View my profile">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Design pattern">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
+          <router-link
+            to="/profile"
+            class="text-heading6 inline-flex text-neutral-600 [&.router-link-active]:text-neutral-800 [&.router-link-active]:bg-neutral-100 hover:bg-neutral-50 px-4 py-2"
+          >
+            About me
+          </router-link>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Design pattern</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <ListItem
+                <RouterLink
                   v-for="component in components"
                   :key="component.title"
-                  :title="component.title"
-                  :href="component.href"
+                  class="text-heading6 inline-flex text-neutral-600 [&.router-link-active]:text-neutral-800 [&.router-link-active]:bg-neutral-100 hover:bg-neutral-50 px-4 py-2"
+                  :to="component.href"
                 >
-                  {{ component.description }}
-                </ListItem>
+                  <div class="flex flex-col gap-2">
+                    <div class="text-body font-medium leading-none text-neutral-700">
+                      {{ component.title }}
+                    </div>
+                    <p
+                      class="line-clamp-2 text-caption leading-snug text-muted-foreground font-extralight"
+                    >
+                      {{ component.description }}
+                    </p>
+                  </div>
+                </RouterLink>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/docs" :class="navigationMenuTriggerStyle()">
-              Documentation
-            </NavigationMenuLink>
-          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <BaseAvatar size="sm" shape="circle" alt="cn" class="ml-auto"></BaseAvatar>
-      <!-- <div class="flex gap-2 h-24 items-center">
-        <NavigationMenu class="grid flex-grow">
-          <div class="flex gap-3">
-            <NavLink size="md" as="router-link" to="/coaches">Coaches</NavLink>
-            <NavLink size="md" as="router-link" to="/requests-received">Requests received</NavLink>
-            <NavigationMenuItem trigger-text="Author" size="md">
-              <div class="grid w-[456px] grid-cols-[auto_1fr] gap-x-3">
-                <div class="p-1">
-                  <NavLink
-                    as="router-link"
-                    class="flex h-full w-full select-none flex-col  bg-gradient-to-b from-muted/50 to-muted p-5 no-underline outline-none focus:shadow-md"
-                    to="/profile"
-                  >
-                    <BaseAvatar
-                      size="lg"
-                      shape="square"
-                      src="/src/assets/avatar.jpeg"
-                      fallback="avatar"
-                      alt="cn"
-                    >
-                    </BaseAvatar>
-                    <div class="mt-4 text-heading6 font-bold">Y Lee</div>
-                    <p class="text-caption font-extralight leading-tight text-muted-foreground">
-                      Frontend developer
-                    </p>
-                  </NavLink>
-                </div>
-                <div class="flex flex-col gap-y-1 px-2 py-6">
-                  <ListItem href="/docs" title="Email"> duongy96@gmail.com </ListItem>
-                  <ListItem href="/docs/installation" title="Phone"> (+84)976888738 </ListItem>
-                  <ListItem href="/docs/primitives/typography" title="Github">
-                    https://github.com/duongacy
-                  </ListItem>
-                  <ListItem href="/components" title="Components">Some common components</ListItem>
-                </div>
-              </div>
-            </NavigationMenuItem>
-
-            <NavLink size="md" as="button" v-if="isAuthenticated" class="ml-auto" @click="signout"
-              >Sign out</NavLink
-            >
-            <NavLink class="ml-auto" size="md" as="router-link" v-else to="/auth">Sign in</NavLink>
-          </div>
-        </NavigationMenu>
-      </div> -->
     </BaseContainer>
   </div>
 </template>
@@ -112,17 +44,13 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
-import { BaseAvatar } from '@/components/ui/avatar';
 import { store } from '@/store';
 import { computed } from 'vue';
 import BaseContainer from './BaseContainer.vue';
-import ListItem from './NavigationMenuDemoItem.vue';
 
 const components: { title: string; href: string; description: string }[] = [
   {
