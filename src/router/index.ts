@@ -1,5 +1,5 @@
 import { store } from '@/store';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
 const TheAuthentication = () => import('@/pages/auth/TheAuthentication.vue');
 const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue');
@@ -14,7 +14,7 @@ const TheContent = () => import('@/pages/design-pattern/content/TheContent.vue')
 const TheForms = () => import('@/pages/design-pattern/forms/TheForms.vue');
 const TheLayouts = () => import('@/pages/design-pattern/layouts/TheLayouts.vue');
 
-export const routes = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
@@ -22,18 +22,22 @@ export const routes = [
   },
   {
     path: '/design-pattern/content',
+    name: 'designPatternContent',
     component: TheContent,
   },
   {
     path: '/design-pattern/forms',
+    name: 'designPatternForm',
     component: TheForms,
   },
   {
     path: '/design-pattern/layouts',
+    name: 'designPatternLayout',
     component: TheLayouts,
   },
   {
     path: '/design-pattern/components',
+    name: 'designPatternComponents',
     component: TheComponents,
   },
   {
@@ -48,13 +52,13 @@ export const routes = [
   },
   {
     path: '/coaches/:coachId',
-    name: 'coach-details',
+    name: 'coachDetails',
     props: true,
     component: CoachDetails,
     children: [
       {
-        path: 'request',
-        name: 'request-form',
+        path: '/coaches/:coachId/request',
+        name: 'requestForm',
         props: true,
         component: RequestForm,
       },
@@ -62,7 +66,7 @@ export const routes = [
   },
   {
     path: '/coaches/add',
-    name: 'add-coach',
+    name: 'coachesAdd',
     component: CoachAdd,
     meta: {
       requireAuth: true,
@@ -70,7 +74,7 @@ export const routes = [
   },
   {
     path: '/requests-received',
-    name: 'requests-received',
+    name: 'requestsReceived',
     component: RequestsReceived,
     meta: {
       requireAuth: true,
@@ -86,7 +90,7 @@ export const routes = [
   },
   {
     path: '/not-found',
-    name: 'not-found',
+    name: 'notFound',
     component: NotFound,
   },
   {
@@ -94,6 +98,25 @@ export const routes = [
     redirect: '/not-found',
   },
 ];
+
+export const getRoute = (
+  name:
+    | 'home'
+    | 'designPatternContent'
+    | 'designPatternForm'
+    | 'designPatternLayout'
+    | 'designPatternComponents'
+    | 'profile'
+    | 'coaches'
+    | 'requestsReceived'
+    | 'coachDetails'
+    | 'requestForm'
+    | 'coachesAdd'
+    | 'authen'
+    | 'notFound',
+) => {
+  return routes.find((item) => item.name === name) as RouteRecordRaw;
+};
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

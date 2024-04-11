@@ -33,6 +33,12 @@
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+          <router-link
+            to="/public-project"
+            class="text-heading6 inline-flex text-neutral-600 [&.router-link-active]:text-neutral-800 [&.router-link-active]:bg-neutral-100 hover:bg-neutral-50 px-4 py-2"
+          >
+            Public project
+          </router-link>
         </NavigationMenuList>
       </NavigationMenu>
     </BaseContainer>
