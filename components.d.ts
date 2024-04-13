@@ -9,7 +9,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     BaseContainer: typeof import('./src/layouts/BaseContainer.vue')['default']
     MainLayout: typeof import('./src/layouts/MainLayout.vue')['default']
+    Navigation: typeof import('./src/layouts/navigation/Navigation.vue')['default']
+    NavigationDemoItem: typeof import('./src/layouts/navigation/NavigationDemoItem.vue')['default']
+    NavigationLogo: typeof import('./src/layouts/navigation/NavigationLogo.vue')['default']
     NavigationMenuDemoItem: typeof import('./src/layouts/NavigationMenuDemoItem.vue')['default']
+    NavigationMobileMenu: typeof import('./src/layouts/navigation/NavigationMobileMenu.vue')['default']
+    NavigationPCMenu: typeof import('./src/layouts/navigation/NavigationPCMenu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheFooter: typeof import('./src/layouts/TheFooter.vue')['default']
