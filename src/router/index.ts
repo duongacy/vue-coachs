@@ -1,19 +1,6 @@
 import { store } from '@/store';
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
-const TheAuthentication = () => import('@/pages/auth/TheAuthentication.vue');
-const CoachDetails = () => import('@/pages/coaches/CoachDetails.vue');
-const CoachAdd = () => import('@/pages/coaches/CoachAdd.vue');
-const CoachesList = () => import('@/pages/coaches/CoachesList.vue');
-const RequestForm = () => import('@/pages/requests/RequestForm.vue');
-const RequestsReceived = () => import('@/pages/requests/RequestsReceived.vue');
-const NotFound = () => import('@/pages/NotFound.vue');
-const TheProfile = () => import('@/pages/profile/TheProfile.vue');
-const TheComponents = () => import('@/pages/design-pattern/components/TheComponents.vue');
-const TheContent = () => import('@/pages/design-pattern/content/TheContent.vue');
-const TheForms = () => import('@/pages/design-pattern/forms/TheForms.vue');
-const TheLayouts = () => import('@/pages/design-pattern/layouts/TheLayouts.vue');
-
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -23,51 +10,51 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/design-pattern/content',
     name: 'designPatternContent',
-    component: TheContent,
+    component: () => import('@/pages/design-pattern/content/TheContent.vue'),
   },
   {
     path: '/design-pattern/forms',
     name: 'designPatternForm',
-    component: TheForms,
+    component: () => import('@/pages/design-pattern/forms/TheForms.vue'),
   },
   {
     path: '/design-pattern/layouts',
     name: 'designPatternLayout',
-    component: TheLayouts,
+    component: () => import('@/pages/design-pattern/layouts/TheLayouts.vue'),
   },
   {
     path: '/design-pattern/components',
     name: 'designPatternComponents',
-    component: TheComponents,
+    component: () => import('@/pages/design-pattern/components/TheComponents.vue'),
   },
   {
     path: '/profile',
     name: 'profile',
-    component: TheProfile,
+    component: () => import('@/pages/profile/TheProfile.vue'),
   },
   {
     path: '/coaches',
     name: 'coaches',
-    component: CoachesList,
+    component: () => import('@/pages/coaches/CoachesList.vue'),
   },
   {
     path: '/coaches/:coachId',
     name: 'coachDetails',
     props: true,
-    component: CoachDetails,
+    component: () => import('@/pages/coaches/CoachDetails.vue'),
     children: [
       {
         path: '/coaches/:coachId/request',
         name: 'requestForm',
         props: true,
-        component: RequestForm,
+        component: () => import('@/pages/requests/RequestForm.vue'),
       },
     ],
   },
   {
     path: '/coaches/add',
     name: 'coachesAdd',
-    component: CoachAdd,
+    component: () => import('@/pages/coaches/CoachAdd.vue'),
     meta: {
       requireAuth: true,
     },
@@ -75,7 +62,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/requests-received',
     name: 'requestsReceived',
-    component: RequestsReceived,
+    component: () => import('@/pages/requests/RequestsReceived.vue'),
     meta: {
       requireAuth: true,
     },
@@ -83,7 +70,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/auth',
     name: 'authen',
-    component: TheAuthentication,
+    component: () => import('@/pages/auth/TheAuthentication.vue'),
     meta: {
       requireUnauth: true,
     },
@@ -91,7 +78,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/not-found',
     name: 'notFound',
-    component: NotFound,
+    component: () => import('@/pages/NotFound.vue'),
   },
   {
     path: '/:catchAll(.*)',

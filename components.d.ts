@@ -10,7 +10,7 @@ declare module 'vue' {
     BaseContainer: typeof import('./src/layouts/BaseContainer.vue')['default']
     MainLayout: typeof import('./src/layouts/MainLayout.vue')['default']
     Navigation: typeof import('./src/layouts/navigation/Navigation.vue')['default']
-    NavigationDemoItem: typeof import('./src/layouts/navigation/NavigationDemoItem.vue')['default']
+    NavigationItem: typeof import('./src/layouts/navigation/NavigationItem.vue')['default']
     NavigationLogo: typeof import('./src/layouts/navigation/NavigationLogo.vue')['default']
     NavigationMenuDemoItem: typeof import('./src/layouts/NavigationMenuDemoItem.vue')['default']
     NavigationMobileMenu: typeof import('./src/layouts/navigation/NavigationMobileMenu.vue')['default']

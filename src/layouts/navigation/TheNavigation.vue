@@ -1,5 +1,5 @@
 <template>
-  <div :class="cn(' shadow-sm', $props.class)">
+  <div :class="cn('shadow-sm', $props.class)">
     <BaseContainer class="flex gap-4 py-4 items-center">
       <NavigationMobileMenu class="lg:hidden" />
       <NavigationPCMenu class="hidden lg:flex flex-auto" />

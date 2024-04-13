@@ -13,8 +13,11 @@
       </Transition>
       <Transition name="fade">
         <DialogContent
+          aria-describedby="_"
           class="fixed left-0 top-0 bottom-0 z-50 max-w-[350px] w-full border bg-white rounded-tr-md overflow-hidden"
         >
+          <DialogTitle></DialogTitle>
+          <DialogDescription></DialogDescription>
           <BaseContainer class="flex items-center gap-4 border-b py-4">
             <DialogTrigger as-child>
               <button
@@ -40,7 +43,13 @@ import BaseContainer from '@/layouts/BaseContainer.vue';
 import { cn } from '@/lib/utils';
 import { HamburgerMenuIcon } from '@radix-icons/vue';
 import { X } from 'lucide-vue-next';
-import { DialogContent, DialogOverlay, DialogTrigger } from 'radix-vue';
+import {
+  DialogContent,
+  DialogDescription,
+  DialogOverlay,
+  DialogTitle,
+  DialogTrigger,
+} from 'radix-vue';
 import { Transition } from 'vue';
 
 defineProps<{

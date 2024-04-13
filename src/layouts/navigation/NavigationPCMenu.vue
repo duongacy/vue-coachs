@@ -1,10 +1,20 @@
 <template>
   <NavigationMenu :class="cn('', $props.class)">
-    <NavigationMenuList>
+    <NavigationMenuList class="gap-4">
       <router-link to="/profile" :class="navigationMenuTriggerStyle()"> About me </router-link>
 
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Design pattern</NavigationMenuTrigger>
+        <NavigationMenuTrigger class="has-[.router-link-active]:bg-neutral-100"
+          >Design pattern
+          <ListItem
+            v-for="component in components"
+            :key="component.title + '__'"
+            :href="component.href"
+            class="hidden"
+          >
+          </ListItem>
+        </NavigationMenuTrigger>
+
         <NavigationMenuContent>
           <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
             <ListItem
@@ -35,7 +45,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
-import ListItem from './NavigationDemoItem.vue';
+import ListItem from './NavigationItem.vue';
 
 const components: { title: string; href: string; description: string }[] = [
   {

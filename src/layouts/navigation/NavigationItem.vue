@@ -8,11 +8,11 @@ defineProps<{ title?: string; href?: string }>();
 <template>
   <li>
     <NavigationMenuLink as-child>
-      <a
-        :href="href"
+      <router-link
+        :to="href || ''"
         :class="
           cn(
-            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground [&.router-link-active]:bg-neutral-100 hover:bg-neutral-50',
             $attrs.class ?? '',
           )
         "
@@ -21,7 +21,7 @@ defineProps<{ title?: string; href?: string }>();
         <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
           <slot />
         </p>
-      </a>
+      </router-link>
     </NavigationMenuLink>
   </li>
 </template>
