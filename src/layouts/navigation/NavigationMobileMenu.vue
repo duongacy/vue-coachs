@@ -2,18 +2,32 @@
   <div :class="cn('', $props.class)">
     <BaseDialog>
       <DialogTrigger as-child>
-        <button type="button" class="w-10 h-10 bg-red-300"></button>
+        <button
+          class="w-10 h-10 grid place-content-center bg-neutral-100 rounded-md ml-auto text-neutral-500 hover:bg-neutral-50 active:bg-neutral-200"
+        >
+          <HamburgerMenuIcon />
+        </button>
       </DialogTrigger>
-      <DialogContent
-        class="fixed rounded-tr-3xl overflow-hidden inset-y-0 left-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-      >
-        <BaseContainer class="flex items-center gap-4 border-b py-4">
-          <DialogTrigger as-child>
-            <button type="button" class="w-10 h-10 bg-red-300 ml-auto"></button>
-          </DialogTrigger>
-        </BaseContainer>
-        <div class="mt-6 flow-root"></div>
-      </DialogContent>
+      <Transition name="overlay">
+        <DialogOverlay class="fixed inset-0 z-50 bg-black/70" />
+      </Transition>
+      <Transition name="fade">
+        <DialogContent
+          class="fixed left-0 top-0 bottom-0 z-50 max-w-[350px] w-full border bg-white rounded-md overflow-hidden"
+        >
+          <BaseContainer class="flex items-center gap-4 border-b py-4">
+            <DialogTrigger as-child>
+              <button
+                type="button"
+                class="w-10 h-10 grid place-content-center bg-neutral-100 rounded-md ml-auto text-neutral-500 hover:bg-neutral-50 active:bg-neutral-200"
+              >
+                <X class="w-4 h-4" />
+              </button>
+            </DialogTrigger>
+          </BaseContainer>
+          <div class="mt-6 flow-root"></div>
+        </DialogContent>
+      </Transition>
     </BaseDialog>
   </div>
 </template>
@@ -22,9 +36,41 @@
 import { BaseDialog } from '@/components/ui/dialog';
 import BaseContainer from '@/layouts/BaseContainer.vue';
 import { cn } from '@/lib/utils';
-import { DialogContent, DialogTrigger } from 'radix-vue';
+import { HamburgerMenuIcon } from '@radix-icons/vue';
+import { X } from 'lucide-vue-next';
+import { DialogContent, DialogOverlay, DialogTrigger } from 'radix-vue';
+import { Transition } from 'vue';
 
 defineProps<{
   class?: string;
 }>();
 </script>
+
+<style scoped>
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter-active,
+.fade-leave-active {
+  left: 0;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  left: -100%;
+}
+
+.overlay-enter-active,
+.overlay-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+  opacity: 1;
+}
+
+.overlay-enter-from,
+.overlay-leave-to {
+  opacity: 0;
+}
+</style>
