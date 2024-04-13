@@ -1,5 +1,5 @@
 <template>
-  <BaseContainer fluid class="pt-20 text-neutral-800">
+  <TheContainer fluid class="pt-20 text-neutral-800">
     <p class="text-heading3 font-bold">Content</p>
     <div class="mt-12 grid gap-4">
       <TypographyDemo />
@@ -8,11 +8,11 @@
       <SeparatorDemo />
       <TooltipDemo />
     </div>
-  </BaseContainer>
+  </TheContainer>
 </template>
 
 <script setup lang="ts">
-import BaseContainer from '@/layouts/BaseContainer.vue';
+import TheContainer from '../container/TheContainer.vue';
 import AvatarDemo from './AvatarDemo.vue';
 import SeparatorDemo from './SeparatorDemo.vue';
 import TabsDemo from './TabsDemo.vue';

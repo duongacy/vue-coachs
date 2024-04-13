@@ -18,7 +18,7 @@
         >
           <DialogTitle></DialogTitle>
           <DialogDescription></DialogDescription>
-          <BaseContainer class="flex items-center gap-4 border-b py-4">
+          <TheContainer class="flex items-center gap-4 border-b py-4">
             <DialogTrigger as-child>
               <button
                 type="button"
@@ -27,7 +27,7 @@
                 <X class="w-4 h-4" />
               </button>
             </DialogTrigger>
-          </BaseContainer>
+          </TheContainer>
           <div class="mt-6 flow-root">
             <!-- Add menu here -->
           </div>
@@ -39,7 +39,6 @@
 
 <script setup lang="ts">
 import { BaseDialog } from '@/components/ui/dialog';
-import BaseContainer from '@/layouts/BaseContainer.vue';
 import { cn } from '@/lib/utils';
 import { HamburgerMenuIcon } from '@radix-icons/vue';
 import { X } from 'lucide-vue-next';
@@ -51,6 +50,7 @@ import {
   DialogTrigger,
 } from 'radix-vue';
 import { Transition } from 'vue';
+import TheContainer from '../container/TheContainer.vue';
 
 defineProps<{
   class?: string;

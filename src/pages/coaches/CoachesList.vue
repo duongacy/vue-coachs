@@ -1,5 +1,5 @@
 <template>
-  <BaseContainer>
+  <TheContainer>
     <p class="text-neutral-800 text-heading3 font-bold">Our coachs</p>
     <p class="text-neutral-500 text-heading5 font-thin mt-2">
       We’re a dynamic group of individuals who are passionate about what we do and dedicated to
@@ -37,7 +37,7 @@
         </BaseLabel>
       </div>
     </BaseDialog>
-  </BaseContainer>
+  </TheContainer>
 
   <!-- <div class="p-4">
     <div class="overflow-hidden  border border-neutral-200 py-6">

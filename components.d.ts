@@ -17,6 +17,7 @@ declare module 'vue' {
     NavigationPCMenu: typeof import('./src/layouts/navigation/NavigationPCMenu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheContainer: typeof import('./src/layouts/container/TheContainer.vue')['default']
     TheFooter: typeof import('./src/layouts/TheFooter.vue')['default']
     TheNavigation: typeof import('./src/layouts/navigation/TheNavigation.vue')['default']
   }

@@ -1,5 +1,5 @@
 <template>
-  <BaseContainer class="pt-36">
+  <TheContainer class="pt-36">
     <div class="lg:flex-row gap-16 flex flex-col justify-between">
       <div class="w-full lg:max-w-lg lg:flex-auto">
         <p class="text-heading3 font-bold">We’re always looking for awesome people to join us</p>
@@ -54,11 +54,11 @@
         </div>
       </div>
     </div>
-  </BaseContainer>
+  </TheContainer>
 </template>
 
 <script setup>
-import BaseContainer from '@/layouts/BaseContainer.vue';
+import TheContainer from '../container/TheContainer.vue';
 
 const jobOpenings = [
   {
