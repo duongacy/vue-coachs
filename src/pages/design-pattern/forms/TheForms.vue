@@ -1,5 +1,5 @@
 <template>
-  <TheContainer fluid class="pt-20 text-neutral-800">
+  <TheContainer class="pt-20 text-neutral-800">
     <p class="text-heading3 font-bold">Forms</p>
     <div class="mt-12 grid gap-4">
       <InputDemo />
@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import TheContainer from '../container/TheContainer.vue';
+import TheContainer from '@/layouts/container/TheContainer.vue';
 import CheckboxGroupDemo from './CheckboxGroupDemo.vue';
 import InputDemo from './InputDemo.vue';
 import RadioGroupDemo from './RadioGroupDemo.vue';

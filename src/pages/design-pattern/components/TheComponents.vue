@@ -1,5 +1,5 @@
 <template>
-  <TheContainer fluid class="pt-20 text-neutral-800">
+  <TheContainer class="pt-20 text-neutral-800">
     <p class="text-heading3 font-bold">Components</p>
     <div class="mt-12 grid gap-4">
       <AlertDemo />
@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import TheContainer from '../container/TheContainer.vue';
+import TheContainer from '@/layouts/container/TheContainer.vue';
 import AlertDemo from './AlertDemo.vue';
 import AlertDialogDemo from './AlertDialogDemo.vue';
 import BadgeDemo from './BadgeDemo.vue';

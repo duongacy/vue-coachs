@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-import TheContainer from '../container/TheContainer.vue';
+import TheContainer from '@/layouts/container/TheContainer.vue';
 
 const jobOpenings = [
   {

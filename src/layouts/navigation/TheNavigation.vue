@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
+import TheContainer from '@/layouts/container/TheContainer.vue';
 import { cn } from '@/lib/utils';
-import TheContainer from '../container/TheContainer.vue';
 import NavigationMobileMenu from './NavigationMobileMenu.vue';
 import NavigationPCMenu from './NavigationPCMenu.vue';
 

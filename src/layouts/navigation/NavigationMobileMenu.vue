@@ -39,6 +39,7 @@
 
 <script setup lang="ts">
 import { BaseDialog } from '@/components/ui/dialog';
+import TheContainer from '@/layouts/container/TheContainer.vue';
 import { cn } from '@/lib/utils';
 import { HamburgerMenuIcon } from '@radix-icons/vue';
 import { X } from 'lucide-vue-next';
@@ -50,7 +51,6 @@ import {
   DialogTrigger,
 } from 'radix-vue';
 import { Transition } from 'vue';
-import TheContainer from '../container/TheContainer.vue';
 
 defineProps<{
   class?: string;

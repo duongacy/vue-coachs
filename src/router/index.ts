@@ -33,6 +33,11 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/profile/TheProfile.vue'),
   },
   {
+    path: '/public-projects',
+    name: 'publicProjects',
+    component: () => import('@/pages/public-projects/PublicProject.vue'),
+  },
+  {
     path: '/coaches',
     name: 'coaches',
     component: () => import('@/pages/coaches/CoachesList.vue'),
@@ -94,6 +99,7 @@ export const getRoute = (
     | 'designPatternLayout'
     | 'designPatternComponents'
     | 'profile'
+    | 'publicProjects'
     | 'coaches'
     | 'requestsReceived'
     | 'coachDetails'

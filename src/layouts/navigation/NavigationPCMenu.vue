@@ -28,7 +28,7 @@
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>
-      <router-link to="/public-projects" :class="navigationMenuTriggerStyle()">
+      <router-link :to="getRoute('publicProjects').path" :class="navigationMenuTriggerStyle()">
         Public projects
       </router-link>
     </NavigationMenuList>
@@ -45,27 +45,28 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
+import { getRoute } from '@/router';
 import ListItem from './NavigationItem.vue';
 
 const components: { title: string; href: string; description: string }[] = [
   {
     title: 'Content',
-    href: '/design-pattern/content',
+    href: getRoute('designPatternContent').path,
     description: 'Typography, Images, Tables, Figures,...',
   },
   {
     title: 'Forms',
-    href: '/design-pattern/forms',
+    href: getRoute('designPatternForm').path,
     description: 'Select, Checkbox, Radio, Range, Input,...',
   },
   {
     title: 'Layout',
-    href: '/design-pattern/layouts',
+    href: getRoute('designPatternLayout').path,
     description: 'Header, Footer, Container,...',
   },
   {
     title: 'Components',
-    href: '/design-pattern/components',
+    href: getRoute('designPatternComponents').path,
     description: 'Accordion, Alerts, Badge, Breadcrumb,...',
   },
 ];
