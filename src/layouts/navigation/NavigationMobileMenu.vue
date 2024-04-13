@@ -13,7 +13,7 @@
       </Transition>
       <Transition name="fade">
         <DialogContent
-          class="fixed left-0 top-0 bottom-0 z-50 max-w-[350px] w-full border bg-white rounded-md overflow-hidden"
+          class="fixed left-0 top-0 bottom-0 z-50 max-w-[350px] w-full border bg-white rounded-tr-md overflow-hidden"
         >
           <BaseContainer class="flex items-center gap-4 border-b py-4">
             <DialogTrigger as-child>
@@ -25,7 +25,9 @@
               </button>
             </DialogTrigger>
           </BaseContainer>
-          <div class="mt-6 flow-root"></div>
+          <div class="mt-6 flow-root">
+            <!-- Add menu here -->
+          </div>
         </DialogContent>
       </Transition>
     </BaseDialog>

@@ -18,6 +18,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheFooter: typeof import('./src/layouts/TheFooter.vue')['default']
-    TheNavigation: typeof import('./src/layouts/TheNavigation.vue')['default']
+    TheNavigation: typeof import('./src/layouts/navigation/TheNavigation.vue')['default']
   }
 }

@@ -2,7 +2,6 @@
   <div :class="cn(' shadow-sm', $props.class)">
     <BaseContainer class="flex gap-4 py-4 items-center">
       <NavigationMobileMenu class="lg:hidden" />
-      <!-- <NavigationLogo class="ml-auto lg:ml-0" /> -->
       <NavigationPCMenu class="hidden lg:flex flex-auto" />
     </BaseContainer>
   </div>

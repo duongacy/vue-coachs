@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { MainLayout } from '@/layouts';
 import TheFooter from '@/layouts/TheFooter.vue';
-import TheNavigation from '@/layouts/TheNavigation.vue';
 import { store } from '@/store';
 import { computed, onBeforeUnmount, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import TheNavigation from './layouts/navigation/TheNavigation.vue';
 const router = useRouter();
 const route = useRoute();
 
