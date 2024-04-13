@@ -3,7 +3,7 @@
     <BaseDialog>
       <DialogTrigger as-child>
         <button
-          class="w-10 h-10 grid place-content-center bg-neutral-100 rounded-md ml-auto text-neutral-500 hover:bg-neutral-50 active:bg-neutral-200"
+          class="w-10 h-10 grid place-content-center bg-neutral-100 ml-auto text-neutral-500 hover:bg-neutral-50 active:bg-neutral-200"
         >
           <HamburgerMenuIcon />
         </button>
@@ -22,7 +22,7 @@
             <DialogTrigger as-child>
               <button
                 type="button"
-                class="w-10 h-10 grid place-content-center bg-neutral-100 rounded-md ml-auto text-neutral-500 hover:bg-neutral-50 active:bg-neutral-200"
+                class="w-10 h-10 grid place-content-center bg-neutral-100 ml-auto text-neutral-500 hover:bg-neutral-50 active:bg-neutral-200"
               >
                 <X class="w-4 h-4" />
               </button>
